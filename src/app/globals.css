@@ -127,10 +127,35 @@ margin: 0%;
 }
 .center{
     position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+body{
+  margin: 0%;
+  scrollbar-width: none;
+  overflow-x: hidden;
+}
+.lg{
+background-image: linear-gradient(to bottom right, #020a17, #000000);
+}
+.custom-spotlight-card {
+  @apply flex flex-col items-center justify-start bg-[#1a1a2e] rounded-xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl;
+  width: 280px; /* fixed card width */
+  min-height: 220px; /* optional for consistent height */
+}
+
+.custom-spotlight-card img {
+  @apply object-contain;
+}
+
+.custom-spotlight-card h3 {
+  @apply text-white text-center;
+}
+
+.custom-spotlight-card p {
+  @apply text-gray-300 text-center;
 }
