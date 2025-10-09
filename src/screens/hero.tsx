@@ -61,30 +61,17 @@ const hero = () => {
     },
   ];
   return (
- <div className="flex justify-center items-center w-screen h-screen mb-0">
-      <div style={{ width: "100%", height: "100%", position: "relative" }}>
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#4191ff"
-          raysSpeed={1.6}
-          lightSpread={0.5}
-          rayLength={8.9}
-          followMouse={true}
-          mouseInfluence={0.3}
-          noiseAmount={0}
-          distortion={0}
-          className="custom-rays"
-        />
+ <div className="hero flex justify-center items-center w-full h-[400px] mb-0 bg-[#0D0716]">
         <CardNav
           logoAlt="Company Logo"
           items={items}
-          baseColor="#98a1bdff"
+          baseColor="#c6d3f1ff"
           menuColor="#132159ff"
           buttonBgColor="#132159ff"
           buttonTextColor="#fff"
           ease="power3.out"
         />
-        <h1 className="center ">
+        <h1 className="mt-50 mx-2 lg:w-[40%] flex-wrap">
           <TextType
             text={[
               "Hi, I'm Qarib. A Full Stack Web And Mobile Developer.",
@@ -102,7 +89,7 @@ const hero = () => {
           />
         </h1>
       </div>
-    </div>
+    // </div>
   )
 }
 

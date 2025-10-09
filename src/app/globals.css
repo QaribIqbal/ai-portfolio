@@ -42,10 +42,10 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
-body #root{
-width: 100%;
-height: 100%;
-margin: 0%;
+body #root {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
 }
 
 :root {
@@ -125,27 +125,37 @@ margin: 0%;
     @apply bg-background text-foreground;
   }
 }
-.center{
-    position: absolute;
-  top: 45%;
-  left: 50%;
+.center {
+ 
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: center;
+  justify-self: center;
+  /* min-height: 30vh; */
 }
-body{
+.center1{
+    position: absolute;
+  top: 40%
+}
+html body {
   margin: 0%;
   scrollbar-width: none;
   overflow-x: hidden;
+    background-color: #0D0716;
+
 }
-.lg{
-background-image: linear-gradient(to bottom right, #020a17, #000000);
+.lg {
+  background-image: linear-gradient(to bottom right, #091934, #000000);
 }
 .custom-spotlight-card {
   @apply flex flex-col items-center justify-start bg-[#1a1a2e] rounded-xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl;
   width: 280px; /* fixed card width */
   min-height: 220px; /* optional for consistent height */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .custom-spotlight-card img {
@@ -158,4 +168,13 @@ background-image: linear-gradient(to bottom right, #020a17, #000000);
 
 .custom-spotlight-card p {
   @apply text-gray-300 text-center;
+}
+
+.hero{
+  position: absolute;
+  top: 0%;
+  height: 50vh;
+}
+.custom-spotlight-card{
+  cursor: pointer;
 }
