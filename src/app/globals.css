@@ -143,12 +143,15 @@ html body {
   margin: 0%;
   scrollbar-width: none;
   overflow-x: hidden;
-    background-color: #0D0716;
+    /* background-color: #0D0716; */
+    overscroll-behavior: none;
 
 }
 .lg {
-  background-image: linear-gradient(to bottom right, #091934, #000000);
+  background-image: radial-gradient(circle at center, #0D0716, #0000);
 }
+
+/* services screen */
 .custom-spotlight-card {
   @apply flex flex-col items-center justify-start bg-[#1a1a2e] rounded-xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl;
   width: 280px; /* fixed card width */
@@ -173,7 +176,47 @@ html body {
 .hero{
   position: absolute;
   top: 0%;
-  height: 50vh;
+  /* height: 50vh; */
+}
+.custom-spotlight-card:hover{
+  cursor: pointer;
+}
+
+/* tech screen */
+.custom-spotlight-tech-card {
+  @apply flex flex-col items-center justify-start bg-[#1a1a2e] rounded-xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl;
+  width: 280px; /* fixed card width */
+  min-height: 220px; /* optional for consistent height */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  justify-content: space-between;
+  transform: translateZ(0);
+}
+
+.custom-spotlight-tech-card img {
+  @apply object-contain;
+}
+
+.custom-spotlight-tech-card span{
+  margin-top: auto;
+}
+
+.custom-spotlight-tech-card h3 {
+  @apply text-white text-center uppercase;
+  letter-spacing: 1.5;
+  font-size:large;
+  font-weight:700;
+  
+}
+
+.custom-spotlight-tech-card p {
+  @apply text-gray-300 text-center;
+}
+
+.hero{
+  position: absolute;
+  top: 0%;
+  /* height: 50vh; */
 }
 .custom-spotlight-card{
   cursor: pointer;

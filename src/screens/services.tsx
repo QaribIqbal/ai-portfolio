@@ -17,37 +17,37 @@ const services = () => {
     // Animate heading
     gsap.from(card1.current, {
       opacity: 0,
-      y: 50,
-      duration: 1.2,
+      y: 100,
+      duration: 2,
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 80%",
-        end: "top -80",
-        markers: true,
+        start: "top 30%",
+        end: "top -5%",
+
         scrub : 1
       },
     });
     gsap.from(card2.current, {
       opacity: 0,
-      y: -50,
-      duration: 1.2,
+      y: -100,
+      duration: 2,
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 80%",
-        end: "top -80",
-        markers: true,
+        start: "top 30%",
+        end: "top -5%",
+
         scrub : 1
       },
     });
     gsap.from(card3.current, {
       opacity: 0,
-      x: 50,
-      duration: 1.5,
+      x: 100,
+      duration: 2,
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 80%",
-        end: "top -80",
-        markers: true,
+        start: "top 30%",
+        end: "top -5%",
+
         scrub: 1,
       },
     });
@@ -56,10 +56,10 @@ const services = () => {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col items-center  w-full min-h-[700px] overflow-x-hidden mt-0 lg"
+      className="flex flex-col items-center w-full h-[100vh]  overflow-x-hidden mt-0 lg "
     >
       {/* Heading Section */}
-      <div className=" text-center m-auto mb-10 mt-20">
+      <div className=" text-center m-auto mb-10 mt-50">
         <BlurText
           text="Services I'm Providing"
           delay={150}

@@ -61,7 +61,7 @@ const hero = () => {
     },
   ];
   return (
- <div className="hero flex justify-center items-center w-full h-[400px] mb-0 bg-[#0D0716]">
+ <div className=" flex flex-col justify-center items-center w-full h-[100vh] mb-0 bg-[#0D0716]">
         <CardNav
           logoAlt="Company Logo"
           items={items}
@@ -71,7 +71,7 @@ const hero = () => {
           buttonTextColor="#fff"
           ease="power3.out"
         />
-        <h1 className="mt-50 mx-2 lg:w-[40%] flex-wrap">
+        <h1 className="mx-auto lg:w-[41%] flex-wrap">
           <TextType
             text={[
               "Hi, I'm Qarib. A Full Stack Web And Mobile Developer.",
