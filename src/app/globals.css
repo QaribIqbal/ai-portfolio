@@ -204,7 +204,7 @@ html body {
 .custom-spotlight-tech-card h3 {
   @apply text-white text-center uppercase;
   letter-spacing: 1.5;
-  font-size:large;
+  font-size:small;
   font-weight:700;
   
 }

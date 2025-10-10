@@ -24,8 +24,7 @@ function tech() {
   //       trigger: sectionRef.current,
   //       start: "top 30%",
   //       end: "top -5%",
-  //       markers: true,
-  //       scrub: 1.3,
+  //   //       scrub: 1.3,
   //     },
   //   });
   //   gsap.from(techCard2.current, {
@@ -37,8 +36,7 @@ function tech() {
   //       trigger: sectionRef.current,
   //       start: "top 30%",
   //       end: "top -5%",
-  //       markers: true,
-  //       scrub: 1.3,
+  //   //       scrub: 1.3,
   //     },
   //   });
   //   gsap.from(techCard3.current, {
@@ -50,8 +48,7 @@ function tech() {
   //       trigger: sectionRef.current,
   //       start: "top 30%",
   //       end: "top -5%",
-  //       markers: true,
-  //       scrub: 1.3,
+  //   //       scrub: 1.3,
   //     },
   //   });
   //    gsap.from(techCard4.current, {
@@ -63,8 +60,7 @@ function tech() {
   //       trigger: sectionRef.current,
   //       start: "top 30%",
   //       end: "top -5%",
-  //       markers: true,
-  //       scrub: 1.3,
+  //   //       scrub: 1.3,
   //     },
   //   });
   // });
@@ -80,7 +76,6 @@ ease: "power4.out",      // subtle overshoot then settle
       trigger: sectionRef.current,
       start: "top 30%",
       end: "top -5%",
-      markers: true,
       scrub: 1.3,
     },
   });
@@ -96,7 +91,6 @@ ease: "power4.out",      // subtle overshoot then settle
       trigger: sectionRef.current,
       start: "top 30%",
       end: "top -5%",
-      markers: true,
       scrub: 1.3,
     },
   });
@@ -112,7 +106,6 @@ ease: "power4.out",      // subtle overshoot then settle
       trigger: sectionRef.current,
       start: "top 30%",
       end: "top -5%",
-      markers: true,
       scrub: 1.3,
     },
   });
@@ -128,7 +121,6 @@ ease: "power4.out",
       trigger: sectionRef.current,
       start: "top 30%",
       end: "top -5%",
-      markers: true,
       scrub: 0.5,
     },
   });
@@ -268,7 +260,7 @@ ease: "power4.out",
             className="custom-spotlight-tech-card"
             spotlightColor="rgba(6, 96, 206, 0.25)"
           >
-            <h3 className="text-lg font-semibold mb-1">AI Automation</h3>
+            <h3 className="text-lg font-normal mb-1">AI Automation</h3>
             <div className="flex flex-row flex-wrap items-center justify-center gap-2 overflow-hidden">
               <span>
                 <img

@@ -99,7 +99,7 @@ function tools() {
       </div>
       <LogoLoop
         logos={imageLogos}
-        speed={40}
+        speed={90}
         direction="right"
         logoHeight={60}
         gap={40}
