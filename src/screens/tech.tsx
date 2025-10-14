@@ -92,7 +92,7 @@ ease: "power4.out",      // subtle overshoot then settle
       start: "top 45%",
       end: "top -55%",
       scrub: 1.3,
-      markers: true
+      // markers: true
     },
   });
 

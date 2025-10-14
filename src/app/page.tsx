@@ -10,7 +10,7 @@ export default function Home() {
       <LightRays
         raysOrigin="top-center"
         raysColor="#4191ff"
-        raysSpeed={0}
+        raysSpeed={0.5}
         lightSpread={0.025}
         rayLength={2}
         followMouse={true}

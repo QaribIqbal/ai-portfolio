@@ -61,7 +61,7 @@ const hero = () => {
     },
   ];
   return (
- <div className=" flex flex-col justify-center items-center w-full h-[100vh] mb-0 bg-[#0D0716]">
+ <div className=" flex flex-col justify-center items-center w-full h-[100vh] mb-0">
         <CardNav
           logoAlt="Company Logo"
           items={items}
