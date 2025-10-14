@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LightRays from "@/components/LightRays";
+import LenisProvider from "@/components/lenisProvider";
 // import { ThemeProvider } from "next-themes";
 
 // const geistSans = Geist({
@@ -29,7 +29,9 @@ export default function RootLayout({
     <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
       <body
       >
+        <LenisProvider>
         {children}
+        </LenisProvider>
     {/* </ThemeProvider> */}
       </body>
     </html>
