@@ -61,16 +61,17 @@ const hero = () => {
     },
   ];
   return (
- <div className=" flex flex-col justify-center items-center w-full min-h-[100vh] mb-0">
+ <div className=" flex flex-col justify-center items-center w-full min-h-[100vh]">
         <CardNav
-          logoAlt="Company Logo"
-          items={items}
-          baseColor="#84adef99"
-          menuColor="#132159ff"
-          buttonBgColor="#132159ff"
-          buttonTextColor="#fff"
-          ease="power3.out"
-        />
+                  logoAlt="Company Logo"
+                  items={items}
+                  baseColor="linear-gradient(90deg, rgba(13,30,99,0.45), rgba(30,40,70,0.25))"
+                  menuColor="#e6eef8"
+                  buttonBgColor="#0d1e63cc"
+                  buttonTextColor="#fff"
+                  ease="power3.out"
+                  className="text-black" // override internals if CardNav accepts className
+                />
         <h1 className="mx-auto lg:w-[41%] flex-wrap">
           <TextType
             text={[
@@ -81,7 +82,7 @@ const hero = () => {
               "Empowering Brands Through Latest Technologies.",
               "Turning Ideas into Impact.",
             ]}
-            className="text-4xl md:text-5xl lg:text-5xl font-bold text-white"
+            className="text-4xl md:text-5xl lg:text-7xl font-black text-white"
             typingSpeed={75}
             pauseDuration={1500}
             showCursor={true}

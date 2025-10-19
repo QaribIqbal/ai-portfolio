@@ -18,8 +18,8 @@ export default function LenisProvider({
     <ReactLenis
       root
       options={{
-        lerp: 0.1,
-        // wheelMultiplier:1.5,
+        lerp: 0.03,
+        wheelMultiplier:1.5,
         smoothWheel: true,
         syncTouch: true, // Slightly increase for smoother motion
       }}

@@ -21,40 +21,16 @@ export default function AboutMe() {
     gsap.from(card1.current, {
       opacity: 0,
       y: 100,
-      scale:0.5,
+      // scale:0.9,
       duration: 1.8,
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 30%",
+        start: "top 10%",
         end: "top -5%",
-
         scrub : 1.2
       },
     });
-    gsap.from(card2.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 30%",
-        end: "top -5%",
-
-        scrub : 1
-      },
-    });
-    gsap.from(card3.current, {
-      opacity: 0,
-      x: 100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 30%",
-        end: "top -5%",
-
-        scrub: 1,
-      },
-    });
+   
   });
   return (
     <section  ref={sectionRef} className="flex flex-col items-center justify-center w-full min-h-screen px-6 py-20 lg:px-20 lg text-white">
