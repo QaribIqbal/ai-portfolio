@@ -12,20 +12,20 @@ export default function Home() {
       <div style={{ width: "100%", height: "100vh", position: "relative" }}>
         <LightRays
           raysOrigin="top-center"
-          raysColor="#0307f7"
+          raysColor="#0216c3"
           raysSpeed={0.5}
           lightSpread={0.5}
-          rayLength={3}
+          rayLength={5}
           followMouse={true}
           mouseInfluence={0.3}
           noiseAmount={0}
           distortion={0}
           fadeDistance={50}
-          saturation={0.2}
+          saturation={0.01}
           pulsating={false}
           className="z-0"
         />
-        <div className="absolute top-0 left-0 w-full">
+        <div  className="absolute top-0 left-0 w-full">
           <Hero />
         </div>
       </div>

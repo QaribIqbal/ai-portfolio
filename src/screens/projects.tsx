@@ -1,4 +1,5 @@
 "use client";
+import ShinyText from "@/components/ShinyText";
 import BlurText from "@/components/BlurText";
 import GradientText from "@/components/GradientText";
 import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack";
@@ -34,7 +35,8 @@ function Projects() {
       id: 1,
       name: "Schoolage",
       image: "/projects/project2.png",
-      description: "A complete college and university management system.",
+      description:
+        "A complete academic management system for colleges and universities, covering attendance, exams, results, and invoicing.",
     },
     {
       id: 2,
@@ -129,25 +131,41 @@ function Projects() {
                   <p className="hidden md:flex text-lg mb-6">
                     {project.description}
                   </p>
-                  <div className="hidden md:flex flex flex-col justify-center sm:flex-row gap-4">
+                  {/* <div className="hidden md:flex flex flex-col justify-center sm:flex-row gap-4">
                     <Link href={`/about`} prefetch={true}>
                       <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium cursor-pointer">
                         More Details
                       </button>
                     </Link>
-                    {/* <button onClick={() => router.push("/About")} className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium cursor-pointer transition">
-                      More Details
-                    </button> */}
+          
                     <button className="hidden md:block px-6 py-3 border border-gray-300 bg-gray-300/30 text-gray-200 rounded-lg hover:bg-gray-100 hover:text-gray-700 transition font-medium cursor-pointer transition">
                       Source Code
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </ScrollStackItem>
           ))}
         </ScrollStack>
+              <div className="flex justify-center items-center mt-2">
+  <button
+    onClick={() => window.location.href = '/about'}
+    className="relative px-8 py-4 rounded-full bg-gradient-to-r from-[#0b004b] via-[#111381] to-[#0004e0] text-white font-semibold text-lg tracking-wide shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(0,0,0,0.6)] hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 overflow-hidden group cursor-pointer"
+  >
+    <span className="relative z-10">
+      <ShinyText 
+        text="Explore My Work →" 
+        disabled={false} 
+        speed={2.5} 
+        className="font-semibold text-lg text-silver"
+      />
+    </span>
+    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  </button>
+</div>
       </div>
+
+
     </div>
   );
 }
