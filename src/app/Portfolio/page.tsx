@@ -16,10 +16,10 @@ const projects = [
     video: "/demos/campusflow.mp4",
     description:
       "A complete college and university management system — from attendance tracking to exam management, results, and invoicing, all in one integrated platform.",
-    tech: ["Angular", "Node.js", "MySQL", "Firebase"],
+    tech: ["Angular", "Node.js", "MySQL", "Duende"],
     category: "Full Stack",
-    liveUrl: "http://admin-dev.schoolage.net/dashboard",
-    githubUrl: "https://github.com/QaribIqbal/Portfolio",
+    liveUrl: "#",
+    githubUrl: "#",
   },
   {
     id: 2,
@@ -30,8 +30,8 @@ const projects = [
       "A To Do List having advanced features like user management and multi device support.",
     tech: ["Flutter", "Firebase", "OpenAI API"],
     category: "Mobile App",
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://studybuddysample.netlify.app/",
+    githubUrl: "https://github.com/QaribIqbal/LMS-REACT",
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const projects = [
     tech: ["Vue.js", "Express.js", "MongoDB", "Firebase Auth"],
     category: "Web App",
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/QaribIqbal/LMS-REACT",
   },
   {
     id: 4,
@@ -184,7 +184,7 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
         className={`absolute inset-0 -z-10 pointer-events-none transition-opacity duration-1000
           ${
             isEven
-              ? "bg-gradient-to-l from-cyan-500/5 to-transparent"
+              ? "bg-gradient-to-l from-blue-500/5 to-transparent"
               : "bg-gradient-to-r from-blue-500/5 to-transparent"
           }
           group-hover:opacity-100 opacity-0`}
@@ -204,7 +204,7 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
           >
             {/* Category Badge */}
             <div className="absolute top-4 lg:top-6 left-4 lg:left-6 z-20 pointer-events-none">
-              <span className="px-3 lg:px-4 py-1.5 lg:py-2 text-xs lg:text-sm font-bold rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-2xl border border-white/20">
+              <span className="px-3 lg:px-4 py-1.5 lg:py-2 text-xs lg:text-sm font-bold rounded-full bg-gradient-to-r from-blue-500 to-blue-500 text-white shadow-2xl border border-white/20">
                 {project.category}
               </span>
             </div>
@@ -242,7 +242,7 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
               <div className="text-4xl lg:text-6xl font-black text-white/10">
                 {project.id.toString().padStart(2, "0")}
               </div>
-              <div className="h-px flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent" />
+              <div className="h-px flex-1 bg-gradient-to-r from-blue-500/50 to-transparent" />
             </div>
 
             {/* Mobile Media - Visible on small screens */}
@@ -260,7 +260,7 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
                   priority={index < 2}
                 />
                 <div className="absolute top-3 left-3 pointer-events-none">
-                  <span className="px-2 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
+                  <span className="px-2 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-blue-500 to-blue-500 text-white">
                     {project.category}
                   </span>
                 </div>
@@ -282,7 +282,7 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 lg:px-4 lg:py-2 text-xs lg:text-sm font-medium rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-400/30 hover:bg-cyan-500/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105"
+                  className="px-3 py-1.5 lg:px-4 lg:py-2 text-xs lg:text-sm font-medium rounded-full bg-blue-500/10 text-blue-400 border border-blue-400/30 hover:bg-blue-500/20 hover:border-blue-400/50 transition-all duration-300 hover:scale-105"
                 >
                   {tech}
                 </span>
@@ -292,7 +292,7 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
             <div className="flex flex-wrap gap-3 lg:gap-4">
               <button
                 onClick={() => onVideoClick(project.id)}
-                className="flex items-center gap-2 lg:gap-3 px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold rounded-xl lg:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg text-sm lg:text-base"
+                className="flex items-center gap-2 lg:gap-3 px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-300 to-blue-500 hover:from-blue-900 hover:to-blue-600 text-white font-semibold rounded-xl lg:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg text-sm lg:text-base"
               >
                 <Play className="w-4 h-4 lg:w-5 lg:h-5" />
                 Watch Demo
@@ -376,7 +376,7 @@ const VideoModal = ({ isOpen, onClose, project }: VideoModalProps) => {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-white hover:text-cyan-400 transition-colors duration-300 z-10 text-lg font-semibold flex items-center gap-2 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full"
+          className="absolute top-4 right-4 text-white hover:text-blue-400 transition-colors duration-300 z-10 text-lg font-semibold flex items-center gap-2 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full"
         >
           <X className="w-5 h-5" />
           Close
@@ -453,17 +453,19 @@ export default function ProjectsSection() {
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="floating-bg-1 absolute -top-40 -left-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl" />
+        <div className="floating-bg-1 absolute -top-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
         <div className="floating-bg-2 absolute -bottom-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-500/5 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-transparent to-transparent" />
       </div>
       {/* Header Section */}
       <div className="relative z-10 text-center pt-20 lg:pt-32 pb-12 lg:pb-20 px-4">
         <div className="main-title">
-          <h1 className="text-4xl lg:text-6xl xl:text-8xl font-black bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent leading-tight mb-4 lg:mb-6">
+          {/* <h1 className="text-4xl lg:text-6xl xl:text-8xl font-black bg-gradient-to-r from-blue-400 via-blue-400 to-purple-500 bg-clip-text text-transparent leading-tight mb-4 lg:mb-6"> */}
+          <h1 className="text-4xl lg:text-6xl xl:text-8xl font-black bg-gradient-to-r from-blue-200 via-blue-600 to-blue-900 bg-clip-text text-transparent leading-tight mb-4 lg:mb-6">
+
             PROJECTS
           </h1>
-          <div className="w-20 lg:w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mb-6 lg:mb-8 rounded-full" />
+          <div className="w-20 lg:w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-500 mx-auto mb-6 lg:mb-8 rounded-full" />
           <p className="text-lg lg:text-xl xl:text-2xl text-gray-300 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed font-light px-4">
             Immersive digital experiences that blend cutting-edge technology
             with exceptional design. Each project tells a unique story of

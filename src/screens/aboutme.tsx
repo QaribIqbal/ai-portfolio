@@ -55,24 +55,38 @@ export default function AboutMe() {
       {/* Content Layout */}
       <div  ref={card1} className="flex flex-col-reverse lg:flex-row items-center justify-between w-full gap-12">
         {/* Text Section */}
-        <div className="w-full lg:w-2/3 text-center lg:text-left">
-          <DecryptedText
-            text={`Hi, I’m Qarib Iqbal — a Full-Stack Developer and tech enthusiast from Lahore, Pakistan.
-I’m passionate about turning ideas into functional, high-performing digital products that actually solve real-world problems.
+       <div className="w-full lg:w-2/3 text-center lg:text-left space-y-5 leading-relaxed text-gray-300">
+  <p className="text-lg font-medium">
+    Hi, I’m <span className="font-semibold text-white">Qarib Iqbal</span> — a passionate Full-Stack Developer and tech enthusiast from Lahore, Pakistan.
+  </p>
 
-I started my coding journey during my first semester of Computer Science, and since then, I’ve worked across multiple technologies — including Angular, React, Flutter, Node.js, Express, MongoDB, and MySQL.
-I specialize in building modern web apps, cross-platform mobile solutions, and efficient backend systems that are both scalable and user-focused.
+  <p>
+    I love transforming ideas into high-performing digital products that solve real-world problems — from concept to code.
+  </p>
 
-I’ve also co-developed projects like PBay, a Pakistan-based marketplace designed to rival OLX, where I handled business development, marketing, and backend strategy. Alongside freelancing and startup building, I’m continuously learning AI and machine learning to bring intelligent automation into my future projects.
+  <p>
+    My journey began during my first semester of Computer Science, and since then, I’ve worked across a wide tech stack including 
+    <span className="text-white font-medium"> Angular, React, Flutter, Node.js, Express, MongoDB,</span> and 
+    <span className="text-white font-medium"> MySQL</span>. I specialize in building modern web apps, cross-platform mobile solutions, and efficient backend systems that are both scalable and user-focused.
+  </p>
 
-What sets me apart is my mindset — I don’t just code; I create solutions that help businesses grow.
-Whether you need a pixel-perfect frontend, a robust backend, or a complete product strategy, I can help you build it from the ground up.
+  <p>
+    One of my highlight projects is <span className="text-white font-medium">PBay</span> — a Pakistan-based marketplace built to rival OLX. I co-developed it while leading business development, marketing, and backend strategy.
+  </p>
 
-Let’s turn your idea into something remarkable.`}
-animateOn="hover"          
-className="text-base md:text-lg font-medium leading-relaxed text-gray-300 max-w-3xl mx-auto lg:mx-0"
-          />
-        </div>
+  <p>
+    Alongside freelancing and startup building, I’m actively learning <span className="text-white font-medium">AI and Machine Learning</span> to integrate intelligent automation into my future projects.
+  </p>
+
+  <p className="text-xl font-semibold text-white mt-6">
+    I don’t just code — I craft solutions that help businesses grow.
+  </p>
+
+  <p>
+    Whether you need a pixel-perfect frontend, a robust backend, or a complete product strategy — let’s build something remarkable together.
+  </p>
+</div>
+
 
         {/* Profile Card */}
         <div className="w-full lg:w-1/3 flex justify-center">
