@@ -13,7 +13,7 @@ const projects = [
     id: 1,
     title: "Schoolage",
     image: "/projects/project2.png",
-    video: "/demos/campusflow.mp4",
+    video: "/demos/Schoolage.mp4",
     description:
       "A complete college and university management system — from attendance tracking to exam management, results, and invoicing, all in one integrated platform.",
     tech: ["Angular", "Node.js", "MySQL", "Duende"],
