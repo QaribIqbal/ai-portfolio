@@ -34,7 +34,7 @@ export default function AboutMe() {
    
   });
   return (
-    <section  ref={sectionRef} className="flex flex-col items-center justify-center w-full min-h-screen px-6 py-20 lg:px-20 lg text-white">
+    <section id="about"  ref={sectionRef} className="flex flex-col items-center justify-center w-full min-h-screen px-6 py-20 lg:px-20 lg text-white">
       {/* Heading */}
       <div className="text-center mb-26">
         <SplitText

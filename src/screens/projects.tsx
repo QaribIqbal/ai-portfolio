@@ -230,7 +230,7 @@ const projects = [
         <div className="flex justify-center items-center mt-2">
           <button
             onClick={() => (window.location.href = "/Portfolio")}
-            className="relative px-8 py-4 rounded-full bg-gradient-to-r from-[#050452] via-[#191785] to-[#26A373] text-white font-semibold text-lg tracking-wide shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(0,0,0,0.6)] hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 overflow-hidden group cursor-pointer"
+            className="relative px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 via-blue-900 to-green-700 text-white font-semibold text-lg tracking-wide shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(0,0,0,0.6)] hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 overflow-hidden group cursor-pointer"
           >
             <span className="relative z-10">
               <ShinyText

@@ -5,9 +5,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { Play, ExternalLink, Github, X } from "lucide-react";
+import GooeyNav from "@/components/GooeyNav";
 
 gsap.registerPlugin(ScrollTrigger);
 
+ const items = [
+    { label: "Home", href: "/" },
+    { label: "Work", href: "/Portfolio" },
+    { label: "Contact", href: "/#connect" },
+  ];
 const projects = [
   {
     id: 1,
@@ -179,6 +185,7 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
       ref={cardRef}
       className="project-wrapper group relative isolate min-h-screen flex items-center py-10 lg:py-20"
     >
+
       {/* Background Glow Effect */}
       <div
         className={`absolute inset-0 -z-10 pointer-events-none transition-opacity duration-1000
@@ -292,7 +299,7 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
             <div className="flex flex-wrap gap-3 lg:gap-4">
               <button
                 onClick={() => onVideoClick(project.id)}
-                className="flex items-center gap-2 lg:gap-3 px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-300 to-blue-500 hover:from-blue-900 hover:to-blue-600 text-white font-semibold rounded-xl lg:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg text-sm lg:text-base"
+                className="flex items-center gap-2 lg:gap-3 px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-500 to-blue-900 hover:from-green-600 hover:to-green-900 cursor-pointer text-white font-semibold rounded-xl lg:rounded-2xl transition-all duration-600 hover:scale-105 hover:shadow-2xl shadow-lg text-sm lg:text-base transition-colors duration-700 ease-in-out"
               >
                 <Play className="w-4 h-4 lg:w-5 lg:h-5" />
                 Watch Demo
@@ -451,6 +458,25 @@ export default function ProjectsSection() {
       ref={containerRef}
       className="min-h-screen w-full bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white relative overflow-x-clip isolate"
     >
+        <div
+          className="absolute top-8 left-1/2 transform -translate-x-1/2 z-50 w-100 px-4 py-0 pointer-events-auto"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <GooeyNav
+            items={items}
+            particleCount={15}
+            particleDistances={[90, 10]}
+            particleR={100}
+            initialActiveIndex={1}
+            animationTime={600}
+            timeVariance={300}
+            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+          />
+        </div>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="floating-bg-1 absolute -top-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />

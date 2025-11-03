@@ -71,7 +71,7 @@ function socials() {
     });
   });
   return (
-    <div
+    <div id="connect"
       ref={sectionRef}
       className="flex flex-col items-center justify-center w-full h-[100vh]  overflow-x-hidden mt-0 pt-0 lg "
     >

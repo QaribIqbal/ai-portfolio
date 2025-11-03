@@ -5,70 +5,77 @@ import TextType from "../components/TextType";
 import React, { useRef } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { useGSAP } from "@gsap/react";
- import gsap from "gsap";
- import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GooeyNav from "@/components/GooeyNav";
 
 const hero = () => {
+  // const items = [
+  //   {
+  //     label: "About",
+  //     bgColor: "#0D0716",
+  //     textColor: "#fff",
+  //     links: [
+  //       {
+  //         label: "Company",
+  //         href: "/about/company",
+  //         ariaLabel: "About Company",
+  //       },
+  //       {
+  //         label: "Careers",
+  //         href: "/about/careers",
+  //         ariaLabel: "About Careers",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     label: "Projects",
+  //     bgColor: "#170D27",
+  //     textColor: "#fff",
+  //     links: [
+  //       {
+  //         label: "Featured",
+  //         href: "/projects/featured",
+  //         ariaLabel: "Featured Projects",
+  //       },
+  //       {
+  //         label: "Case Studies",
+  //         href: "/projects/case-studies",
+  //         ariaLabel: "Project Case Studies",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     label: "Contact",
+  //     bgColor: "#271E37",
+  //     textColor: "#fff",
+  //     links: [
+  //       {
+  //         label: "Email",
+  //         href: "mailto:info@company.com",
+  //         ariaLabel: "Email us",
+  //       },
+  //       {
+  //         label: "Twitter",
+  //         href: "https://twitter.com/company",
+  //         ariaLabel: "Twitter",
+  //       },
+  //       {
+  //         label: "LinkedIn",
+  //         href: "https://linkedin.com/company",
+  //         ariaLabel: "LinkedIn",
+  //       },
+  //     ],
+  //   },
+  // ];
+
   const items = [
-    {
-      label: "About",
-      bgColor: "#0D0716",
-      textColor: "#fff",
-      links: [
-        {
-          label: "Company",
-          href: "/about/company",
-          ariaLabel: "About Company",
-        },
-        {
-          label: "Careers",
-          href: "/about/careers",
-          ariaLabel: "About Careers",
-        },
-      ],
-    },
-    {
-      label: "Projects",
-      bgColor: "#170D27",
-      textColor: "#fff",
-      links: [
-        {
-          label: "Featured",
-          href: "/projects/featured",
-          ariaLabel: "Featured Projects",
-        },
-        {
-          label: "Case Studies",
-          href: "/projects/case-studies",
-          ariaLabel: "Project Case Studies",
-        },
-      ],
-    },
-    {
-      label: "Contact",
-      bgColor: "#271E37",
-      textColor: "#fff",
-      links: [
-        {
-          label: "Email",
-          href: "mailto:info@company.com",
-          ariaLabel: "Email us",
-        },
-        {
-          label: "Twitter",
-          href: "https://twitter.com/company",
-          ariaLabel: "Twitter",
-        },
-        {
-          label: "LinkedIn",
-          href: "https://linkedin.com/company",
-          ariaLabel: "LinkedIn",
-        },
-      ],
-    },
+    { label: "Home", href: "#about" },
+    { label: "Work", href: "/Portfolio" },
+    { label: "Contact", href: "#connect" },
   ];
 
-   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
   const sectionRef = useRef(null);
   const texthead = useRef(null);
   useGSAP(() => {
@@ -86,20 +93,32 @@ const hero = () => {
     });
   });
   return (
-    <div ref={sectionRef} className=" flex flex-col justify-center items-center w-full min-h-[100vh]">
-       <div className="flex flex-col md:flex-row justify-between items-center min-h-screen md:px-50 mt-0">
-     <div>
-      <CardNav
-        logoAlt="Company Logo"
-        items={items}
-        baseColor="linear-gradient(90deg, rgba(13,30,99,0.45), rgba(30,40,70,0.25))"
-        menuColor="#e6eef8"
-        buttonBgColor="#0d1e63cc"
-        buttonTextColor="#fff"
-        ease="power3.out"
-        className="text-black mb-0" // override internals if CardNav accepts className
-      />
-      </div>
+    <div
+      ref={sectionRef}
+      className=" flex flex-col justify-center items-center w-full min-h-screen"
+    >
+      <div className="flex flex-col md:flex-row justify-between items-center min-h-screen md:px-50 mt-0">
+    
+        <div
+          className="absolute top-8 left-1/2 transform -translate-x-1/2 z-50 w-100 px-4 py-0 pointer-events-auto"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <GooeyNav
+            items={items}
+            particleCount={15}
+            particleDistances={[90, 10]}
+            particleR={100}
+            initialActiveIndex={0}
+            animationTime={600}
+            timeVariance={300}
+            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+          />
+        </div>
+
         <div className="min-w-[100vw] md:min-w-[55vw] mx-auto">
           <TextType
             text={[
