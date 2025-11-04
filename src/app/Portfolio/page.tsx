@@ -10,7 +10,7 @@ import GooeyNav from "@/components/GooeyNav";
 gsap.registerPlugin(ScrollTrigger);
 
  const items = [
-    { label: "Home", href: "/" },
+    { label: "About Me", href: "/#about" },
     { label: "Work", href: "/Portfolio" },
     { label: "Contact", href: "/#connect" },
   ];
@@ -43,19 +43,19 @@ const projects = [
     id: 3,
     title: "Student LMS",
     image: "/projects/project3.png",
-    video: "/demos/pbay.mp4",
+    video: "#",
     description:
       "An OLX-inspired social marketplace with bidding, real-time chat, and a clean modern UI — built to make buying and selling fun and trustworthy.",
     tech: ["Vue.js", "Express.js", "MongoDB", "Firebase Auth"],
     category: "Web App",
     liveUrl: "#",
-    githubUrl: "https://github.com/QaribIqbal/LMS-REACT",
+    githubUrl: "#",
   },
   {
     id: 4,
     title: "Taskify Pro",
     image: "/projects/project4.png",
-    video: "/demos/taskify.mp4",
+    video: "#",
     description:
       "A task and project management tool with analytics, timelines, and real-time team collaboration — designed to boost productivity across organizations.",
     tech: ["React", "Node.js", "PostgreSQL", "Redis"],
@@ -297,13 +297,14 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
             </div>
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-3 lg:gap-4">
-              <button
+               {project.video !=='#' && <button
                 onClick={() => onVideoClick(project.id)}
                 className="flex items-center gap-2 lg:gap-3 px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-500 to-blue-900 hover:from-green-600 hover:to-green-900 cursor-pointer text-white font-semibold rounded-xl lg:rounded-2xl transition-all duration-600 hover:scale-105 hover:shadow-2xl shadow-lg text-sm lg:text-base transition-colors duration-700 ease-in-out"
               >
                 <Play className="w-4 h-4 lg:w-5 lg:h-5" />
                 Watch Demo
               </button>
+              }
 
               {project.liveUrl !== "#" && (
                 <a

@@ -9,71 +9,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GooeyNav from "@/components/GooeyNav";
 
-const hero = () => {
-  // const items = [
-  //   {
-  //     label: "About",
-  //     bgColor: "#0D0716",
-  //     textColor: "#fff",
-  //     links: [
-  //       {
-  //         label: "Company",
-  //         href: "/about/company",
-  //         ariaLabel: "About Company",
-  //       },
-  //       {
-  //         label: "Careers",
-  //         href: "/about/careers",
-  //         ariaLabel: "About Careers",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     label: "Projects",
-  //     bgColor: "#170D27",
-  //     textColor: "#fff",
-  //     links: [
-  //       {
-  //         label: "Featured",
-  //         href: "/projects/featured",
-  //         ariaLabel: "Featured Projects",
-  //       },
-  //       {
-  //         label: "Case Studies",
-  //         href: "/projects/case-studies",
-  //         ariaLabel: "Project Case Studies",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     label: "Contact",
-  //     bgColor: "#271E37",
-  //     textColor: "#fff",
-  //     links: [
-  //       {
-  //         label: "Email",
-  //         href: "mailto:info@company.com",
-  //         ariaLabel: "Email us",
-  //       },
-  //       {
-  //         label: "Twitter",
-  //         href: "https://twitter.com/company",
-  //         ariaLabel: "Twitter",
-  //       },
-  //       {
-  //         label: "LinkedIn",
-  //         href: "https://linkedin.com/company",
-  //         ariaLabel: "LinkedIn",
-  //       },
-  //     ],
-  //   },
-  // ];
 
-  const items = [
-    { label: "Home", href: "#about" },
-    { label: "Work", href: "/Portfolio" },
-    { label: "Contact", href: "#connect" },
-  ];
+const hero = () => {
+
+ const items = [
+  { label: "About Me", href: "/#about" },     // absolute fragment -> always targets home
+  { label: "Work", href: "/Portfolio" }, // use lowercase / correct route path
+  { label: "Contact", href: "/#connect" } // absolute contact fragment
+];
+
 
   gsap.registerPlugin(ScrollTrigger);
   const sectionRef = useRef(null);
@@ -93,7 +37,7 @@ const hero = () => {
     });
   });
   return (
-    <div
+    <div 
       ref={sectionRef}
       className=" flex flex-col justify-center items-center w-full min-h-screen"
     >

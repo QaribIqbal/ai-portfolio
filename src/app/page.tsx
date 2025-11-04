@@ -9,8 +9,8 @@ import AboutMe from "@/screens/aboutme";
 import Cta from "@/screens/Cta";
 export default function Home() {
   return (
-    <div style={{ width: "100%" }}>
-      <div style={{ width: "100%", height: "100vh", position: "relative" }}>
+    <div  style={{ width: "100%" }}>
+      <div  style={{ width: "100%", height: "100vh", position: "relative" }}>
         <LightRays
           raysOrigin="top-center"
           raysColor="#0216c3"

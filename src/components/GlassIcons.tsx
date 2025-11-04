@@ -133,8 +133,9 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
   );
 
   return (
-    <div className={`grid gap-[5em] grid-cols-2 md:grid-cols-3 mx-auto py-[3em] overflow-visible ${className || ""}`}>
-      {items.map((item, index) => {
+    // <div className={`grid gap-[5em] grid-cols-2 md:grid-cols-3 mx-auto py-[3em] overflow-visible ${className || ""}`}>
+    <div className="flex min-w-[100vw] justify-center items-center mx-auto py-[3em]">  
+    {items.map((item, index) => {
         const isExternal = !!item.href && /^(https?:)?\/\//.test(item.href);
         const commonClasses =
           "relative bg-transparent outline-none w-[4.5em] h-[4.5em] [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] group " +

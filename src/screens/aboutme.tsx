@@ -85,6 +85,16 @@ export default function AboutMe() {
   <p>
     Whether you need a pixel-perfect frontend, a robust backend, or a complete product strategy — let’s build something remarkable together.
   </p>
+  <div>
+    <a
+  href="/QaribIqbal_Resume.pdf"
+  download="QaribIqbal_Resume.pdf"
+  className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300"
+>
+  Download CV
+</a>
+
+  </div>
 </div>
 
 

@@ -14,24 +14,24 @@ const items = [
     label: "Linkedin",
     href: "https://linkedin.com",
   },
-  {
-    icon: <img src="/icons/fiverr.png" alt="Fiverr" className="w-6 h-6" />,
-    color: "green",
-    label: "Fiverr",
-    href: "https://linkedin.com",
-  },
-  {
-    icon: <img src="/icons/upwork.png" alt="Upwork" className="w-6 h-6" />,
-    color: "white",
-    label: "Upwork",
-    href: "https://linkedin.com",
-  },
-  {
-    icon: <img src="/icons/whatsapp.png" alt="Whatsapp" className="w-6 h-6" />,
-    color: "darkgreen",
-    label: "Whatsapp",
-    href: "https://linkedin.com",
-  },
+  // {
+  //   icon: <img src="/icons/fiverr.png" alt="Fiverr" className="w-6 h-6" />,
+  //   color: "green",
+  //   label: "Fiverr",
+  //   href: "https://linkedin.com",
+  // },
+  // {
+  //   icon: <img src="/icons/upwork.png" alt="Upwork" className="w-6 h-6" />,
+  //   color: "white",
+  //   label: "Upwork",
+  //   href: "https://linkedin.com",
+  // },
+  // {
+  //   icon: <img src="/icons/whatsapp.png" alt="Whatsapp" className="w-6 h-6" />,
+  //   color: "darkgreen",
+  //   label: "Whatsapp",
+  //   href: "https://linkedin.com",
+  // },
 
   //   { icon: <FiCloud />, color: 'indigo', label: 'Weather' },
   //   { icon: <FiEdit />, color: 'orange', label: 'Notes' },
