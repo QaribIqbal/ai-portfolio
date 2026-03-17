@@ -6,6 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { Play, ExternalLink, Github, X } from "lucide-react";
 import GooeyNav from "@/components/GooeyNav";
+import Link from "next/link";
+import BlurText from "@/components/BlurText";
+import LightRays from "@/components/LightRays";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -161,9 +164,8 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
             className="relative z-10 w-full h-full rounded-2xl lg:rounded-3xl overflow-hidden cursor-pointer group/media transition-all duration-700"
             onClick={() => onVideoClick(project.id)}
           >
-            {/* Category Badge */}
             <div className="absolute top-4 lg:top-6 left-4 lg:left-6 z-20 pointer-events-none">
-              <span className="px-3 lg:px-4 py-1.5 lg:py-2 text-xs lg:text-sm font-bold rounded-full bg-gradient-to-r from-blue-500 to-blue-500 text-white shadow-2xl border border-white/20">
+              <span className="px-3 lg:px-4 py-1.5 lg:py-2 text-xs lg:text-sm font-bold rounded-full bg-teal text-main shadow-2xl border border-white/20">
                 {project.category}
               </span>
             </div>
@@ -196,12 +198,11 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
             ref={contentRef}
             className="project-content max-w-2xl mx-auto lg:mx-0 w-full"
           >
-            {/* Project Number */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="text-4xl lg:text-6xl font-black text-white/10">
+              <div className="text-4xl lg:text-6xl font-black text-white/10 font-mono">
                 {project.id.toString().padStart(2, "0")}
               </div>
-              <div className="h-px flex-1 bg-gradient-to-r from-blue-500/50 to-transparent" />
+              <div className="h-px flex-1 bg-teal/30" />
             </div>
 
             {/* Mobile Media - Visible on small screens */}
@@ -219,7 +220,7 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
                   priority={index < 2}
                 />
                 <div className="absolute top-3 left-3 pointer-events-none">
-                  <span className="px-2 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-blue-500 to-blue-500 text-white">
+                  <span className="px-2 py-1 text-xs font-bold rounded-full bg-teal text-main">
                     {project.category}
                   </span>
                 </div>
@@ -230,10 +231,10 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
                 </div>
               </div>
             </div>
-            <h2 className="text-3xl lg:text-5xl xl:text-6xl font-black text-white mb-4 lg:mb-6 leading-tight">
+            <h2 className="text-3xl lg:text-5xl xl:text-6xl font-black text-textMain mb-4 lg:mb-6 leading-tight">
               {project.title}
             </h2>
-            <p className="text-base lg:text-lg xl:text-xl text-gray-300 mb-6 lg:mb-8 leading-relaxed bg-white/5 backdrop-blur-lg p-4 lg:p-6 rounded-xl lg:rounded-2xl border border-white/10">
+            <p className="text-base lg:text-lg xl:text-xl text-textMuted mb-6 lg:mb-8 leading-relaxed bg-main/40 backdrop-blur-lg p-5 lg:p-7 rounded-2xl border border-white/10">
               {project.description}
             </p>
             {/* Tech Stack */}
@@ -241,7 +242,7 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 lg:px-4 lg:py-2 text-xs lg:text-sm font-medium rounded-full bg-blue-500/10 text-blue-400 border border-blue-400/30 hover:bg-blue-500/20 hover:border-blue-400/50 transition-all duration-300 hover:scale-105"
+                  className="px-3 py-1.5 lg:px-4 lg:py-2 text-xs lg:text-sm font-medium rounded-full bg-teal/10 text-teal border border-teal/30 hover:bg-teal/20 transition-all duration-300 hover:scale-105"
                 >
                   {tech}
                 </span>
@@ -251,9 +252,9 @@ const ProjectCard = ({ project, index, onVideoClick }: CardProps) => {
             <div className="flex flex-wrap gap-3 lg:gap-4">
                {project.video !=='#' && <button
                 onClick={() => onVideoClick(project.id)}
-                className="flex items-center gap-2 lg:gap-3 px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-500 to-blue-900 hover:from-green-600 hover:to-green-900 cursor-pointer text-white font-semibold rounded-xl lg:rounded-2xl transition-all duration-600 hover:scale-105 hover:shadow-2xl shadow-lg text-sm lg:text-base transition-colors duration-700 ease-in-out"
+                className="flex items-center gap-2 lg:gap-3 px-6 py-3 lg:px-8 lg:py-4 bg-teal text-main font-bold rounded-xl lg:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] text-sm lg:text-base cursor-pointer"
               >
-                <Play className="w-4 h-4 lg:w-5 lg:h-5" />
+                <Play className="w-4 h-4 lg:w-5 lg:h-5 fill-current" />
                 Watch Demo
               </button>
               }
@@ -409,43 +410,74 @@ export default function ProjectsSection() {
   return (
     <section
       ref={containerRef}
-      className="min-h-screen w-full bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white relative overflow-x-clip isolate"
+      className="min-h-screen w-full bg-main text-white relative overflow-x-clip isolate"
     >
-        <div
-          className="absolute top-8 left-1/2 transform -translate-x-1/2 z-50 w-100 px-4 py-0 pointer-events-auto"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <GooeyNav
-            items={items}
-            particleCount={15}
-            particleDistances={[90, 10]}
-            particleR={100}
-            initialActiveIndex={1}
-            animationTime={600}
-            timeVariance={300}
-            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-          />
+      {/* Sticky Top Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-[100] bg-main/80 backdrop-blur-md border-b border-white/5 px-4 md:px-8 py-4 flex items-center justify-between transition-all duration-300">
+        <div className="flex items-center gap-2">
+          <Link href="/" className="font-bold text-lg tracking-tight text-white flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-teal animate-pulse"></span>
+            Qarib Iqbal
+          </Link>
         </div>
+        <div className="hidden md:flex items-center gap-8">
+          <Link href="/#about" className="text-sm font-medium text-textMuted hover:text-white transition-colors">About</Link>
+          <Link href="/#services" className="text-sm font-medium text-textMuted hover:text-white transition-colors">Services</Link>
+          <Link href="/Portfolio" className="text-sm font-medium text-white transition-colors">Work</Link>
+        </div>
+        <div>
+          <Link href="/#connect" className="bg-teal text-main px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg font-bold hover:scale-105 transition-transform shadow-[0_0_15px_rgba(34,197,94,0.3)] text-xs sm:text-sm">
+            Fix My Deployments
+          </Link>
+        </div>
+      </nav>
+
+      {/* Floating GooeyNav (Keep but move to corner or hide on mobile if redundant) */}
+      <div
+        className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-[400px] px-4 py-0 pointer-events-auto md:hidden"
+      >
+        <GooeyNav
+          items={items}
+          particleCount={15}
+          particleDistances={[90, 10]}
+          particleR={100}
+          initialActiveIndex={1}
+          animationTime={600}
+          timeVariance={300}
+          colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+        />
+      </div>
+
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="floating-bg-1 absolute -top-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="floating-bg-2 absolute -bottom-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 h-[80vh]">
+         <LightRays
+          raysOrigin="top-center"
+          raysColor="#22C55E" 
+          raysSpeed={0.5}
+          lightSpread={0.5}
+          rayLength={5}
+          followMouse={true}
+          mouseInfluence={0.3}
+          noiseAmount={0}
+          distortion={0}
+          fadeDistance={50}
+          saturation={0.01}
+          pulsating={false}
+          className="z-0"
+        />
       </div>
       {/* Header Section */}
-      <div className="relative z-10 text-center pt-20 lg:pt-32 pb-12 lg:pb-20 px-4">
+      <div className="relative z-10 text-center pt-32 lg:pt-48 pb-12 lg:pb-20 px-4">
         <div className="main-title">
-          {/* <h1 className="text-4xl lg:text-6xl xl:text-8xl font-black bg-gradient-to-r from-blue-400 via-blue-400 to-purple-500 bg-clip-text text-transparent leading-tight mb-4 lg:mb-6"> */}
-          <h1 className="text-4xl lg:text-6xl xl:text-8xl font-black bg-gradient-to-r from-blue-200 via-blue-600 to-blue-900 bg-clip-text text-transparent leading-tight mb-4 lg:mb-6">
-
-            PROJECTS
-          </h1>
-          <div className="w-20 lg:w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-500 mx-auto mb-6 lg:mb-8 rounded-full" />
-          <p className="text-lg lg:text-xl xl:text-2xl text-gray-300 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed font-light px-4">
+          <BlurText
+            text="PROJECTS"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="text-6xl lg:text-8xl xl:text-9xl font-black text-textMain tracking-tight justify-center"
+          />
+          <div className="w-24 lg:w-32 h-1.5 bg-teal mx-auto mb-10 mt-8 rounded-full shadow-[0_0_15px_rgba(34,197,94,0.5)]" />
+          <p className="text-lg lg:text-xl xl:text-2xl text-textMuted max-w-3xl lg:max-w-4xl mx-auto leading-relaxed font-light px-4">
             A look at how I’ve helped teams automate workflows, secure deployments, and replace fragile ops with rock-solid infrastructure.
           </p>
         </div>

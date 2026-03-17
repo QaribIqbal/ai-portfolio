@@ -65,7 +65,7 @@ const services = () => {
           delay={150}
           animateBy="words"
           direction="top"
-          className="text-4xl md:text-5xl font-black tracking-tight text-textMain"
+          className="text-4xl md:text-5xl font-black tracking-tight text-textMain justify-center"
         />
         <div className="w-20 h-[3px] bg-teal mx-auto mt-6 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
       </div>

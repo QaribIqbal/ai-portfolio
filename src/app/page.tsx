@@ -11,8 +11,24 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="w-screen min-h-screen overflow-x-hidden bg-main">
+       <div className="relative w-full min-h-100 pt-0 pb-12 flex flex-col justify-center">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#22C55E" 
+          raysSpeed={0.5}
+          lightSpread={0.5}
+          rayLength={5}
+          followMouse={true}
+          mouseInfluence={0.3}
+          noiseAmount={0}
+          distortion={0}
+          fadeDistance={50}
+          saturation={0.01}
+          pulsating={false}
+          className="z-0"
+        />
       {/* Sticky Top Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-[100] bg-main/80 backdrop-blur-md border-b border-white/5 px-4 md:px-8 py-4 flex items-center justify-between transition-all duration-300">
+      <nav className="fixed top-0 left-0 right-0 z-10 bg-main/80 backdrop-blur-md border-b border-white/5 px-4 md:px-8 py-4 flex items-center justify-between transition-all duration-300">
         <div className="flex items-center gap-2">
           <span className="font-bold text-lg tracking-tight text-white flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-teal animate-pulse"></span>
@@ -32,7 +48,7 @@ export default function Home() {
       </nav>
 
       {/* Hero with rays */}
-      <div className="relative w-full min-h-screen pt-24 pb-12 flex flex-col justify-center">
+      {/* <div className="relative w-full min-h-100 pt-24 pb-12 flex flex-col justify-center">
         <LightRays
           raysOrigin="top-center"
           raysColor="#22C55E" 
@@ -47,8 +63,8 @@ export default function Home() {
           saturation={0.01}
           pulsating={false}
           className="z-0"
-        />
-        <div className="relative z-10 w-full">
+        /> */}
+        <div className="absolute top-0 z-10 w-full">
           <Hero />
         </div>
       </div>
