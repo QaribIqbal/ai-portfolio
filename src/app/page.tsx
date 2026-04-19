@@ -199,7 +199,7 @@ export default function HomePage() {
                   <Reveal
                     key={service.title}
                     delay={index * 0.04}
-                    className={`min-w-[88vw] snap-start sm:min-w-[70vw] lg:min-w-[44vw] ${index === services.length - 1 ? "lg:min-w-[60vw]" : ""}`}
+                    className="min-w-[88vw] snap-start sm:min-w-[70vw] lg:min-w-[calc((100%-2.5rem)/2.2)]"
                   >
                     <article className="panel kinetic-panel relative h-full overflow-hidden">
                       <Image
