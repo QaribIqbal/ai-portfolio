@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Sora } from "next/font/google";
+
 import "./globals.css";
-import LenisProvider from "@/components/lenisProvider";
-// import { ThemeProvider } from "next-themes";
+import { defaultMetadata } from "@/lib/seo";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+});
 
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+});
 
-export const metadata: Metadata = {
-  title: "Qarib Iqbal - Portfolio",
-  description: "Portfolio of Qarib Iqbal, a full-stack wen abd mobile app developer.",
-};
+export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
@@ -25,15 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
-    <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
-      <body
-      >
-        <LenisProvider>
-        {children}
-        </LenisProvider>
-    {/* </ThemeProvider> */}
-      </body>
+    <html lang="en">
+      <body className={`${geist.variable} ${sora.variable}`}>{children}</body>
     </html>
   );
 }
