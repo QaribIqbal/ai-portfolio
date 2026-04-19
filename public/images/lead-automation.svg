@@ -1,0 +1,33 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="#09131A"/>
+  <g opacity="0.6" filter="url(#blur0)">
+    <ellipse cx="930" cy="130" rx="230" ry="140" fill="#57D6CB"/>
+  </g>
+  <g opacity="0.42" filter="url(#blur1)">
+    <ellipse cx="180" cy="760" rx="260" ry="160" fill="#2E8CA6"/>
+  </g>
+  <path d="M132 190C132 162.386 154.386 140 182 140H511C538.614 140 561 162.386 561 190V283C561 310.614 538.614 333 511 333H182C154.386 333 132 310.614 132 283V190Z" fill="#10202B" stroke="#2A576A"/>
+  <path d="M132 411C132 383.386 154.386 361 182 361H511C538.614 361 561 383.386 561 411V504C561 531.614 538.614 554 511 554H182C154.386 554 132 531.614 132 504V411Z" fill="#10202B" stroke="#2A576A"/>
+  <path d="M132 632C132 604.386 154.386 582 182 582H511C538.614 582 561 604.386 561 632V725C561 752.614 538.614 775 511 775H182C154.386 775 132 752.614 132 725V632Z" fill="#10202B" stroke="#2A576A"/>
+  <path d="M664 271H1028C1055.61 271 1078 293.386 1078 321V596C1078 623.614 1055.61 646 1028 646H664C636.386 646 614 623.614 614 596V321C614 293.386 636.386 271 664 271Z" fill="#10202B" stroke="#2A576A"/>
+  <circle cx="205" cy="236" r="9" fill="#57D6CB"/>
+  <circle cx="205" cy="457" r="9" fill="#57D6CB"/>
+  <circle cx="205" cy="678" r="9" fill="#57D6CB"/>
+  <path d="M231 236H381" stroke="#7CA4B5" stroke-width="4" stroke-linecap="round"/>
+  <path d="M231 457H381" stroke="#7CA4B5" stroke-width="4" stroke-linecap="round"/>
+  <path d="M231 678H381" stroke="#7CA4B5" stroke-width="4" stroke-linecap="round"/>
+  <path d="M581 236H626C662 236 691 265 691 301V391C691 427 720 456 756 456H775" stroke="#57D6CB" stroke-width="4" stroke-linecap="round"/>
+  <path d="M581 457H705C741 457 770 428 770 392V356C770 320 799 291 835 291H960" stroke="#57D6CB" stroke-width="4" stroke-linecap="round"/>
+  <path d="M581 678H654C690 678 719 649 719 613V553C719 517 748 488 784 488H960" stroke="#57D6CB" stroke-width="4" stroke-linecap="round"/>
+  <rect x="665" y="322" width="362" height="82" rx="18" fill="#153342"/>
+  <rect x="665" y="431" width="255" height="65" rx="14" fill="#153342"/>
+  <rect x="665" y="521" width="311" height="65" rx="14" fill="#153342"/>
+  <defs>
+    <filter id="blur0" x="560" y="-130" width="740" height="520" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+    <filter id="blur1" x="-210" y="390" width="780" height="740" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+  </defs>
+</svg>

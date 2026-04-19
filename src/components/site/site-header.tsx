@@ -7,7 +7,7 @@ import { navigation, siteConfig } from "@/lib/site-content";
 export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
   return (
     <header className="sticky top-0 z-40 border-b border-[color:var(--line)] bg-[color:color-mix(in_oklch,var(--bg)_84%,transparent)] backdrop-blur-xl">
-      <div className="shell relative flex min-h-18 items-center justify-between gap-5 py-4">
+      <div className="shell relative flex min-h-18 items-center justify-between gap-4 py-4">
         <Link href="/" className="flex items-center gap-3 text-sm font-semibold tracking-[-0.01em] text-[color:var(--text-main)]">
           <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[color:var(--accent)]" aria-hidden="true" />
           <span>{siteConfig.name}</span>
@@ -32,7 +32,7 @@ export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
           <div className="hidden sm:block" />
         )}
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
           {!minimal ? (
             <>
               <ButtonLink href="/contact" variant="ghost" className="hidden xl:inline-flex">

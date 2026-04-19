@@ -13,12 +13,12 @@
   --icon: none;
   --behind-gradient: none;
   --inner-gradient: none;
-  --sunpillar-1: hsl(2, 100%, 73%);
-  --sunpillar-2: hsl(53, 100%, 69%);
-  --sunpillar-3: hsl(93, 100%, 69%);
-  --sunpillar-4: hsl(176, 100%, 76%);
-  --sunpillar-5: hsl(228, 100%, 74%);
-  --sunpillar-6: hsl(283, 100%, 73%);
+  --sunpillar-1: hsl(186, 70%, 72%);
+  --sunpillar-2: hsl(194, 72%, 66%);
+  --sunpillar-3: hsl(201, 68%, 61%);
+  --sunpillar-4: hsl(176, 76%, 74%);
+  --sunpillar-5: hsl(208, 64%, 63%);
+  --sunpillar-6: hsl(190, 70%, 68%);
   --sunpillar-clr-1: var(--sunpillar-1);
   --sunpillar-clr-2: var(--sunpillar-2);
   --sunpillar-clr-3: var(--sunpillar-3);
@@ -82,14 +82,14 @@
   background-image:
     radial-gradient(
       farthest-side circle at var(--pointer-x) var(--pointer-y),
-      hsla(266, 100%, 90%, var(--card-opacity)) 4%,
-      hsla(266, 50%, 80%, calc(var(--card-opacity) * 0.75)) 10%,
-      hsla(266, 25%, 70%, calc(var(--card-opacity) * 0.5)) 50%,
-      hsla(266, 0%, 60%, 0) 100%
+      hsla(189, 76%, 83%, var(--card-opacity)) 4%,
+      hsla(198, 66%, 72%, calc(var(--card-opacity) * 0.75)) 10%,
+      hsla(204, 44%, 62%, calc(var(--card-opacity) * 0.5)) 50%,
+      hsla(208, 10%, 60%, 0) 100%
     ),
-    radial-gradient(35% 52% at 55% 20%, #00ffaac4 0%, #073aff00 100%),
-    radial-gradient(100% 100% at 50% 50%, #00c1ffff 1%, #073aff00 76%),
-    conic-gradient(from 124deg at 50% 50%, #c137ffff 0%, #07c6ffff 40%, #07c6ffff 60%, #c137ffff 100%);
+    radial-gradient(35% 52% at 55% 20%, #56d5c9bd 0%, #073aff00 100%),
+    radial-gradient(100% 100% at 50% 50%, #3cb8dbd8 1%, #073aff00 76%),
+    conic-gradient(from 124deg at 50% 50%, #56d5c9ff 0%, #31b0d2ff 40%, #2f90abff 60%, #56d5c9ff 100%);
   overflow: hidden;
 }
 

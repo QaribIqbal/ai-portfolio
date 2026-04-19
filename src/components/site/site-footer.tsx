@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Linkedin, Mail } from "lucide-react";
+import { Calendar, Linkedin, Mail } from "lucide-react";
 
 import { ButtonLink } from "@/components/site/button-link";
 import { articles, navigation, siteConfig } from "@/lib/site-content";
@@ -69,6 +69,15 @@ export function SiteFooter() {
             >
               <Linkedin className="h-4 w-4" aria-hidden="true" />
               LinkedIn
+            </a>
+            <a
+              href={siteConfig.calendly}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 hover:text-[color:var(--text-main)]"
+            >
+              <Calendar className="h-4 w-4" aria-hidden="true" />
+              Calendly
             </a>
           </div>
         </div>

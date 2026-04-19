@@ -2,6 +2,7 @@ export const siteConfig = {
   name: "Qarib Iqbal",
   email: "qaribiqbal92@gmail.com",
   linkedin: "https://www.linkedin.com/in/qarib-iqbal92",
+  calendly: "https://calendly.com/qaribiqbal92/30min",
   primaryCta: "Get the Free Agency AI Automation Checklist",
   secondaryCta: "Book a Free Automation Audit",
   shortCredibility:

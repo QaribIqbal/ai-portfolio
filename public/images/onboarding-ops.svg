@@ -1,0 +1,41 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="#09131A"/>
+  <g opacity="0.48" filter="url(#blur0)">
+    <ellipse cx="960" cy="170" rx="260" ry="150" fill="#57D6CB"/>
+  </g>
+  <g opacity="0.38" filter="url(#blur1)">
+    <ellipse cx="170" cy="700" rx="240" ry="160" fill="#2E8CA6"/>
+  </g>
+  <rect x="130" y="164" width="940" height="570" rx="36" fill="#10202B" stroke="#2A576A"/>
+  <rect x="190" y="224" width="260" height="450" rx="24" fill="#112B39"/>
+  <rect x="470" y="224" width="260" height="450" rx="24" fill="#112B39"/>
+  <rect x="750" y="224" width="260" height="450" rx="24" fill="#112B39"/>
+  <rect x="226" y="274" width="188" height="16" rx="8" fill="#7CA4B5"/>
+  <rect x="226" y="316" width="120" height="12" rx="6" fill="#557786"/>
+  <rect x="506" y="274" width="188" height="16" rx="8" fill="#7CA4B5"/>
+  <rect x="506" y="316" width="120" height="12" rx="6" fill="#557786"/>
+  <rect x="786" y="274" width="188" height="16" rx="8" fill="#7CA4B5"/>
+  <rect x="786" y="316" width="120" height="12" rx="6" fill="#557786"/>
+  <circle cx="234" cy="394" r="11" fill="#57D6CB"/>
+  <circle cx="234" cy="469" r="11" fill="#57D6CB"/>
+  <circle cx="234" cy="544" r="11" fill="#57D6CB"/>
+  <path d="M258 394H380" stroke="#88AAB8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M258 469H354" stroke="#88AAB8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M258 544H372" stroke="#88AAB8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M430 394H494" stroke="#57D6CB" stroke-width="4" stroke-linecap="round"/>
+  <path d="M710 469H774" stroke="#57D6CB" stroke-width="4" stroke-linecap="round"/>
+  <rect x="510" y="374" width="180" height="190" rx="16" fill="#183A4B"/>
+  <rect x="790" y="374" width="180" height="190" rx="16" fill="#183A4B"/>
+  <rect x="538" y="412" width="124" height="10" rx="5" fill="#8EB1BE"/>
+  <rect x="538" y="447" width="94" height="10" rx="5" fill="#8EB1BE"/>
+  <rect x="818" y="412" width="124" height="10" rx="5" fill="#8EB1BE"/>
+  <rect x="818" y="447" width="94" height="10" rx="5" fill="#8EB1BE"/>
+  <defs>
+    <filter id="blur0" x="560" y="-120" width="800" height="580" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+    <filter id="blur1" x="-210" y="350" width="760" height="700" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+  </defs>
+</svg>

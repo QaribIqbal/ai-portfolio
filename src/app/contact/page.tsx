@@ -1,4 +1,4 @@
-import { Linkedin, Mail } from "lucide-react";
+import { Calendar, Linkedin, Mail } from "lucide-react";
 
 import { AuditForm } from "@/components/site/audit-form";
 import { PageHero } from "@/components/site/page-hero";
@@ -73,6 +73,15 @@ export default function ContactPage() {
                   >
                     <Linkedin className="h-4 w-4 text-[color:var(--accent)]" aria-hidden="true" />
                     Message on LinkedIn
+                  </a>
+                  <a
+                    href={siteConfig.calendly}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="subtle-card inline-flex items-center gap-3 text-sm text-[color:var(--text-muted)] hover:text-[color:var(--text-main)]"
+                  >
+                    <Calendar className="h-4 w-4 text-[color:var(--accent)]" aria-hidden="true" />
+                    Book on Calendly
                   </a>
                 </div>
               </article>

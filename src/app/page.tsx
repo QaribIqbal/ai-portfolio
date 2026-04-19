@@ -6,11 +6,14 @@ import {
   Settings2,
   Workflow,
 } from "lucide-react";
+import Image from "next/image";
 
 import { ButtonLink } from "@/components/site/button-link";
 import { FaqList } from "@/components/site/faq-list";
 import { LeadCaptureForm } from "@/components/site/lead-capture-form";
+import { ProfileCardPanel } from "@/components/site/profile-card-panel";
 import { Reveal } from "@/components/site/reveal";
+import { SectionRail } from "@/components/site/section-rail";
 import { SectionHeading } from "@/components/site/section-heading";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
@@ -43,15 +46,44 @@ const serviceIcons = [
   Bot,
 ];
 
+const serviceVisuals = [
+  "/images/lead-automation.svg",
+  "/images/reporting-automation.svg",
+  "/images/onboarding-ops.svg",
+  "/images/lead-automation.svg",
+  "/images/reporting-automation.svg",
+];
+
+const railSections = [
+  { id: "problem", label: "Problem" },
+  { id: "outcomes", label: "Outcomes" },
+  { id: "services", label: "Services" },
+  { id: "offers", label: "Offers" },
+  { id: "process", label: "Process" },
+  { id: "proof", label: "Proof" },
+  { id: "about", label: "About" },
+  { id: "free-resource", label: "Checklist" },
+  { id: "faq", label: "FAQ" },
+];
+
 export default function HomePage() {
   return (
     <div className="min-h-[100dvh]">
       <SiteHeader />
+      <SectionRail sections={railSections} />
       <main>
-        <section className="page-section pt-20 sm:pt-28">
+        <section className="page-section section-slice section-slice-hero pt-20 sm:pt-28">
           <div className="shell">
-            <Reveal className="hero-panel">
-              <div className="max-w-[58rem]">
+            <Reveal className="hero-panel relative overflow-hidden">
+              <Image
+                src="/images/lead-automation.svg"
+                alt=""
+                width={420}
+                height={420}
+                aria-hidden="true"
+                className="hero-visual hero-visual-main"
+              />
+              <div className="relative z-10 max-w-[58rem]">
                 <p className="section-eyebrow">AI Automation For Marketing Agencies</p>
                 <h1 className="display-title max-w-[15ch] text-balance">
                   I help marketing agencies eliminate manual follow-up, reporting, and repetitive
@@ -61,7 +93,7 @@ export default function HomePage() {
                   I design and implement AI automation systems that save time, reduce lead
                   leakage, and help your agency run more smoothly without adding more manual work.
                 </p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
                   <ButtonLink href="/checklist">{siteConfig.primaryCta}</ButtonLink>
                   <ButtonLink href="/contact" variant="secondary">
                     {siteConfig.secondaryCta}
@@ -75,7 +107,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section" id="problem">
+        <section className="page-section section-slice section-slice-problem" id="problem">
           <div className="shell">
             <Reveal>
               <SectionHeading
@@ -98,7 +130,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section" id="outcomes">
+        <section className="page-section section-slice section-slice-outcomes" id="outcomes">
           <div className="shell">
             <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
               <Reveal>
@@ -127,7 +159,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section" id="services">
+        <section className="page-section section-slice section-slice-services" id="services">
           <div className="shell">
             <Reveal>
               <SectionHeading
@@ -136,18 +168,27 @@ export default function HomePage() {
                 description="Each service is built around a specific operational pain and a practical outcome: faster lead handling, cleaner reporting, smoother onboarding, better connected systems, and less repeated internal work."
               />
             </Reveal>
-            <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            <div className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-3 lg:grid lg:overflow-visible lg:pb-0 lg:[grid-template-columns:repeat(2,minmax(0,1fr))">
               {services.map((service, index) => {
                 const Icon = serviceIcons[index];
+                const visual = serviceVisuals[index];
 
                 return (
                   <Reveal
                     key={service.title}
                     delay={index * 0.04}
-                    className={index === services.length - 1 ? "lg:col-span-2" : ""}
+                    className={`min-w-[88vw] snap-start sm:min-w-[70vw] lg:min-w-0 ${index === services.length - 1 ? "lg:col-span-2" : ""}`}
                   >
-                    <article className="panel h-full">
-                      <div className="flex items-start justify-between gap-6">
+                    <article className="panel kinetic-panel relative h-full overflow-hidden">
+                      <Image
+                        src={visual}
+                        alt=""
+                        width={280}
+                        height={180}
+                        aria-hidden="true"
+                        className="service-visual"
+                      />
+                      <div className="relative z-10 flex items-start justify-between gap-6">
                         <div className="max-w-[42rem]">
                           <h3 className="text-[1.55rem] font-semibold tracking-[-0.04em] text-[color:var(--text-main)] sm:text-[1.75rem]">
                             {service.title}
@@ -182,7 +223,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section" id="offers">
+        <section className="page-section section-slice section-slice-offers" id="offers">
           <div className="shell">
             <Reveal>
               <SectionHeading
@@ -191,12 +232,14 @@ export default function HomePage() {
                 description="Clients do not need more AI tools. They need the right system fixing the right bottleneck, with clear scope, dependable communication, and a realistic path from diagnosis to implementation."
               />
             </Reveal>
-            <Reveal className="mt-8 flex flex-wrap gap-3" delay={0.04}>
-              {trustStrip.map((item) => (
-                <span key={item} className="metric-pill">
-                  {item}
-                </span>
-              ))}
+            <Reveal className="mt-8 overflow-hidden" delay={0.04}>
+              <div className="rail-track">
+                {[...trustStrip, ...trustStrip].map((item, index) => (
+                  <span key={`${item}-${index}`} className="metric-pill whitespace-nowrap">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </Reveal>
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
               {offerPath.map((offer, index) => (
@@ -241,7 +284,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section" id="process">
+        <section className="page-section section-slice section-slice-process" id="process">
           <div className="shell">
             <Reveal>
               <SectionHeading
@@ -268,7 +311,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section" id="proof">
+        <section className="page-section section-slice section-slice-proof" id="proof">
           <div className="shell">
             <Reveal>
               <SectionHeading
@@ -277,10 +320,18 @@ export default function HomePage() {
                 description="Until real client work exists, the most credible thing to show is how the work is scoped, what a sample system looks like, and what a client actually receives in a sprint."
               />
             </Reveal>
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            <div className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-3 lg:grid lg:overflow-visible lg:pb-0 lg:grid-cols-3">
               {proofCards.map((card, index) => (
-                <Reveal key={card.title} delay={index * 0.04}>
-                  <article className="panel h-full">
+                <Reveal key={card.title} delay={index * 0.04} className="min-w-[86vw] snap-start sm:min-w-[66vw] lg:min-w-0">
+                  <article className="panel kinetic-panel relative h-full overflow-hidden">
+                    <Image
+                      src={serviceVisuals[index]}
+                      alt=""
+                      width={260}
+                      height={160}
+                      aria-hidden="true"
+                      className="proof-visual"
+                    />
                     <h3 className="text-[1.45rem] font-semibold tracking-[-0.04em] text-[color:var(--text-main)]">
                       {card.title}
                     </h3>
@@ -307,7 +358,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section" id="about">
+        <section className="page-section section-slice section-slice-about" id="about">
           <div className="shell">
             <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
               <Reveal>
@@ -340,12 +391,15 @@ export default function HomePage() {
                   to make systems dependable, but the work stays focused on practical wins for small
                   teams.
                 </p>
+                <div className="mt-8 flex justify-center sm:justify-start">
+                  <ProfileCardPanel />
+                </div>
               </Reveal>
             </div>
           </div>
         </section>
 
-        <section className="page-section" id="free-resource">
+        <section className="page-section section-slice section-slice-resource" id="free-resource">
           <div className="shell">
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <Reveal>
@@ -378,7 +432,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section" id="faq">
+        <section className="page-section section-slice section-slice-faq" id="faq">
           <div className="shell">
             <Reveal>
               <SectionHeading
@@ -395,7 +449,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section pt-0">
+        <section className="page-section section-slice section-slice-final pt-0">
           <div className="shell">
             <Reveal className="hero-panel">
               <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
@@ -410,7 +464,7 @@ export default function HomePage() {
                     bottleneck.
                   </p>
                 </div>
-                <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <div className="flex flex-col gap-4 sm:flex-row lg:flex-col">
                   <ButtonLink href="/checklist">{siteConfig.primaryCta}</ButtonLink>
                   <ButtonLink href="/contact" variant="secondary">
                     {siteConfig.secondaryCta}
