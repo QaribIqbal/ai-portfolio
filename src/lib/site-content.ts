@@ -210,7 +210,7 @@ export const offerPath = [
     note: "If something inside the agreed sprint scope is not working as specified at handoff, it gets fixed before sign-off. The promise is around scope clarity and implementation quality, not exaggerated outcome guarantees.",
   },
   {
-    title: "Ongoing Optimization Support",
+    title: "Ongoing Optimization Support / Retainer",
     description:
       "Available only after the sprint, as the natural next step once the first automation is live. Useful for refinement, maintenance, and the next workflow once the first system is already working.",
     bullets: [

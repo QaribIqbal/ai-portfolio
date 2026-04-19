@@ -29,33 +29,33 @@ export default function ServicesPage() {
         <section className="page-section pt-0">
           <div className="shell grid gap-5">
             {services.map((service) => (
-              <article key={service.title} className="panel">
-                <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
-                  <div>
-                    <h2 className="text-[clamp(1.75rem,2.5vw,2.5rem)] font-semibold tracking-[-0.045em] text-[color:var(--text-main)]">
+              <article key={service.title} className="panel service-panel">
+                <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:gap-9">
+                  <div className="service-copy-col">
+                    <h2 className="max-w-[18ch] text-[clamp(1.85rem,2.8vw,2.8rem)] font-semibold leading-[1.08] tracking-[-0.045em] text-[color:var(--text-main)]">
                       {service.title}
                     </h2>
-                    <p className="mt-4 max-w-[58ch] text-[1rem] leading-7 text-[color:var(--text-muted)]">
+                    <p className="mt-5 max-w-[58ch] text-[1.04rem] leading-8 text-[color:var(--text-muted)]">
                       {service.description}
                     </p>
-                    <p className="mt-6 text-sm leading-7 text-[color:var(--text-subtle)]">
+                    <p className="mt-8 text-[0.95rem] leading-8 text-[color:var(--text-subtle)]">
                       {service.fit}
                     </p>
                   </div>
 
-                  <div className="grid gap-5 md:grid-cols-3">
-                    <div className="subtle-card">
+                  <div className="service-insight-grid">
+                    <div className="subtle-card service-insight-card">
                       <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--text-subtle)]">
                         What It Includes
                       </h3>
-                      <ul className="mt-4 space-y-3">
+                      <ul className="mt-5 space-y-4">
                         {service.includes.map((item) => (
                           <li key={item} className="flex items-start gap-3">
                             <CheckCircle2
                               className="mt-1 h-4 w-4 shrink-0 text-[color:var(--accent)]"
                               aria-hidden="true"
                             />
-                            <span className="text-sm leading-7 text-[color:var(--text-muted)]">
+                            <span className="text-[0.98rem] leading-8 text-[color:var(--text-muted)]">
                               {item}
                             </span>
                           </li>
@@ -63,26 +63,26 @@ export default function ServicesPage() {
                       </ul>
                     </div>
 
-                    <div className="subtle-card">
+                    <div className="subtle-card service-insight-card">
                       <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--text-subtle)]">
                         Problems It Solves
                       </h3>
-                      <ul className="mt-4 space-y-3">
+                      <ul className="mt-5 space-y-4">
                         {service.problems.map((item) => (
-                          <li key={item} className="text-sm leading-7 text-[color:var(--text-muted)]">
+                          <li key={item} className="text-[0.98rem] leading-8 text-[color:var(--text-muted)]">
                             {item}
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="subtle-card">
+                    <div className="subtle-card service-insight-card">
                       <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--text-subtle)]">
                         Outcomes
                       </h3>
-                      <ul className="mt-4 space-y-3">
+                      <ul className="mt-5 space-y-4">
                         {service.outcomes.map((item) => (
-                          <li key={item} className="text-sm leading-7 text-[color:var(--text-muted)]">
+                          <li key={item} className="text-[0.98rem] leading-8 text-[color:var(--text-muted)]">
                             {item}
                           </li>
                         ))}
@@ -121,7 +121,7 @@ export default function ServicesPage() {
               <div className="grid gap-5">
                 <article className="panel">
                   <h3 className="text-[1.55rem] font-semibold tracking-[-0.04em] text-[color:var(--text-main)]">
-                    Automation Audit
+                    Free Automation Audit
                   </h3>
                   <p className="mt-4 text-[1rem] leading-7 text-[color:var(--text-muted)]">
                     A focused diagnostic for identifying the workflow bottleneck most worth fixing
@@ -193,7 +193,7 @@ export default function ServicesPage() {
 
                 <article className="panel">
                   <h3 className="text-[1.55rem] font-semibold tracking-[-0.04em] text-[color:var(--text-main)]">
-                    Ongoing Optimization Support
+                    Ongoing Optimization Support / Retainer
                   </h3>
                   <p className="mt-4 text-[1rem] leading-7 text-[color:var(--text-muted)]">
                     Available after the sprint for agencies that want to refine, maintain, or extend
