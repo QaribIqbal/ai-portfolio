@@ -20,7 +20,7 @@ export function ButtonLink({
     <Link
       href={href}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full border px-5 py-3 text-sm font-medium transition duration-200 active:translate-y-px",
+        "group inline-flex items-center justify-center gap-2 rounded-full border px-5 py-3 text-sm font-medium transition duration-200 active:translate-y-px active:scale-[0.985]",
         variant === "primary" &&
           "border-[color:var(--accent)] bg-[color:var(--accent)] text-[color:var(--bg-strong)] hover:bg-[color:var(--accent-strong)] hover:border-[color:var(--accent-strong)]",
         variant === "secondary" &&
@@ -31,7 +31,9 @@ export function ButtonLink({
       )}
     >
       <span>{children}</span>
-      {variant !== "ghost" ? <ArrowRight className="h-4 w-4" aria-hidden="true" /> : null}
+      {variant !== "ghost" ? (
+        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
+      ) : null}
     </Link>
   );
 }

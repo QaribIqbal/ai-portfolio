@@ -56,6 +56,9 @@ export function AuditForm() {
 
   return (
     <form className="panel space-y-5" onSubmit={handleSubmit}>
+      <div className="rounded-[24px] border border-[color:var(--line)] bg-[color:rgba(255,255,255,0.02)] px-4 py-3 text-xs uppercase tracking-[0.18em] text-[color:var(--text-subtle)]">
+        Audit Request
+      </div>
       <div className="grid gap-5 md:grid-cols-2">
         <label className="form-field">
           <span>Name</span>

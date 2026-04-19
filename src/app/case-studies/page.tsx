@@ -31,7 +31,7 @@ export default function CaseStudiesPage() {
                 <h2 className="text-3xl font-semibold tracking-[-0.04em] text-[color:var(--text-main)]">
                   {study.agencyType}
                 </h2>
-                <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+                <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4 xl:[&>*]:px-5 xl:[&>*:not(:first-child)]:border-l xl:[&>*:not(:first-child)]:border-[color:var(--line)] xl:[&>*:first-child]:pl-0 xl:[&>*:last-child]:pr-0">
                   <div>
                     <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--text-subtle)]">
                       Operational Challenge

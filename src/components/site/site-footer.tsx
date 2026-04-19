@@ -6,7 +6,7 @@ import { articles, navigation, siteConfig } from "@/lib/site-content";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[color:var(--line)] pb-10 pt-12">
+    <footer className="section-frame border-t border-[color:var(--line)] pb-10 pt-14">
       <div className="shell grid gap-10 lg:grid-cols-[1.3fr_0.8fr_0.9fr]">
         <div className="space-y-5">
           <p className="section-eyebrow">For Lean Marketing Agencies</p>
@@ -25,7 +25,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div>
+        <div className="subtle-card">
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--text-subtle)]">
             Navigate
           </h3>
@@ -43,7 +43,7 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div className="space-y-6">
+        <div className="subtle-card space-y-6">
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--text-subtle)]">
               Planned Articles

@@ -22,7 +22,7 @@ export function PageHero({
         <div className="hero-panel">
           <SectionHeading eyebrow={eyebrow} title={title} description={description} />
           {(primaryCta || secondaryCta) && (
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 border-t border-[color:var(--line)] pt-8 sm:flex-row">
               {primaryCta ? (
                 <ButtonLink href={primaryCta.href}>{primaryCta.label}</ButtonLink>
               ) : null}

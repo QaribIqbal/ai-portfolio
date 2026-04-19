@@ -53,7 +53,7 @@ export default function HomePage() {
       <main>
         <section className="page-section pt-20 sm:pt-28">
           <div className="shell">
-            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+            <div className="grid gap-8 lg:grid-cols-[1.22fr_0.78fr] lg:items-end">
               <Reveal className="hero-panel hero-orbit">
                 <p className="section-eyebrow">AI Automation For Marketing Agencies</p>
                 <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[color:var(--line)] bg-[color:rgba(88,196,173,0.08)] px-4 py-2 text-xs uppercase tracking-[0.16em] text-[color:var(--text-subtle)]">

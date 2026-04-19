@@ -45,7 +45,7 @@ export default function ServicesPage() {
                       </p>
                     </div>
 
-                    <div className="grid gap-5 md:grid-cols-3">
+                    <div className="grid gap-5 md:grid-cols-3 md:[&>*]:px-5 md:[&>*:not(:first-child)]:border-l md:[&>*:not(:first-child)]:border-[color:var(--line)] md:[&>*:first-child]:pl-0 md:[&>*:last-child]:pr-0">
                       <div>
                         <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--text-subtle)]">
                           What It Includes
@@ -125,7 +125,7 @@ export default function ServicesPage() {
                   <h3 className="text-3xl font-semibold tracking-[-0.04em] text-[color:var(--text-main)]">
                     Fixed-Scope AI Automation Sprint (2 to 4 weeks)
                   </h3>
-                  <div className="mt-6 grid gap-5 md:grid-cols-2">
+                  <div className="mt-6 grid gap-5 md:grid-cols-2 md:[&>*]:px-5 md:[&>*:not(:first-child)]:border-l md:[&>*:not(:first-child)]:border-[color:var(--line)] md:[&>*:first-child]:pl-0 md:[&>*:last-child]:pr-0">
                     <div>
                       <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--text-subtle)]">
                         Scoped Before Build

@@ -26,9 +26,9 @@ export default function ChecklistPage() {
 
         <section className="page-section pt-0">
           <div className="shell grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
-            <div className="panel">
-              <p className="section-eyebrow">What’s Inside</p>
-              <div className="space-y-4">
+              <div className="panel">
+                <p className="section-eyebrow">What’s Inside</p>
+                <div className="space-y-4">
                 {checklistHighlights.map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <CheckCircle2 className="mt-1 h-4 w-4 text-[color:var(--accent)]" aria-hidden="true" />
@@ -37,7 +37,7 @@ export default function ChecklistPage() {
                 ))}
               </div>
 
-              <div className="mt-8 rounded-[24px] border border-[color:var(--line)] p-5">
+              <div className="subtle-card mt-8">
                 <h2 className="text-lg font-medium text-[color:var(--text-main)]">Who it’s for</h2>
                 <p className="mt-3 text-sm leading-7 text-[color:var(--text-muted)]">
                   Lean agencies that feel stretched, are still handling too much manually, and want a
@@ -45,7 +45,7 @@ export default function ChecklistPage() {
                 </p>
               </div>
 
-              <div className="mt-5 rounded-[24px] border border-[color:var(--line)] p-5">
+              <div className="subtle-card mt-5">
                 <h2 className="text-lg font-medium text-[color:var(--text-main)]">Why it matters now</h2>
                 <p className="mt-3 text-sm leading-7 text-[color:var(--text-muted)]">
                   Manual follow-up, manual reporting, and manual onboarding do not stay small for long. The

@@ -78,7 +78,7 @@ export default function AboutPage() {
               </h2>
               <div className="mt-6 grid gap-4 md:grid-cols-3">
                 {articles.map((article) => (
-                  <div key={article.title} className="rounded-[24px] border border-[color:var(--line)] p-5">
+                  <div key={article.title} className="subtle-card">
                     <h3 className="text-lg font-medium text-[color:var(--text-main)]">{article.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-[color:var(--text-muted)]">{article.blurb}</p>
                   </div>

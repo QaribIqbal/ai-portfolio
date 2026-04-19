@@ -57,10 +57,10 @@ export default function ContactPage() {
 
               <article className="panel">
                 <p className="section-eyebrow">Direct Contact</p>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="inline-flex items-center gap-3 text-sm text-[color:var(--text-muted)] hover:text-[color:var(--text-main)]"
+                    className="subtle-card inline-flex items-center gap-3 text-sm text-[color:var(--text-muted)] hover:text-[color:var(--text-main)]"
                   >
                     <Mail className="h-4 w-4 text-[color:var(--accent)]" aria-hidden="true" />
                     {siteConfig.email}
@@ -69,7 +69,7 @@ export default function ContactPage() {
                     href={siteConfig.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-3 text-sm text-[color:var(--text-muted)] hover:text-[color:var(--text-main)]"
+                    className="subtle-card inline-flex items-center gap-3 text-sm text-[color:var(--text-muted)] hover:text-[color:var(--text-main)]"
                   >
                     <Linkedin className="h-4 w-4 text-[color:var(--accent)]" aria-hidden="true" />
                     Message on LinkedIn
