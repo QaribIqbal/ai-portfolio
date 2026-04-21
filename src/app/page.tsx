@@ -171,16 +171,12 @@ export default function HomePage() {
               </article>
 
               <article className="panel">
-                <p className="section-eyebrow">Proof Assets Placeholder</p>
+                <p className="section-eyebrow">Risk Reduction</p>
                 <div className="space-y-4 text-sm leading-7 text-[color:var(--text-muted)]">
-                  {/* Replace these placeholders with real assets as they become available. */}
-                  <p>1. Add 3 short real testimonials.</p>
-                  <p>2. Drop in 1 screenshot of a live automation workflow.</p>
-                  <p>3. Embed 1 short Loom demo.</p>
-                  <p>4. Add 1 sample automation audit output.</p>
-                  <p>5. Add 1 sample workflow map visual.</p>
-                  <p>6. Add 1 sprint-includes card from real delivery docs.</p>
-                  <p>7. Add a checklist preview visual.</p>
+                  <p>Clear scope is agreed before implementation starts.</p>
+                  <p>Delivery is fixed around one bottleneck at a time.</p>
+                  <p>You get implementation plus handoff support.</p>
+                  <p>Direct communication stays open throughout the sprint.</p>
                 </div>
               </article>
             </div>

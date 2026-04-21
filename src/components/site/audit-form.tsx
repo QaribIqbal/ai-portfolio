@@ -25,6 +25,7 @@ const initialState: AuditFormState = {
 };
 
 export function AuditForm() {
+  const showDevHints = process.env.NODE_ENV !== "production";
   const [form, setForm] = useState<AuditFormState>(initialState);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [error, setError] = useState("");
@@ -103,9 +104,6 @@ export function AuditForm() {
         >
           Book on Calendly
         </a>
-        <p className="text-xs leading-6 text-[color:var(--text-subtle)]">
-          Edit this thank-you message in `src/components/site/audit-form.tsx`.
-        </p>
       </div>
     );
   }
@@ -206,11 +204,13 @@ export function AuditForm() {
 
       {status === "error" ? <p className="text-sm text-red-300">{error}</p> : null}
 
-      <p className="text-xs leading-6 text-[color:var(--text-subtle)]">
-        Form endpoint setup: configure `AUDIT_FORM_ENDPOINT` (or
-        `NEXT_PUBLIC_AUDIT_FORM_ENDPOINT`) to connect Formspree, Basin, Tally, Airtable,
-        Supabase, or your own endpoint.
-      </p>
+      {showDevHints ? (
+        <p className="text-xs leading-6 text-[color:var(--text-subtle)]">
+          Form endpoint setup: configure `AUDIT_FORM_ENDPOINT` (or
+          `NEXT_PUBLIC_AUDIT_FORM_ENDPOINT`) to connect Formspree, Basin, Tally, Airtable,
+          Supabase, or your own endpoint.
+        </p>
+      ) : null}
     </form>
   );
 }

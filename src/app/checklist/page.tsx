@@ -57,9 +57,8 @@ export default function ChecklistPage() {
 
               <div className="subtle-card mt-5">
                 <h2 className="text-lg font-medium text-[color:var(--text-main)]">Checklist preview</h2>
-                {/* Replace this box with a screenshot/preview image of the real checklist. */}
                 <div className="mt-3 rounded-[18px] border border-dashed border-[color:var(--line-strong)] px-4 py-6 text-sm leading-7 text-[color:var(--text-subtle)]">
-                  Preview placeholder: add one screenshot or first-page preview of the checklist.
+                  You will receive the full checklist after submission.
                 </div>
               </div>
 

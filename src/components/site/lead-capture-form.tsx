@@ -22,6 +22,7 @@ const initialState: LeadFormState = {
 };
 
 export function LeadCaptureForm() {
+  const showDevHints = process.env.NODE_ENV !== "production";
   const [form, setForm] = useState<LeadFormState>(initialState);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [error, setError] = useState("");
@@ -95,9 +96,6 @@ export function LeadCaptureForm() {
         <ButtonLink href="/contact" variant="secondary" className="w-full sm:w-auto">
           {siteConfig.secondaryCta}
         </ButtonLink>
-        <p className="text-xs leading-6 text-[color:var(--text-subtle)]">
-          Edit this thank-you message in `src/components/site/lead-capture-form.tsx`.
-        </p>
       </div>
     );
   }
@@ -179,11 +177,13 @@ export function LeadCaptureForm() {
 
       {status === "error" ? <p className="text-sm text-red-300">{error}</p> : null}
 
-      <p className="text-xs leading-6 text-[color:var(--text-subtle)]">
-        Form endpoint setup: configure `CHECKLIST_FORM_ENDPOINT` (or
-        `NEXT_PUBLIC_CHECKLIST_FORM_ENDPOINT`) to connect Formspree, Basin, Tally, Airtable,
-        Supabase, or your own endpoint.
-      </p>
+      {showDevHints ? (
+        <p className="text-xs leading-6 text-[color:var(--text-subtle)]">
+          Form endpoint setup: configure `CHECKLIST_FORM_ENDPOINT` (or
+          `NEXT_PUBLIC_CHECKLIST_FORM_ENDPOINT`) to connect Formspree, Basin, Tally, Airtable,
+          Supabase, or your own endpoint.
+        </p>
+      ) : null}
     </form>
   );
 }
