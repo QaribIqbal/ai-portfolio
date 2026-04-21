@@ -472,6 +472,53 @@ img {
     outline: none;
   }
 
+  .form-input-invalid {
+    border-color: color-mix(in oklch, #ff6f7d 75%, var(--line)) !important;
+    box-shadow: 0 0 0 4px color-mix(in oklch, #ff6f7d 18%, transparent) !important;
+  }
+
+  .form-error {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: color-mix(in oklch, #ff8a96 78%, white 8%);
+  }
+
+  .form-help {
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: var(--text-subtle);
+  }
+
+  .success-state {
+    position: relative;
+    overflow: hidden;
+    animation: success-fade-in 460ms var(--ease-out-strong);
+  }
+
+  .success-icon-wrap {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in oklch, #2eb97b 24%, transparent);
+    border: 1px solid color-mix(in oklch, #2eb97b 54%, var(--line));
+    box-shadow:
+      0 0 0 10px color-mix(in oklch, #2eb97b 10%, transparent),
+      0 14px 28px -20px color-mix(in oklch, #2eb97b 44%, transparent);
+    animation: success-pop-in 560ms var(--ease-emphasized);
+  }
+
+  .success-icon-svg {
+    width: 2rem;
+    height: 2rem;
+    color: color-mix(in oklch, #3ed991 86%, white 8%);
+  }
+
   .metric-pill {
     @apply inline-flex items-center rounded-full border px-3 py-2 text-[0.7rem] font-semibold uppercase;
     letter-spacing: 0.14em;
@@ -912,6 +959,32 @@ img {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes success-pop-in {
+  0% {
+    transform: scale(0.72);
+    opacity: 0;
+  }
+  55% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes success-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
