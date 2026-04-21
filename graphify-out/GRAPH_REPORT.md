@@ -1,11 +1,11 @@
 # Graph Report - /Users/qaribiqbal/Developement/Projects/ai-portfolio  (2026-04-21)
 
 ## Corpus Check
-- 59 files · ~466,844 words
+- 60 files · ~467,423 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 160 nodes · 144 edges · 55 communities detected
+- 162 nodes · 145 edges · 56 communities detected
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -65,6 +65,7 @@
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
+- [[_COMMUNITY_Community 55|Community 55]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `handleSubmit()` - 7 edges
@@ -312,6 +313,10 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
+### Community 55 - "Community 55"
+Cohesion: 1.0
+Nodes (0): 
+
 ## Knowledge Gaps
 - **Thin community `Community 14`** (2 nodes): `RootLayout()`, `layout.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -347,53 +352,55 @@ Nodes (0):
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 30`** (2 nodes): `FaqList()`, `faq-list.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 31`** (2 nodes): `utm-capture.tsx`, `UtmCapture()`
+- **Thin community `Community 31`** (2 nodes): `PageInProgressBanner()`, `page-in-progress-banner.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 32`** (2 nodes): `SiteHeader()`, `site-header.tsx`
+- **Thin community `Community 32`** (2 nodes): `utm-capture.tsx`, `UtmCapture()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 33`** (2 nodes): `SiteFooter()`, `site-footer.tsx`
+- **Thin community `Community 33`** (2 nodes): `SiteHeader()`, `site-header.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 34`** (2 nodes): `ProfileCardPanel()`, `profile-card-panel.tsx`
+- **Thin community `Community 34`** (2 nodes): `SiteFooter()`, `site-footer.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 35`** (2 nodes): `closeMenu()`, `mobile-nav.tsx`
+- **Thin community `Community 35`** (2 nodes): `ProfileCardPanel()`, `profile-card-panel.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 36`** (2 nodes): `ButtonLink()`, `button-link.tsx`
+- **Thin community `Community 36`** (2 nodes): `closeMenu()`, `mobile-nav.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 37`** (2 nodes): `Reveal()`, `reveal.tsx`
+- **Thin community `Community 37`** (2 nodes): `ButtonLink()`, `button-link.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 38`** (2 nodes): `SectionRail()`, `section-rail.tsx`
+- **Thin community `Community 38`** (2 nodes): `Reveal()`, `reveal.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 39`** (2 nodes): `utils.ts`, `cn()`
+- **Thin community `Community 39`** (2 nodes): `SectionRail()`, `section-rail.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 40`** (2 nodes): `buildMetadata()`, `seo.ts`
+- **Thin community `Community 40`** (2 nodes): `utils.ts`, `cn()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 41`** (1 nodes): `postcss.config.mjs`
+- **Thin community `Community 41`** (2 nodes): `buildMetadata()`, `seo.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 42`** (1 nodes): `next-env.d.ts`
+- **Thin community `Community 42`** (1 nodes): `postcss.config.mjs`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 43`** (1 nodes): `next.config.ts`
+- **Thin community `Community 43`** (1 nodes): `next-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 44`** (1 nodes): `global.d.ts`
+- **Thin community `Community 44`** (1 nodes): `next.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 45`** (1 nodes): `page.tsx`
+- **Thin community `Community 45`** (1 nodes): `global.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 46`** (1 nodes): `page.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 47`** (1 nodes): `projects.tsx`
+- **Thin community `Community 47`** (1 nodes): `page.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 48`** (1 nodes): `hero.tsx`
+- **Thin community `Community 48`** (1 nodes): `projects.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 49`** (1 nodes): `tech.tsx`
+- **Thin community `Community 49`** (1 nodes): `hero.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 50`** (1 nodes): `GradientText.tsx`
+- **Thin community `Community 50`** (1 nodes): `tech.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 51`** (1 nodes): `ShinyText.tsx`
+- **Thin community `Community 51`** (1 nodes): `GradientText.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 52`** (1 nodes): `page-hero.tsx`
+- **Thin community `Community 52`** (1 nodes): `ShinyText.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 53`** (1 nodes): `section-heading.tsx`
+- **Thin community `Community 53`** (1 nodes): `page-hero.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 54`** (1 nodes): `site-content.ts`
+- **Thin community `Community 54`** (1 nodes): `section-heading.tsx`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 55`** (1 nodes): `site-content.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions

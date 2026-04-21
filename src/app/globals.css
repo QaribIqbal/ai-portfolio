@@ -439,6 +439,36 @@ img {
     color: var(--text-main);
   }
 
+  /* review: change-1 */
+  .hero-primary-cta {
+    padding-inline: calc(1.5rem + 4px) !important;
+  }
+
+  /* review: change-1 */
+  .hero-secondary-cta {
+    padding-inline: 1.5rem !important;
+    border: 1px solid var(--accent) !important;
+    background: transparent !important;
+    color: var(--accent) !important;
+    box-shadow: none !important;
+    font-size: 0.875em !important;
+  }
+
+  .hero-secondary-cta:hover {
+    background: transparent !important;
+    border-color: var(--accent-strong) !important;
+    color: var(--accent-strong) !important;
+    box-shadow: none !important;
+  }
+
+  @media (max-width: 480px) {
+    /* review: change-1 */
+    .hero-primary-cta,
+    .hero-secondary-cta {
+      width: 100%;
+    }
+  }
+
   .form-field {
     @apply flex flex-col gap-2;
   }
@@ -488,6 +518,83 @@ img {
     margin: 0;
     font-size: 0.78rem;
     line-height: 1.45;
+    color: var(--text-subtle);
+  }
+
+  /* review: change-2 */
+  .profile-photo {
+    object-fit: cover;
+  }
+
+  /* review: change-3 */
+  .social-proof-placeholder,
+  .testimonial-placeholder {
+    border-style: dashed !important;
+    border-width: 1px !important;
+    border-color: var(--line-strong) !important;
+  }
+
+  .social-proof-placeholder a,
+  .testimonial-placeholder a {
+    text-decoration: none;
+  }
+
+  .social-proof-placeholder a:hover,
+  .testimonial-placeholder a:hover {
+    text-decoration: underline;
+  }
+
+  /* review: change-4 */
+  .pricing-note {
+    font-size: 0.8em;
+    line-height: 1.6;
+    color: var(--text-subtle);
+  }
+
+  /* review: change-5 */
+  .capacity-note {
+    font-size: 0.78em;
+    line-height: 1.45;
+    color: color-mix(in oklch, var(--text-subtle) 88%, transparent);
+    text-align: left;
+  }
+
+  /* review: change-6 */
+  .page-in-progress-banner {
+    width: 100%;
+    padding: 12px 1rem;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-subtle);
+    background: color-mix(in oklch, white 4%, transparent);
+  }
+
+  .page-in-progress-banner a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .page-in-progress-banner a:hover {
+    color: var(--text-main);
+  }
+
+  /* review: change-7 */
+  .footer-email-link {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer-email-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* review: change-7 */
+  .footer-copyright {
+    font-size: 0.75em;
+    line-height: 1.4;
     color: var(--text-subtle);
   }
 

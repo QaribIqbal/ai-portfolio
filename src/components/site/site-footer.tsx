@@ -25,8 +25,12 @@ export function SiteFooter() {
         </div>
 
         <div className="subtle-card space-y-4">
-          <p className="text-sm text-[color:var(--text-muted)]">{siteConfig.email}</p>
-          <ButtonLink href={siteConfig.linkedin} variant="ghost" trackingEvent="linkedin_footer_click">
+          {/* review: change-7 */}
+          <a href={`mailto:${siteConfig.email}`} className="footer-email-link text-sm">
+            {siteConfig.email}
+          </a>
+          {/* review: change-7 */}
+          <ButtonLink href={siteConfig.linkedin} variant="ghost" external trackingEvent="linkedin_footer_click">
             <span className="inline-flex items-center gap-2">
               <Linkedin className="h-4 w-4" aria-hidden="true" />
               LinkedIn
@@ -45,6 +49,8 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
+      {/* review: change-7 */}
+      <p className="footer-copyright mt-8 text-center">© 2026 Qarib Iqbal. All rights reserved.</p>
     </footer>
   );
 }

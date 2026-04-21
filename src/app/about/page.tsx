@@ -28,25 +28,37 @@ export default function AboutPage() {
 
         <section className="page-section pt-0">
           <div className="shell grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-            <article className="panel">
+            {/* review: change-2 */}
+            <article className="panel min-h-[100px]">
               <p className="section-eyebrow">Profile</p>
               <div className="flex items-start gap-4">
                 <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border-2 border-[color:var(--accent)]">
-                  {/* TODO: Replace placeholder profile photo with real image */}
+                  {/* TODO: Replace with real headshot — recommended size 400x400px */}
                   <Image
                     src="/assets/images/qarib-profile.jpg"
                     alt="Qarib Iqbal profile photo"
                     fill
                     sizes="96px"
-                    className="object-cover"
+                    className="profile-photo object-cover"
                   />
                 </div>
                 <div>
-                  <h2 className="text-[1.3rem] font-semibold tracking-[-0.02em] text-[color:var(--text-main)]">
-                    Qarib Iqbal
+                  <h2 className="text-[1.2rem] font-semibold tracking-[-0.02em] text-[color:var(--text-main)]">
+                    Operator-led implementation
                   </h2>
                   <p className="mt-2 text-sm leading-7 text-[color:var(--text-muted)]">
-                    AI Automation Specialist for Marketing Agencies
+                    I spent years watching marketing agencies lose hours every week to the same
+                    manual workflows — reports rebuilt by hand, leads chased one by one, onboarding
+                    that started differently every time. I build focused automation systems that fix
+                    one expensive process at a time, so founder-led teams get real leverage without
+                    adding headcount, new software stacks, or extra complexity.
+                  </p>
+                  <p className="mt-3 text-[0.8em] leading-6 text-[color:var(--text-subtle)]">
+                    Based in Lahore, Pakistan. Working with agencies remotely worldwide.
+                  </p>
+                  <p className="mt-1 text-[0.8em] leading-6 text-[color:var(--text-subtle)]">
+                    Specialized in Make (Integromat), n8n, Zapier, Airtable, and CRM workflow
+                    design.
                   </p>
                 </div>
               </div>

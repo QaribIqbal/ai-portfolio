@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { ButtonLink } from "@/components/site/button-link";
 import { LeadCaptureForm } from "@/components/site/lead-capture-form";
@@ -44,16 +45,30 @@ export default function HomePage() {
                 workflow at a time, lead follow-up, reporting, onboarding, or internal handoffs, so
                 your team gets hours back without adding headcount.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-                <ButtonLink href="/contact" className="max-sm:w-full" trackingEvent="hero_audit_click">
+              {/* review: change-1 */}
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+                <ButtonLink
+                  href="/contact"
+                  className="hero-primary-cta max-[480px]:w-full"
+                  trackingEvent="hero_audit_click"
+                >
                   Book Free Automation Audit
                 </ButtonLink>
-                <ButtonLink href="/checklist" variant="secondary" trackingEvent="hero_checklist_click">
+                <ButtonLink
+                  href="/checklist"
+                  variant="ghost"
+                  className="hero-secondary-cta max-[480px]:w-full"
+                  trackingEvent="hero_checklist_click"
+                >
                   Get the Agency AI Automation Checklist
                 </ButtonLink>
               </div>
               <p className="mt-5 max-w-[54ch] text-sm leading-7 text-[color:var(--text-subtle)]">
                 {siteConfig.shortCredibility}
+              </p>
+              {/* review: change-5 */}
+              <p className="capacity-note mt-2 max-w-[54ch]">
+                Currently accepting 2 new sprint clients per month — next availability: May 2026.
               </p>
               {/*
                 LinkedIn traffic alignment:
@@ -149,13 +164,36 @@ export default function HomePage() {
                 ))}
               </div>
             ) : (
-              <article className="panel mt-10">
-                {/* TODO: Replace placeholder case-study metric with real result */}
-                <p className="text-sm leading-7 text-[color:var(--text-muted)]">
-                  Public case-study outcomes are being prepared. During the audit, I can walk you
-                  through anonymized workflow examples and delivery artifacts.
-                </p>
-              </article>
+              <div className="mt-10 grid gap-4 md:grid-cols-2">
+                {/* review: change-3 */}
+                <article className="panel social-proof-placeholder">
+                  <p className="text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
+                    SPRINT OUTCOMES
+                  </p>
+                  <p className="mt-4 text-sm leading-7 text-[color:var(--text-muted)]">
+                    Sprint results are documented with before/after metrics and workflow maps.
+                    During the free audit, I walk through anonymized delivery artifacts from past
+                    sprint engagements.
+                  </p>
+                  <Link href="/services" className="mt-4 inline-flex text-sm text-[color:var(--accent)]">
+                    See what a sprint delivers →
+                  </Link>
+                </article>
+                {/* review: change-3 */}
+                <article className="panel testimonial-placeholder">
+                  <p className="text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
+                    CLIENT FEEDBACK
+                  </p>
+                  <p className="mt-4 text-sm leading-7 text-[color:var(--text-muted)]">
+                    Feedback is collected at sprint close. Quotes and outcomes are shared publicly
+                    only after client approval. References available on request during the audit
+                    call.
+                  </p>
+                  <Link href="/contact" className="mt-4 inline-flex text-sm text-[color:var(--accent)]">
+                    Book the free audit →
+                  </Link>
+                </article>
+              </div>
             )}
 
             <div className="mt-5 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
@@ -173,6 +211,14 @@ export default function HomePage() {
                 <p className="mt-6 text-sm leading-7 text-[color:var(--text-muted)]">
                   If the agreed workflow is not implemented and running as scoped, I keep working on
                   it until it is, at no extra cost.
+                </p>
+                {/* review: change-4 */}
+                <hr className="mt-6 border-0 border-t border-t-[color:color-mix(in_oklch,var(--line)_40%,transparent)]" />
+                {/* review: change-4 */}
+                <p className="pricing-note mt-4">
+                  Sprint pricing is scoped per engagement based on workflow complexity, tool stack,
+                  and agency size. Investment range and timeline are discussed transparently during
+                  the free automation audit — no vague retainer structures, no surprise scope creep.
                 </p>
               </article>
 
@@ -242,17 +288,19 @@ export default function HomePage() {
                 </ul>
               </article>
 
-              <article className="panel">
-                <p className="section-eyebrow">About Qarib</p>
+              {/* review: change-2 */}
+              <article className="panel min-h-[100px]">
+                <p className="section-eyebrow">ABOUT QARIB</p>
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
                   <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border-2 border-[color:var(--accent)]">
                     {/* TODO: Replace placeholder profile photo with real image */}
+                    {/* <!-- TODO: Replace with real headshot — recommended size 400x400px --> */}
                     <Image
                       src="/assets/images/qarib-profile.jpg"
-                      alt="Qarib Iqbal profile placeholder"
+                      alt="Qarib Iqbal profile photo"
                       fill
                       sizes="96px"
-                      className="object-cover"
+                      className="profile-photo object-cover"
                     />
                   </div>
                   <div>
@@ -260,8 +308,19 @@ export default function HomePage() {
                       Operator-led implementation
                     </h3>
                     <p className="mt-3 text-sm leading-7 text-[color:var(--text-muted)]">
-                      My job is to find the friction point before writing a single line of
-                      automation.
+                      I spent years watching marketing agencies lose hours every week to the same
+                      manual workflows — reports rebuilt by hand, leads chased one by one,
+                      onboarding that started differently every time. I build focused automation
+                      systems that fix one expensive process at a time, so founder-led teams get
+                      real leverage without adding headcount, new software stacks, or extra
+                      complexity.
+                    </p>
+                    <p className="mt-3 text-[0.8em] leading-6 text-[color:var(--text-subtle)]">
+                      Based in Lahore, Pakistan. Working with agencies remotely worldwide.
+                    </p>
+                    <p className="mt-1 text-[0.8em] leading-6 text-[color:var(--text-subtle)]">
+                      Specialized in Make (Integromat), n8n, Zapier, Airtable, and CRM workflow
+                      design.
                     </p>
                   </div>
                 </div>

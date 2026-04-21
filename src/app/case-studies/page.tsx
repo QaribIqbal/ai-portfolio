@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/site/button-link";
+import { PageInProgressBanner } from "@/components/site/page-in-progress-banner";
 import { PageHero } from "@/components/site/page-hero";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
@@ -16,6 +17,8 @@ export default function CaseStudiesPage() {
     <div className="min-h-[100dvh]">
       <SiteHeader />
       <main>
+        {/* review: change-6 */}
+        <PageInProgressBanner />
         <PageHero
           eyebrow="Case Studies"
           title="Workflow outcomes from focused implementation"
