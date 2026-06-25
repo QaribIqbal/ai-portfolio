@@ -68,7 +68,7 @@ export default function HomePage() {
               </p>
               {/* review: change-5 */}
               <p className="capacity-note mt-2 max-w-[54ch]">
-                Currently accepting 2 new sprint clients per month — next availability: May 2026.
+                Currently accepting 2 new sprint clients per month — next availability: June 2026.
               </p>
               {/*
                 LinkedIn traffic alignment:
