@@ -1,11 +1,11 @@
 # Graph Report - /Users/qaribiqbal/Developement/Projects/ai-portfolio  (2026-06-26)
 
 ## Corpus Check
-- 65 files · ~469,506 words
+- 66 files · ~469,708 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 173 nodes · 151 edges · 62 communities detected
+- 174 nodes · 151 edges · 63 communities detected
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -72,6 +72,7 @@
 - [[_COMMUNITY_Community 59|Community 59]]
 - [[_COMMUNITY_Community 60|Community 60]]
 - [[_COMMUNITY_Community 61|Community 61]]
+- [[_COMMUNITY_Community 62|Community 62]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `handleSubmit()` - 7 edges
@@ -347,6 +348,10 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
+### Community 62 - "Community 62"
+Cohesion: 1.0
+Nodes (0): 
+
 ## Knowledge Gaps
 - **Thin community `Community 17`** (2 nodes): `RootLayout()`, `layout.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -432,11 +437,13 @@ Nodes (0):
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 58`** (1 nodes): `site-header.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 59`** (1 nodes): `page-hero.tsx`
+- **Thin community `Community 59`** (1 nodes): `testimonial-carousel.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 60`** (1 nodes): `section-heading.tsx`
+- **Thin community `Community 60`** (1 nodes): `page-hero.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 61`** (1 nodes): `site-content.ts`
+- **Thin community `Community 61`** (1 nodes): `section-heading.tsx`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 62`** (1 nodes): `site-content.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions

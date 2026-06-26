@@ -9,6 +9,7 @@ import { LeadCaptureForm } from "@/components/site/lead-capture-form";
 import { SectionHeading } from "@/components/site/section-heading";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
+import { TestimonialCarousel } from "@/components/site/testimonial-carousel";
 import {
   checklistHighlights,
   homeProblems,
@@ -239,11 +240,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section section-slice section-slice-proof" id="proof" data-snap-section>
+        <section className="page-section section-slice section-slice-proof" id="case-studies" data-snap-section>
           <div className="shell">
             <GSAPReveal>
               <SectionHeading
-                eyebrow="Validation"
+                eyebrow="Case Studies & Proof"
                 title="What you can check before committing"
                 description="Real operators care about implementation clarity more than vague promise language, so the audit, sprint scope, deliverables, and handoff all stay visible."
               />
@@ -377,23 +378,8 @@ export default function HomePage() {
             )}
 
             {publishedTestimonials.length > 0 ? (
-              <GSAPReveal stagger>
-                <div className="mt-5 grid gap-5 lg:grid-cols-3">
-                  {publishedTestimonials.map((testimonial, index) => (
-                    <article
-                      key={`${testimonial.name}-${index}`}
-                      className="panel border-t-2 border-t-[color:var(--accent)]" data-gsap-reveal
-                    >
-                      <p className="text-sm leading-7 text-[color:var(--text-muted)]">"{testimonial.quote}"</p>
-                      <p className="mt-4 text-sm font-semibold text-[color:var(--text-main)]">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-xs uppercase tracking-[0.08em] text-[color:var(--text-subtle)]">
-                        {testimonial.role} at {testimonial.company}
-                      </p>
-                    </article>
-                  ))}
-                </div>
+              <GSAPReveal>
+                <TestimonialCarousel testimonials={publishedTestimonials} />
               </GSAPReveal>
             ) : null}
 

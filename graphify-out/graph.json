@@ -1138,6 +1138,15 @@
       "norm_label": "primaryserviceserror()"
     },
     {
+      "label": "testimonial-carousel.tsx",
+      "file_type": "code",
+      "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/testimonial-carousel.tsx",
+      "source_location": "L1",
+      "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_testimonial_carousel_tsx",
+      "community": 59,
+      "norm_label": "testimonial-carousel.tsx"
+    },
+    {
       "label": "smooth-scroll-provider.tsx",
       "file_type": "code",
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/smooth-scroll-provider.tsx",
@@ -1170,7 +1179,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/page-hero.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_page_hero_tsx",
-      "community": 59,
+      "community": 60,
       "norm_label": "page-hero.tsx"
     },
     {
@@ -1197,7 +1206,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/section-heading.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_section_heading_tsx",
-      "community": 60,
+      "community": 61,
       "norm_label": "section-heading.tsx"
     },
     {
@@ -1503,7 +1512,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/site-content.ts",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_lib_site_content_ts",
-      "community": 61,
+      "community": 62,
       "norm_label": "site-content.ts"
     },
     {

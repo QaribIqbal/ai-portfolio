@@ -27,11 +27,10 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     if (reducedMotion) return;
 
     const lenis = new Lenis({
-      autoRaf: false,
+      autoRaf: true,
       smoothWheel: true,
       duration: 1.5,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      wheelMultiplier: 1.2,
+      wheelMultiplier: 1.5,
       touchMultiplier: 2,
       syncTouch: false,
     });

@@ -31,7 +31,7 @@ export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-0.5 rounded-full border border-[color:var(--line)] bg-[color:color-mix(in_oklch,var(--panel-soft)_60%,transparent)] p-1 backdrop-blur-md lg:flex">
-          {navigation.slice(0, 2).map((item) => (
+          {navigation.slice(0, 3).map((item) => (
             <Link
               key={item.href}
               href={item.href}
