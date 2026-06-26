@@ -47,6 +47,8 @@ export const siteConfig = {
 };
 
 export const navigation = [
+  { href: "/#services", label: "Services" },
+  { href: "/#process", label: "Process" },
   { href: "/checklist", label: "Checklist" },
   { href: "/contact", label: "Free Audit" },
 ];

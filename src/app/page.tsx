@@ -30,6 +30,24 @@ export const metadata = buildMetadata({
     "Qarib Iqbal helps lean marketing agencies remove manual follow-up, reporting, onboarding, and handoff bottlenecks with practical automation systems.",
 });
 
+const flowSteps = [
+  {
+    label: "Find the leak",
+    href: "#problem",
+    description: "Scan the bottlenecks that usually drain agency time.",
+  },
+  {
+    label: "Choose the workflow",
+    href: "#services",
+    description: "Pick the one manual process worth fixing first.",
+  },
+  {
+    label: "See the sprint path",
+    href: "#process",
+    description: "Understand exactly how the audit becomes a working system.",
+  },
+];
+
 export default function HomePage() {
   return (
     <div className="min-h-[100dvh]">
@@ -90,6 +108,31 @@ export default function HomePage() {
                 but analytics tools (Plausible, GA4) will capture them automatically.
               */}
             </div>
+          </div>
+        </section>
+
+        <section className="flow-strip-section" aria-label="Recommended page path">
+          <div className="shell">
+            <GSAPReveal stagger>
+              <div className="flow-strip">
+                {flowSteps.map((step, index) => (
+                  <Link key={step.href} href={step.href} className="flow-step" data-gsap-reveal>
+                    <span className="flow-step-index">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="flow-step-copy">
+                      <span>{step.label}</span>
+                      <span>{step.description}</span>
+                    </span>
+                  </Link>
+                ))}
+                <div className="flow-step flow-step-cta" data-gsap-reveal>
+                  <span className="flow-step-index">04</span>
+                  <span className="flow-step-copy">
+                    <span>Book or self-audit</span>
+                    <span>Use the checklist if you are not ready for the call.</span>
+                  </span>
+                </div>
+              </div>
+            </GSAPReveal>
           </div>
         </section>
 
@@ -166,13 +209,43 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="page-section section-slice section-slice-process" id="process" data-snap-section>
+          <div className="shell">
+            <GSAPReveal>
+              <SectionHeading
+                eyebrow="Process"
+                title="How the audit turns into one fixed workflow"
+                description="Start with the smallest high-cost bottleneck. Then map it, build it, test it, and hand it over without turning the engagement into a vague retainer."
+              />
+            </GSAPReveal>
+            <GSAPReveal stagger>
+              <div className="process-path mt-10">
+                {processSteps.map((step, index) => (
+                  <article key={step.title} className="panel process-card" data-gsap-reveal>
+                    <div className="mb-4 flex items-center gap-3">
+                      <span className="step-number">{index + 1}</span>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
+                        Step {index + 1}
+                      </p>
+                    </div>
+                    <h3 className="text-[1.35rem] font-semibold tracking-[-0.03em] text-[color:var(--text-main)]">
+                      {step.title}
+                    </h3>
+                    <p className="mt-4 text-sm leading-7 text-[color:var(--text-muted)]">{step.description}</p>
+                  </article>
+                ))}
+              </div>
+            </GSAPReveal>
+          </div>
+        </section>
+
         <section className="page-section section-slice section-slice-proof" id="proof" data-snap-section>
           <div className="shell">
             <GSAPReveal>
               <SectionHeading
-                eyebrow="Proof"
-                title="How the sprint is scoped, delivered, and validated"
-                description="Real operators care about implementation clarity more than vague promise language."
+                eyebrow="Validation"
+                title="What you can check before committing"
+                description="Real operators care about implementation clarity more than vague promise language, so the audit, sprint scope, deliverables, and handoff all stay visible."
               />
             </GSAPReveal>
 
@@ -375,36 +448,6 @@ export default function HomePage() {
                     </div>
                   </div>
                 </article>
-              </div>
-            </GSAPReveal>
-          </div>
-        </section>
-
-        <section className="page-section section-slice section-slice-process" id="process" data-snap-section>
-          <div className="shell">
-            <GSAPReveal>
-              <SectionHeading
-                eyebrow="Process"
-                title="Offer ladder: from first visit to fixed workflow"
-                description="Fix the right bottleneck first. Everything else follows."
-              />
-            </GSAPReveal>
-            <GSAPReveal stagger>
-              <div className="mt-10 grid gap-4 lg:grid-cols-2">
-                {processSteps.map((step, index) => (
-                  <article key={step.title} className="panel" data-gsap-reveal>
-                    <div className="mb-4 flex items-center gap-3">
-                      <span className="step-number">{index + 1}</span>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
-                        Step {index + 1}
-                      </p>
-                    </div>
-                    <h3 className="text-[1.35rem] font-semibold tracking-[-0.03em] text-[color:var(--text-main)]">
-                      {step.title}
-                    </h3>
-                    <p className="mt-4 text-sm leading-7 text-[color:var(--text-muted)]">{step.description}</p>
-                  </article>
-                ))}
               </div>
             </GSAPReveal>
           </div>

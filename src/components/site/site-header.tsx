@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { ButtonLink } from "@/components/site/button-link";
 import { MobileNav } from "@/components/site/mobile-nav";
-import { siteConfig } from "@/lib/site-content";
+import { navigation, siteConfig } from "@/lib/site-content";
 
 export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
   return (
@@ -30,7 +30,17 @@ export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
           <span>{siteConfig.name}</span>
         </Link>
 
-        <div className="hidden sm:block" />
+        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+          {navigation.slice(0, 2).map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-full px-3.5 py-2 text-[0.82rem] font-medium text-[color:var(--text-subtle)] transition hover:bg-[color:var(--panel-soft)] hover:text-[color:var(--text-main)]"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
 
         <div className="flex items-center gap-2.5">
           {!minimal ? (
