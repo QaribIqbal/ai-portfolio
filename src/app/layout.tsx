@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Manrope } from "next/font/google";
+import { Inter } from "next/font/google";
 
 import "./globals.css";
+import { SmoothScrollProvider } from "@/components/site/smooth-scroll-provider";
 import { UtmCapture } from "@/components/site/utm-capture";
 import { defaultMetadata } from "@/lib/seo";
 
-const geist = Geist({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-geist",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = defaultMetadata;
@@ -24,9 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} ${manrope.variable}`}>
+      <body className={inter.variable}>
         <UtmCapture />
-        {children}
+        <noscript>
+          <style>{`[data-gsap-reveal] { opacity: 1 !important; transform: none !important; }`}</style>
+        </noscript>
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );
