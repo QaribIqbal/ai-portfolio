@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site-content";
 
 export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
   return (
-    <header className="sticky top-0 z-40 border-b border-[color:var(--line)] bg-[color:color-mix(in_oklch,var(--bg)_90%,transparent)] backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-[color:var(--line)] bg-[color:color-mix(in_oklch,var(--bg)_82%,transparent)] backdrop-blur-2xl backdrop-saturate-150">
       <div className="shell relative flex min-h-18 items-center justify-between gap-4 py-4">
         <Link
           href="/"

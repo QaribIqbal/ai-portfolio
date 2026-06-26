@@ -5,8 +5,8 @@ import { siteConfig } from "@/lib/site-content";
 
 export function SiteFooter() {
   return (
-    <footer className="section-frame border-t border-[color:var(--line)] pb-10 pt-14">
-      <div className="shell grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+    <footer className="section-frame border-t border-[color:var(--line)] pb-12 pt-16">
+      <div className="shell grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-5">
           <p className="section-eyebrow">For Lean Marketing Agencies</p>
           <h2 className="max-w-xl text-[clamp(1.8rem,2.8vw,2.7rem)] font-semibold tracking-[-0.045em] text-[color:var(--text-main)]">
@@ -50,7 +50,8 @@ export function SiteFooter() {
         </div>
       </div>
       {/* review: change-7 */}
-      <p className="footer-copyright mt-8 text-center">© 2026 Qarib Iqbal. All rights reserved.</p>
+      <div className="soft-divider mt-10" />
+      <p className="footer-copyright mt-6 text-center">© 2026 Qarib Iqbal. All rights reserved.</p>
     </footer>
   );
 }
