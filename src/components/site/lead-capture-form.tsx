@@ -204,7 +204,6 @@ export function LeadCaptureForm() {
       onFocusCapture={markStart}
       noValidate
     >
-      <div className="absolute top-0 right-0 -z-10 h-64 w-64 -translate-y-1/2 translate-x-1/3 rounded-full bg-[color:var(--accent)] opacity-[0.08] blur-3xl" />
 
       <div className="inline-flex items-center gap-2 rounded-full border border-[color:color-mix(in_oklch,var(--accent)_20%,transparent)] bg-[color:color-mix(in_oklch,var(--accent)_10%,transparent)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-[color:var(--accent)] mb-2">
         <CheckCircle2 className="h-4 w-4" />
@@ -314,7 +313,7 @@ export function LeadCaptureForm() {
           className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full p-4 sm:p-5 font-medium text-[color:var(--bg)] shadow-[0_0_40px_-10px_color-mix(in_oklch,var(--accent)_60%,transparent)] transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:hover:scale-100"
           disabled={status === "submitting" || (hasStarted && !isFormValid)}
         >
-          <span className="absolute inset-0 bg-[color:var(--accent)] bg-gradient-to-r from-[color:var(--accent)] to-[color:var(--accent-warm)] transition-transform duration-300 group-hover:scale-110" />
+          <span className="absolute inset-0 bg-[color:var(--accent)] transition-colors duration-300 group-hover:bg-[color:var(--accent-warm)]" />
           <span className="relative flex items-center gap-2 text-base sm:text-lg font-bold tracking-wide">
             {status === "submitting" ? "Sending..." : "Get the Free Checklist"}
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
