@@ -29,8 +29,10 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     const lenis = new Lenis({
       autoRaf: false,
       smoothWheel: true,
-      duration: 1.08,
-      wheelMultiplier: 1.08,
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      wheelMultiplier: 1.2,
+      touchMultiplier: 2,
       syncTouch: false,
     });
 
@@ -75,8 +77,8 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
           scrollTrigger: {
             id: "services-horizontal-scroll",
             trigger: servicesSection,
-            start: () => `top top+=${Math.round(getHeaderOffset() + window.innerHeight * 0.3)}`,
-            end: () => `+=${Math.max(getTotalShift() * 1.35, window.innerHeight * 0.75)}`,
+            start: () => `top top+=${Math.round(getHeaderOffset() + window.innerHeight * -0.45)}`,
+            end: () => `+=${Math.max(getTotalShift() * 0.35, window.innerHeight * 1.75)}`,
             pin: true,
             pinSpacing: true,
             scrub: 1,
@@ -105,7 +107,7 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
               trigger: section,
               start: "top bottom",
               end: "bottom top",
-              scrub: 1.1,
+              scrub: 0.9,
             },
           },
         );
