@@ -125,7 +125,7 @@ export function ExperienceShell() {
               scrollTrigger: {
                 id: "services-horizontal-scroll",
                 trigger: servicesSection,
-                start: () => `top top+=${getHeaderOffset()}`,
+                start: () => `top top`,
                 end: () => `+=${getTotalShift()}`,
                 pin: true,
                 pinSpacing: true,
