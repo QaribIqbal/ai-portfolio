@@ -75,7 +75,7 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
           scrollTrigger: {
             id: "services-horizontal-scroll",
             trigger: servicesSection,
-            start: () => `top top+=${getHeaderOffset()}`,
+            start: () => `top top+=${Math.round(getHeaderOffset() + window.innerHeight * 0.3)}`,
             end: () => `+=${Math.max(getTotalShift() * 1.35, window.innerHeight * 0.75)}`,
             pin: true,
             pinSpacing: true,

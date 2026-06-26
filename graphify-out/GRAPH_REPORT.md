@@ -1,7 +1,7 @@
 # Graph Report - /Users/qaribiqbal/Developement/Projects/ai-portfolio  (2026-06-26)
 
 ## Corpus Check
-- 65 files · ~469,495 words
+- 65 files · ~469,494 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
