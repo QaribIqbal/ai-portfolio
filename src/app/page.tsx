@@ -464,11 +464,6 @@ export default function HomePage() {
                   <p className="mt-3 text-sm leading-7 text-[color:var(--text-subtle)]">
                     This helps you decide what to tackle in your first sprint.
                   </p>
-                  <div className="mt-6">
-                    <ButtonLink href="/checklist" trackingEvent="checklist_section_button_click">
-                      Get the Checklist
-                    </ButtonLink>
-                  </div>
                 </div>
                 <LeadCaptureForm />
               </div>
