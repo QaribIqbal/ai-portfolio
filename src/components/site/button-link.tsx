@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import type { CSSProperties } from "react";
+import type { AnchorHTMLAttributes, CSSProperties } from "react";
 
 import { trackEvent } from "@/lib/analytics";
 import { captureCurrentUtmParams } from "@/lib/utm";
 import { cn } from "@/lib/utils";
 
-type ButtonLinkProps = {
+type ButtonLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
   href: string;
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "ghost";
@@ -25,6 +25,8 @@ export function ButtonLink({
   external = false,
   trackingEvent,
   trackingProps,
+  style: incomingStyle,
+  ...props
 }: ButtonLinkProps) {
   const isExternal = external || /^https?:\/\//.test(href);
 
@@ -54,8 +56,10 @@ export function ButtonLink({
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer noopener" : undefined}
-      style={style}
-      onClick={() => {
+      style={{ ...style, ...incomingStyle }}
+      {...props}
+      onClick={(event) => {
+        props.onClick?.(event);
         captureCurrentUtmParams();
 
         if (trackingEvent) {

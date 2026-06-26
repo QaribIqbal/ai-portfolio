@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { ButtonLink } from "@/components/site/button-link";
+import { GSAPReveal } from "@/components/site/gsap-reveal";
+import { HeroAnimation, HeroTitle } from "@/components/site/hero-animation";
 import { LeadCaptureForm } from "@/components/site/lead-capture-form";
-import { ScrollReveal } from "@/components/site/scroll-reveal";
 import { SectionHeading } from "@/components/site/section-heading";
+import { SectionSnap } from "@/components/site/section-snap";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import {
@@ -33,44 +35,55 @@ export default function HomePage() {
   return (
     <div className="min-h-[100dvh]">
       <SiteHeader />
+      <SectionSnap />
       <main>
-        <section className="page-section section-slice section-slice-hero pt-16 sm:pt-20">
+        <section className="page-section section-slice section-slice-hero pt-16 sm:pt-20" id="hero" data-snap-section>
           <div className="shell">
             <div className="hero-panel">
-              <p className="section-eyebrow">AI Automation for Marketing Agencies</p>
-              <h1 className="display-title max-w-[17ch] text-balance">
-                Remove one high-cost manual bottleneck in 21 days.
-              </h1>
-              <p className="mt-6 max-w-[62ch] text-[1.08rem] leading-8 text-[color:var(--text-muted)] sm:text-[1.14rem]">
-                I run focused 21-Day Agency Automation Sprints that fix one expensive manual
-                workflow at a time, lead follow-up, reporting, onboarding, or internal handoffs, so
-                your team gets hours back without adding headcount.
-              </p>
-              {/* review: change-1 */}
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-                <ButtonLink
-                  href="/contact"
-                  className="hero-primary-cta max-[480px]:w-full"
-                  trackingEvent="hero_audit_click"
+              <HeroAnimation>
+                <p className="section-eyebrow" data-hero-eyebrow>
+                  AI Automation for Marketing Agencies
+                </p>
+                <HeroTitle />
+                <p
+                  className="mt-6 max-w-[62ch] text-[1.08rem] leading-8 text-[color:var(--text-muted)] sm:text-[1.14rem]"
+                  data-hero-copy
                 >
-                  Book Free Automation Audit
-                </ButtonLink>
-                <ButtonLink
-                  href="/checklist"
-                  variant="ghost"
-                  className="hero-secondary-cta max-[480px]:w-full"
-                  trackingEvent="hero_checklist_click"
+                  I run focused 21-Day Agency Automation Sprints that fix one expensive manual
+                  workflow at a time, lead follow-up, reporting, onboarding, or internal handoffs, so
+                  your team gets hours back without adding headcount.
+                </p>
+                {/* review: change-1 */}
+                <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+                  <ButtonLink
+                    href="/contact"
+                    className="hero-primary-cta max-[480px]:w-full"
+                    trackingEvent="hero_audit_click"
+                    data-hero-cta
+                  >
+                    Book Free Automation Audit
+                  </ButtonLink>
+                  <ButtonLink
+                    href="/checklist"
+                    variant="ghost"
+                    className="hero-secondary-cta max-[480px]:w-full"
+                    trackingEvent="hero_checklist_click"
+                    data-hero-cta
+                  >
+                    Get the Agency AI Automation Checklist
+                  </ButtonLink>
+                </div>
+                <p
+                  className="mt-6 max-w-[54ch] text-sm leading-7 text-[color:var(--text-subtle)]"
+                  data-hero-credibility
                 >
-                  Get the Agency AI Automation Checklist
-                </ButtonLink>
-              </div>
-              <p className="mt-6 max-w-[54ch] text-sm leading-7 text-[color:var(--text-subtle)]">
-                {siteConfig.shortCredibility}
-              </p>
-              {/* review: change-5 */}
-              <p className="capacity-note mt-3 max-w-[54ch]">
-                Currently accepting 2 new sprint clients per month — next availability: June 2026.
-              </p>
+                  {siteConfig.shortCredibility}
+                </p>
+                {/* review: change-5 */}
+                <p className="capacity-note mt-3 max-w-[54ch]" data-hero-capacity>
+                  Currently accepting 2 new sprint clients per month — next availability: June 2026.
+                </p>
+              </HeroAnimation>
               {/*
                 LinkedIn traffic alignment:
                 When sharing the website from LinkedIn Featured or banner,
@@ -82,19 +95,19 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section section-slice section-slice-problem" id="problem">
+        <section className="page-section section-slice section-slice-problem" id="problem" data-snap-section>
           <div className="shell">
-            <ScrollReveal>
+            <GSAPReveal>
               <SectionHeading
                 eyebrow="Problem"
                 title="Manual operations are where lean agencies lose leverage"
                 description="Fix one bottleneck properly and the team gets immediate leverage without adding more software."
               />
-            </ScrollReveal>
-            <ScrollReveal stagger>
+            </GSAPReveal>
+            <GSAPReveal stagger>
               <div className="problem-grid mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {homeProblems.map((problem, index) => (
-                  <article key={problem} className="reveal panel">
+                  <article key={problem} className="panel" data-gsap-reveal>
                     <div className="mb-3 flex items-center gap-3">
                       <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[color:color-mix(in_oklch,var(--accent)_30%,transparent)] bg-[color:color-mix(in_oklch,var(--accent)_10%,transparent)] text-xs font-bold text-[color:var(--accent)]">
                         {index + 1}
@@ -104,23 +117,23 @@ export default function HomePage() {
                   </article>
                 ))}
               </div>
-            </ScrollReveal>
+            </GSAPReveal>
           </div>
         </section>
 
-        <section className="page-section section-slice section-slice-services" id="services">
+        <section className="page-section section-slice section-slice-services" id="services" data-snap-section>
           <div className="shell">
-            <ScrollReveal>
+            <GSAPReveal>
               <SectionHeading
                 eyebrow="Services"
                 title="What the 21-Day Agency Automation Sprint can target"
                 description="Instead of vague automation services, the work is delivered through focused sprints that target one painful workflow at a time."
               />
-            </ScrollReveal>
-            <ScrollReveal stagger>
+            </GSAPReveal>
+            <GSAPReveal stagger>
               <div className="mt-10 grid gap-5 md:grid-cols-2">
                 {services.map((service) => (
-                  <article key={service.title} className="reveal panel">
+                  <article key={service.title} className="panel" data-gsap-reveal>
                     <h3 className="text-[1.55rem] font-semibold tracking-[-0.04em] text-[color:var(--text-main)]">
                       {service.title}
                     </h3>
@@ -141,25 +154,25 @@ export default function HomePage() {
                   </article>
                 ))}
               </div>
-            </ScrollReveal>
+            </GSAPReveal>
           </div>
         </section>
 
-        <section className="page-section section-slice section-slice-proof" id="proof">
+        <section className="page-section section-slice section-slice-proof" id="proof" data-snap-section>
           <div className="shell">
-            <ScrollReveal>
+            <GSAPReveal>
               <SectionHeading
                 eyebrow="Proof"
                 title="How the sprint is scoped, delivered, and validated"
                 description="Real operators care about implementation clarity more than vague promise language."
               />
-            </ScrollReveal>
+            </GSAPReveal>
 
             {publishedCaseStudyTiles.length > 0 ? (
-              <ScrollReveal stagger>
+              <GSAPReveal stagger>
                 <div className="mt-10 grid gap-5 lg:grid-cols-3">
                   {publishedCaseStudyTiles.map((tile) => (
-                    <article key={tile.clientType} className="reveal panel">
+                    <article key={tile.clientType} className="panel" data-gsap-reveal>
                       <p className="text-xs uppercase tracking-[0.12em] text-[color:var(--text-subtle)]">
                         {tile.clientType}
                       </p>
@@ -180,12 +193,12 @@ export default function HomePage() {
                     </article>
                   ))}
                 </div>
-              </ScrollReveal>
+              </GSAPReveal>
             ) : (
-              <ScrollReveal stagger>
+              <GSAPReveal stagger>
                 <div className="mt-10 grid gap-4 md:grid-cols-2">
                   {/* review: change-3 */}
-                  <article className="reveal panel social-proof-placeholder">
+                  <article className="panel social-proof-placeholder" data-gsap-reveal>
                     <p className="text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
                       SPRINT OUTCOMES
                     </p>
@@ -199,7 +212,7 @@ export default function HomePage() {
                     </Link>
                   </article>
                   {/* review: change-3 */}
-                  <article className="reveal panel testimonial-placeholder">
+                  <article className="panel testimonial-placeholder" data-gsap-reveal>
                     <p className="text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
                       CLIENT FEEDBACK
                     </p>
@@ -213,10 +226,10 @@ export default function HomePage() {
                     </Link>
                   </article>
                 </div>
-              </ScrollReveal>
+              </GSAPReveal>
             )}
 
-            <ScrollReveal>
+            <GSAPReveal>
               <div className="mt-5 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
                 <article className="panel">
                   <h3 className="text-[1.35rem] font-semibold tracking-[-0.03em] text-[color:var(--text-main)]">
@@ -255,10 +268,10 @@ export default function HomePage() {
                   </ul>
                 </article>
               </div>
-            </ScrollReveal>
+            </GSAPReveal>
 
             {publishedQuoteStripEntries.length > 0 ? (
-              <ScrollReveal>
+              <GSAPReveal>
                 <article className="panel mt-5">
                   <p className="section-eyebrow">Quote Strip</p>
                   <div className="grid gap-4 md:grid-cols-2">
@@ -269,9 +282,9 @@ export default function HomePage() {
                     ))}
                   </div>
                 </article>
-              </ScrollReveal>
+              </GSAPReveal>
             ) : (
-              <ScrollReveal>
+              <GSAPReveal>
                 <article className="panel mt-5">
                   {/* TODO: Replace placeholder testimonial with real client quote */}
                   <p className="text-sm leading-7 text-[color:var(--text-muted)]">
@@ -279,16 +292,16 @@ export default function HomePage() {
                     anonymized sprint feedback during the audit call.
                   </p>
                 </article>
-              </ScrollReveal>
+              </GSAPReveal>
             )}
 
             {publishedTestimonials.length > 0 ? (
-              <ScrollReveal stagger>
+              <GSAPReveal stagger>
                 <div className="mt-5 grid gap-5 lg:grid-cols-3">
                   {publishedTestimonials.map((testimonial, index) => (
                     <article
                       key={`${testimonial.name}-${index}`}
-                      className="reveal panel border-t-2 border-t-[color:var(--accent)]"
+                      className="panel border-t-2 border-t-[color:var(--accent)]" data-gsap-reveal
                     >
                       <p className="text-sm leading-7 text-[color:var(--text-muted)]">"{testimonial.quote}"</p>
                       <p className="mt-4 text-sm font-semibold text-[color:var(--text-main)]">
@@ -300,10 +313,10 @@ export default function HomePage() {
                     </article>
                   ))}
                 </div>
-              </ScrollReveal>
+              </GSAPReveal>
             ) : null}
 
-            <ScrollReveal>
+            <GSAPReveal>
               <div className="mt-5 grid gap-5 lg:grid-cols-[0.96fr_1.04fr]">
                 <article className="panel">
                   <p className="section-eyebrow">Free Agency Automation Audit</p>
@@ -355,23 +368,23 @@ export default function HomePage() {
                   </div>
                 </article>
               </div>
-            </ScrollReveal>
+            </GSAPReveal>
           </div>
         </section>
 
-        <section className="page-section section-slice section-slice-process" id="process">
+        <section className="page-section section-slice section-slice-process" id="process" data-snap-section>
           <div className="shell">
-            <ScrollReveal>
+            <GSAPReveal>
               <SectionHeading
                 eyebrow="Process"
                 title="Offer ladder: from first visit to fixed workflow"
                 description="Fix the right bottleneck first. Everything else follows."
               />
-            </ScrollReveal>
-            <ScrollReveal stagger>
+            </GSAPReveal>
+            <GSAPReveal stagger>
               <div className="mt-10 grid gap-4 lg:grid-cols-2">
                 {processSteps.map((step, index) => (
-                  <article key={step.title} className="reveal panel">
+                  <article key={step.title} className="panel" data-gsap-reveal>
                     <div className="mb-4 flex items-center gap-3">
                       <span className="step-number">{index + 1}</span>
                       <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
@@ -385,13 +398,13 @@ export default function HomePage() {
                   </article>
                 ))}
               </div>
-            </ScrollReveal>
+            </GSAPReveal>
           </div>
         </section>
 
-        <section className="page-section section-slice section-slice-resource" id="checklist">
+        <section className="page-section section-slice section-slice-resource" id="checklist" data-snap-section>
           <div className="shell">
-            <ScrollReveal>
+            <GSAPReveal>
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                 <div>
                   <SectionHeading
@@ -422,13 +435,13 @@ export default function HomePage() {
                 </div>
                 <LeadCaptureForm />
               </div>
-            </ScrollReveal>
+            </GSAPReveal>
           </div>
         </section>
 
-        <section className="page-section section-slice section-slice-final pt-0">
+        <section className="page-section section-slice section-slice-final pt-0" id="final-cta" data-snap-section>
           <div className="shell">
-            <ScrollReveal>
+            <GSAPReveal>
               <div className="hero-panel">
                 <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
                   <div>
@@ -453,7 +466,7 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-            </ScrollReveal>
+            </GSAPReveal>
           </div>
         </section>
       </main>
