@@ -2,13 +2,13 @@
 @import "tw-animate-css";
 
 :root {
-  --bg: oklch(0.17 0.01 220);
-  --bg-strong: oklch(0.14 0.009 220);
-  --panel: oklch(0.22 0.012 220 / 0.92);
-  --panel-strong: oklch(0.25 0.013 220 / 0.96);
-  --panel-soft: oklch(0.24 0.012 220 / 0.62);
-  --line: oklch(0.44 0.012 220 / 0.24);
-  --line-strong: oklch(0.58 0.014 220 / 0.34);
+  --bg: oklch(0.155 0.009 220);
+  --bg-strong: oklch(0.12 0.008 220);
+  --panel: oklch(0.215 0.011 220 / 0.9);
+  --panel-strong: oklch(0.255 0.013 220 / 0.94);
+  --panel-soft: oklch(0.245 0.012 220 / 0.58);
+  --line: oklch(0.5 0.012 220 / 0.22);
+  --line-strong: oklch(0.66 0.014 220 / 0.32);
   --line-contrast: oklch(0.72 0.02 205 / 0.48);
   --text-main: oklch(0.97 0.006 220);
   --text-muted: oklch(0.9 0.012 220);
@@ -55,7 +55,8 @@ body {
   margin: 0;
   min-height: 100dvh;
   background:
-    radial-gradient(circle at 50% 0%, color-mix(in oklch, var(--accent) 10%, transparent), transparent 38%),
+    linear-gradient(90deg, color-mix(in oklch, var(--accent) 5%, transparent), transparent 24%, transparent 76%, color-mix(in oklch, var(--accent) 4%, transparent)),
+    radial-gradient(ellipse at 50% -10%, color-mix(in oklch, var(--accent) 12%, transparent), transparent 44%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-strong) 100%);
   color: var(--text-muted);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
@@ -101,7 +102,7 @@ img {
 
 @layer components {
   .shell {
-    @apply mx-auto w-full max-w-[1180px] px-5 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-6 lg:px-8;
   }
 
   .page-section {
@@ -219,16 +220,16 @@ img {
   }
 
   .panel {
-    @apply rounded-[28px] border p-6 sm:p-8;
+    @apply rounded-[24px] border p-6 sm:p-8;
     background: linear-gradient(
       180deg,
-      color-mix(in oklch, var(--panel-strong) 92%, transparent) 0%,
-      var(--panel) 100%
+      color-mix(in oklch, var(--panel-strong) 86%, transparent) 0%,
+      color-mix(in oklch, var(--panel) 92%, black 8%) 100%
     );
     border-color: var(--line);
     box-shadow:
-      inset 0 1px 0 color-mix(in oklch, var(--text-main) 6%, transparent),
-      0 22px 60px -42px color-mix(in oklch, black 72%, transparent);
+      inset 0 1px 0 color-mix(in oklch, var(--text-main) 7%, transparent),
+      0 18px 58px -42px color-mix(in oklch, black 78%, transparent);
     transition:
       border-color 300ms var(--ease-out-strong),
       background-color 300ms var(--ease-out-strong),
@@ -240,8 +241,8 @@ img {
     border-color: var(--line-strong);
     transform: translateY(-2px);
     box-shadow:
-      inset 0 1px 0 color-mix(in oklch, var(--text-main) 7%, transparent),
-      0 36px 72px -42px color-mix(in oklch, black 72%, transparent);
+      inset 0 1px 0 color-mix(in oklch, var(--text-main) 8%, transparent),
+      0 26px 68px -44px color-mix(in oklch, black 76%, transparent);
   }
 
   .panel-featured {
@@ -252,16 +253,16 @@ img {
   }
 
   .hero-panel {
-    @apply rounded-[40px] border px-6 py-10 sm:px-8 sm:py-14 lg:px-14 lg:py-20;
+    @apply rounded-[34px] border px-6 py-10 sm:px-8 sm:py-14 lg:px-14 lg:py-20;
     position: relative;
     overflow: hidden;
     background:
-      linear-gradient(180deg, color-mix(in oklch, var(--accent) 8%, transparent), transparent 28%),
-      linear-gradient(180deg, var(--panel-strong), color-mix(in oklch, var(--panel) 92%, black 8%));
+      linear-gradient(135deg, color-mix(in oklch, var(--accent) 9%, transparent), transparent 36%),
+      linear-gradient(180deg, color-mix(in oklch, var(--panel-strong) 88%, transparent), color-mix(in oklch, var(--panel) 90%, black 10%));
     border-color: var(--line-strong);
     box-shadow:
       inset 0 1px 0 color-mix(in oklch, var(--text-main) 6%, transparent),
-      0 30px 80px -52px color-mix(in oklch, black 80%, transparent);
+      0 34px 92px -58px color-mix(in oklch, black 82%, transparent);
   }
 
   .hero-panel::before {
@@ -271,13 +272,27 @@ img {
     right: -20%;
     width: 60%;
     height: 100%;
-    background: radial-gradient(
-      ellipse at center,
-      color-mix(in oklch, var(--accent) 8%, transparent),
-      transparent 70%
-    );
+    background:
+      linear-gradient(135deg, transparent, color-mix(in oklch, var(--accent) 8%, transparent), transparent 68%);
     pointer-events: none;
     animation: hero-glow-drift 12s var(--ease-emphasized) infinite alternate;
+  }
+
+  .hero-panel::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    pointer-events: none;
+    border-radius: inherit;
+    background:
+      linear-gradient(180deg, color-mix(in oklch, white 5%, transparent), transparent 22%),
+      linear-gradient(90deg, color-mix(in oklch, var(--accent) 9%, transparent), transparent 26%, transparent 74%, color-mix(in oklch, white 4%, transparent));
+    opacity: 0.72;
+  }
+
+  .hero-panel > * {
+    position: relative;
+    z-index: 1;
   }
 
   .hero-visual {
@@ -422,7 +437,7 @@ img {
     background: color-mix(in oklch, var(--panel) 82%, var(--accent) 6%);
   }
 
-.button-link {
+  .button-link {
     @apply inline-flex min-h-[3.25rem] items-center justify-center rounded-full border px-6 py-3.5 text-center text-[0.94rem] font-semibold leading-5 tracking-[-0.01em] transition duration-300;
     background: var(--button-bg, transparent) !important;
     border-color: var(--button-border, transparent) !important;
@@ -447,7 +462,7 @@ img {
   .button-link-primary:hover {
     background: var(--accent-strong);
     border-color: var(--accent-strong);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow:
       0 22px 38px -26px color-mix(in oklch, var(--accent) 74%, transparent),
       0 1px 0 color-mix(in oklch, white 26%, transparent) inset;
@@ -970,17 +985,81 @@ img {
   }
 
   [data-horizontal-section="services"] {
+    overflow: clip;
+  }
+
+  .horizontal-services-section {
+    min-height: 100dvh;
+    padding-block: clamp(4.75rem, 7vw, 7rem);
+  }
+
+  .horizontal-services-section h2 {
+    max-width: 16ch;
+    font-size: clamp(2.15rem, 3.7vw, 4rem);
+    letter-spacing: -0.045em;
+  }
+
+  .horizontal-services-section .section-eyebrow {
+    margin-bottom: 0.9rem;
+  }
+
+  .horizontal-services-section .section-eyebrow + h2 + p {
+    margin-top: 1.2rem;
+    max-width: 58ch;
+  }
+
+  .services-heading-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .horizontal-scroll-cue {
+    display: none;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: color-mix(in oklch, var(--panel-soft) 72%, transparent);
+    box-shadow: inset 0 1px 0 color-mix(in oklch, white 5%, transparent);
+  }
+
+  .horizontal-scroll-cue span {
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 999px;
+    background: color-mix(in oklch, var(--accent) 72%, transparent);
+    opacity: 0.48;
+  }
+
+  .horizontal-scroll-cue span:nth-child(2) {
+    opacity: 0.78;
+  }
+
+  .horizontal-scroll-cue span:nth-child(3) {
+    opacity: 1;
+  }
+
+  .horizontal-viewport {
+    margin-top: clamp(2rem, 3.6vw, 3.25rem);
     overflow: visible;
   }
 
   .horizontal-track {
     align-items: stretch;
+    display: flex;
+    gap: clamp(1rem, 2vw, 1.35rem);
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     scrollbar-width: thin;
     scrollbar-color: color-mix(in oklch, var(--accent) 60%, transparent) transparent;
     will-change: transform;
+    width: max-content;
+    max-width: 100%;
+    padding: 0.45rem 0 1.1rem;
   }
 
   .horizontal-track > * {
@@ -1007,7 +1086,7 @@ img {
   }
 
   [data-horizontal-track][data-horizontal-mode="forced"] {
-    overflow-x: clip;
+    overflow-x: visible;
     scroll-snap-type: none;
     touch-action: pan-y;
   }
@@ -1021,6 +1100,14 @@ img {
   .service-panel {
     position: relative;
     overflow: clip;
+    display: flex;
+    min-height: 23rem;
+    width: min(78vw, 26.5rem);
+    scroll-snap-align: start;
+    flex-direction: column;
+    justify-content: space-between;
+    isolation: isolate;
+    padding: clamp(1.35rem, 2vw, 1.65rem) !important;
   }
 
   .service-panel::before {
@@ -1028,10 +1115,81 @@ img {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background:
-      radial-gradient(circle at 20% 10%, color-mix(in oklch, var(--accent) 10%, transparent), transparent 34%),
-      linear-gradient(100deg, transparent 0%, color-mix(in oklch, var(--panel-soft) 34%, transparent) 52%, transparent 100%);
-    opacity: 0.85;
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--accent) 12%, transparent),
+      transparent 32%,
+      color-mix(in oklch, var(--panel-soft) 22%, transparent)
+    );
+    opacity: 0.74;
+    z-index: -1;
+  }
+
+  .service-panel::after {
+    content: "";
+    position: absolute;
+    inset: auto 1.2rem 1.2rem 1.2rem;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, color-mix(in oklch, var(--accent) 34%, transparent), transparent);
+    opacity: 0.72;
+    z-index: -1;
+  }
+
+  .service-card-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-subtle);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .service-card-topline span:first-child {
+    display: inline-flex;
+    width: 2.1rem;
+    height: 2.1rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid color-mix(in oklch, var(--accent) 36%, transparent);
+    border-radius: 999px;
+    color: var(--accent);
+    background: color-mix(in oklch, var(--accent) 7%, transparent);
+  }
+
+  .service-card-topline span:last-child {
+    max-width: 17ch;
+    text-align: right;
+  }
+
+  .service-card-title {
+    color: var(--text-main);
+    font-size: clamp(1.42rem, 1.75vw, 1.88rem);
+    font-weight: 640;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  .service-card-list {
+    margin-top: auto;
+    padding-top: 1.15rem;
+    display: grid;
+    gap: 0.58rem;
+  }
+
+  .service-panel > p {
+    font-size: 0.95rem;
+    line-height: 1.62;
+  }
+
+  .service-card-list span {
+    font-size: 0.86rem;
+    line-height: 1.58;
   }
 
   .service-copy-col {
@@ -1117,6 +1275,21 @@ img {
 }
 
 @media (min-width: 1024px) {
+  .horizontal-scroll-cue {
+    display: inline-flex;
+  }
+
+  .horizontal-services-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .horizontal-track {
+    overflow-x: visible;
+    padding-bottom: 1.35rem;
+  }
+
   .service-insight-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.15rem;
@@ -1135,8 +1308,12 @@ img {
   }
 
   [data-horizontal-track][data-horizontal-mode="forced"] {
-    overflow-x: clip;
+    overflow-x: visible;
     scroll-snap-type: none;
+  }
+
+  .horizontal-service-card {
+    width: clamp(22rem, 29vw, 25.25rem);
   }
 }
 

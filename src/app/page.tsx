@@ -7,7 +7,6 @@ import { GSAPReveal } from "@/components/site/gsap-reveal";
 import { HeroAnimation, HeroTitle } from "@/components/site/hero-animation";
 import { LeadCaptureForm } from "@/components/site/lead-capture-form";
 import { SectionHeading } from "@/components/site/section-heading";
-import { SectionSnap } from "@/components/site/section-snap";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import {
@@ -35,7 +34,6 @@ export default function HomePage() {
   return (
     <div className="min-h-[100dvh]">
       <SiteHeader />
-      <SectionSnap />
       <main>
         <section className="page-section section-slice section-slice-hero pt-16 sm:pt-20" id="hero" data-snap-section>
           <div className="shell">
@@ -121,26 +119,39 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section section-slice section-slice-services" id="services" data-snap-section>
+        <section
+          className="page-section section-slice section-slice-services horizontal-services-section"
+          id="services"
+          data-horizontal-section="services"
+        >
           <div className="shell">
             <GSAPReveal>
-              <SectionHeading
-                eyebrow="Services"
-                title="What the 21-Day Agency Automation Sprint can target"
-                description="Instead of vague automation services, the work is delivered through focused sprints that target one painful workflow at a time."
-              />
+              <div className="services-heading-row">
+                <SectionHeading
+                  eyebrow="Services"
+                  title="What the 21-Day Agency Automation Sprint can target"
+                  description="Instead of vague automation services, the work is delivered through focused sprints that target one painful workflow at a time."
+                />
+                <div className="horizontal-scroll-cue" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+              </div>
             </GSAPReveal>
-            <GSAPReveal stagger>
-              <div className="mt-10 grid gap-5 md:grid-cols-2">
-                {services.map((service) => (
-                  <article key={service.title} className="panel" data-gsap-reveal>
-                    <h3 className="text-[1.55rem] font-semibold tracking-[-0.04em] text-[color:var(--text-main)]">
-                      {service.title}
-                    </h3>
+            <GSAPReveal stagger className="horizontal-viewport">
+              <div className="horizontal-track services-horizontal-track" data-horizontal-track="services">
+                {services.map((service, index) => (
+                  <article key={service.title} className="panel service-panel horizontal-service-card" data-gsap-reveal>
+                    <div className="service-card-topline">
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <span>{service.callout}</span>
+                    </div>
+                    <h3 className="service-card-title">{service.title}</h3>
                     <p className="mt-4 text-[1rem] leading-7 text-[color:var(--text-muted)]">
                       {service.description}
                     </p>
-                    <ul className="mt-6 space-y-3">
+                    <ul className="service-card-list">
                       {service.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-3">
                           <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[color:var(--accent)]" aria-hidden="true" />
@@ -148,9 +159,6 @@ export default function HomePage() {
                         </li>
                       ))}
                     </ul>
-                    <p className="mt-5 text-xs uppercase tracking-[0.12em] text-[color:var(--accent)]">
-                      {service.callout}
-                    </p>
                   </article>
                 ))}
               </div>

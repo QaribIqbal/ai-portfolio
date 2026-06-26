@@ -29,7 +29,12 @@ export function SectionSnap() {
 
       const snapTrigger = ScrollTrigger.create({
         snap: {
-          snapTo: (progress) => gsap.utils.snap(getSnapPoints(), progress),
+          snapTo: (progress) => {
+            const horizontalTrigger = ScrollTrigger.getById("services-horizontal-scroll");
+            if (horizontalTrigger?.isActive) return progress;
+
+            return gsap.utils.snap(getSnapPoints(), progress);
+          },
           duration: { min: 0.3, max: 0.6 },
           delay: 0.05,
           ease: "power2.inOut",
