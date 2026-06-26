@@ -1,11 +1,11 @@
 # Graph Report - /Users/qaribiqbal/Developement/Projects/ai-portfolio  (2026-06-26)
 
 ## Corpus Check
-- 65 files · ~469,288 words
+- 65 files · ~469,495 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 174 nodes · 152 edges · 61 communities detected
+- 173 nodes · 151 edges · 62 communities detected
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -71,6 +71,7 @@
 - [[_COMMUNITY_Community 58|Community 58]]
 - [[_COMMUNITY_Community 59|Community 59]]
 - [[_COMMUNITY_Community 60|Community 60]]
+- [[_COMMUNITY_Community 61|Community 61]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `handleSubmit()` - 7 edges
@@ -89,18 +90,18 @@
   /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/lead-capture-form.tsx → /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/form-validation.ts
 - `handleSubmit()` --calls--> `sanitizeChecklistForm()`  [INFERRED]
   /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/lead-capture-form.tsx → /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/form-validation.ts
+- `handleSubmit()` --calls--> `getStoredUtmParams()`  [INFERRED]
+  /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/lead-capture-form.tsx → /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/utm.ts
+- `handleSubmit()` --calls--> `readTrackingParams()`  [INFERRED]
+  /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/lead-capture-form.tsx → /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/utm.ts
 - `round()` --calls--> `getHorizontalTravel()`  [INFERRED]
   /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/ProfileCard.tsx → /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/horizontal-scroll.ts
-- `markStart()` --calls--> `trackEvent()`  [INFERRED]
-  /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/lead-capture-form.tsx → /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/analytics.ts
-- `handleSubmit()` --calls--> `trackEvent()`  [INFERRED]
-  /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/lead-capture-form.tsx → /Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/analytics.ts
 
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.18
-Nodes (12): trackEvent(), validateChecklistForm(), focusFirstInvalidField(), handleBlur(), handleSubmit(), markStart(), setFieldTouched(), captureCurrentUtmParams() (+4 more)
+Cohesion: 0.24
+Nodes (7): trackEvent(), validateChecklistForm(), focusFirstInvalidField(), handleBlur(), handleSubmit(), markStart(), setFieldTouched()
 
 ### Community 1 - "Community 1"
 Cohesion: 0.42
@@ -131,8 +132,8 @@ Cohesion: 0.33
 Nodes (0): 
 
 ### Community 8 - "Community 8"
-Cohesion: 0.5
-Nodes (0): 
+Cohesion: 0.67
+Nodes (5): captureCurrentUtmParams(), getStoredUtmParams(), isSupportedStorage(), persistUtmParams(), readTrackingParams()
 
 ### Community 9 - "Community 9"
 Cohesion: 0.5
@@ -143,12 +144,12 @@ Cohesion: 0.5
 Nodes (0): 
 
 ### Community 11 - "Community 11"
-Cohesion: 1.0
-Nodes (2): POST(), toFormBody()
+Cohesion: 0.5
+Nodes (0): 
 
 ### Community 12 - "Community 12"
-Cohesion: 0.67
-Nodes (0): 
+Cohesion: 1.0
+Nodes (2): POST(), toFormBody()
 
 ### Community 13 - "Community 13"
 Cohesion: 0.67
@@ -163,7 +164,7 @@ Cohesion: 0.67
 Nodes (0): 
 
 ### Community 16 - "Community 16"
-Cohesion: 1.0
+Cohesion: 0.67
 Nodes (0): 
 
 ### Community 17 - "Community 17"
@@ -342,46 +343,48 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
+### Community 61 - "Community 61"
+Cohesion: 1.0
+Nodes (0): 
+
 ## Knowledge Gaps
-- **Thin community `Community 16`** (2 nodes): `RootLayout()`, `layout.tsx`
+- **Thin community `Community 17`** (2 nodes): `RootLayout()`, `layout.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 17`** (2 nodes): `ContactPage()`, `page.tsx`
+- **Thin community `Community 18`** (2 nodes): `ContactPage()`, `page.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 18`** (2 nodes): `AboutPage()`, `page.tsx`
+- **Thin community `Community 19`** (2 nodes): `AboutPage()`, `page.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 19`** (2 nodes): `ServicesPage()`, `page.tsx`
+- **Thin community `Community 20`** (2 nodes): `ServicesPage()`, `page.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 20`** (2 nodes): `ChecklistPage()`, `page.tsx`
+- **Thin community `Community 21`** (2 nodes): `ChecklistPage()`, `page.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 21`** (2 nodes): `AboutMe()`, `aboutme.tsx`
+- **Thin community `Community 22`** (2 nodes): `AboutMe()`, `aboutme.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 22`** (2 nodes): `socials()`, `socials.tsx`
+- **Thin community `Community 23`** (2 nodes): `socials()`, `socials.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 23`** (2 nodes): `tools()`, `tools.tsx`
+- **Thin community `Community 24`** (2 nodes): `tools()`, `tools.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 24`** (2 nodes): `services()`, `services.tsx`
+- **Thin community `Community 25`** (2 nodes): `services()`, `services.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 25`** (2 nodes): `Cta()`, `Cta.tsx`
+- **Thin community `Community 26`** (2 nodes): `Cta()`, `Cta.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 26`** (2 nodes): `SplitText()`, `SplitText.tsx`
+- **Thin community `Community 27`** (2 nodes): `SplitText()`, `SplitText.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 27`** (2 nodes): `DecryptedText()`, `DecryptedText.tsx`
+- **Thin community `Community 28`** (2 nodes): `DecryptedText()`, `DecryptedText.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 28`** (2 nodes): `ScrollStackItem()`, `ScrollStack.tsx`
+- **Thin community `Community 29`** (2 nodes): `ScrollStackItem()`, `ScrollStack.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 29`** (2 nodes): `LenisProvider()`, `lenisProvider.tsx`
+- **Thin community `Community 30`** (2 nodes): `LenisProvider()`, `lenisProvider.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 30`** (2 nodes): `buildKeyframes()`, `BlurText.tsx`
+- **Thin community `Community 31`** (2 nodes): `buildKeyframes()`, `BlurText.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 31`** (2 nodes): `TextType()`, `TextType.tsx`
+- **Thin community `Community 32`** (2 nodes): `TextType()`, `TextType.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 32`** (2 nodes): `FaqList()`, `faq-list.tsx`
+- **Thin community `Community 33`** (2 nodes): `FaqList()`, `faq-list.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 33`** (2 nodes): `PageInProgressBanner()`, `page-in-progress-banner.tsx`
+- **Thin community `Community 34`** (2 nodes): `PageInProgressBanner()`, `page-in-progress-banner.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 34`** (2 nodes): `utm-capture.tsx`, `UtmCapture()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 35`** (2 nodes): `SiteHeader()`, `site-header.tsx`
+- **Thin community `Community 35`** (2 nodes): `utm-capture.tsx`, `UtmCapture()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 36`** (2 nodes): `SiteFooter()`, `site-footer.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -427,19 +430,23 @@ Nodes (0):
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 57`** (1 nodes): `ShinyText.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 58`** (1 nodes): `page-hero.tsx`
+- **Thin community `Community 58`** (1 nodes): `site-header.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 59`** (1 nodes): `section-heading.tsx`
+- **Thin community `Community 59`** (1 nodes): `page-hero.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 60`** (1 nodes): `site-content.ts`
+- **Thin community `Community 60`** (1 nodes): `section-heading.tsx`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 61`** (1 nodes): `site-content.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `handleSubmit()` connect `Community 0` to `Community 3`?**
+- **Why does `handleSubmit()` connect `Community 0` to `Community 8`, `Community 3`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Why does `sanitizeChecklistForm()` connect `Community 3` to `Community 0`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
+- **Why does `getStoredUtmParams()` connect `Community 8` to `Community 0`?**
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Are the 5 inferred relationships involving `handleSubmit()` (e.g. with `validateChecklistForm()` and `trackEvent()`) actually correct?**
   _`handleSubmit()` has 5 INFERRED edges - model-reasoned connections that need verification._

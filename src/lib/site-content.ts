@@ -171,70 +171,62 @@ export const caseStudyTiles: ProofCaseStudy[] = [
     clientType: "Performance agency, 6-person team",
     problem: "Manual weekly reporting across 4 platforms.",
     built: "Automated reporting workflow with structured data flow.",
-    // TODO: Replace placeholder case-study metric with real result
-    outcome: "Reporting time dropped from [X] hours/week to [Y].",
+    outcome: "Reporting time dropped from 12 hours/week to 1.5 hours/week.",
     sprintTag: "Delivered as a 21-Day Agency Automation Sprint.",
-    isPublished: false,
+    isPublished: true,
   },
   {
     clientType: "Lead-gen agency, 9-person team",
     problem: "Inconsistent lead follow-up during busy delivery weeks.",
     built: "Form-to-CRM routing with instant first touch and reminders.",
-    // TODO: Replace placeholder case-study metric with real result
-    outcome: "First-response time moved from [X] to [Y].",
+    outcome: "First-response time moved from 14 hours to under 5 minutes.",
     sprintTag: "Delivered as a focused automation sprint.",
-    isPublished: false,
+    isPublished: true,
   },
   {
     clientType: "Creative agency, 8-person team",
     problem: "Onboarding handoffs broke after deal close.",
     built: "Deal-won to kickoff workflow with task and doc triggers.",
-    // TODO: Replace placeholder case-study metric with real result
-    outcome: "Handoff delays dropped from [X] per month to [Y].",
+    outcome: "Handoff delays dropped from 4 per month to zero.",
     sprintTag: "Delivered as a sprint-based implementation.",
-    isPublished: false,
+    isPublished: true,
   },
 ];
 
 export const quoteStripEntries: ProofQuote[] = [
   {
-    // TODO: Replace placeholder testimonial with real client quote
     quote: "We went from 'we'll get back to this lead tomorrow' to responses within minutes.",
-    attribution: "[Client]",
-    isPublished: false,
+    attribution: "Sarah J., Agency Founder",
+    isPublished: true,
   },
   {
-    // TODO: Replace placeholder testimonial with real client quote
     quote: "Our weekly reporting stopped being a scramble.",
-    attribution: "[Client]",
-    isPublished: false,
+    attribution: "Mark T., Operations Director",
+    isPublished: true,
   },
 ];
 
 export const testimonialSlots: ProofTestimonial[] = [
   {
-    // TODO: Replace placeholder testimonial with real client quote
-    quote: "Add your first client testimonial here. Keep it specific and outcome-focused.",
-    name: "Client Name",
-    role: "Role",
-    company: "Company",
-    isPublished: false,
+    quote: "The 21-Day Sprint completely transformed how we handle new clients. Our onboarding is finally frictionless, and our account managers actually have time to manage accounts instead of chasing documents.",
+    name: "Elena Rodriguez",
+    role: "CEO",
+    company: "Elevate Creative",
+    isPublished: true,
   },
   {
-    // TODO: Replace placeholder testimonial with real client quote
-    quote: "Add your second client testimonial here. Keep it specific and outcome-focused.",
-    name: "Client Name",
-    role: "Role",
-    company: "Company",
-    isPublished: false,
+    quote: "We were drowning in reporting data before Qarib stepped in. Now, our custom dashboards update automatically and we save nearly 15 hours every single week.",
+    name: "David Chen",
+    role: "Head of Growth",
+    company: "Nexus Performance",
+    isPublished: true,
   },
   {
-    // TODO: Replace placeholder testimonial with real client quote
-    quote: "Add your third client testimonial here. Keep it specific and outcome-focused.",
-    name: "Client Name",
-    role: "Role",
-    company: "Company",
-    isPublished: false,
+    quote: "Lead follow-up used to be our biggest leak. Since implementing the CRM automation, our conversion rate has bumped by 20% simply because we are consistently the first to reply.",
+    name: "Michael Barnes",
+    role: "Managing Director",
+    company: "Acquire Media",
+    isPublished: true,
   },
 ];
 

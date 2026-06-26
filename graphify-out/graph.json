@@ -99,16 +99,16 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/layout.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_app_layout_tsx",
-      "community": 16,
+      "community": 17,
       "norm_label": "layout.tsx"
     },
     {
       "label": "RootLayout()",
       "file_type": "code",
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/layout.tsx",
-      "source_location": "L16",
+      "source_location": "L22",
       "id": "layout_rootlayout",
-      "community": 16,
+      "community": 17,
       "norm_label": "rootlayout()"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/contact/page.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_app_contact_page_tsx",
-      "community": 17,
+      "community": 18,
       "norm_label": "page.tsx"
     },
     {
@@ -135,7 +135,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/contact/page.tsx",
       "source_location": "L17",
       "id": "page_contactpage",
-      "community": 17,
+      "community": 18,
       "norm_label": "contactpage()"
     },
     {
@@ -144,7 +144,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/about/page.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_app_about_page_tsx",
-      "community": 18,
+      "community": 19,
       "norm_label": "page.tsx"
     },
     {
@@ -153,7 +153,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/about/page.tsx",
       "source_location": "L16",
       "id": "page_aboutpage",
-      "community": 18,
+      "community": 19,
       "norm_label": "aboutpage()"
     },
     {
@@ -171,7 +171,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/api/forms/[formType]/route.ts",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_app_api_forms_formtype_route_ts",
-      "community": 11,
+      "community": 12,
       "norm_label": "route.ts"
     },
     {
@@ -180,7 +180,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/api/forms/[formType]/route.ts",
       "source_location": "L25",
       "id": "route_toformbody",
-      "community": 11,
+      "community": 12,
       "norm_label": "toformbody()"
     },
     {
@@ -189,7 +189,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/api/forms/[formType]/route.ts",
       "source_location": "L47",
       "id": "route_post",
-      "community": 11,
+      "community": 12,
       "norm_label": "post()"
     },
     {
@@ -198,7 +198,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/services/page.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_app_services_page_tsx",
-      "community": 19,
+      "community": 20,
       "norm_label": "page.tsx"
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/services/page.tsx",
       "source_location": "L16",
       "id": "page_servicespage",
-      "community": 19,
+      "community": 20,
       "norm_label": "servicespage()"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/checklist/page.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_app_checklist_page_tsx",
-      "community": 20,
+      "community": 21,
       "norm_label": "page.tsx"
     },
     {
@@ -225,7 +225,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/checklist/page.tsx",
       "source_location": "L17",
       "id": "page_checklistpage",
-      "community": 20,
+      "community": 21,
       "norm_label": "checklistpage()"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/aboutme.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_screens_aboutme_tsx",
-      "community": 21,
+      "community": 22,
       "norm_label": "aboutme.tsx"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/aboutme.tsx",
       "source_location": "L11",
       "id": "aboutme_aboutme",
-      "community": 21,
+      "community": 22,
       "norm_label": "aboutme()"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/socials.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_screens_socials_tsx",
-      "community": 22,
+      "community": 23,
       "norm_label": "socials.tsx"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/socials.tsx",
       "source_location": "L25",
       "id": "socials_socials",
-      "community": 22,
+      "community": 23,
       "norm_label": "socials()"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/tools.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_screens_tools_tsx",
-      "community": 23,
+      "community": 24,
       "norm_label": "tools.tsx"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/tools.tsx",
       "source_location": "L22",
       "id": "tools_tools",
-      "community": 23,
+      "community": 24,
       "norm_label": "tools()"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/services.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_screens_services_tsx",
-      "community": 24,
+      "community": 25,
       "norm_label": "services.tsx"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/services.tsx",
       "source_location": "L10",
       "id": "services_services",
-      "community": 24,
+      "community": 25,
       "norm_label": "services()"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/Cta.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_screens_cta_tsx",
-      "community": 25,
+      "community": 26,
       "norm_label": "cta.tsx"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/Cta.tsx",
       "source_location": "L4",
       "id": "cta_cta",
-      "community": 25,
+      "community": 26,
       "norm_label": "cta()"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/SplitText.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_splittext_tsx",
-      "community": 26,
+      "community": 27,
       "norm_label": "splittext.tsx"
     },
     {
@@ -369,7 +369,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/SplitText.tsx",
       "source_location": "L25",
       "id": "splittext_splittext",
-      "community": 26,
+      "community": 27,
       "norm_label": "splittext()"
     },
     {
@@ -378,7 +378,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/DecryptedText.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_decryptedtext_tsx",
-      "community": 27,
+      "community": 28,
       "norm_label": "decryptedtext.tsx"
     },
     {
@@ -387,7 +387,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/DecryptedText.tsx",
       "source_location": "L36",
       "id": "decryptedtext_decryptedtext",
-      "community": 27,
+      "community": 28,
       "norm_label": "decryptedtext()"
     },
     {
@@ -396,7 +396,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/LightRays.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_lightrays_tsx",
-      "community": 8,
+      "community": 9,
       "norm_label": "lightrays.tsx"
     },
     {
@@ -405,7 +405,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/LightRays.tsx",
       "source_location": "L33",
       "id": "lightrays_hextorgb",
-      "community": 8,
+      "community": 9,
       "norm_label": "hextorgb()"
     },
     {
@@ -414,7 +414,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/LightRays.tsx",
       "source_location": "L38",
       "id": "lightrays_getanchoranddir",
-      "community": 8,
+      "community": 9,
       "norm_label": "getanchoranddir()"
     },
     {
@@ -423,7 +423,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/LightRays.tsx",
       "source_location": "L64",
       "id": "lightrays_lightrays",
-      "community": 8,
+      "community": 9,
       "norm_label": "lightrays()"
     },
     {
@@ -486,7 +486,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/ScrollStack.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_scrollstack_tsx",
-      "community": 28,
+      "community": 29,
       "norm_label": "scrollstack.tsx"
     },
     {
@@ -495,7 +495,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/ScrollStack.tsx",
       "source_location": "L9",
       "id": "scrollstack_scrollstackitem",
-      "community": 28,
+      "community": 29,
       "norm_label": "scrollstackitem()"
     },
     {
@@ -594,7 +594,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/ScrollVelocity.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_scrollvelocity_tsx",
-      "community": 12,
+      "community": 13,
       "norm_label": "scrollvelocity.tsx"
     },
     {
@@ -603,7 +603,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/ScrollVelocity.tsx",
       "source_location": "L48",
       "id": "scrollvelocity_useelementwidth",
-      "community": 12,
+      "community": 13,
       "norm_label": "useelementwidth()"
     },
     {
@@ -612,7 +612,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/ScrollVelocity.tsx",
       "source_location": "L65",
       "id": "scrollvelocity_scrollvelocity",
-      "community": 12,
+      "community": 13,
       "norm_label": "scrollvelocity()"
     },
     {
@@ -621,7 +621,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/lenisProvider.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_lenisprovider_tsx",
-      "community": 29,
+      "community": 30,
       "norm_label": "lenisprovider.tsx"
     },
     {
@@ -630,7 +630,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/lenisProvider.tsx",
       "source_location": "L6",
       "id": "lenisprovider_lenisprovider",
-      "community": 29,
+      "community": 30,
       "norm_label": "lenisprovider()"
     },
     {
@@ -639,7 +639,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/BlurText.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_blurtext_tsx",
-      "community": 30,
+      "community": 31,
       "norm_label": "blurtext.tsx"
     },
     {
@@ -648,7 +648,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/BlurText.tsx",
       "source_location": "L20",
       "id": "blurtext_buildkeyframes",
-      "community": 30,
+      "community": 31,
       "norm_label": "buildkeyframes()"
     },
     {
@@ -765,7 +765,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/GlassIcons.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_glassicons_tsx",
-      "community": 13,
+      "community": 14,
       "norm_label": "glassicons.tsx"
     },
     {
@@ -774,7 +774,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/GlassIcons.tsx",
       "source_location": "L100",
       "id": "glassicons_getbackgroundstyle",
-      "community": 13,
+      "community": 14,
       "norm_label": "getbackgroundstyle()"
     },
     {
@@ -783,7 +783,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/GlassIcons.tsx",
       "source_location": "L107",
       "id": "glassicons_rendercontent",
-      "community": 13,
+      "community": 14,
       "norm_label": "rendercontent()"
     },
     {
@@ -801,7 +801,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/TextType.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_texttype_tsx",
-      "community": 31,
+      "community": 32,
       "norm_label": "texttype.tsx"
     },
     {
@@ -810,7 +810,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/TextType.tsx",
       "source_location": "L27",
       "id": "texttype_texttype",
-      "community": 31,
+      "community": 32,
       "norm_label": "texttype()"
     },
     {
@@ -873,7 +873,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/hero-animation.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_hero_animation_tsx",
-      "community": 14,
+      "community": 15,
       "norm_label": "hero-animation.tsx"
     },
     {
@@ -882,7 +882,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/hero-animation.tsx",
       "source_location": "L17",
       "id": "hero_animation_heroanimation",
-      "community": 14,
+      "community": 15,
       "norm_label": "heroanimation()"
     },
     {
@@ -891,7 +891,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/hero-animation.tsx",
       "source_location": "L55",
       "id": "hero_animation_herotitle",
-      "community": 14,
+      "community": 15,
       "norm_label": "herotitle()"
     },
     {
@@ -900,7 +900,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/faq-list.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_faq_list_tsx",
-      "community": 32,
+      "community": 33,
       "norm_label": "faq-list.tsx"
     },
     {
@@ -909,7 +909,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/faq-list.tsx",
       "source_location": "L8",
       "id": "faq_list_faqlist",
-      "community": 32,
+      "community": 33,
       "norm_label": "faqlist()"
     },
     {
@@ -918,7 +918,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/page-in-progress-banner.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_page_in_progress_banner_tsx",
-      "community": 33,
+      "community": 34,
       "norm_label": "page-in-progress-banner.tsx"
     },
     {
@@ -927,7 +927,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/page-in-progress-banner.tsx",
       "source_location": "L3",
       "id": "page_in_progress_banner_pageinprogressbanner",
-      "community": 33,
+      "community": 34,
       "norm_label": "pageinprogressbanner()"
     },
     {
@@ -936,7 +936,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/utm-capture.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_utm_capture_tsx",
-      "community": 34,
+      "community": 35,
       "norm_label": "utm-capture.tsx"
     },
     {
@@ -945,7 +945,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/utm-capture.tsx",
       "source_location": "L7",
       "id": "utm_capture_utmcapture",
-      "community": 34,
+      "community": 35,
       "norm_label": "utmcapture()"
     },
     {
@@ -954,17 +954,8 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/site-header.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_site_header_tsx",
-      "community": 35,
+      "community": 58,
       "norm_label": "site-header.tsx"
-    },
-    {
-      "label": "SiteHeader()",
-      "file_type": "code",
-      "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/site-header.tsx",
-      "source_location": "L8",
-      "id": "site_header_siteheader",
-      "community": 35,
-      "norm_label": "siteheader()"
     },
     {
       "label": "site-footer.tsx",
@@ -1116,7 +1107,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/audit-form.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_audit_form_tsx",
-      "community": 9,
+      "community": 10,
       "norm_label": "audit-form.tsx"
     },
     {
@@ -1125,7 +1116,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/audit-form.tsx",
       "source_location": "L40",
       "id": "audit_form_auditform",
-      "community": 9,
+      "community": 10,
       "norm_label": "auditform()"
     },
     {
@@ -1134,7 +1125,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/audit-form.tsx",
       "source_location": "L232",
       "id": "audit_form_boolean",
-      "community": 9,
+      "community": 10,
       "norm_label": "boolean()"
     },
     {
@@ -1143,7 +1134,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/audit-form.tsx",
       "source_location": "L310",
       "id": "audit_form_primaryserviceserror",
-      "community": 9,
+      "community": 10,
       "norm_label": "primaryserviceserror()"
     },
     {
@@ -1152,7 +1143,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/smooth-scroll-provider.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_smooth_scroll_provider_tsx",
-      "community": 15,
+      "community": 16,
       "norm_label": "smooth-scroll-provider.tsx"
     },
     {
@@ -1161,7 +1152,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/smooth-scroll-provider.tsx",
       "source_location": "L14",
       "id": "smooth_scroll_provider_usesmoothscroll",
-      "community": 15,
+      "community": 16,
       "norm_label": "usesmoothscroll()"
     },
     {
@@ -1170,7 +1161,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/smooth-scroll-provider.tsx",
       "source_location": "L22",
       "id": "smooth_scroll_provider_smoothscrollprovider",
-      "community": 15,
+      "community": 16,
       "norm_label": "smoothscrollprovider()"
     },
     {
@@ -1179,7 +1170,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/page-hero.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_page_hero_tsx",
-      "community": 58,
+      "community": 59,
       "norm_label": "page-hero.tsx"
     },
     {
@@ -1206,7 +1197,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/section-heading.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_section_heading_tsx",
-      "community": 59,
+      "community": 60,
       "norm_label": "section-heading.tsx"
     },
     {
@@ -1233,7 +1224,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/experience-shell.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_experience_shell_tsx",
-      "community": 10,
+      "community": 11,
       "norm_label": "experience-shell.tsx"
     },
     {
@@ -1242,7 +1233,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/experience-shell.tsx",
       "source_location": "L15",
       "id": "experience_shell_getsystemtheme",
-      "community": 10,
+      "community": 11,
       "norm_label": "getsystemtheme()"
     },
     {
@@ -1251,7 +1242,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/experience-shell.tsx",
       "source_location": "L83",
       "id": "experience_shell_onlenisscroll",
-      "community": 10,
+      "community": 11,
       "norm_label": "onlenisscroll()"
     },
     {
@@ -1260,7 +1251,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/experience-shell.tsx",
       "source_location": "L84",
       "id": "experience_shell_lenisraf",
-      "community": 10,
+      "community": 11,
       "norm_label": "lenisraf()"
     },
     {
@@ -1458,7 +1449,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/utm.ts",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_lib_utm_ts",
-      "community": 0,
+      "community": 8,
       "norm_label": "utm.ts"
     },
     {
@@ -1467,7 +1458,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/utm.ts",
       "source_location": "L20",
       "id": "utm_issupportedstorage",
-      "community": 0,
+      "community": 8,
       "norm_label": "issupportedstorage()"
     },
     {
@@ -1476,7 +1467,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/utm.ts",
       "source_location": "L24",
       "id": "utm_readtrackingparams",
-      "community": 0,
+      "community": 8,
       "norm_label": "readtrackingparams()"
     },
     {
@@ -1485,7 +1476,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/utm.ts",
       "source_location": "L37",
       "id": "utm_persistutmparams",
-      "community": 0,
+      "community": 8,
       "norm_label": "persistutmparams()"
     },
     {
@@ -1494,7 +1485,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/utm.ts",
       "source_location": "L52",
       "id": "utm_getstoredutmparams",
-      "community": 0,
+      "community": 8,
       "norm_label": "getstoredutmparams()"
     },
     {
@@ -1503,7 +1494,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/utm.ts",
       "source_location": "L70",
       "id": "utm_capturecurrentutmparams",
-      "community": 0,
+      "community": 8,
       "norm_label": "capturecurrentutmparams()"
     },
     {
@@ -1512,7 +1503,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/site-content.ts",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_lib_site_content_ts",
-      "community": 60,
+      "community": 61,
       "norm_label": "site-content.ts"
     },
     {
@@ -1659,7 +1650,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/layout.tsx",
-      "source_location": "L16",
+      "source_location": "L22",
       "weight": 1.0,
       "_src": "users_qaribiqbal_developement_projects_ai_portfolio_src_app_layout_tsx",
       "_tgt": "layout_rootlayout",
@@ -2541,18 +2532,6 @@
       "_tgt": "utm_capture_utmcapture",
       "source": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_utm_capture_tsx",
       "target": "utm_capture_utmcapture",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/site-header.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_src": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_site_header_tsx",
-      "_tgt": "site_header_siteheader",
-      "source": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_site_header_tsx",
-      "target": "site_header_siteheader",
       "confidence_score": 1.0
     },
     {
