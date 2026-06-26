@@ -27,7 +27,7 @@ export function MobileNav() {
       </button>
 
       {open ? (
-        <div className="absolute inset-x-5 top-[calc(100%+0.85rem)] rounded-[24px] border border-[color:var(--line-strong)] bg-[color:var(--panel-strong)] p-5 shadow-[0_24px_80px_-32px_rgba(0,0,0,0.75)]">
+        <div className="absolute inset-x-5 top-[calc(100%+0.85rem)] rounded-[24px] border border-[color:color-mix(in_oklch,var(--accent)_12%,var(--line-strong))] bg-[color:color-mix(in_oklch,var(--panel-strong)_92%,transparent)] p-5 shadow-[0_28px_86px_-32px_rgba(0,0,0,0.8)] backdrop-blur-xl">
           <nav aria-label="Mobile" className="flex flex-col gap-1">
             {navigation.map((item) => (
               <Link

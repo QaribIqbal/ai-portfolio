@@ -7,14 +7,14 @@ import { navigation, siteConfig } from "@/lib/site-content";
 
 export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
   return (
-    <header className="sticky top-0 z-40 border-b border-[color:var(--line)] bg-[color:color-mix(in_oklch,var(--bg)_82%,transparent)] backdrop-blur-2xl backdrop-saturate-150">
+    <header className="sticky top-0 z-40 border-b border-[color:color-mix(in_oklch,var(--accent)_8%,var(--line))] bg-[color:color-mix(in_oklch,var(--bg)_78%,transparent)] backdrop-blur-2xl backdrop-saturate-[1.6]">
       <div className="shell relative flex min-h-18 items-center justify-between gap-4 py-4">
         <Link
           href="/"
           className="flex items-center gap-3 text-sm font-semibold tracking-[-0.01em] text-[color:var(--text-main)]"
         >
           <span
-            className="relative inline-flex h-8 w-8 overflow-hidden rounded-full border-2 border-[color:var(--accent)]"
+            className="relative inline-flex h-9 w-9 overflow-hidden rounded-full border-2 border-[color:var(--accent)] shadow-[0_0_12px_-4px_color-mix(in_oklch,var(--accent)_40%,transparent)] transition-shadow duration-300 hover:shadow-[0_0_20px_-4px_color-mix(in_oklch,var(--accent)_60%,transparent)]"
             aria-hidden="true"
           >
             {/* TODO: Replace placeholder profile photo with real image */}
@@ -23,19 +23,19 @@ export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
               src="/assets/images/qarib-profile.jpg"
               alt="Qarib Iqbal profile avatar"
               fill
-              sizes="32px"
+              sizes="36px"
               className="object-cover"
             />
           </span>
           <span>{siteConfig.name}</span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-0.5 rounded-full border border-[color:var(--line)] bg-[color:color-mix(in_oklch,var(--panel-soft)_60%,transparent)] p-1 backdrop-blur-md lg:flex">
           {navigation.slice(0, 2).map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3.5 py-2 text-[0.82rem] font-medium text-[color:var(--text-subtle)] transition hover:bg-[color:var(--panel-soft)] hover:text-[color:var(--text-main)]"
+              className="rounded-full px-4 py-2 text-[0.82rem] font-medium text-[color:var(--text-subtle)] transition hover:bg-[color:color-mix(in_oklch,var(--accent)_10%,transparent)] hover:text-[color:var(--text-main)]"
             >
               {item.label}
             </Link>

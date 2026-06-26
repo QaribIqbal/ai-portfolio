@@ -33,16 +33,16 @@ export function ButtonLink({
   const style =
     variant === "primary"
       ? ({
-          "--button-bg": "var(--accent)",
-          "--button-border": "var(--accent)",
+          "--button-bg": "var(--accent-warm)",
+          "--button-border": "var(--accent-warm)",
           "--button-fg": "var(--bg-strong)",
           "--button-shadow":
-            "0 18px 32px -26px color-mix(in oklch, var(--accent) 78%, transparent)",
+            "0 18px 36px -24px color-mix(in oklch, var(--accent-warm) 68%, transparent)",
         } as CSSProperties)
       : variant === "secondary"
         ? ({
-            "--button-bg": "var(--panel-soft)",
-            "--button-border": "var(--line-strong)",
+            "--button-bg": "color-mix(in oklch, var(--panel-soft) 70%, transparent)",
+            "--button-border": "color-mix(in oklch, var(--accent) 22%, var(--line-strong))",
             "--button-fg": "var(--text-main)",
           } as CSSProperties)
         : ({

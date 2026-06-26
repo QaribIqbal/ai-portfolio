@@ -415,7 +415,7 @@ export default function HomePage() {
                 <article className="panel min-h-[100px]">
                   <p className="section-eyebrow">ABOUT QARIB</p>
                   <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-                    <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border-2 border-[color:var(--accent)] shadow-[0_0_0_4px_color-mix(in_oklch,var(--accent)_12%,transparent)]">
+                    <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border-2 border-[color:var(--accent)] shadow-[0_0_0_4px_color-mix(in_oklch,var(--accent)_10%,transparent),0_0_20px_-6px_color-mix(in_oklch,var(--accent)_30%,transparent)]">
                       {/* TODO: Replace placeholder profile photo with real image */}
                       {/* <!-- TODO: Replace with real headshot — recommended size 400x400px --> */}
                       <Image

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/site/smooth-scroll-provider";
@@ -11,6 +11,12 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display-loaded",
+  weight: ["500", "600", "700"],
+});
+
 export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
@@ -20,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.variable}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
         <UtmCapture />
         <noscript>
           <style>{`[data-gsap-reveal] { opacity: 1 !important; transform: none !important; }`}</style>

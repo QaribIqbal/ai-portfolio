@@ -2,42 +2,50 @@
 @import "tw-animate-css";
 
 :root {
-  --bg: oklch(0.155 0.009 220);
-  --bg-strong: oklch(0.12 0.008 220);
-  --panel: oklch(0.215 0.011 220 / 0.9);
-  --panel-strong: oklch(0.255 0.013 220 / 0.94);
-  --panel-soft: oklch(0.245 0.012 220 / 0.58);
-  --line: oklch(0.5 0.012 220 / 0.22);
-  --line-strong: oklch(0.66 0.014 220 / 0.32);
-  --line-contrast: oklch(0.72 0.02 205 / 0.48);
-  --text-main: oklch(0.97 0.006 220);
-  --text-muted: oklch(0.9 0.012 220);
-  --text-subtle: oklch(0.8 0.012 220);
-  --accent: oklch(0.76 0.085 195);
-  --accent-strong: oklch(0.81 0.078 195);
+  --bg: oklch(0.13 0.018 250);
+  --bg-strong: oklch(0.10 0.016 250);
+  --panel: oklch(0.19 0.018 250 / 0.92);
+  --panel-strong: oklch(0.23 0.020 250 / 0.95);
+  --panel-soft: oklch(0.22 0.016 250 / 0.58);
+  --line: oklch(0.46 0.018 250 / 0.24);
+  --line-strong: oklch(0.58 0.022 250 / 0.34);
+  --line-contrast: oklch(0.65 0.04 250 / 0.48);
+  --text-main: oklch(0.96 0.005 250);
+  --text-muted: oklch(0.82 0.012 250);
+  --text-subtle: oklch(0.65 0.016 250);
+  --accent: oklch(0.62 0.18 255);
+  --accent-strong: oklch(0.68 0.17 255);
   --accent-soft: color-mix(in oklch, var(--accent) 14%, transparent);
+  --accent-warm: oklch(0.74 0.14 65);
+  --accent-warm-strong: oklch(0.79 0.13 65);
+  --primary: oklch(0.42 0.14 250);
+  --primary-light: oklch(0.52 0.12 250);
   --ease-out-strong: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
   --section-gap: clamp(5rem, 8vw, 8rem);
   --font-geist: var(--font-inter);
-  --font-display: var(--font-inter);
+  --font-display: var(--font-display-loaded, var(--font-inter));
 }
 
 html[data-theme="light"] {
-  --bg: oklch(0.97 0.006 220);
-  --bg-strong: oklch(0.93 0.007 220);
-  --panel: oklch(0.985 0.005 220 / 0.92);
-  --panel-strong: oklch(1 0.004 220 / 0.98);
-  --panel-soft: oklch(0.95 0.008 220 / 0.7);
-  --line: oklch(0.73 0.012 220 / 0.35);
-  --line-strong: oklch(0.6 0.018 220 / 0.45);
-  --line-contrast: oklch(0.45 0.06 200 / 0.45);
-  --text-main: oklch(0.19 0.02 220);
-  --text-muted: oklch(0.29 0.018 220);
-  --text-subtle: oklch(0.4 0.015 220);
-  --accent: oklch(0.58 0.1 195);
-  --accent-strong: oklch(0.52 0.11 195);
+  --bg: oklch(0.97 0.006 250);
+  --bg-strong: oklch(0.93 0.008 250);
+  --panel: oklch(0.985 0.005 250 / 0.92);
+  --panel-strong: oklch(1 0.004 250 / 0.98);
+  --panel-soft: oklch(0.95 0.008 250 / 0.7);
+  --line: oklch(0.73 0.014 250 / 0.35);
+  --line-strong: oklch(0.6 0.020 250 / 0.45);
+  --line-contrast: oklch(0.45 0.06 250 / 0.45);
+  --text-main: oklch(0.16 0.025 250);
+  --text-muted: oklch(0.28 0.020 250);
+  --text-subtle: oklch(0.42 0.018 250);
+  --accent: oklch(0.50 0.18 255);
+  --accent-strong: oklch(0.44 0.19 255);
   --accent-soft: color-mix(in oklch, var(--accent) 12%, transparent);
+  --accent-warm: oklch(0.62 0.15 65);
+  --accent-warm-strong: oklch(0.56 0.16 65);
+  --primary: oklch(0.38 0.14 250);
+  --primary-light: oklch(0.48 0.12 250);
 }
 
 *,
@@ -55,8 +63,9 @@ body {
   margin: 0;
   min-height: 100dvh;
   background:
-    linear-gradient(90deg, color-mix(in oklch, var(--accent) 5%, transparent), transparent 24%, transparent 76%, color-mix(in oklch, var(--accent) 4%, transparent)),
-    radial-gradient(ellipse at 50% -10%, color-mix(in oklch, var(--accent) 12%, transparent), transparent 44%),
+    radial-gradient(ellipse at 50% -8%, color-mix(in oklch, var(--primary) 18%, transparent), transparent 52%),
+    radial-gradient(ellipse at 90% 20%, color-mix(in oklch, var(--accent) 6%, transparent), transparent 40%),
+    radial-gradient(ellipse at 10% 60%, color-mix(in oklch, var(--primary) 5%, transparent), transparent 35%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-strong) 100%);
   color: var(--text-muted);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
@@ -140,96 +149,97 @@ img {
   .section-slice-hero {
     --slice-bg: linear-gradient(
       180deg,
-      color-mix(in oklch, var(--accent) 10%, transparent),
+      color-mix(in oklch, var(--primary) 14%, transparent),
       transparent 58%
     );
     --slice-x: 82%;
     --slice-y: 18%;
-    --slice-glow: color-mix(in oklch, var(--accent) 22%, transparent);
+    --slice-glow: color-mix(in oklch, var(--accent) 18%, transparent);
   }
 
   .section-slice-problem {
-    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, #0e2940 20%, transparent));
+    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, var(--primary) 12%, transparent));
     --slice-x: 12%;
     --slice-y: 34%;
-    --slice-glow: color-mix(in oklch, #2c9fbc 12%, transparent);
+    --slice-glow: color-mix(in oklch, var(--accent) 10%, transparent);
     --slice-opacity: 0.7;
   }
 
   .section-slice-outcomes {
-    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, #11304a 16%, transparent));
+    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, var(--primary) 10%, transparent));
     --slice-x: 78%;
     --slice-y: 28%;
-    --slice-glow: color-mix(in oklch, var(--accent) 14%, transparent);
+    --slice-glow: color-mix(in oklch, var(--accent) 12%, transparent);
   }
 
   .section-slice-services {
-    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, #0f283a 20%, transparent));
+    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, var(--primary) 14%, transparent));
     --slice-x: 14%;
     --slice-y: 22%;
-    --slice-glow: color-mix(in oklch, #2f90aa 14%, transparent);
+    --slice-glow: color-mix(in oklch, var(--accent) 12%, transparent);
   }
 
   .section-slice-offers {
-    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, #0f2c3f 22%, transparent));
+    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, var(--primary) 14%, transparent));
     --slice-x: 84%;
     --slice-y: 34%;
-    --slice-glow: color-mix(in oklch, var(--accent) 18%, transparent);
+    --slice-glow: color-mix(in oklch, var(--accent) 14%, transparent);
   }
 
   .section-slice-process {
-    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, #11273c 18%, transparent));
+    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, var(--primary) 12%, transparent));
     --slice-x: 18%;
     --slice-y: 30%;
-    --slice-glow: color-mix(in oklch, #3d96b2 10%, transparent);
+    --slice-glow: color-mix(in oklch, var(--primary-light) 10%, transparent);
   }
 
   .section-slice-proof {
-    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, #10324a 20%, transparent));
+    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, var(--primary) 14%, transparent));
     --slice-x: 78%;
-    --slice-y: 25%;
-    --slice-glow: color-mix(in oklch, var(--accent) 20%, transparent);
-  }
-
-  .section-slice-about {
-    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, #112940 18%, transparent));
-    --slice-x: 14%;
-    --slice-y: 34%;
-    --slice-glow: color-mix(in oklch, #3d95b3 10%, transparent);
-  }
-
-  .section-slice-resource {
-    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, #10314a 22%, transparent));
-    --slice-x: 84%;
     --slice-y: 25%;
     --slice-glow: color-mix(in oklch, var(--accent) 16%, transparent);
   }
 
+  .section-slice-about {
+    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, var(--primary) 12%, transparent));
+    --slice-x: 14%;
+    --slice-y: 34%;
+    --slice-glow: color-mix(in oklch, var(--primary-light) 10%, transparent);
+  }
+
+  .section-slice-resource {
+    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, var(--primary) 14%, transparent));
+    --slice-x: 84%;
+    --slice-y: 25%;
+    --slice-glow: color-mix(in oklch, var(--accent) 14%, transparent);
+  }
+
   .section-slice-faq {
-    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, #0f273c 18%, transparent));
+    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, var(--primary) 12%, transparent));
     --slice-x: 12%;
     --slice-y: 34%;
-    --slice-glow: color-mix(in oklch, #2b90ab 12%, transparent);
+    --slice-glow: color-mix(in oklch, var(--accent) 10%, transparent);
   }
 
   .section-slice-final {
-    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, #112f46 23%, transparent));
+    --slice-bg: linear-gradient(180deg, transparent, color-mix(in oklch, var(--primary) 16%, transparent));
     --slice-x: 78%;
     --slice-y: 26%;
-    --slice-glow: color-mix(in oklch, var(--accent) 20%, transparent);
+    --slice-glow: color-mix(in oklch, var(--accent) 16%, transparent);
   }
 
   .panel {
     @apply rounded-[24px] border p-6 sm:p-8;
     background: linear-gradient(
       180deg,
-      color-mix(in oklch, var(--panel-strong) 86%, transparent) 0%,
-      color-mix(in oklch, var(--panel) 92%, black 8%) 100%
+      color-mix(in oklch, var(--panel-strong) 88%, transparent) 0%,
+      color-mix(in oklch, var(--panel) 94%, black 6%) 100%
     );
     border-color: var(--line);
+    backdrop-filter: blur(12px) saturate(1.2);
     box-shadow:
-      inset 0 1px 0 color-mix(in oklch, var(--text-main) 7%, transparent),
-      0 18px 58px -42px color-mix(in oklch, black 78%, transparent);
+      inset 0 1px 0 color-mix(in oklch, var(--text-main) 6%, transparent),
+      0 20px 60px -40px color-mix(in oklch, black 80%, transparent);
     transition:
       border-color 300ms var(--ease-out-strong),
       background-color 300ms var(--ease-out-strong),
@@ -238,17 +248,18 @@ img {
   }
 
   .panel:hover {
-    border-color: var(--line-strong);
-    transform: translateY(-2px);
+    border-color: color-mix(in oklch, var(--accent) 30%, var(--line-strong));
+    transform: translateY(-3px);
     box-shadow:
       inset 0 1px 0 color-mix(in oklch, var(--text-main) 8%, transparent),
-      0 26px 68px -44px color-mix(in oklch, black 76%, transparent);
+      0 28px 72px -44px color-mix(in oklch, var(--primary) 40%, black 60%),
+      0 0 0 1px color-mix(in oklch, var(--accent) 8%, transparent);
   }
 
   .panel-featured {
-    border-color: color-mix(in oklch, var(--accent) 42%, var(--line));
+    border-color: color-mix(in oklch, var(--accent) 38%, var(--line));
     background:
-      linear-gradient(180deg, color-mix(in oklch, var(--accent) 8%, transparent), transparent 42%),
+      linear-gradient(180deg, color-mix(in oklch, var(--accent) 7%, transparent), transparent 42%),
       linear-gradient(180deg, var(--panel-strong), var(--panel));
   }
 
@@ -257,12 +268,14 @@ img {
     position: relative;
     overflow: hidden;
     background:
-      linear-gradient(135deg, color-mix(in oklch, var(--accent) 9%, transparent), transparent 36%),
-      linear-gradient(180deg, color-mix(in oklch, var(--panel-strong) 88%, transparent), color-mix(in oklch, var(--panel) 90%, black 10%));
-    border-color: var(--line-strong);
+      linear-gradient(135deg, color-mix(in oklch, var(--primary) 12%, transparent), transparent 40%),
+      linear-gradient(180deg, color-mix(in oklch, var(--panel-strong) 90%, transparent), color-mix(in oklch, var(--panel) 92%, black 8%));
+    border-color: color-mix(in oklch, var(--accent) 16%, var(--line-strong));
+    backdrop-filter: blur(16px) saturate(1.3);
     box-shadow:
       inset 0 1px 0 color-mix(in oklch, var(--text-main) 6%, transparent),
-      0 34px 92px -58px color-mix(in oklch, black 82%, transparent);
+      0 40px 100px -60px color-mix(in oklch, var(--primary) 30%, black 70%),
+      0 0 0 1px color-mix(in oklch, var(--accent) 6%, transparent);
   }
 
   .hero-panel::before {
@@ -273,7 +286,7 @@ img {
     width: 60%;
     height: 100%;
     background:
-      linear-gradient(135deg, transparent, color-mix(in oklch, var(--accent) 8%, transparent), transparent 68%);
+      radial-gradient(ellipse, color-mix(in oklch, var(--primary) 14%, transparent), transparent 65%);
     pointer-events: none;
     animation: hero-glow-drift 12s var(--ease-emphasized) infinite alternate;
   }
@@ -285,9 +298,9 @@ img {
     pointer-events: none;
     border-radius: inherit;
     background:
-      linear-gradient(180deg, color-mix(in oklch, white 5%, transparent), transparent 22%),
-      linear-gradient(90deg, color-mix(in oklch, var(--accent) 9%, transparent), transparent 26%, transparent 74%, color-mix(in oklch, white 4%, transparent));
-    opacity: 0.72;
+      linear-gradient(180deg, color-mix(in oklch, white 4%, transparent), transparent 18%),
+      linear-gradient(90deg, color-mix(in oklch, var(--accent) 7%, transparent), transparent 26%, transparent 74%, color-mix(in oklch, white 3%, transparent));
+    opacity: 0.68;
   }
 
   .hero-panel > * {
@@ -340,7 +353,7 @@ img {
     place-content: center;
     gap: 1.6rem;
     background:
-      radial-gradient(circle at 50% 18%, color-mix(in oklch, var(--accent) 24%, transparent), transparent 45%),
+      radial-gradient(circle at 50% 18%, color-mix(in oklch, var(--primary) 28%, transparent), transparent 48%),
       linear-gradient(180deg, var(--bg), var(--bg-strong));
   }
 
@@ -400,24 +413,25 @@ img {
 
   .display-title {
     font-family: var(--font-display), sans-serif;
-    font-size: clamp(2.6rem, 6vw, 5.3rem);
-    line-height: 0.94;
-    letter-spacing: -0.04em;
+    font-size: clamp(2.8rem, 6.5vw, 5.8rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    font-weight: 700;
     color: var(--text-main);
     text-wrap: balance;
   }
 
   .button-primary {
     @apply inline-flex min-h-12 items-center justify-center rounded-full border px-5 py-3 text-sm font-medium tracking-[-0.01em] transition;
-    background: var(--accent);
-    border-color: var(--accent);
+    background: var(--accent-warm);
+    border-color: var(--accent-warm);
     color: var(--bg);
-    box-shadow: 0 18px 32px -26px color-mix(in oklch, var(--accent) 74%, transparent);
+    box-shadow: 0 18px 36px -24px color-mix(in oklch, var(--accent-warm) 68%, transparent);
   }
 
   .button-primary:hover {
-    background: var(--accent-strong);
-    border-color: var(--accent-strong);
+    background: var(--accent-warm-strong);
+    border-color: var(--accent-warm-strong);
   }
 
   .button-primary:active,
@@ -450,34 +464,36 @@ img {
   }
 
   .button-link-primary {
-    background: var(--button-bg, var(--accent));
-    border-color: var(--button-border, var(--accent));
+    background: var(--button-bg, var(--accent-warm));
+    border-color: var(--button-border, var(--accent-warm));
     color: var(--button-fg, var(--bg-strong));
+    font-weight: 700;
     box-shadow: var(
       --button-shadow,
-      0 18px 32px -26px color-mix(in oklch, var(--accent) 78%, transparent)
+      0 18px 36px -24px color-mix(in oklch, var(--accent-warm) 68%, transparent)
     );
   }
 
   .button-link-primary:hover {
-    background: var(--accent-strong);
-    border-color: var(--accent-strong);
-    transform: translateY(-1px);
+    background: var(--accent-warm-strong);
+    border-color: var(--accent-warm-strong);
+    transform: translateY(-2px);
     box-shadow:
-      0 22px 38px -26px color-mix(in oklch, var(--accent) 74%, transparent),
-      0 1px 0 color-mix(in oklch, white 26%, transparent) inset;
+      0 24px 44px -24px color-mix(in oklch, var(--accent-warm) 64%, transparent),
+      0 1px 0 color-mix(in oklch, white 22%, transparent) inset;
   }
 
   .button-link-secondary {
-    background: var(--button-bg, var(--panel-soft));
-    border-color: var(--button-border, var(--line-strong));
+    background: var(--button-bg, color-mix(in oklch, var(--panel-soft) 70%, transparent));
+    border-color: var(--button-border, color-mix(in oklch, var(--accent) 22%, var(--line-strong)));
     color: var(--button-fg, var(--text-main));
+    backdrop-filter: blur(8px);
   }
 
   .button-link-secondary:hover {
-    border-color: var(--line-contrast);
-    background: color-mix(in oklch, var(--panel) 82%, var(--accent) 6%);
-    box-shadow: 0 14px 30px -24px color-mix(in oklch, var(--accent) 44%, transparent);
+    border-color: color-mix(in oklch, var(--accent) 44%, var(--line-contrast));
+    background: color-mix(in oklch, var(--panel) 78%, var(--accent) 8%);
+    box-shadow: 0 16px 34px -22px color-mix(in oklch, var(--accent) 36%, transparent);
   }
 
   .button-link-ghost {
@@ -497,18 +513,19 @@ img {
   /* review: change-1 */
   .hero-secondary-cta {
     padding-inline: 1.5rem !important;
-    border: 1px solid var(--accent) !important;
-    background: transparent !important;
+    border: 1px solid color-mix(in oklch, var(--accent) 60%, transparent) !important;
+    background: color-mix(in oklch, var(--accent) 6%, transparent) !important;
     color: var(--accent) !important;
     box-shadow: none !important;
     font-size: 0.875em !important;
+    backdrop-filter: blur(8px);
   }
 
   .hero-secondary-cta:hover {
-    background: transparent !important;
+    background: color-mix(in oklch, var(--accent) 12%, transparent) !important;
     border-color: var(--accent-strong) !important;
     color: var(--accent-strong) !important;
-    box-shadow: none !important;
+    box-shadow: 0 12px 28px -18px color-mix(in oklch, var(--accent) 34%, transparent) !important;
   }
 
   @media (max-width: 480px) {
@@ -643,12 +660,13 @@ img {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1px;
     overflow: hidden;
-    border: 1px solid var(--line);
+    border: 1px solid color-mix(in oklch, var(--accent) 14%, var(--line));
     border-radius: 26px;
-    background: color-mix(in oklch, var(--line) 68%, transparent);
+    background: color-mix(in oklch, var(--line) 60%, transparent);
+    backdrop-filter: blur(8px);
     box-shadow:
-      inset 0 1px 0 color-mix(in oklch, white 5%, transparent),
-      0 26px 70px -54px color-mix(in oklch, black 80%, transparent);
+      inset 0 1px 0 color-mix(in oklch, white 4%, transparent),
+      0 28px 74px -52px color-mix(in oklch, var(--primary) 24%, black 76%);
   }
 
   .flow-step {
@@ -667,9 +685,10 @@ img {
 
   .flow-step[href]:hover {
     background:
-      linear-gradient(135deg, color-mix(in oklch, var(--accent) 9%, transparent), transparent 48%),
+      linear-gradient(135deg, color-mix(in oklch, var(--accent) 10%, transparent), transparent 48%),
       color-mix(in oklch, var(--panel-strong) 86%, black 14%);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -12px color-mix(in oklch, var(--accent) 18%, transparent);
   }
 
   .flow-step-index {
@@ -1063,7 +1082,8 @@ img {
     background: linear-gradient(
       90deg,
       transparent,
-      color-mix(in oklch, var(--text-subtle) 26%, transparent),
+      color-mix(in oklch, var(--accent) 22%, transparent),
+      color-mix(in oklch, var(--primary-light) 18%, transparent),
       transparent
     );
   }
@@ -1071,7 +1091,8 @@ img {
   .subtle-card {
     @apply rounded-[24px] border p-5;
     border-color: var(--line);
-    background: color-mix(in oklch, var(--panel-soft) 88%, black 12%);
+    background: color-mix(in oklch, var(--panel-soft) 86%, black 14%);
+    backdrop-filter: blur(6px);
   }
 
   .section-frame {
@@ -1086,7 +1107,7 @@ img {
     background: linear-gradient(
       90deg,
       transparent,
-      color-mix(in oklch, var(--text-subtle) 24%, transparent),
+      color-mix(in oklch, var(--accent) 20%, transparent),
       transparent
     );
   }
@@ -1215,6 +1236,7 @@ img {
     justify-content: space-between;
     isolation: isolate;
     padding: clamp(1.35rem, 2vw, 1.65rem) !important;
+    border-top: 2px solid color-mix(in oklch, var(--accent) 30%, transparent);
   }
 
   .service-panel::before {
@@ -1223,12 +1245,12 @@ img {
     inset: 0;
     pointer-events: none;
     background: linear-gradient(
-      135deg,
-      color-mix(in oklch, var(--accent) 12%, transparent),
-      transparent 32%,
-      color-mix(in oklch, var(--panel-soft) 22%, transparent)
+      180deg,
+      color-mix(in oklch, var(--accent) 8%, transparent),
+      transparent 40%,
+      color-mix(in oklch, var(--panel-soft) 18%, transparent)
     );
-    opacity: 0.74;
+    opacity: 0.8;
     z-index: -1;
   }
 
@@ -1238,7 +1260,7 @@ img {
     inset: auto 1.2rem 1.2rem 1.2rem;
     height: 1px;
     pointer-events: none;
-    background: linear-gradient(90deg, transparent, color-mix(in oklch, var(--accent) 34%, transparent), transparent);
+    background: linear-gradient(90deg, transparent, color-mix(in oklch, var(--accent) 28%, transparent), transparent);
     opacity: 0.72;
     z-index: -1;
   }

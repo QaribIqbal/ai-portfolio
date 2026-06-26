@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site-content";
 
 export function SiteFooter() {
   return (
-    <footer className="section-frame border-t border-[color:var(--line)] pb-12 pt-16">
+    <footer className="section-frame border-t border-[color:color-mix(in_oklch,var(--accent)_8%,var(--line))] pb-12 pt-16">
       <div className="shell grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-5">
           <p className="section-eyebrow">For Lean Marketing Agencies</p>
