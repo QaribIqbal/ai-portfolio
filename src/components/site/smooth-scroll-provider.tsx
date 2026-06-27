@@ -5,8 +5,6 @@ import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { getHorizontalTravel } from "@/lib/horizontal-scroll";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const LenisContext = createContext<Lenis | null>(null);
@@ -70,54 +68,7 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     }
 
     const ctx = gsap.context(() => {
-      const servicesSection = document.querySelector<HTMLElement>("[data-horizontal-section='services']");
-      const servicesTrack = document.querySelector<HTMLElement>("[data-horizontal-track='services']");
-
-      if (servicesTrack) {
-        servicesTrack.dataset.horizontalMode = "native";
-        gsap.set(servicesTrack, { x: 0 });
-      }
-
       const mm = gsap.matchMedia();
-
-      mm.add("(min-width: 1024px)", () => {
-        if (!servicesSection || !servicesTrack) return;
-
-        servicesTrack.dataset.horizontalMode = "forced";
-
-        const getHeaderOffset = () =>
-          Math.round(document.querySelector("header")?.getBoundingClientRect().height ?? 0);
-        const getTotalShift = () => getHorizontalTravel(servicesTrack.scrollWidth, servicesTrack.clientWidth);
-        if (getTotalShift() <= 0) {
-          servicesTrack.dataset.horizontalMode = "native";
-          return;
-        }
-
-        const horizontalTween = gsap.to(servicesTrack, {
-          x: () => -getTotalShift(),
-          ease: "none",
-          force3D: true,
-          overwrite: "auto",
-          scrollTrigger: {
-            id: "services-horizontal-scroll",
-            trigger: servicesSection,
-            start: () => `top top+=${Math.round(getHeaderOffset() + window.innerHeight * -0.45)}`,
-            end: () => `+=${Math.max(getTotalShift() * 0.35, window.innerHeight * 1.75)}`,
-            pin: true,
-            pinSpacing: true,
-            scrub: 1,
-            anticipatePin: 1,
-            fastScrollEnd: true,
-            invalidateOnRefresh: true,
-          },
-        });
-
-        return () => {
-          horizontalTween.kill();
-          servicesTrack.dataset.horizontalMode = "native";
-          gsap.set(servicesTrack, { x: 0 });
-        };
-      });
 
       const sections = gsap.utils.toArray<HTMLElement>(".section-slice");
       sections.forEach((section) => {
@@ -137,7 +88,91 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
         );
       });
 
-      return () => mm.revert();
+      // Hero scroll-away: panel scales down, fades, shifts up as user scrolls past
+      const heroPanel = document.querySelector<HTMLElement>(".hero-panel");
+      const heroSection = document.querySelector<HTMLElement>(".section-slice-hero");
+      if (heroPanel && heroSection) {
+        gsap.to(heroPanel, {
+          y: -100,
+          scale: 0.93,
+          opacity: 0.15,
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroSection,
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.4,
+          },
+        });
+      }
+
+      mm.add("(min-width: 768px)", () => {
+        // Section depth entrance: shells rise with subtle scale and fade
+        document
+          .querySelectorAll<HTMLElement>("[data-depth-section] > .shell")
+          .forEach((shell) => {
+            const section = shell.closest<HTMLElement>(".page-section");
+            if (!section) return;
+            gsap.fromTo(
+              shell,
+              { y: 60, opacity: 0.4 },
+              {
+                y: 0,
+                opacity: 1,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: section,
+                  start: "top 92%",
+                  end: "top 30%",
+                  scrub: 0.6,
+                },
+              },
+            );
+          });
+
+        // Panel 3D tilt on scroll entrance
+        gsap.utils
+          .toArray<HTMLElement>("[data-tilt-card]")
+          .forEach((panel) => {
+            gsap.fromTo(
+              panel,
+              { rotateX: 5, transformPerspective: 1200, y: 24 },
+              {
+                rotateX: 0,
+                y: 0,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: panel,
+                  start: "top 92%",
+                  end: "top 55%",
+                  scrub: 0.5,
+                },
+              },
+            );
+          });
+
+        // Service visual-side parallax: visuals move slower than text
+        gsap.utils
+          .toArray<HTMLElement>(".svc-visual-side")
+          .forEach((el) => {
+            const showcase = el.closest<HTMLElement>(".svc-showcase");
+            if (!showcase) return;
+            gsap.fromTo(
+              el,
+              { y: 60 },
+              {
+                y: -60,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: showcase,
+                  start: "top bottom",
+                  end: "bottom top",
+                  scrub: true,
+                },
+              },
+            );
+          });
+      });
     });
 
     ScrollTrigger.refresh();

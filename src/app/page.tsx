@@ -7,6 +7,7 @@ import { GSAPReveal } from "@/components/site/gsap-reveal";
 import { HeroAnimation, HeroTitle } from "@/components/site/hero-animation";
 import { JourneySection } from "@/components/site/journey-section";
 import { LeadCaptureForm } from "@/components/site/lead-capture-form";
+import { PinnedProcess } from "@/components/site/pinned-process";
 import { ServiceShowcase } from "@/components/site/service-showcase";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
@@ -83,7 +84,7 @@ export default function HomePage() {
         <JourneySection />
 
         {/* ─── SERVICES: THE STAR ─── */}
-        <section className="page-section section-slice section-slice-services" id="services" data-snap-section>
+        <section className="page-section section-slice section-slice-services" id="services" data-snap-section data-depth-section>
           <div className="shell">
             <GSAPReveal variant="clip-up">
               <div className="max-w-[680px] mx-auto text-center">
@@ -255,7 +256,7 @@ export default function HomePage() {
         <VoiceAgentShowcase />
 
         {/* ─── HOW IT WORKS ─── */}
-        <section className="page-section section-slice section-slice-process" id="process" data-snap-section>
+        <section className="page-section section-slice section-slice-process" id="process">
           <div className="shell">
             <GSAPReveal variant="clip-up">
               <div className="max-w-[680px]">
@@ -266,65 +267,55 @@ export default function HomePage() {
                 </h2>
               </div>
             </GSAPReveal>
-            <GSAPReveal stagger variant="slide-up" delay={0.1}>
-              <div className="process-steps-grid mt-12">
-                {[
-                  {
-                    num: "01",
-                    title: "Download the free checklist",
-                    desc: (
-                      <>
-                        A <span className="text-highlight">10-minute self-audit</span> to find the workflows
-                        leaking the most time each week.
-                      </>
-                    ),
-                  },
-                  {
-                    num: "02",
-                    title: "Book the free automation audit",
-                    desc: (
-                      <>
-                        We map <span className="text-highlight">one painful workflow</span> live and
-                        define what to automate first.
-                      </>
-                    ),
-                  },
-                  {
-                    num: "03",
-                    title: "Run a 21-Day Sprint",
-                    desc: (
-                      <>
-                        Audit, design, build, test, and hand over — with{" "}
-                        <span className="text-highlight-strong">Loom walkthroughs and SOPs</span> included.
-                      </>
-                    ),
-                  },
-                  {
-                    num: "04",
-                    title: "Optional ongoing optimization",
-                    desc: (
-                      <>
-                        Keep the workflow healthy. Adjust when tools change. Scope the next
-                        bottleneck <span className="text-highlight">one at a time</span>.
-                      </>
-                    ),
-                  },
-                ].map((step) => (
-                  <article key={step.num} className="panel process-step-card" data-gsap-reveal>
-                    <span className="process-step-num">{step.num}</span>
-                    <h3 className="text-[1.3rem] font-semibold tracking-[-0.03em] text-[color:var(--text-main)] mt-3">
-                      {step.title}
-                    </h3>
-                    <p className="mt-3 text-[0.95rem] leading-[1.8] text-[color:var(--text-muted)]">{step.desc}</p>
-                  </article>
-                ))}
-              </div>
-            </GSAPReveal>
+            <PinnedProcess
+              steps={[
+                {
+                  num: "01",
+                  title: "Download the free checklist",
+                  desc: (
+                    <>
+                      A <span className="text-highlight">10-minute self-audit</span> to find the workflows
+                      leaking the most time each week.
+                    </>
+                  ),
+                },
+                {
+                  num: "02",
+                  title: "Book the free automation audit",
+                  desc: (
+                    <>
+                      We map <span className="text-highlight">one painful workflow</span> live and
+                      define what to automate first.
+                    </>
+                  ),
+                },
+                {
+                  num: "03",
+                  title: "Run a 21-Day Sprint",
+                  desc: (
+                    <>
+                      Audit, design, build, test, and hand over — with{" "}
+                      <span className="text-highlight-strong">Loom walkthroughs and SOPs</span> included.
+                    </>
+                  ),
+                },
+                {
+                  num: "04",
+                  title: "Optional ongoing optimization",
+                  desc: (
+                    <>
+                      Keep the workflow healthy. Adjust when tools change. Scope the next
+                      bottleneck <span className="text-highlight">one at a time</span>.
+                    </>
+                  ),
+                },
+              ]}
+            />
           </div>
         </section>
 
         {/* ─── RESULTS & PROOF ─── */}
-        <section className="page-section section-slice section-slice-proof" id="case-studies" data-snap-section>
+        <section className="page-section section-slice section-slice-proof" id="case-studies" data-snap-section data-depth-section>
           <div className="shell">
             <GSAPReveal variant="clip-up">
               <div className="max-w-[680px]">
@@ -340,7 +331,7 @@ export default function HomePage() {
               <GSAPReveal stagger variant="slide-up" delay={0.1}>
                 <div className="mt-12 grid gap-5 lg:grid-cols-3">
                   {publishedCaseStudyTiles.map((tile) => (
-                    <article key={tile.clientType} className="panel" data-gsap-reveal>
+                    <article key={tile.clientType} className="panel" data-gsap-reveal data-tilt-card>
                       <p className="text-xs uppercase tracking-[0.12em] text-[color:var(--text-subtle)]">
                         {tile.clientType}
                       </p>
@@ -396,7 +387,7 @@ export default function HomePage() {
         </section>
 
         {/* ─── CHECKLIST + LEAD CAPTURE ─── */}
-        <section className="page-section section-slice section-slice-resource" id="checklist" data-snap-section>
+        <section className="page-section section-slice section-slice-resource" id="checklist" data-snap-section data-depth-section>
           <div className="shell">
             <GSAPReveal variant="slide-up">
               <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
@@ -418,7 +409,7 @@ export default function HomePage() {
         </section>
 
         {/* ─── FINAL CTA ─── */}
-        <section className="page-section section-slice section-slice-final pt-0" id="final-cta" data-snap-section>
+        <section className="page-section section-slice section-slice-final pt-0" id="final-cta" data-snap-section data-depth-section>
           <div className="shell">
             <GSAPReveal variant="fade-scale">
               <div className="hero-panel">

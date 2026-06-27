@@ -36,67 +36,101 @@ export function ServiceShowcase({
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reducedMotion) return;
 
-      const textSide = el.querySelector(".svc-text-side");
-      const visualSide = el.querySelector(".svc-visual-side");
-      const featureItems = gsap.utils.toArray<HTMLElement>(".svc-feature", el);
-      const statEl = el.querySelector(".svc-stat");
+      const mm = gsap.matchMedia();
 
-      if (textSide) {
-        gsap.fromTo(
-          textSide,
-          { opacity: 0, x: reverse ? 50 : -50 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 80%", once: true },
+      mm.add("(min-width: 768px)", () => {
+        const textSide = el.querySelector<HTMLElement>(".svc-text-side");
+        const visualSide = el.querySelector<HTMLElement>(".svc-visual-side");
+        const featureItems = gsap.utils.toArray<HTMLElement>(".svc-feature", el);
+        const statEl = el.querySelector<HTMLElement>(".svc-stat");
+        const descEl = el.querySelector<HTMLElement>(".svc-showcase-desc");
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: el,
+            start: "top 75%",
+            end: "bottom 20%",
+            scrub: 0.8,
           },
-        );
-      }
+        });
 
-      if (visualSide) {
-        gsap.fromTo(
-          visualSide,
-          { opacity: 0, x: reverse ? -50 : 50, scale: 0.95 },
-          {
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            duration: 0.9,
-            delay: 0.15,
-            ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 80%", once: true },
-          },
-        );
-      }
+        if (textSide) {
+          tl.fromTo(
+            textSide,
+            { opacity: 0, x: reverse ? 80 : -80, y: 40 },
+            { opacity: 1, x: 0, y: 0, duration: 0.4, ease: "power3.out" },
+            0,
+          );
+        }
 
-      gsap.fromTo(
-        featureItems,
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: { trigger: el, start: "top 70%", once: true },
-        },
-      );
+        if (visualSide) {
+          tl.fromTo(
+            visualSide,
+            { opacity: 0, x: reverse ? -80 : 80, y: 40, scale: 0.92 },
+            { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.4, ease: "power3.out" },
+            0.05,
+          );
+        }
 
-      if (statEl) {
-        gsap.fromTo(
-          statEl,
-          { opacity: 0, scale: 0.9 },
-          {
-            opacity: 1,
-            scale: 1,
-            duration: 0.6,
-            ease: "back.out(1.4)",
-            scrollTrigger: { trigger: statEl, start: "top 90%", once: true },
-          },
-        );
-      }
+        if (descEl) {
+          tl.fromTo(
+            descEl,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" },
+            0.15,
+          );
+        }
+
+        featureItems.forEach((item, i) => {
+          tl.fromTo(
+            item,
+            { opacity: 0, x: reverse ? 30 : -30, y: 20 },
+            { opacity: 1, x: 0, y: 0, duration: 0.25, ease: "power3.out" },
+            0.2 + i * 0.06,
+          );
+        });
+
+        if (statEl) {
+          tl.fromTo(
+            statEl,
+            { opacity: 0, scale: 0.8, y: 20 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "back.out(1.4)" },
+            0.45,
+          );
+        }
+
+        const visualCard = el.querySelector<HTMLElement>(".svc-visual-card");
+        if (visualCard) {
+          tl.fromTo(
+            visualCard,
+            { rotateY: reverse ? -6 : 6, transformPerspective: 1200 },
+            { rotateY: 0, duration: 0.5, ease: "power2.out" },
+            0.05,
+          );
+        }
+
+        return () => tl.kill();
+      });
+
+      mm.add("(max-width: 767px)", () => {
+        const textSide = el.querySelector<HTMLElement>(".svc-text-side");
+        const visualSide = el.querySelector<HTMLElement>(".svc-visual-side");
+
+        if (textSide) {
+          gsap.fromTo(textSide, { opacity: 0, y: 40 }, {
+            opacity: 1, y: 0, duration: 0.7, ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 85%", once: true },
+          });
+        }
+        if (visualSide) {
+          gsap.fromTo(visualSide, { opacity: 0, y: 40 }, {
+            opacity: 1, y: 0, duration: 0.7, delay: 0.15, ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 85%", once: true },
+          });
+        }
+      });
+
+      return () => mm.revert();
     },
     { scope: ref },
   );
