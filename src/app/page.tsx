@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/site/button-link";
 import { GSAPReveal } from "@/components/site/gsap-reveal";
 import { HeroAnimation, HeroTitle } from "@/components/site/hero-animation";
+import { JourneySection } from "@/components/site/journey-section";
 import { LeadCaptureForm } from "@/components/site/lead-capture-form";
 import { SectionHeading } from "@/components/site/section-heading";
 import { SiteFooter } from "@/components/site/site-footer";
@@ -136,6 +137,8 @@ export default function HomePage() {
             </GSAPReveal>
           </div>
         </section>
+
+        <JourneySection />
 
         <section className="page-section section-slice section-slice-problem" id="problem" data-snap-section>
           <div className="shell">
