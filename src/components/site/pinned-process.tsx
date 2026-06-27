@@ -49,6 +49,14 @@ export function PinnedProcess({ steps }: PinnedProcessProps) {
             pin: true,
             scrub: 0.8,
             anticipatePin: 1,
+            onRefresh(self) {
+              if (self.pin) {
+                (self.pin as HTMLElement).style.zIndex = "1";
+              }
+              if (self.spacer) {
+                (self.spacer as HTMLElement).style.zIndex = "1";
+              }
+            },
           },
         });
 

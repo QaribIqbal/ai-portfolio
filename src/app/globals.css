@@ -123,7 +123,7 @@ img {
     isolation: isolate;
     scroll-margin-top: 7rem;
     z-index: 10;
-    background: var(--bg);
+    background-color: var(--bg);
   }
 
   .section-slice::before {

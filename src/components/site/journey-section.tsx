@@ -198,6 +198,14 @@ export function JourneySection() {
               animateCounters(dashboardEl);
             }
           },
+          onRefresh(self) {
+            if (self.pin) {
+              (self.pin as HTMLElement).style.zIndex = "1";
+            }
+            if (self.spacer) {
+              (self.spacer as HTMLElement).style.zIndex = "1";
+            }
+          },
         },
       });
 
