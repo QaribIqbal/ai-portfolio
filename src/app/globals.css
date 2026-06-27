@@ -111,11 +111,11 @@ img {
 
 @layer components {
   .shell {
-    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-6 lg:px-10;
   }
 
   .page-section {
-    padding-block: clamp(6rem, 10vw, 10rem);
+    padding-block: clamp(6rem, 12vw, 12rem);
   }
 
   .section-slice {
@@ -135,6 +135,7 @@ img {
     background: var(--slice-bg, transparent);
     opacity: 0.76;
   }
+
 
   .section-slice::after {
     content: "";
@@ -266,7 +267,7 @@ img {
   }
 
   .hero-panel {
-    @apply rounded-[34px] border px-6 py-10 sm:px-8 sm:py-14 lg:px-14 lg:py-20;
+    @apply rounded-[34px] border px-6 py-10 sm:px-10 sm:py-16 lg:px-16 lg:py-24;
     position: relative;
     overflow: hidden;
     background:
@@ -427,7 +428,7 @@ img {
   }
 
   .section-eyebrow {
-    @apply mb-4 inline-flex items-center gap-2.5 text-[0.72rem] font-semibold uppercase;
+    @apply mb-5 inline-flex items-center gap-2.5 text-[0.72rem] font-semibold uppercase;
     letter-spacing: 0.14em;
     color: var(--accent);
   }
@@ -435,9 +436,9 @@ img {
   .section-eyebrow::before {
     content: "";
     display: inline-block;
-    width: 1.5rem;
+    width: 2rem;
     height: 2px;
-    background: var(--accent);
+    background: linear-gradient(90deg, var(--accent), color-mix(in oklch, var(--accent) 40%, transparent));
     border-radius: 1px;
   }
 
@@ -1119,10 +1120,12 @@ img {
   }
 
   .subtle-card {
-    @apply rounded-[24px] border p-5;
+    @apply rounded-[24px] border p-6 sm:p-8;
     border-color: var(--line);
-    background: color-mix(in oklch, var(--panel-soft) 86%, black 14%);
-    backdrop-filter: blur(6px);
+    background:
+      linear-gradient(135deg, color-mix(in oklch, var(--accent) 3%, transparent), transparent 40%),
+      color-mix(in oklch, var(--panel-soft) 86%, black 14%);
+    backdrop-filter: blur(8px);
   }
 
   .section-frame {
@@ -1373,6 +1376,7 @@ img {
   /* Pinned Process Timeline */
   .pp-wrapper {
     position: relative;
+    max-width: 720px;
   }
 
   .pp-track {
@@ -1434,6 +1438,11 @@ img {
 
   .pp-content {
     flex: 1;
+    transition: border-color 300ms var(--ease-out-strong);
+  }
+
+  .pp-content.panel {
+    padding: 1.75rem 2rem;
   }
 }
 
@@ -2236,12 +2245,18 @@ img {
   align-items: center;
   padding-block: clamp(5rem, 10vw, 9rem);
   min-height: 70vh;
+  border-top: 1px solid color-mix(in oklch, var(--line) 30%, transparent);
+}
+
+.svc-showcase:first-of-type {
+  border-top: none;
+  margin-top: 4rem;
 }
 
 @media (min-width: 1024px) {
   .svc-showcase {
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 5.5rem;
   }
 
   .svc-showcase-reverse .svc-text-side {
@@ -2288,14 +2303,16 @@ img {
 }
 
 .svc-stat {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 1.5rem;
-  border-radius: 16px;
-  border: 1px solid color-mix(in oklch, var(--accent) 20%, var(--line));
-  background: color-mix(in oklch, var(--accent) 5%, var(--panel));
+  padding: 1.15rem 1.75rem;
+  border-radius: 18px;
+  border: 1px solid color-mix(in oklch, var(--accent) 22%, var(--line));
+  background:
+    linear-gradient(135deg, color-mix(in oklch, var(--accent) 6%, transparent), color-mix(in oklch, var(--accent) 3%, var(--panel)));
+  box-shadow: 0 8px 24px -12px color-mix(in oklch, var(--accent) 15%, transparent);
 }
 
 .svc-stat-value {
@@ -2320,13 +2337,23 @@ img {
 .svc-visual-card {
   border-radius: 24px;
   border: 1px solid color-mix(in oklch, var(--accent) 15%, var(--line));
-  background: color-mix(in oklch, var(--bg) 90%, transparent);
-  backdrop-filter: blur(16px);
-  padding: 2rem;
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--panel-strong) 60%, transparent), color-mix(in oklch, var(--bg) 92%, transparent));
+  backdrop-filter: blur(20px);
+  padding: 2rem 2.25rem;
   box-shadow:
-    0 30px 60px -15px color-mix(in oklch, black 45%, transparent),
-    0 0 40px -10px color-mix(in oklch, var(--accent) 10%, transparent),
-    inset 0 1px 0 color-mix(in oklch, white 4%, transparent);
+    0 40px 80px -20px color-mix(in oklch, black 50%, transparent),
+    0 0 50px -12px color-mix(in oklch, var(--accent) 10%, transparent),
+    inset 0 1px 0 color-mix(in oklch, white 5%, transparent);
+  transition: transform 500ms var(--ease-out-strong), box-shadow 500ms var(--ease-out-strong);
+}
+
+.svc-visual-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 50px 100px -25px color-mix(in oklch, black 55%, transparent),
+    0 0 60px -14px color-mix(in oklch, var(--accent) 14%, transparent),
+    inset 0 1px 0 color-mix(in oklch, white 6%, transparent);
 }
 
 .svc-visual-card-header {
@@ -2356,17 +2383,21 @@ img {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  padding: 0.85rem 1rem;
-  border-radius: 12px;
-  border: 1px solid color-mix(in oklch, var(--line) 50%, transparent);
-  background: color-mix(in oklch, var(--panel-strong) 60%, transparent);
+  padding: 0.95rem 1.1rem;
+  border-radius: 14px;
+  border: 1px solid color-mix(in oklch, var(--line) 40%, transparent);
+  background:
+    linear-gradient(135deg, color-mix(in oklch, var(--accent) 3%, transparent), transparent 50%),
+    color-mix(in oklch, var(--panel-strong) 55%, transparent);
   font-size: 0.88rem;
   color: var(--text-muted);
-  transition: border-color 200ms ease;
+  transition: border-color 300ms var(--ease-out-strong), background 300ms var(--ease-out-strong), transform 300ms var(--ease-out-strong);
 }
 
 .svc-workflow-step:hover {
   border-color: color-mix(in oklch, var(--accent) 30%, var(--line));
+  background: color-mix(in oklch, var(--accent) 5%, var(--panel-strong) 60%);
+  transform: translateX(3px);
 }
 
 .svc-workflow-step-icon {
@@ -2468,17 +2499,21 @@ img {
 .voice-feature-card {
   display: flex;
   gap: 1rem;
-  padding: 1.25rem 1.5rem;
-  border-radius: 16px;
-  border: 1px solid color-mix(in oklch, var(--line) 60%, transparent);
-  background: color-mix(in oklch, var(--panel) 70%, transparent);
-  backdrop-filter: blur(8px);
-  transition: border-color 300ms ease, background 300ms ease;
+  padding: 1.35rem 1.65rem;
+  border-radius: 18px;
+  border: 1px solid color-mix(in oklch, var(--line) 50%, transparent);
+  background:
+    linear-gradient(135deg, color-mix(in oklch, var(--accent) 3%, transparent), transparent 50%),
+    color-mix(in oklch, var(--panel) 70%, transparent);
+  backdrop-filter: blur(10px);
+  transition: border-color 300ms var(--ease-out-strong), background 300ms var(--ease-out-strong), transform 300ms var(--ease-out-strong), box-shadow 300ms var(--ease-out-strong);
 }
 
 .voice-feature-card:hover {
   border-color: color-mix(in oklch, var(--accent) 30%, var(--line));
-  background: color-mix(in oklch, var(--accent) 4%, var(--panel) 80%);
+  background: color-mix(in oklch, var(--accent) 5%, var(--panel) 82%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -16px color-mix(in oklch, var(--accent) 18%, transparent);
 }
 
 .voice-feature-icon {

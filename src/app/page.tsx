@@ -37,7 +37,7 @@ export default function HomePage() {
       <SiteHeader />
       <main>
         {/* ─── HERO ─── */}
-        <section className="page-section section-slice section-slice-hero pt-16 sm:pt-20" id="hero">
+        <section className="page-section section-slice section-slice-hero pt-20 sm:pt-28" id="hero">
           <div className="shell">
             <div className="hero-panel">
               <HeroAnimation>
@@ -93,13 +93,13 @@ export default function HomePage() {
         <section className="page-section section-slice section-slice-services" id="services" data-depth-section>
           <div className="shell">
             <ScrollSectionDepth>
-              <div className="max-w-[680px] mx-auto text-center">
+              <div className="max-w-[720px] mx-auto text-center">
                 <p className="section-eyebrow" style={{ justifyContent: "center" }}>What I Build</p>
                 <ScrollWordReveal
                   text="Pick the workflow that hurts most. I'll fix it in 21 days."
-                  className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]"
+                  className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-bold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]"
                 />
-                <p className="mt-6 text-[1.08rem] leading-[1.85] text-[color:var(--text-muted)] max-w-[52ch] mx-auto">
+                <p className="mt-7 text-[1.1rem] leading-[1.9] text-[color:var(--text-muted)] max-w-[52ch] mx-auto">
                   Each sprint targets <span className="text-highlight">one painful process</span> — not
                   a vague retainer. You pick the bottleneck, I build the automation.
                 </p>
@@ -271,11 +271,11 @@ export default function HomePage() {
         <section className="page-section section-slice section-slice-process" id="process">
           <div className="shell">
             <ScrollSectionDepth>
-              <div className="max-w-[680px]">
+              <div className="max-w-[720px]">
                 <p className="section-eyebrow">How It Works</p>
                 <ScrollWordReveal
                   text="From free audit to running automation — in 4 steps."
-                  className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]"
+                  className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-bold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]"
                 />
               </div>
             </ScrollSectionDepth>
@@ -330,18 +330,18 @@ export default function HomePage() {
         <section className="page-section section-slice section-slice-proof" id="case-studies" data-depth-section>
           <div className="shell">
             <ScrollSectionDepth>
-              <div className="max-w-[680px]">
+              <div className="max-w-[720px]">
                 <p className="section-eyebrow">Results</p>
                 <ScrollWordReveal
                   text="Real sprints. Measurable outcomes."
-                  className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]"
+                  className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-bold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]"
                 />
               </div>
             </ScrollSectionDepth>
 
             {publishedCaseStudyTiles.length > 0 && (
               <GSAPReveal stagger variant="slide-up" delay={0.1}>
-                <div className="mt-12 grid gap-5 lg:grid-cols-3">
+                <div className="mt-14 grid gap-6 lg:grid-cols-3">
                   {publishedCaseStudyTiles.map((tile) => (
                     <ScrollScaleReveal key={tile.clientType}>
                       <article className="panel" data-gsap-reveal data-tilt-card>
@@ -374,21 +374,21 @@ export default function HomePage() {
             ) : null}
 
             <ScrollScaleReveal>
-              <div className="mt-12 grid gap-5 lg:grid-cols-[auto_1fr] lg:items-center">
-                <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border-2 border-[color:var(--accent)] shadow-[0_0_0_4px_color-mix(in_oklch,var(--accent)_10%,transparent),0_0_20px_-6px_color-mix(in_oklch,var(--accent)_30%,transparent)]">
+              <div className="mt-16 panel grid gap-6 lg:grid-cols-[auto_1fr] lg:items-center">
+                <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-2xl border-2 border-[color:var(--accent)] shadow-[0_0_0_4px_color-mix(in_oklch,var(--accent)_10%,transparent),0_0_24px_-6px_color-mix(in_oklch,var(--accent)_30%,transparent)]">
                   <Image
                     src="/assets/images/qarib-profile.jpg"
                     alt="Qarib Iqbal profile photo"
                     fill
-                    sizes="112px"
+                    sizes="128px"
                     className="profile-photo object-cover"
                   />
                 </div>
                 <div>
-                  <h3 className="text-[1.3rem] font-semibold tracking-[-0.02em] text-[color:var(--text-main)]">
+                  <h3 className="text-[1.4rem] font-bold tracking-[-0.02em] text-[color:var(--text-main)]">
                     Built by <span className="text-highlight-strong">Qarib Iqbal</span>
                   </h3>
-                  <p className="mt-2 text-[0.95rem] leading-[1.8] text-[color:var(--text-muted)] max-w-[60ch]">
+                  <p className="mt-3 text-[1rem] leading-[1.85] text-[color:var(--text-muted)] max-w-[60ch]">
                     I build focused automation systems for marketing agencies — one expensive
                     process at a time. Specialized in{" "}
                     <span className="text-highlight">Make, n8n, Zapier, Airtable</span>, and CRM workflow design.
@@ -404,14 +404,14 @@ export default function HomePage() {
         <section className="page-section section-slice section-slice-resource" id="checklist" data-depth-section>
           <div className="shell">
             <ScrollSectionDepth>
-              <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+              <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                 <div>
                   <p className="section-eyebrow">Free Checklist</p>
                   <ScrollWordReveal
                     text="Not ready for a call? Start with the checklist."
-                    className="text-balance font-[family:var(--font-display)] text-[clamp(1.8rem,3.5vw,3rem)] font-semibold leading-[1.08] tracking-[-0.04em] text-[color:var(--text-main)]"
+                    className="text-balance font-[family:var(--font-display)] text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.08] tracking-[-0.04em] text-[color:var(--text-main)]"
                   />
-                  <p className="mt-5 text-[1rem] leading-[1.8] text-[color:var(--text-muted)] max-w-[48ch]">
+                  <p className="mt-6 text-[1.05rem] leading-[1.85] text-[color:var(--text-muted)] max-w-[48ch]">
                     A <span className="text-highlight">10-minute self-audit</span> to find the 3-5 workflows
                     wasting the most time — and see which one is ready for a sprint.
                   </p>
@@ -429,12 +429,12 @@ export default function HomePage() {
           <div className="shell">
             <ScrollSectionDepth>
               <div className="hero-panel">
-                <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+                <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
                   <div>
                     <p className="section-eyebrow">Ready?</p>
                     <ScrollWordReveal
                       text="Map the bottleneck, then fix one workflow in 21 days."
-                      className="max-w-[20ch] text-balance font-[family:var(--font-display)] text-[clamp(2rem,3.8vw,4rem)] font-semibold leading-[1.05] tracking-[-0.05em] text-[color:var(--text-main)]"
+                      className="max-w-[20ch] text-balance font-[family:var(--font-display)] text-[clamp(2rem,3.8vw,4rem)] font-bold leading-[1.05] tracking-[-0.05em] text-[color:var(--text-main)]"
                     />
                   </div>
                   <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 lg:flex-col">
