@@ -9,7 +9,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/postcss.config.mjs",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_postcss_config_mjs",
-      "community": 47,
+      "community": 49,
       "norm_label": "postcss.config.mjs"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/next-env.d.ts",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_next_env_d_ts",
-      "community": 48,
+      "community": 50,
       "norm_label": "next-env.d.ts"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/next.config.ts",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_next_config_ts",
-      "community": 49,
+      "community": 51,
       "norm_label": "next.config.ts"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/global.d.ts",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_global_d_ts",
-      "community": 50,
+      "community": 52,
       "norm_label": "global.d.ts"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/page.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_app_page_tsx",
-      "community": 51,
+      "community": 53,
       "norm_label": "page.tsx"
     },
     {
@@ -162,7 +162,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/app/case-studies/page.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_app_case_studies_page_tsx",
-      "community": 52,
+      "community": 54,
       "norm_label": "page.tsx"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/projects.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_screens_projects_tsx",
-      "community": 53,
+      "community": 55,
       "norm_label": "projects.tsx"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/hero.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_screens_hero_tsx",
-      "community": 54,
+      "community": 56,
       "norm_label": "hero.tsx"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/screens/tech.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_screens_tech_tsx",
-      "community": 55,
+      "community": 57,
       "norm_label": "tech.tsx"
     },
     {
@@ -351,7 +351,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/GradientText.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_gradienttext_tsx",
-      "community": 56,
+      "community": 58,
       "norm_label": "gradienttext.tsx"
     },
     {
@@ -792,7 +792,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/ShinyText.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_shinytext_tsx",
-      "community": 57,
+      "community": 59,
       "norm_label": "shinytext.tsx"
     },
     {
@@ -949,12 +949,21 @@
       "norm_label": "utmcapture()"
     },
     {
+      "label": "voice-agent-showcase.tsx",
+      "file_type": "code",
+      "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/voice-agent-showcase.tsx",
+      "source_location": "L1",
+      "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_voice_agent_showcase_tsx",
+      "community": 60,
+      "norm_label": "voice-agent-showcase.tsx"
+    },
+    {
       "label": "site-header.tsx",
       "file_type": "code",
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/site-header.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_site_header_tsx",
-      "community": 58,
+      "community": 61,
       "norm_label": "site-header.tsx"
     },
     {
@@ -992,6 +1001,24 @@
       "id": "profile_card_panel_profilecardpanel",
       "community": 37,
       "norm_label": "profilecardpanel()"
+    },
+    {
+      "label": "service-showcase.tsx",
+      "file_type": "code",
+      "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/service-showcase.tsx",
+      "source_location": "L1",
+      "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_service_showcase_tsx",
+      "community": 38,
+      "norm_label": "service-showcase.tsx"
+    },
+    {
+      "label": "ServiceShowcase()",
+      "file_type": "code",
+      "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/service-showcase.tsx",
+      "source_location": "L21",
+      "id": "service_showcase_serviceshowcase",
+      "community": 38,
+      "norm_label": "serviceshowcase()"
     },
     {
       "label": "lead-capture-form.tsx",
@@ -1060,7 +1087,7 @@
       "label": "Boolean()",
       "file_type": "code",
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/lead-capture-form.tsx",
-      "source_location": "L226",
+      "source_location": "L225",
       "id": "lead_capture_form_boolean",
       "community": 0,
       "norm_label": "boolean()"
@@ -1071,7 +1098,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/scroll-reveal.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_scroll_reveal_tsx",
-      "community": 38,
+      "community": 39,
       "norm_label": "scroll-reveal.tsx"
     },
     {
@@ -1080,7 +1107,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/scroll-reveal.tsx",
       "source_location": "L13",
       "id": "scroll_reveal_scrollreveal",
-      "community": 38,
+      "community": 39,
       "norm_label": "scrollreveal()"
     },
     {
@@ -1089,7 +1116,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/section-snap.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_section_snap_tsx",
-      "community": 39,
+      "community": 40,
       "norm_label": "section-snap.tsx"
     },
     {
@@ -1098,8 +1125,26 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/section-snap.tsx",
       "source_location": "L9",
       "id": "section_snap_sectionsnap",
-      "community": 39,
+      "community": 40,
       "norm_label": "sectionsnap()"
+    },
+    {
+      "label": "journey-section.tsx",
+      "file_type": "code",
+      "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/journey-section.tsx",
+      "source_location": "L1",
+      "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_journey_section_tsx",
+      "community": 41,
+      "norm_label": "journey-section.tsx"
+    },
+    {
+      "label": "animateCounters()",
+      "file_type": "code",
+      "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/journey-section.tsx",
+      "source_location": "L98",
+      "id": "journey_section_animatecounters",
+      "community": 41,
+      "norm_label": "animatecounters()"
     },
     {
       "label": "audit-form.tsx",
@@ -1143,7 +1188,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/testimonial-carousel.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_testimonial_carousel_tsx",
-      "community": 59,
+      "community": 62,
       "norm_label": "testimonial-carousel.tsx"
     },
     {
@@ -1179,7 +1224,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/page-hero.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_page_hero_tsx",
-      "community": 60,
+      "community": 63,
       "norm_label": "page-hero.tsx"
     },
     {
@@ -1188,16 +1233,16 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/gsap-reveal.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_gsap_reveal_tsx",
-      "community": 40,
+      "community": 42,
       "norm_label": "gsap-reveal.tsx"
     },
     {
       "label": "GSAPReveal()",
       "file_type": "code",
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/gsap-reveal.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "id": "gsap_reveal_gsapreveal",
-      "community": 40,
+      "community": 42,
       "norm_label": "gsapreveal()"
     },
     {
@@ -1206,7 +1251,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/section-heading.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_section_heading_tsx",
-      "community": 61,
+      "community": 64,
       "norm_label": "section-heading.tsx"
     },
     {
@@ -1215,7 +1260,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/mobile-nav.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_mobile_nav_tsx",
-      "community": 41,
+      "community": 43,
       "norm_label": "mobile-nav.tsx"
     },
     {
@@ -1224,7 +1269,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/mobile-nav.tsx",
       "source_location": "L13",
       "id": "mobile_nav_closemenu",
-      "community": 41,
+      "community": 43,
       "norm_label": "closemenu()"
     },
     {
@@ -1269,7 +1314,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/button-link.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_button_link_tsx",
-      "community": 42,
+      "community": 44,
       "norm_label": "button-link.tsx"
     },
     {
@@ -1278,7 +1323,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/button-link.tsx",
       "source_location": "L20",
       "id": "button_link_buttonlink",
-      "community": 42,
+      "community": 44,
       "norm_label": "buttonlink()"
     },
     {
@@ -1287,7 +1332,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/reveal.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_reveal_tsx",
-      "community": 43,
+      "community": 45,
       "norm_label": "reveal.tsx"
     },
     {
@@ -1296,7 +1341,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/reveal.tsx",
       "source_location": "L17",
       "id": "reveal_reveal",
-      "community": 43,
+      "community": 45,
       "norm_label": "reveal()"
     },
     {
@@ -1305,7 +1350,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/section-rail.tsx",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_section_rail_tsx",
-      "community": 44,
+      "community": 46,
       "norm_label": "section-rail.tsx"
     },
     {
@@ -1314,7 +1359,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/section-rail.tsx",
       "source_location": "L10",
       "id": "section_rail_sectionrail",
-      "community": 44,
+      "community": 46,
       "norm_label": "sectionrail()"
     },
     {
@@ -1440,7 +1485,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/utils.ts",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_lib_utils_ts",
-      "community": 45,
+      "community": 47,
       "norm_label": "utils.ts"
     },
     {
@@ -1449,7 +1494,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/utils.ts",
       "source_location": "L4",
       "id": "utils_cn",
-      "community": 45,
+      "community": 47,
       "norm_label": "cn()"
     },
     {
@@ -1512,7 +1557,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/site-content.ts",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_lib_site_content_ts",
-      "community": 62,
+      "community": 65,
       "norm_label": "site-content.ts"
     },
     {
@@ -1548,7 +1593,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/seo.ts",
       "source_location": "L1",
       "id": "users_qaribiqbal_developement_projects_ai_portfolio_src_lib_seo_ts",
-      "community": 46,
+      "community": 48,
       "norm_label": "seo.ts"
     },
     {
@@ -1557,7 +1602,7 @@
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/lib/seo.ts",
       "source_location": "L16",
       "id": "seo_buildmetadata",
-      "community": 46,
+      "community": 48,
       "norm_label": "buildmetadata()"
     },
     {
@@ -2570,6 +2615,18 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/service-showcase.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_service_showcase_tsx",
+      "_tgt": "service_showcase_serviceshowcase",
+      "source": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_service_showcase_tsx",
+      "target": "service_showcase_serviceshowcase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/lead-capture-form.tsx",
       "source_location": "L51",
       "weight": 1.0,
@@ -2643,7 +2700,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/lead-capture-form.tsx",
-      "source_location": "L296",
+      "source_location": "L295",
       "weight": 1.0,
       "_src": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_lead_capture_form_tsx",
       "_tgt": "lead_capture_form_boolean",
@@ -2774,6 +2831,18 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/journey-section.tsx",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_src": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_journey_section_tsx",
+      "_tgt": "journey_section_animatecounters",
+      "source": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_journey_section_tsx",
+      "target": "journey_section_animatecounters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/audit-form.tsx",
       "source_location": "L40",
       "weight": 1.0,
@@ -2835,7 +2904,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/qaribiqbal/Developement/Projects/ai-portfolio/src/components/site/gsap-reveal.tsx",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0,
       "_src": "users_qaribiqbal_developement_projects_ai_portfolio_src_components_site_gsap_reveal_tsx",
       "_tgt": "gsap_reveal_gsapreveal",

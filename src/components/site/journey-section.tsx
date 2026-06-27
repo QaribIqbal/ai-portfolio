@@ -41,12 +41,12 @@ const CHAOS_CARDS = [
 ];
 
 const CATEGORIES = [
-  { key: "lead", label: "Lead Follow-Up", x: 12, y: 18 },
-  { key: "reporting", label: "Client Reporting", x: 62, y: 18 },
-  { key: "crm", label: "CRM Updates", x: 12, y: 58 },
-  { key: "onboarding", label: "Onboarding", x: 62, y: 58 },
-  { key: "scheduling", label: "Scheduling", x: 37, y: 78 },
-  { key: "alerts", label: "Internal Alerts", x: 37, y: 38 },
+  { key: "lead", label: "Lead Follow-Up", x: 45, y: 18 },
+  { key: "reporting", label: "Client Reporting", x: 78, y: 18 },
+  { key: "crm", label: "CRM Updates", x: 45, y: 58 },
+  { key: "onboarding", label: "Onboarding", x: 78, y: 58 },
+  { key: "scheduling", label: "Scheduling", x: 61, y: 78 },
+  { key: "alerts", label: "Internal Alerts", x: 61, y: 38 },
 ];
 
 const FUNNEL_STAGES: { label: string; Icon: typeof Target }[] = [
@@ -364,11 +364,11 @@ export function JourneySection() {
             ))}
 
             <svg className="connection-lines-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <line className="connection-line" x1="25" y1="22" x2="37" y2="38" />
-              <line className="connection-line" x1="62" y1="22" x2="37" y2="38" />
-              <line className="connection-line" x1="25" y1="58" x2="37" y2="38" />
-              <line className="connection-line" x1="62" y1="58" x2="37" y2="38" />
-              <line className="connection-line" x1="37" y1="78" x2="37" y2="38" />
+              <line className="connection-line" x1="45" y1="22" x2="61" y2="38" />
+              <line className="connection-line" x1="78" y1="22" x2="61" y2="38" />
+              <line className="connection-line" x1="45" y1="58" x2="61" y2="38" />
+              <line className="connection-line" x1="78" y1="58" x2="61" y2="38" />
+              <line className="connection-line" x1="61" y1="78" x2="61" y2="38" />
             </svg>
 
             <div className="ai-core">

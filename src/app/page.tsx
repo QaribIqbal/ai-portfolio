@@ -1,6 +1,5 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Mail, BarChart3, FileText, Settings, ArrowDown } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 import { ButtonLink } from "@/components/site/button-link";
 import { VoiceAgentShowcase } from "@/components/site/voice-agent-showcase";
@@ -8,21 +7,13 @@ import { GSAPReveal } from "@/components/site/gsap-reveal";
 import { HeroAnimation, HeroTitle } from "@/components/site/hero-animation";
 import { JourneySection } from "@/components/site/journey-section";
 import { LeadCaptureForm } from "@/components/site/lead-capture-form";
-import { SectionHeading } from "@/components/site/section-heading";
+import { ServiceShowcase } from "@/components/site/service-showcase";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { TestimonialCarousel } from "@/components/site/testimonial-carousel";
 import {
-  checklistHighlights,
-  homeProblems,
-  processSteps,
   publishedCaseStudyTiles,
-  publishedQuoteStripEntries,
   publishedTestimonials,
-  proofAuditIncludes,
-  proofDeliverables,
-  proofSprintIncludes,
-  services,
   siteConfig,
 } from "@/lib/site-content";
 import { buildMetadata } from "@/lib/seo";
@@ -33,29 +24,12 @@ export const metadata = buildMetadata({
     "Qarib Iqbal helps lean marketing agencies remove manual follow-up, reporting, onboarding, and handoff bottlenecks with practical automation systems.",
 });
 
-const flowSteps = [
-  {
-    label: "Find the leak",
-    href: "#problem",
-    description: "Scan the bottlenecks that usually drain agency time.",
-  },
-  {
-    label: "Choose the workflow",
-    href: "#services",
-    description: "Pick the one manual process worth fixing first.",
-  },
-  {
-    label: "See the sprint path",
-    href: "#process",
-    description: "Understand exactly how the audit becomes a working system.",
-  },
-];
-
 export default function HomePage() {
   return (
     <div className="min-h-[100dvh]">
       <SiteHeader />
       <main>
+        {/* ─── HERO ─── */}
         <section className="page-section section-slice section-slice-hero pt-16 sm:pt-20" id="hero" data-snap-section>
           <div className="shell">
             <div className="hero-panel">
@@ -65,14 +39,13 @@ export default function HomePage() {
                 </p>
                 <HeroTitle />
                 <p
-                  className="mt-8 max-w-[62ch] text-[1.1rem] leading-[1.85] text-[color:var(--text-muted)] sm:text-[1.18rem]"
+                  className="mt-8 max-w-[56ch] text-[1.14rem] leading-[1.85] text-[color:var(--text-muted)] sm:text-[1.2rem]"
                   data-hero-copy
                 >
-                  I run focused 21-Day Agency Automation Sprints that fix one expensive manual
-                  workflow at a time, lead follow-up, reporting, onboarding, or internal handoffs, so
+                  I run <span className="text-highlight-strong">21-Day Automation Sprints</span> that
+                  fix <span className="text-highlight">one expensive manual workflow</span> at a time — so
                   your team gets hours back without adding headcount.
                 </p>
-                {/* review: change-1 */}
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                   <ButtonLink
                     href="/contact"
@@ -89,7 +62,7 @@ export default function HomePage() {
                     trackingEvent="hero_checklist_click"
                     data-hero-cta
                   >
-                    Get the Agency AI Automation Checklist
+                    Get the Free Checklist
                   </ButtonLink>
                 </div>
                 <p
@@ -98,147 +71,251 @@ export default function HomePage() {
                 >
                   {siteConfig.shortCredibility}
                 </p>
-                {/* review: change-5 */}
                 <p className="capacity-note mt-3 max-w-[54ch]" data-hero-capacity>
-                  Currently accepting 2 new sprint clients per month — next availability: June 2026.
+                  Currently accepting <span className="text-highlight">2 new sprint clients</span> per month.
                 </p>
               </HeroAnimation>
-              {/*
-                LinkedIn traffic alignment:
-                When sharing the website from LinkedIn Featured or banner,
-                use: https://qaribiqbal.netlify.app/?utm_source=linkedin&utm_medium=profile&utm_campaign=checklist
-                The site does not need to show UTM params to visitors —
-                but analytics tools (Plausible, GA4) will capture them automatically.
-              */}
             </div>
           </div>
         </section>
 
-        <section className="flow-strip-section" aria-label="Recommended page path">
-          <div className="shell">
-            <GSAPReveal stagger>
-              <div className="flow-strip">
-                {flowSteps.map((step, index) => (
-                  <Link key={step.href} href={step.href} className="flow-step" data-gsap-reveal>
-                    <span className="flow-step-index">{String(index + 1).padStart(2, "0")}</span>
-                    <span className="flow-step-copy">
-                      <span>{step.label}</span>
-                      <span>{step.description}</span>
-                    </span>
-                  </Link>
-                ))}
-                <div className="flow-step flow-step-cta" data-gsap-reveal>
-                  <span className="flow-step-index">04</span>
-                  <span className="flow-step-copy">
-                    <span>Book or self-audit</span>
-                    <span>Use the checklist if you are not ready for the call.</span>
-                  </span>
-                </div>
-              </div>
-            </GSAPReveal>
-          </div>
-        </section>
-
+        {/* ─── CINEMATIC JOURNEY ─── */}
         <JourneySection />
 
-        <section className="page-section section-slice section-slice-problem" id="problem" data-snap-section>
+        {/* ─── SERVICES: THE STAR ─── */}
+        <section className="page-section section-slice section-slice-services" id="services" data-snap-section>
           <div className="shell">
             <GSAPReveal variant="clip-up">
-              <SectionHeading
-                eyebrow="Problem"
-                title="Manual operations are where lean agencies lose leverage"
-                description="Fix one bottleneck properly and the team gets immediate leverage without adding more software."
-              />
-            </GSAPReveal>
-            <GSAPReveal stagger variant="slide-up" delay={0.15}>
-              <div className="problem-grid mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                {homeProblems.map((problem, index) => (
-                  <article key={problem} className="panel" data-gsap-reveal>
-                    <div className="mb-4 flex items-center gap-3">
-                      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[color:color-mix(in_oklch,var(--accent)_30%,transparent)] bg-[color:color-mix(in_oklch,var(--accent)_10%,transparent)] text-sm font-bold text-[color:var(--accent)]">
-                        {index + 1}
-                      </span>
-                    </div>
-                    <p className="text-[1.02rem] leading-[1.8] text-[color:var(--text-muted)]">{problem}</p>
-                  </article>
-                ))}
+              <div className="max-w-[680px] mx-auto text-center">
+                <p className="section-eyebrow" style={{ justifyContent: "center" }}>What I Build</p>
+                <h2 className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]">
+                  Pick the workflow that hurts most.{" "}
+                  <span className="text-highlight-strong">I&apos;ll fix it in 21 days.</span>
+                </h2>
+                <p className="mt-6 text-[1.08rem] leading-[1.85] text-[color:var(--text-muted)] max-w-[52ch] mx-auto">
+                  Each sprint targets <span className="text-highlight">one painful process</span> — not
+                  a vague retainer. You pick the bottleneck, I build the automation.
+                </p>
               </div>
             </GSAPReveal>
-          </div>
-        </section>
 
-        <section
-          className="page-section section-slice section-slice-services horizontal-services-section"
-          id="services"
-          data-horizontal-section="services"
-        >
-          <div className="shell">
-            <GSAPReveal variant="slide-up">
-              <div className="services-heading-row">
-                <SectionHeading
-                  eyebrow="Services"
-                  title="What the 21-Day Agency Automation Sprint can target"
-                  description="Instead of vague automation services, the work is delivered through focused sprints that target one painful workflow at a time."
-                />
-                <div className="horizontal-scroll-cue" aria-hidden="true">
-                  <span />
-                  <span />
-                  <span />
+            <ServiceShowcase
+              eyebrow="Sprint 01"
+              title={
+                <>
+                  Lead Follow-Up{" "}
+                  <span className="text-highlight-strong">in minutes, not hours</span>
+                </>
+              }
+              description={
+                <>
+                  When lead response depends on who&apos;s free, opportunities stall.
+                  This sprint builds <span className="text-highlight">instant first-touch automation</span> that
+                  qualifies, routes, and follows up — before your competitor even opens their inbox.
+                </>
+              }
+              features={[
+                { text: <><span className="text-highlight">Qualified leads</span> get a response within minutes — automatically</> },
+                { text: <>CRM status stays current without manual cleanup</> },
+                { text: <>Sales gets structured reminders, not ad-hoc chasing</> },
+              ]}
+              stat={{ value: "<5m", label: "Avg First Response" }}
+              visual={
+                <div className="svc-visual-card">
+                  <div className="svc-visual-card-header">
+                    <div className="svc-visual-card-dot" style={{ background: "#34d399" }} />
+                    <div className="svc-visual-card-dot" style={{ background: "var(--accent)" }} />
+                    <div className="svc-visual-card-dot" style={{ background: "#a78bfa" }} />
+                    <span className="svc-visual-card-title">Lead Automation Flow</span>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <div className="svc-workflow-step">
+                      <div className="svc-workflow-step-icon"><Mail className="h-4 w-4" /></div>
+                      <span>New lead submitted via form</span>
+                    </div>
+                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                    <div className="svc-workflow-step">
+                      <div className="svc-workflow-step-icon"><Settings className="h-4 w-4" /></div>
+                      <span>AI qualifies &amp; scores lead</span>
+                    </div>
+                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                    <div className="svc-workflow-step">
+                      <div className="svc-workflow-step-icon"><CheckCircle2 className="h-4 w-4" /></div>
+                      <span>CRM updated, follow-up triggered</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </GSAPReveal>
-            <GSAPReveal stagger className="horizontal-viewport">
-              <div className="horizontal-track services-horizontal-track" data-horizontal-track="services">
-                {services.map((service, index) => (
-                  <article key={service.title} className="panel service-panel horizontal-service-card" data-gsap-reveal>
-                    <div className="service-card-topline">
-                      <span>{String(index + 1).padStart(2, "0")}</span>
-                      <span>{service.callout}</span>
+              }
+            />
+
+            <ServiceShowcase
+              reverse
+              eyebrow="Sprint 02"
+              title={
+                <>
+                  Reporting that{" "}
+                  <span className="text-highlight-strong">builds itself</span>
+                </>
+              }
+              description={
+                <>
+                  Rebuilding reports by hand every week is a{" "}
+                  <span className="text-highlight">hidden tax on senior time</span>.
+                  This sprint connects your data sources and delivers polished client
+                  reports on autopilot.
+                </>
+              }
+              features={[
+                { text: <>Reports assembled and sent on a <span className="text-highlight">reliable cadence</span></> },
+                { text: <>Team shifts from copy-paste to insight and decisions</> },
+                { text: <>Data stays clean across channels and owners</> },
+              ]}
+              stat={{ value: "12h", label: "Saved Per Week" }}
+              visual={
+                <div className="svc-visual-card">
+                  <div className="svc-visual-card-header">
+                    <div className="svc-visual-card-dot" style={{ background: "#34d399" }} />
+                    <div className="svc-visual-card-dot" style={{ background: "var(--accent)" }} />
+                    <div className="svc-visual-card-dot" style={{ background: "#a78bfa" }} />
+                    <span className="svc-visual-card-title">Reporting Pipeline</span>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <div className="svc-workflow-step">
+                      <div className="svc-workflow-step-icon"><BarChart3 className="h-4 w-4" /></div>
+                      <span>Data pulled from 4+ platforms</span>
                     </div>
-                    <h3 className="service-card-title">{service.title}</h3>
-                    <p className="mt-4 text-[1.02rem] leading-[1.8] text-[color:var(--text-muted)]">
-                      {service.description}
-                    </p>
-                    <ul className="service-card-list">
-                      {service.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-3">
-                          <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[color:var(--accent)]" aria-hidden="true" />
-                          <span className="text-[0.92rem] leading-[1.75] text-[color:var(--text-muted)]">{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </article>
-                ))}
-              </div>
-            </GSAPReveal>
+                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                    <div className="svc-workflow-step">
+                      <div className="svc-workflow-step-icon"><Settings className="h-4 w-4" /></div>
+                      <span>Auto-formatted into branded template</span>
+                    </div>
+                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                    <div className="svc-workflow-step">
+                      <div className="svc-workflow-step-icon"><Mail className="h-4 w-4" /></div>
+                      <span>Delivered to clients on schedule</span>
+                    </div>
+                  </div>
+                </div>
+              }
+            />
+
+            <ServiceShowcase
+              eyebrow="Sprint 03"
+              title={
+                <>
+                  Client onboarding{" "}
+                  <span className="text-highlight-strong">that never drifts</span>
+                </>
+              }
+              description={
+                <>
+                  When onboarding varies by account manager,{" "}
+                  <span className="text-highlight">delivery starts behind</span> and
+                  rework stacks up. This sprint builds a consistent deal-won to kickoff
+                  pipeline that fires every time.
+                </>
+              }
+              features={[
+                { text: <>Tasks, docs, and reminders trigger <span className="text-highlight">in the right order</span></> },
+                { text: <>Internal teams get visibility without chasing status</> },
+                { text: <>New accounts go from close to kickoff with zero gaps</> },
+              ]}
+              stat={{ value: "0", label: "Missed Handoffs Per Month" }}
+              visual={
+                <div className="svc-visual-card">
+                  <div className="svc-visual-card-header">
+                    <div className="svc-visual-card-dot" style={{ background: "#34d399" }} />
+                    <div className="svc-visual-card-dot" style={{ background: "var(--accent)" }} />
+                    <div className="svc-visual-card-dot" style={{ background: "#a78bfa" }} />
+                    <span className="svc-visual-card-title">Onboarding Workflow</span>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <div className="svc-workflow-step">
+                      <div className="svc-workflow-step-icon"><CheckCircle2 className="h-4 w-4" /></div>
+                      <span>Deal marked won in CRM</span>
+                    </div>
+                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                    <div className="svc-workflow-step">
+                      <div className="svc-workflow-step-icon"><FileText className="h-4 w-4" /></div>
+                      <span>Docs, tasks, and calendar auto-created</span>
+                    </div>
+                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                    <div className="svc-workflow-step">
+                      <div className="svc-workflow-step-icon"><Mail className="h-4 w-4" /></div>
+                      <span>Welcome email + team notifications sent</span>
+                    </div>
+                  </div>
+                </div>
+              }
+            />
           </div>
         </section>
 
+        {/* ─── VOICE AGENTS ─── */}
         <VoiceAgentShowcase />
 
+        {/* ─── HOW IT WORKS ─── */}
         <section className="page-section section-slice section-slice-process" id="process" data-snap-section>
           <div className="shell">
             <GSAPReveal variant="clip-up">
-              <SectionHeading
-                eyebrow="Process"
-                title="How the audit turns into one fixed workflow"
-                description="Start with the smallest high-cost bottleneck. Then map it, build it, test it, and hand it over without turning the engagement into a vague retainer."
-              />
+              <div className="max-w-[680px]">
+                <p className="section-eyebrow">How It Works</p>
+                <h2 className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]">
+                  From <span className="text-highlight">free audit</span> to{" "}
+                  <span className="text-highlight-strong">running automation</span> — in 4 steps.
+                </h2>
+              </div>
             </GSAPReveal>
             <GSAPReveal stagger variant="slide-up" delay={0.1}>
-              <div className="process-path mt-12">
-                {processSteps.map((step, index) => (
-                  <article key={step.title} className="panel process-card" data-gsap-reveal>
-                    <div className="mb-4 flex items-center gap-3">
-                      <span className="step-number">{index + 1}</span>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
-                        Step {index + 1}
-                      </p>
-                    </div>
-                    <h3 className="text-[1.4rem] font-semibold tracking-[-0.03em] text-[color:var(--text-main)]">
+              <div className="process-steps-grid mt-12">
+                {[
+                  {
+                    num: "01",
+                    title: "Download the free checklist",
+                    desc: (
+                      <>
+                        A <span className="text-highlight">10-minute self-audit</span> to find the workflows
+                        leaking the most time each week.
+                      </>
+                    ),
+                  },
+                  {
+                    num: "02",
+                    title: "Book the free automation audit",
+                    desc: (
+                      <>
+                        We map <span className="text-highlight">one painful workflow</span> live and
+                        define what to automate first.
+                      </>
+                    ),
+                  },
+                  {
+                    num: "03",
+                    title: "Run a 21-Day Sprint",
+                    desc: (
+                      <>
+                        Audit, design, build, test, and hand over — with{" "}
+                        <span className="text-highlight-strong">Loom walkthroughs and SOPs</span> included.
+                      </>
+                    ),
+                  },
+                  {
+                    num: "04",
+                    title: "Optional ongoing optimization",
+                    desc: (
+                      <>
+                        Keep the workflow healthy. Adjust when tools change. Scope the next
+                        bottleneck <span className="text-highlight">one at a time</span>.
+                      </>
+                    ),
+                  },
+                ].map((step) => (
+                  <article key={step.num} className="panel process-step-card" data-gsap-reveal>
+                    <span className="process-step-num">{step.num}</span>
+                    <h3 className="text-[1.3rem] font-semibold tracking-[-0.03em] text-[color:var(--text-main)] mt-3">
                       {step.title}
                     </h3>
-                    <p className="mt-4 text-[0.95rem] leading-[1.8] text-[color:var(--text-muted)]">{step.description}</p>
+                    <p className="mt-3 text-[0.95rem] leading-[1.8] text-[color:var(--text-muted)]">{step.desc}</p>
                   </article>
                 ))}
               </div>
@@ -246,140 +323,42 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ─── RESULTS & PROOF ─── */}
         <section className="page-section section-slice section-slice-proof" id="case-studies" data-snap-section>
           <div className="shell">
             <GSAPReveal variant="clip-up">
-              <SectionHeading
-                eyebrow="Case Studies & Proof"
-                title="What you can check before committing"
-                description="Real operators care about implementation clarity more than vague promise language, so the audit, sprint scope, deliverables, and handoff all stay visible."
-              />
+              <div className="max-w-[680px]">
+                <p className="section-eyebrow">Results</p>
+                <h2 className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]">
+                  Real sprints.{" "}
+                  <span className="text-highlight-strong">Measurable outcomes.</span>
+                </h2>
+              </div>
             </GSAPReveal>
 
-            {publishedCaseStudyTiles.length > 0 ? (
-              <GSAPReveal stagger>
-                <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {publishedCaseStudyTiles.length > 0 && (
+              <GSAPReveal stagger variant="slide-up" delay={0.1}>
+                <div className="mt-12 grid gap-5 lg:grid-cols-3">
                   {publishedCaseStudyTiles.map((tile) => (
                     <article key={tile.clientType} className="panel" data-gsap-reveal>
                       <p className="text-xs uppercase tracking-[0.12em] text-[color:var(--text-subtle)]">
                         {tile.clientType}
                       </p>
-                      <p className="mt-3 text-sm leading-7 text-[color:var(--text-muted)]">
+                      <p className="mt-4 text-[0.95rem] leading-[1.75] text-[color:var(--text-muted)]">
                         <strong className="text-[color:var(--text-main)]">Problem:</strong> {tile.problem}
                       </p>
-                      <p className="mt-2 text-sm leading-7 text-[color:var(--text-muted)]">
-                        <strong className="text-[color:var(--text-main)]">Built:</strong> {tile.built}
-                      </p>
-                      <p className="mt-2 text-sm leading-7 text-[color:var(--text-muted)]">
-                        <strong className="text-[color:var(--text-main)]">Outcome:</strong> {tile.outcome}
+                      <p className="mt-2 text-[0.95rem] leading-[1.75] text-[color:var(--text-muted)]">
+                        <strong className="text-[color:var(--text-main)]">Outcome:</strong>{" "}
+                        <span className="text-highlight">{tile.outcome}</span>
                       </p>
                       {tile.sprintTag ? (
-                        <p className="mt-3 text-xs uppercase tracking-[0.1em] text-[color:var(--accent)]">
+                        <p className="mt-4 text-xs uppercase tracking-[0.1em] text-[color:var(--accent)]">
                           {tile.sprintTag}
                         </p>
                       ) : null}
                     </article>
                   ))}
                 </div>
-              </GSAPReveal>
-            ) : (
-              <GSAPReveal stagger>
-                <div className="mt-10 grid gap-4 md:grid-cols-2">
-                  {/* review: change-3 */}
-                  <article className="panel social-proof-placeholder" data-gsap-reveal>
-                    <p className="text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
-                      SPRINT OUTCOMES
-                    </p>
-                    <p className="mt-4 text-sm leading-7 text-[color:var(--text-muted)]">
-                      Sprint results are documented with before/after metrics and workflow maps.
-                      During the free audit, I walk through anonymized delivery artifacts from past
-                      sprint engagements.
-                    </p>
-                    <Link href="/services" className="mt-4 inline-flex text-sm text-[color:var(--accent)]">
-                      See what a sprint delivers →
-                    </Link>
-                  </article>
-                  {/* review: change-3 */}
-                  <article className="panel testimonial-placeholder" data-gsap-reveal>
-                    <p className="text-[11px] uppercase tracking-[0.14em] text-[color:var(--text-subtle)]">
-                      CLIENT FEEDBACK
-                    </p>
-                    <p className="mt-4 text-sm leading-7 text-[color:var(--text-muted)]">
-                      Feedback is collected at sprint close. Quotes and outcomes are shared publicly
-                      only after client approval. References available on request during the audit
-                      call.
-                    </p>
-                    <Link href="/contact" className="mt-4 inline-flex text-sm text-[color:var(--accent)]">
-                      Book the free audit →
-                    </Link>
-                  </article>
-                </div>
-              </GSAPReveal>
-            )}
-
-            <GSAPReveal>
-              <div className="mt-5 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-                <article className="panel">
-                  <h3 className="text-[1.35rem] font-semibold tracking-[-0.03em] text-[color:var(--text-main)]">
-                    Inside a 21-Day Agency Automation Sprint
-                  </h3>
-                  <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                    {proofSprintIncludes.map((item) => (
-                      <div key={item} className="subtle-card text-sm leading-7 text-[color:var(--text-muted)]">
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                  <p className="mt-6 text-sm leading-7 text-[color:var(--text-muted)]">
-                    If the agreed workflow is not implemented and running as scoped, I keep working on
-                    it until it is, at no extra cost.
-                  </p>
-                  {/* review: change-4 */}
-                  <hr className="mt-6 border-0 border-t border-t-[color:color-mix(in_oklch,var(--line)_40%,transparent)]" />
-                  {/* review: change-4 */}
-                  <p className="pricing-note mt-4">
-                    Sprint pricing is scoped per engagement based on workflow complexity, tool stack,
-                    and agency size. Investment range and timeline are discussed transparently during
-                    the free automation audit — no vague retainer structures, no surprise scope creep.
-                  </p>
-                </article>
-
-                <article className="panel">
-                  <p className="section-eyebrow">Example Deliverables — Sample systems, not client work</p>
-                  {/* TODO: Replace example deliverable placeholders with real screenshots when available */}
-                  <ul className="space-y-3">
-                    {proofDeliverables.map((item) => (
-                      <li key={item} className="subtle-card text-sm leading-7 text-[color:var(--text-muted)]">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              </div>
-            </GSAPReveal>
-
-            {publishedQuoteStripEntries.length > 0 ? (
-              <GSAPReveal>
-                <article className="panel mt-5">
-                  <p className="section-eyebrow">Quote Strip</p>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    {publishedQuoteStripEntries.map((entry) => (
-                      <p key={`${entry.quote}-${entry.attribution}`} className="subtle-card text-sm leading-7 text-[color:var(--text-muted)]">
-                        "{entry.quote}" — {entry.attribution}
-                      </p>
-                    ))}
-                  </div>
-                </article>
-              </GSAPReveal>
-            ) : (
-              <GSAPReveal>
-                <article className="panel mt-5">
-                  {/* TODO: Replace placeholder testimonial with real client quote */}
-                  <p className="text-sm leading-7 text-[color:var(--text-muted)]">
-                    Client quotes are shared publicly only after approval. If helpful, I can share
-                    anonymized sprint feedback during the audit call.
-                  </p>
-                </article>
               </GSAPReveal>
             )}
 
@@ -389,86 +368,47 @@ export default function HomePage() {
               </GSAPReveal>
             ) : null}
 
-            <GSAPReveal>
-              <div className="mt-5 grid gap-5 lg:grid-cols-[0.96fr_1.04fr]">
-                <article className="panel">
-                  <p className="section-eyebrow">Free Agency Automation Audit</p>
-                  <ul className="space-y-3">
-                    {proofAuditIncludes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[color:var(--accent)]" aria-hidden="true" />
-                        <span className="text-sm leading-7 text-[color:var(--text-muted)]">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-
-                {/* review: change-2 */}
-                <article className="panel min-h-[100px]">
-                  <p className="section-eyebrow">ABOUT QARIB</p>
-                  <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-                    <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border-2 border-[color:var(--accent)] shadow-[0_0_0_4px_color-mix(in_oklch,var(--accent)_10%,transparent),0_0_20px_-6px_color-mix(in_oklch,var(--accent)_30%,transparent)]">
-                      {/* TODO: Replace placeholder profile photo with real image */}
-                      {/* <!-- TODO: Replace with real headshot — recommended size 400x400px --> */}
-                      <Image
-                        src="/assets/images/qarib-profile.jpg"
-                        alt="Qarib Iqbal profile photo"
-                        fill
-                        sizes="112px"
-                        className="profile-photo object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-[1.2rem] font-semibold tracking-[-0.02em] text-[color:var(--text-main)]">
-                        Operator-led implementation
-                      </h3>
-                      <p className="mt-3 text-sm leading-7 text-[color:var(--text-muted)]">
-                        I spent years watching marketing agencies lose hours every week to the same
-                        manual workflows — reports rebuilt by hand, leads chased one by one,
-                        onboarding that started differently every time. I build focused automation
-                        systems that fix one expensive process at a time, so founder-led teams get
-                        real leverage without adding headcount, new software stacks, or extra
-                        complexity.
-                      </p>
-                      <p className="mt-3 text-[0.8em] leading-6 text-[color:var(--text-subtle)]">
-                        Based in Lahore, Pakistan. Working with agencies remotely worldwide.
-                      </p>
-                      <p className="mt-1 text-[0.8em] leading-6 text-[color:var(--text-subtle)]">
-                        Specialized in Make (Integromat), n8n, Zapier, Airtable, and CRM workflow
-                        design.
-                      </p>
-                    </div>
-                  </div>
-                </article>
+            <GSAPReveal variant="slide-up">
+              <div className="mt-12 grid gap-5 lg:grid-cols-[auto_1fr] lg:items-center">
+                <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border-2 border-[color:var(--accent)] shadow-[0_0_0_4px_color-mix(in_oklch,var(--accent)_10%,transparent),0_0_20px_-6px_color-mix(in_oklch,var(--accent)_30%,transparent)]">
+                  <Image
+                    src="/assets/images/qarib-profile.jpg"
+                    alt="Qarib Iqbal profile photo"
+                    fill
+                    sizes="112px"
+                    className="profile-photo object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-[1.3rem] font-semibold tracking-[-0.02em] text-[color:var(--text-main)]">
+                    Built by <span className="text-highlight-strong">Qarib Iqbal</span>
+                  </h3>
+                  <p className="mt-2 text-[0.95rem] leading-[1.8] text-[color:var(--text-muted)] max-w-[60ch]">
+                    I build focused automation systems for marketing agencies — one expensive
+                    process at a time. Specialized in{" "}
+                    <span className="text-highlight">Make, n8n, Zapier, Airtable</span>, and CRM workflow design.
+                    Based in Lahore, working remotely worldwide.
+                  </p>
+                </div>
               </div>
             </GSAPReveal>
           </div>
         </section>
 
+        {/* ─── CHECKLIST + LEAD CAPTURE ─── */}
         <section className="page-section section-slice section-slice-resource" id="checklist" data-snap-section>
           <div className="shell">
             <GSAPReveal variant="slide-up">
-              <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+              <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                 <div>
-                  <SectionHeading
-                    eyebrow="FREE CHECKLIST"
-                    title="Not ready to book a call? Start with the checklist."
-                    description="A 10–15 minute self‑audit to find the 3–5 workflows wasting the most time each week and see which one is ready for a 21‑Day Agency Automation Sprint."
-                  />
-                  <div className="mt-6 space-y-3">
-                    {checklistHighlights.map((item) => (
-                      <div key={item} className="flex items-start gap-3">
-                        <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[color:var(--accent)]" aria-hidden="true" />
-                        <p className="text-sm leading-7 text-[color:var(--text-muted)]">{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="mt-6 text-sm leading-7 text-[color:var(--text-subtle)]">
-                    Not ready for a call yet? Start here, find your bottlenecks, then book the audit
-                    when you&apos;re ready.
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-[color:var(--text-subtle)]">
-                    This helps you decide what to tackle in your first sprint.
+                  <p className="section-eyebrow">Free Checklist</p>
+                  <h2 className="text-balance font-[family:var(--font-display)] text-[clamp(1.8rem,3.5vw,3rem)] font-semibold leading-[1.08] tracking-[-0.04em] text-[color:var(--text-main)]">
+                    Not ready for a call?{" "}
+                    <span className="text-highlight-strong">Start with the checklist.</span>
+                  </h2>
+                  <p className="mt-5 text-[1rem] leading-[1.8] text-[color:var(--text-muted)] max-w-[48ch]">
+                    A <span className="text-highlight">10-minute self-audit</span> to find the 3–5 workflows
+                    wasting the most time — and see which one is ready for a sprint.
                   </p>
                 </div>
                 <LeadCaptureForm />
@@ -477,29 +417,25 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ─── FINAL CTA ─── */}
         <section className="page-section section-slice section-slice-final pt-0" id="final-cta" data-snap-section>
           <div className="shell">
             <GSAPReveal variant="fade-scale">
               <div className="hero-panel">
                 <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
                   <div>
-                    <p className="section-eyebrow">Final CTA</p>
-                    <h2 className="max-w-[18ch] text-balance font-[family:var(--font-display)] text-[clamp(2rem,3.8vw,4rem)] font-semibold leading-[1] tracking-[-0.05em] text-[color:var(--text-main)]">
-                      Map the bottleneck, then fix one workflow in 21 days.
+                    <p className="section-eyebrow">Ready?</p>
+                    <h2 className="max-w-[20ch] text-balance font-[family:var(--font-display)] text-[clamp(2rem,3.8vw,4rem)] font-semibold leading-[1.05] tracking-[-0.05em] text-[color:var(--text-main)]">
+                      Map the bottleneck, then{" "}
+                      <span className="text-highlight-strong">fix one workflow in 21 days.</span>
                     </h2>
-                    <p className="mt-4 max-w-[58ch] text-[1rem] leading-7 text-[color:var(--text-muted)]">
-                      If your agency is still rebuilding reports by hand, chasing leads manually, or
-                      relying on messy onboarding checklists, start with the checklist, book the audit,
-                      and then fix one workflow through a focused 21-day sprint with optional ongoing
-                      optimization after handoff.
-                    </p>
                   </div>
                   <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 lg:flex-col">
                     <ButtonLink href="/contact" className="max-sm:w-full" trackingEvent="final_audit_click">
                       Book Free Automation Audit
                     </ButtonLink>
                     <ButtonLink href="/checklist" variant="secondary" trackingEvent="final_checklist_click">
-                      Get the Agency AI Automation Checklist
+                      Get the Free Checklist
                     </ButtonLink>
                   </div>
                 </div>
