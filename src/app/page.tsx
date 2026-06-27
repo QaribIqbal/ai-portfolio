@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { ButtonLink } from "@/components/site/button-link";
+import { VoiceAgentShowcase } from "@/components/site/voice-agent-showcase";
 import { GSAPReveal } from "@/components/site/gsap-reveal";
 import { HeroAnimation, HeroTitle } from "@/components/site/hero-animation";
 import { JourneySection } from "@/components/site/journey-section";
@@ -64,7 +65,7 @@ export default function HomePage() {
                 </p>
                 <HeroTitle />
                 <p
-                  className="mt-6 max-w-[62ch] text-[1.08rem] leading-8 text-[color:var(--text-muted)] sm:text-[1.14rem]"
+                  className="mt-8 max-w-[62ch] text-[1.1rem] leading-[1.85] text-[color:var(--text-muted)] sm:text-[1.18rem]"
                   data-hero-copy
                 >
                   I run focused 21-Day Agency Automation Sprints that fix one expensive manual
@@ -150,15 +151,15 @@ export default function HomePage() {
               />
             </GSAPReveal>
             <GSAPReveal stagger variant="slide-up" delay={0.15}>
-              <div className="problem-grid mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              <div className="problem-grid mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {homeProblems.map((problem, index) => (
                   <article key={problem} className="panel" data-gsap-reveal>
-                    <div className="mb-3 flex items-center gap-3">
-                      <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[color:color-mix(in_oklch,var(--accent)_30%,transparent)] bg-[color:color-mix(in_oklch,var(--accent)_10%,transparent)] text-xs font-bold text-[color:var(--accent)]">
+                    <div className="mb-4 flex items-center gap-3">
+                      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[color:color-mix(in_oklch,var(--accent)_30%,transparent)] bg-[color:color-mix(in_oklch,var(--accent)_10%,transparent)] text-sm font-bold text-[color:var(--accent)]">
                         {index + 1}
                       </span>
                     </div>
-                    <p className="text-[1rem] leading-7 text-[color:var(--text-muted)]">{problem}</p>
+                    <p className="text-[1.02rem] leading-[1.8] text-[color:var(--text-muted)]">{problem}</p>
                   </article>
                 ))}
               </div>
@@ -195,14 +196,14 @@ export default function HomePage() {
                       <span>{service.callout}</span>
                     </div>
                     <h3 className="service-card-title">{service.title}</h3>
-                    <p className="mt-4 text-[1rem] leading-7 text-[color:var(--text-muted)]">
+                    <p className="mt-4 text-[1.02rem] leading-[1.8] text-[color:var(--text-muted)]">
                       {service.description}
                     </p>
                     <ul className="service-card-list">
                       {service.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-3">
                           <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[color:var(--accent)]" aria-hidden="true" />
-                          <span className="text-sm leading-7 text-[color:var(--text-muted)]">{bullet}</span>
+                          <span className="text-[0.92rem] leading-[1.75] text-[color:var(--text-muted)]">{bullet}</span>
                         </li>
                       ))}
                     </ul>
@@ -212,6 +213,8 @@ export default function HomePage() {
             </GSAPReveal>
           </div>
         </section>
+
+        <VoiceAgentShowcase />
 
         <section className="page-section section-slice section-slice-process" id="process" data-snap-section>
           <div className="shell">
@@ -223,7 +226,7 @@ export default function HomePage() {
               />
             </GSAPReveal>
             <GSAPReveal stagger variant="slide-up" delay={0.1}>
-              <div className="process-path mt-10">
+              <div className="process-path mt-12">
                 {processSteps.map((step, index) => (
                   <article key={step.title} className="panel process-card" data-gsap-reveal>
                     <div className="mb-4 flex items-center gap-3">
@@ -232,10 +235,10 @@ export default function HomePage() {
                         Step {index + 1}
                       </p>
                     </div>
-                    <h3 className="text-[1.35rem] font-semibold tracking-[-0.03em] text-[color:var(--text-main)]">
+                    <h3 className="text-[1.4rem] font-semibold tracking-[-0.03em] text-[color:var(--text-main)]">
                       {step.title}
                     </h3>
-                    <p className="mt-4 text-sm leading-7 text-[color:var(--text-muted)]">{step.description}</p>
+                    <p className="mt-4 text-[0.95rem] leading-[1.8] text-[color:var(--text-muted)]">{step.description}</p>
                   </article>
                 ))}
               </div>

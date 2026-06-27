@@ -114,6 +114,28 @@ export const services: ServiceTarget[] = [
     ],
     callout: "Available as a focused sprint engagement.",
   },
+  {
+    title: "AI Voice Agent Setup",
+    description:
+      "When inbound calls go unanswered or your team spends hours on repetitive phone conversations, an AI voice agent handles it — qualifying leads, booking appointments, and answering FAQs 24/7.",
+    bullets: [
+      "Inbound calls are answered instantly, even outside business hours.",
+      "Leads are qualified and routed to the right person automatically.",
+      "Appointment booking happens live on the call without human intervention.",
+    ],
+    callout: "Available as a 21-Day Voice Agent Sprint.",
+  },
+  {
+    title: "AI Chatbot & Conversational Agents",
+    description:
+      "When support tickets pile up or website visitors leave without engaging, an AI chatbot captures intent, answers questions, and routes conversations intelligently.",
+    bullets: [
+      "Website visitors get instant, contextual responses from your knowledge base.",
+      "Support volume drops as routine questions resolve without human agents.",
+      "Qualified conversations are escalated with full context to your team.",
+    ],
+    callout: "Delivered through sprint-based implementation.",
+  },
 ];
 
 export const processSteps: ProcessStep[] = [
