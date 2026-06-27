@@ -48,17 +48,16 @@ export function ServiceShowcase({
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: el,
-            start: "top 75%",
-            end: "bottom 20%",
-            scrub: 0.8,
+            start: "top 80%",
+            once: true,
           },
         });
 
         if (textSide) {
           tl.fromTo(
             textSide,
-            { opacity: 0, x: reverse ? 80 : -80, y: 40 },
-            { opacity: 1, x: 0, y: 0, duration: 0.4, ease: "power3.out" },
+            { opacity: 0, x: reverse ? 60 : -60, y: 30 },
+            { opacity: 1, x: 0, y: 0, duration: 1, ease: "power3.out" },
             0,
           );
         }
@@ -66,36 +65,36 @@ export function ServiceShowcase({
         if (visualSide) {
           tl.fromTo(
             visualSide,
-            { opacity: 0, x: reverse ? -80 : 80, y: 40, scale: 0.92 },
-            { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.4, ease: "power3.out" },
-            0.05,
+            { opacity: 0, x: reverse ? -60 : 60, y: 30, scale: 0.95 },
+            { opacity: 1, x: 0, y: 0, scale: 1, duration: 1, ease: "power3.out" },
+            0.15,
           );
         }
 
         if (descEl) {
           tl.fromTo(
             descEl,
-            { opacity: 0, y: 30 },
-            { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" },
-            0.15,
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
+            0.3,
           );
         }
 
         featureItems.forEach((item, i) => {
           tl.fromTo(
             item,
-            { opacity: 0, x: reverse ? 30 : -30, y: 20 },
-            { opacity: 1, x: 0, y: 0, duration: 0.25, ease: "power3.out" },
-            0.2 + i * 0.06,
+            { opacity: 0, x: reverse ? 20 : -20, y: 15 },
+            { opacity: 1, x: 0, y: 0, duration: 0.6, ease: "power3.out" },
+            0.4 + i * 0.1,
           );
         });
 
         if (statEl) {
           tl.fromTo(
             statEl,
-            { opacity: 0, scale: 0.8, y: 20 },
-            { opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "back.out(1.4)" },
-            0.45,
+            { opacity: 0, scale: 0.85, y: 15 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "back.out(1.4)" },
+            0.6,
           );
         }
 
@@ -104,8 +103,8 @@ export function ServiceShowcase({
           tl.fromTo(
             visualCard,
             { rotateY: reverse ? -6 : 6, transformPerspective: 1200 },
-            { rotateY: 0, duration: 0.5, ease: "power2.out" },
-            0.05,
+            { rotateY: 0, duration: 1, ease: "power2.out" },
+            0.15,
           );
         }
 

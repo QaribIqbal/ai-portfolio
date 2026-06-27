@@ -8,6 +8,12 @@ import { HeroAnimation, HeroTitle } from "@/components/site/hero-animation";
 import { JourneySection } from "@/components/site/journey-section";
 import { LeadCaptureForm } from "@/components/site/lead-capture-form";
 import { PinnedProcess } from "@/components/site/pinned-process";
+import {
+  ScrollParallax,
+  ScrollWordReveal,
+  ScrollScaleReveal,
+  ScrollSectionDepth,
+} from "@/components/site/scroll-parallax";
 import { ServiceShowcase } from "@/components/site/service-showcase";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
@@ -31,7 +37,7 @@ export default function HomePage() {
       <SiteHeader />
       <main>
         {/* ─── HERO ─── */}
-        <section className="page-section section-slice section-slice-hero pt-16 sm:pt-20" id="hero" data-snap-section>
+        <section className="page-section section-slice section-slice-hero pt-16 sm:pt-20" id="hero">
           <div className="shell">
             <div className="hero-panel">
               <HeroAnimation>
@@ -84,21 +90,21 @@ export default function HomePage() {
         <JourneySection />
 
         {/* ─── SERVICES: THE STAR ─── */}
-        <section className="page-section section-slice section-slice-services" id="services" data-snap-section data-depth-section>
+        <section className="page-section section-slice section-slice-services" id="services" data-depth-section>
           <div className="shell">
-            <GSAPReveal variant="clip-up">
+            <ScrollSectionDepth>
               <div className="max-w-[680px] mx-auto text-center">
                 <p className="section-eyebrow" style={{ justifyContent: "center" }}>What I Build</p>
-                <h2 className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]">
-                  Pick the workflow that hurts most.{" "}
-                  <span className="text-highlight-strong">I&apos;ll fix it in 21 days.</span>
-                </h2>
+                <ScrollWordReveal
+                  text="Pick the workflow that hurts most. I'll fix it in 21 days."
+                  className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]"
+                />
                 <p className="mt-6 text-[1.08rem] leading-[1.85] text-[color:var(--text-muted)] max-w-[52ch] mx-auto">
                   Each sprint targets <span className="text-highlight">one painful process</span> — not
                   a vague retainer. You pick the bottleneck, I build the automation.
                 </p>
               </div>
-            </GSAPReveal>
+            </ScrollSectionDepth>
 
             <ServiceShowcase
               eyebrow="Sprint 01"
@@ -122,30 +128,32 @@ export default function HomePage() {
               ]}
               stat={{ value: "<5m", label: "Avg First Response" }}
               visual={
-                <div className="svc-visual-card">
-                  <div className="svc-visual-card-header">
-                    <div className="svc-visual-card-dot" style={{ background: "#34d399" }} />
-                    <div className="svc-visual-card-dot" style={{ background: "var(--accent)" }} />
-                    <div className="svc-visual-card-dot" style={{ background: "#a78bfa" }} />
-                    <span className="svc-visual-card-title">Lead Automation Flow</span>
+                <ScrollParallax speed={0.15}>
+                  <div className="svc-visual-card">
+                    <div className="svc-visual-card-header">
+                      <div className="svc-visual-card-dot" style={{ background: "#34d399" }} />
+                      <div className="svc-visual-card-dot" style={{ background: "var(--accent)" }} />
+                      <div className="svc-visual-card-dot" style={{ background: "#a78bfa" }} />
+                      <span className="svc-visual-card-title">Lead Automation Flow</span>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <div className="svc-workflow-step">
+                        <div className="svc-workflow-step-icon"><Mail className="h-4 w-4" /></div>
+                        <span>New lead submitted via form</span>
+                      </div>
+                      <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                      <div className="svc-workflow-step">
+                        <div className="svc-workflow-step-icon"><Settings className="h-4 w-4" /></div>
+                        <span>AI qualifies &amp; scores lead</span>
+                      </div>
+                      <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                      <div className="svc-workflow-step">
+                        <div className="svc-workflow-step-icon"><CheckCircle2 className="h-4 w-4" /></div>
+                        <span>CRM updated, follow-up triggered</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="svc-workflow-step">
-                      <div className="svc-workflow-step-icon"><Mail className="h-4 w-4" /></div>
-                      <span>New lead submitted via form</span>
-                    </div>
-                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
-                    <div className="svc-workflow-step">
-                      <div className="svc-workflow-step-icon"><Settings className="h-4 w-4" /></div>
-                      <span>AI qualifies &amp; scores lead</span>
-                    </div>
-                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
-                    <div className="svc-workflow-step">
-                      <div className="svc-workflow-step-icon"><CheckCircle2 className="h-4 w-4" /></div>
-                      <span>CRM updated, follow-up triggered</span>
-                    </div>
-                  </div>
-                </div>
+                </ScrollParallax>
               }
             />
 
@@ -173,30 +181,32 @@ export default function HomePage() {
               ]}
               stat={{ value: "12h", label: "Saved Per Week" }}
               visual={
-                <div className="svc-visual-card">
-                  <div className="svc-visual-card-header">
-                    <div className="svc-visual-card-dot" style={{ background: "#34d399" }} />
-                    <div className="svc-visual-card-dot" style={{ background: "var(--accent)" }} />
-                    <div className="svc-visual-card-dot" style={{ background: "#a78bfa" }} />
-                    <span className="svc-visual-card-title">Reporting Pipeline</span>
+                <ScrollParallax speed={0.15}>
+                  <div className="svc-visual-card">
+                    <div className="svc-visual-card-header">
+                      <div className="svc-visual-card-dot" style={{ background: "#34d399" }} />
+                      <div className="svc-visual-card-dot" style={{ background: "var(--accent)" }} />
+                      <div className="svc-visual-card-dot" style={{ background: "#a78bfa" }} />
+                      <span className="svc-visual-card-title">Reporting Pipeline</span>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <div className="svc-workflow-step">
+                        <div className="svc-workflow-step-icon"><BarChart3 className="h-4 w-4" /></div>
+                        <span>Data pulled from 4+ platforms</span>
+                      </div>
+                      <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                      <div className="svc-workflow-step">
+                        <div className="svc-workflow-step-icon"><Settings className="h-4 w-4" /></div>
+                        <span>Auto-formatted into branded template</span>
+                      </div>
+                      <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                      <div className="svc-workflow-step">
+                        <div className="svc-workflow-step-icon"><Mail className="h-4 w-4" /></div>
+                        <span>Delivered to clients on schedule</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="svc-workflow-step">
-                      <div className="svc-workflow-step-icon"><BarChart3 className="h-4 w-4" /></div>
-                      <span>Data pulled from 4+ platforms</span>
-                    </div>
-                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
-                    <div className="svc-workflow-step">
-                      <div className="svc-workflow-step-icon"><Settings className="h-4 w-4" /></div>
-                      <span>Auto-formatted into branded template</span>
-                    </div>
-                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
-                    <div className="svc-workflow-step">
-                      <div className="svc-workflow-step-icon"><Mail className="h-4 w-4" /></div>
-                      <span>Delivered to clients on schedule</span>
-                    </div>
-                  </div>
-                </div>
+                </ScrollParallax>
               }
             />
 
@@ -223,30 +233,32 @@ export default function HomePage() {
               ]}
               stat={{ value: "0", label: "Missed Handoffs Per Month" }}
               visual={
-                <div className="svc-visual-card">
-                  <div className="svc-visual-card-header">
-                    <div className="svc-visual-card-dot" style={{ background: "#34d399" }} />
-                    <div className="svc-visual-card-dot" style={{ background: "var(--accent)" }} />
-                    <div className="svc-visual-card-dot" style={{ background: "#a78bfa" }} />
-                    <span className="svc-visual-card-title">Onboarding Workflow</span>
+                <ScrollParallax speed={0.15}>
+                  <div className="svc-visual-card">
+                    <div className="svc-visual-card-header">
+                      <div className="svc-visual-card-dot" style={{ background: "#34d399" }} />
+                      <div className="svc-visual-card-dot" style={{ background: "var(--accent)" }} />
+                      <div className="svc-visual-card-dot" style={{ background: "#a78bfa" }} />
+                      <span className="svc-visual-card-title">Onboarding Workflow</span>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <div className="svc-workflow-step">
+                        <div className="svc-workflow-step-icon"><CheckCircle2 className="h-4 w-4" /></div>
+                        <span>Deal marked won in CRM</span>
+                      </div>
+                      <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                      <div className="svc-workflow-step">
+                        <div className="svc-workflow-step-icon"><FileText className="h-4 w-4" /></div>
+                        <span>Docs, tasks, and calendar auto-created</span>
+                      </div>
+                      <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
+                      <div className="svc-workflow-step">
+                        <div className="svc-workflow-step-icon"><Mail className="h-4 w-4" /></div>
+                        <span>Welcome email + team notifications sent</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="svc-workflow-step">
-                      <div className="svc-workflow-step-icon"><CheckCircle2 className="h-4 w-4" /></div>
-                      <span>Deal marked won in CRM</span>
-                    </div>
-                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
-                    <div className="svc-workflow-step">
-                      <div className="svc-workflow-step-icon"><FileText className="h-4 w-4" /></div>
-                      <span>Docs, tasks, and calendar auto-created</span>
-                    </div>
-                    <div className="svc-workflow-arrow"><ArrowDown className="h-4 w-4" /></div>
-                    <div className="svc-workflow-step">
-                      <div className="svc-workflow-step-icon"><Mail className="h-4 w-4" /></div>
-                      <span>Welcome email + team notifications sent</span>
-                    </div>
-                  </div>
-                </div>
+                </ScrollParallax>
               }
             />
           </div>
@@ -258,15 +270,15 @@ export default function HomePage() {
         {/* ─── HOW IT WORKS ─── */}
         <section className="page-section section-slice section-slice-process" id="process">
           <div className="shell">
-            <GSAPReveal variant="clip-up">
+            <ScrollSectionDepth>
               <div className="max-w-[680px]">
                 <p className="section-eyebrow">How It Works</p>
-                <h2 className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]">
-                  From <span className="text-highlight">free audit</span> to{" "}
-                  <span className="text-highlight-strong">running automation</span> — in 4 steps.
-                </h2>
+                <ScrollWordReveal
+                  text="From free audit to running automation — in 4 steps."
+                  className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]"
+                />
               </div>
-            </GSAPReveal>
+            </ScrollSectionDepth>
             <PinnedProcess
               steps={[
                 {
@@ -315,39 +327,41 @@ export default function HomePage() {
         </section>
 
         {/* ─── RESULTS & PROOF ─── */}
-        <section className="page-section section-slice section-slice-proof" id="case-studies" data-snap-section data-depth-section>
+        <section className="page-section section-slice section-slice-proof" id="case-studies" data-depth-section>
           <div className="shell">
-            <GSAPReveal variant="clip-up">
+            <ScrollSectionDepth>
               <div className="max-w-[680px]">
                 <p className="section-eyebrow">Results</p>
-                <h2 className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]">
-                  Real sprints.{" "}
-                  <span className="text-highlight-strong">Measurable outcomes.</span>
-                </h2>
+                <ScrollWordReveal
+                  text="Real sprints. Measurable outcomes."
+                  className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]"
+                />
               </div>
-            </GSAPReveal>
+            </ScrollSectionDepth>
 
             {publishedCaseStudyTiles.length > 0 && (
               <GSAPReveal stagger variant="slide-up" delay={0.1}>
                 <div className="mt-12 grid gap-5 lg:grid-cols-3">
                   {publishedCaseStudyTiles.map((tile) => (
-                    <article key={tile.clientType} className="panel" data-gsap-reveal data-tilt-card>
-                      <p className="text-xs uppercase tracking-[0.12em] text-[color:var(--text-subtle)]">
-                        {tile.clientType}
-                      </p>
-                      <p className="mt-4 text-[0.95rem] leading-[1.75] text-[color:var(--text-muted)]">
-                        <strong className="text-[color:var(--text-main)]">Problem:</strong> {tile.problem}
-                      </p>
-                      <p className="mt-2 text-[0.95rem] leading-[1.75] text-[color:var(--text-muted)]">
-                        <strong className="text-[color:var(--text-main)]">Outcome:</strong>{" "}
-                        <span className="text-highlight">{tile.outcome}</span>
-                      </p>
-                      {tile.sprintTag ? (
-                        <p className="mt-4 text-xs uppercase tracking-[0.1em] text-[color:var(--accent)]">
-                          {tile.sprintTag}
+                    <ScrollScaleReveal key={tile.clientType}>
+                      <article className="panel" data-gsap-reveal data-tilt-card>
+                        <p className="text-xs uppercase tracking-[0.12em] text-[color:var(--text-subtle)]">
+                          {tile.clientType}
                         </p>
-                      ) : null}
-                    </article>
+                        <p className="mt-4 text-[0.95rem] leading-[1.75] text-[color:var(--text-muted)]">
+                          <strong className="text-[color:var(--text-main)]">Problem:</strong> {tile.problem}
+                        </p>
+                        <p className="mt-2 text-[0.95rem] leading-[1.75] text-[color:var(--text-muted)]">
+                          <strong className="text-[color:var(--text-main)]">Outcome:</strong>{" "}
+                          <span className="text-highlight">{tile.outcome}</span>
+                        </p>
+                        {tile.sprintTag ? (
+                          <p className="mt-4 text-xs uppercase tracking-[0.1em] text-[color:var(--accent)]">
+                            {tile.sprintTag}
+                          </p>
+                        ) : null}
+                      </article>
+                    </ScrollScaleReveal>
                   ))}
                 </div>
               </GSAPReveal>
@@ -359,7 +373,7 @@ export default function HomePage() {
               </GSAPReveal>
             ) : null}
 
-            <GSAPReveal variant="slide-up">
+            <ScrollScaleReveal>
               <div className="mt-12 grid gap-5 lg:grid-cols-[auto_1fr] lg:items-center">
                 <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border-2 border-[color:var(--accent)] shadow-[0_0_0_4px_color-mix(in_oklch,var(--accent)_10%,transparent),0_0_20px_-6px_color-mix(in_oklch,var(--accent)_30%,transparent)]">
                   <Image
@@ -382,44 +396,46 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-            </GSAPReveal>
+            </ScrollScaleReveal>
           </div>
         </section>
 
         {/* ─── CHECKLIST + LEAD CAPTURE ─── */}
-        <section className="page-section section-slice section-slice-resource" id="checklist" data-snap-section data-depth-section>
+        <section className="page-section section-slice section-slice-resource" id="checklist" data-depth-section>
           <div className="shell">
-            <GSAPReveal variant="slide-up">
+            <ScrollSectionDepth>
               <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                 <div>
                   <p className="section-eyebrow">Free Checklist</p>
-                  <h2 className="text-balance font-[family:var(--font-display)] text-[clamp(1.8rem,3.5vw,3rem)] font-semibold leading-[1.08] tracking-[-0.04em] text-[color:var(--text-main)]">
-                    Not ready for a call?{" "}
-                    <span className="text-highlight-strong">Start with the checklist.</span>
-                  </h2>
+                  <ScrollWordReveal
+                    text="Not ready for a call? Start with the checklist."
+                    className="text-balance font-[family:var(--font-display)] text-[clamp(1.8rem,3.5vw,3rem)] font-semibold leading-[1.08] tracking-[-0.04em] text-[color:var(--text-main)]"
+                  />
                   <p className="mt-5 text-[1rem] leading-[1.8] text-[color:var(--text-muted)] max-w-[48ch]">
-                    A <span className="text-highlight">10-minute self-audit</span> to find the 3–5 workflows
+                    A <span className="text-highlight">10-minute self-audit</span> to find the 3-5 workflows
                     wasting the most time — and see which one is ready for a sprint.
                   </p>
                 </div>
-                <LeadCaptureForm />
+                <ScrollParallax speed={0.1}>
+                  <LeadCaptureForm />
+                </ScrollParallax>
               </div>
-            </GSAPReveal>
+            </ScrollSectionDepth>
           </div>
         </section>
 
         {/* ─── FINAL CTA ─── */}
-        <section className="page-section section-slice section-slice-final pt-0" id="final-cta" data-snap-section data-depth-section>
+        <section className="page-section section-slice section-slice-final pt-0" id="final-cta" data-depth-section>
           <div className="shell">
-            <GSAPReveal variant="fade-scale">
+            <ScrollSectionDepth>
               <div className="hero-panel">
                 <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
                   <div>
                     <p className="section-eyebrow">Ready?</p>
-                    <h2 className="max-w-[20ch] text-balance font-[family:var(--font-display)] text-[clamp(2rem,3.8vw,4rem)] font-semibold leading-[1.05] tracking-[-0.05em] text-[color:var(--text-main)]">
-                      Map the bottleneck, then{" "}
-                      <span className="text-highlight-strong">fix one workflow in 21 days.</span>
-                    </h2>
+                    <ScrollWordReveal
+                      text="Map the bottleneck, then fix one workflow in 21 days."
+                      className="max-w-[20ch] text-balance font-[family:var(--font-display)] text-[clamp(2rem,3.8vw,4rem)] font-semibold leading-[1.05] tracking-[-0.05em] text-[color:var(--text-main)]"
+                    />
                   </div>
                   <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 lg:flex-col">
                     <ButtonLink href="/contact" className="max-sm:w-full" trackingEvent="final_audit_click">
@@ -431,7 +447,7 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-            </GSAPReveal>
+            </ScrollSectionDepth>
           </div>
         </section>
       </main>

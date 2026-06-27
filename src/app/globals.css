@@ -122,6 +122,8 @@ img {
     position: relative;
     isolation: isolate;
     scroll-margin-top: 7rem;
+    z-index: 10;
+    background: var(--bg);
   }
 
   .section-slice::before {
@@ -1661,6 +1663,7 @@ img {
   overflow: hidden;
   width: 100%;
   min-height: 100dvh;
+  z-index: 1;
   --journey-visual-x: 66%;
   --journey-copy-max: min(30rem, 34vw);
 }

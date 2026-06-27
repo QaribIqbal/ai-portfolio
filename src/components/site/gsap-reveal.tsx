@@ -9,7 +9,14 @@ import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-type RevealVariant = "default" | "slide-up" | "clip-up" | "fade-scale" | "slide-left" | "slide-right";
+type RevealVariant =
+  | "default"
+  | "slide-up"
+  | "clip-up"
+  | "fade-scale"
+  | "slide-left"
+  | "slide-right"
+  | "travel";
 
 type GSAPRevealProps = {
   children: React.ReactNode;
@@ -63,6 +70,27 @@ export function GSAPReveal({
           stagger: stagger ? 0.08 : 0,
           scrollTrigger: { trigger: el, start: "top 88%", once: true },
         });
+        return;
+      }
+
+      if (variant === "travel") {
+        gsap.set(targets, { y: 80, opacity: 0, scale: 0.95 });
+
+        gsap.to(targets, {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          delay,
+          stagger: stagger ? 0.1 : 0,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            once: true,
+          },
+        });
+
         return;
       }
 
