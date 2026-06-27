@@ -3,23 +3,41 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  Target,
+  Bot,
+  CheckCircle2,
+  Send,
+  Megaphone,
+  BarChart3,
+  AlertTriangle,
+  Mail,
+  Phone,
+  MessageSquare,
+  FileText,
+  CalendarX,
+  CreditCard,
+  Bell,
+  RefreshCw,
+  Sheet,
+} from "lucide-react";
 import { ButtonLink } from "@/components/site/button-link";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CHAOS_CARDS = [
-  { label: "Missed Lead", icon: "!", category: "lead" },
-  { label: "Unread Email", icon: "✉", category: "lead" },
-  { label: "CRM Outdated", icon: "⚠", category: "crm" },
-  { label: "Report Overdue", icon: "📉", category: "reporting" },
-  { label: "Client Call", icon: "📞", category: "onboarding" },
-  { label: "WhatsApp Msg", icon: "💬", category: "lead" },
-  { label: "Spreadsheet", icon: "📊", category: "reporting" },
-  { label: "Onboarding Doc", icon: "📄", category: "onboarding" },
-  { label: "Calendar Clash", icon: "📅", category: "scheduling" },
-  { label: "Invoice Draft", icon: "💳", category: "crm" },
-  { label: "Slack Alert", icon: "🔔", category: "alerts" },
-  { label: "Follow-Up", icon: "↻", category: "lead" },
+  { label: "Missed Lead", Icon: AlertTriangle, category: "lead" },
+  { label: "Unread Email", Icon: Mail, category: "lead" },
+  { label: "CRM Outdated", Icon: AlertTriangle, category: "crm" },
+  { label: "Report Overdue", Icon: BarChart3, category: "reporting" },
+  { label: "Client Call", Icon: Phone, category: "onboarding" },
+  { label: "WhatsApp Msg", Icon: MessageSquare, category: "lead" },
+  { label: "Spreadsheet", Icon: Sheet, category: "reporting" },
+  { label: "Onboarding Doc", Icon: FileText, category: "onboarding" },
+  { label: "Calendar Clash", Icon: CalendarX, category: "scheduling" },
+  { label: "Invoice Draft", Icon: CreditCard, category: "crm" },
+  { label: "Slack Alert", Icon: Bell, category: "alerts" },
+  { label: "Follow-Up", Icon: RefreshCw, category: "lead" },
 ];
 
 const CATEGORIES = [
@@ -31,14 +49,23 @@ const CATEGORIES = [
   { key: "alerts", label: "Internal Alerts", x: 37, y: 38 },
 ];
 
-const FUNNEL_STAGES = [
-  { label: "Lead Captured", icon: "🎯" },
-  { label: "AI Qualified", icon: "🤖" },
-  { label: "CRM Updated", icon: "✅" },
-  { label: "Follow-Up Sent", icon: "📨" },
-  { label: "Team Notified", icon: "📢" },
-  { label: "Report Generated", icon: "📊" },
+const FUNNEL_STAGES: { label: string; Icon: typeof Target }[] = [
+  { label: "Lead Captured", Icon: Target },
+  { label: "AI Qualified", Icon: Bot },
+  { label: "CRM Updated", Icon: CheckCircle2 },
+  { label: "Follow-Up Sent", Icon: Send },
+  { label: "Team Notified", Icon: Megaphone },
+  { label: "Report Generated", Icon: BarChart3 },
 ];
+
+const DASHBOARD_METRICS = [
+  { value: 4.2, suffix: "s", label: "Avg Response" },
+  { value: 97, suffix: "%", label: "Follow-Up Rate" },
+  { value: 0, suffix: "", label: "Missed Leads" },
+  { value: 12, suffix: "h", label: "Saved Weekly" },
+];
+
+const BAR_HEIGHTS = [40, 55, 68, 82, 75, 92];
 
 const SCENE_COPY = [
   {
@@ -67,6 +94,40 @@ const SCENE_COPY = [
     subtitle: "More time for strategy, clients, and growth.",
   },
 ];
+
+function animateCounters(container: HTMLElement) {
+  const metricValues = container.querySelectorAll<HTMLElement>(".dashboard-metric-value");
+  metricValues.forEach((el, i) => {
+    const metric = DASHBOARD_METRICS[i];
+    if (!metric) return;
+    const obj = { val: 0 };
+    gsap.to(obj, {
+      val: metric.value,
+      duration: 1.6,
+      delay: i * 0.15,
+      ease: "power2.out",
+      onUpdate() {
+        if (metric.value === 0) {
+          el.textContent = `0${metric.suffix}`;
+        } else if (metric.suffix === "s") {
+          el.textContent = `${obj.val.toFixed(1)}${metric.suffix}`;
+        } else if (metric.suffix === "%") {
+          el.textContent = `${Math.round(obj.val)}${metric.suffix}`;
+        } else {
+          el.textContent = `${Math.round(obj.val)}${metric.suffix}`;
+        }
+      },
+    });
+  });
+
+  const bars = container.querySelectorAll<HTMLElement>(".dashboard-bar");
+  bars.forEach((bar, i) => {
+    gsap.fromTo(bar,
+      { scaleY: 0 },
+      { scaleY: 1, duration: 0.8, delay: 0.3 + i * 0.1, ease: "back.out(1.4)" }
+    );
+  });
+}
 
 export function JourneySection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -102,8 +163,8 @@ export function JourneySection() {
       gsap.set(categoryLabels, { opacity: 0, scale: 0.8 });
       gsap.set(connectionLines, { opacity: 0, scaleX: 0 });
       gsap.set(aiCore, { opacity: 0, scale: 0.5 });
-      gsap.set(funnelStages, { opacity: 0, y: 30, scale: 0.9 });
-      gsap.set(dashboardEl, { opacity: 0, scale: 0.92, y: 20 });
+      gsap.set(funnelStages, { opacity: 0, y: 40, scale: 0.85 });
+      gsap.set(dashboardEl, { opacity: 0, scale: 0.88, y: 40 });
       if (workflowLine) {
         const length = workflowLine.getTotalLength();
         gsap.set(workflowLine, { strokeDasharray: length, strokeDashoffset: length });
@@ -120,6 +181,8 @@ export function JourneySection() {
         });
       });
 
+      let dashboardAnimated = false;
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container,
@@ -129,6 +192,12 @@ export function JourneySection() {
           scrub: 1,
           anticipatePin: 1,
           invalidateOnRefresh: true,
+          onUpdate(self) {
+            if (self.progress > 0.78 && !dashboardAnimated && dashboardEl) {
+              dashboardAnimated = true;
+              animateCounters(dashboardEl);
+            }
+          },
         },
       });
 
@@ -142,7 +211,6 @@ export function JourneySection() {
         stagger: { each: 0.008, from: "random" },
       }, 0);
 
-      // Fade copy block 1 in, then out
       tl.fromTo(copyBlocks[0], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.06 }, 0);
       tl.to(copyBlocks[0], { opacity: 0, y: -20, duration: 0.04 }, 0.12);
 
@@ -150,7 +218,6 @@ export function JourneySection() {
       tl.to(scenes[0], { opacity: 0, duration: 0.04 }, 0.16);
       tl.to(scenes[1], { opacity: 1, duration: 0.04 }, 0.16);
 
-      // Move cards to category positions
       cards.forEach((card) => {
         const cat = card.dataset.category;
         const catInfo = CATEGORIES.find((c) => c.key === cat);
@@ -170,9 +237,7 @@ export function JourneySection() {
         }, 0.18);
       });
 
-      // Show category labels
       tl.to(categoryLabels, { opacity: 1, scale: 1, duration: 0.06, stagger: 0.01, ease: "back.out(1.4)" }, 0.25);
-      // Show connection lines
       tl.to(connectionLines, { opacity: 0.6, scaleX: 1, duration: 0.06, stagger: 0.01, ease: "power2.out" }, 0.28);
 
       tl.fromTo(copyBlocks[1], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.06 }, 0.2);
@@ -182,14 +247,11 @@ export function JourneySection() {
       tl.to(scenes[1], { opacity: 0, duration: 0.04 }, 0.36);
       tl.to(scenes[2], { opacity: 1, duration: 0.04 }, 0.36);
 
-      // Fade out category labels, show AI core
       tl.to(categoryLabels, { opacity: 0.3, duration: 0.06 }, 0.36);
       tl.to(cards, { opacity: 0.15, scale: 0.7, duration: 0.08, ease: "power2.in" }, 0.36);
       tl.to(aiCore, { opacity: 1, scale: 1, duration: 0.08, ease: "back.out(1.7)" }, 0.38);
 
-      // Animate workflow line
       if (workflowLine) {
-        const length = workflowLine.getTotalLength();
         tl.to(workflowLine, { strokeDashoffset: 0, duration: 0.12, ease: "power2.inOut" }, 0.4);
       }
 
@@ -202,13 +264,11 @@ export function JourneySection() {
       tl.to(scenes[2], { opacity: 0, duration: 0.04 }, 0.56);
       tl.to(scenes[3], { opacity: 1, duration: 0.04 }, 0.56);
 
-      // Hide previous visuals, show funnel
       tl.to(cards, { opacity: 0, duration: 0.06 }, 0.55);
       tl.to(aiCore, { opacity: 0.3, scale: 0.8, y: -40, duration: 0.06 }, 0.55);
       tl.to(categoryLabels, { opacity: 0, duration: 0.04 }, 0.55);
       tl.to(connectionLines, { opacity: 0, duration: 0.04 }, 0.55);
 
-      // Show funnel stages sequentially
       funnelStages.forEach((stage, i) => {
         tl.to(stage, {
           opacity: 1,
@@ -231,8 +291,7 @@ export function JourneySection() {
 
       tl.fromTo(copyBlocks[4], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.08 }, 0.78);
 
-      // Ambient floating for cards in scene 1
-      cards.forEach((card, i) => {
+      cards.forEach((card) => {
         gsap.to(card, {
           y: `+=${8 + Math.random() * 12}`,
           x: `+=${(Math.random() - 0.5) * 10}`,
@@ -249,7 +308,6 @@ export function JourneySection() {
       };
     });
 
-    // Mobile: stacked scenes with simpler scroll animations
     mm.add("(max-width: 767px)", () => {
       const mobileScenes = gsap.utils.toArray<HTMLElement>(".journey-mobile-scene", container);
 
@@ -283,21 +341,18 @@ export function JourneySection() {
       {/* Desktop: Pinned journey */}
       <section ref={containerRef} className="journey-section hidden md:block" id="journey">
         <div className="journey-viewport">
-          {/* Visual canvas - always visible, animations change per scene */}
           <div ref={canvasRef} className="journey-canvas">
-            {/* Chaos cards */}
             {CHAOS_CARDS.map((card, i) => (
               <div
                 key={`card-${i}`}
                 className="chaos-card"
                 data-category={card.category}
               >
-                <span className="chaos-card-icon">{card.icon}</span>
+                <card.Icon className="chaos-card-icon" />
                 <span className="chaos-card-label">{card.label}</span>
               </div>
             ))}
 
-            {/* Category labels */}
             {CATEGORIES.map((cat) => (
               <div
                 key={cat.key}
@@ -308,7 +363,6 @@ export function JourneySection() {
               </div>
             ))}
 
-            {/* Connection lines between categories */}
             <svg className="connection-lines-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
               <line className="connection-line" x1="25" y1="22" x2="37" y2="38" />
               <line className="connection-line" x1="62" y1="22" x2="37" y2="38" />
@@ -317,12 +371,10 @@ export function JourneySection() {
               <line className="connection-line" x1="37" y1="78" x2="37" y2="38" />
             </svg>
 
-            {/* AI Core */}
             <div className="ai-core">
               <div className="ai-core-ring" />
               <div className="ai-core-ring ai-core-ring-2" />
               <div className="ai-core-inner">AI</div>
-              {/* Workflow path */}
               <svg className="workflow-svg" viewBox="0 0 600 200" fill="none">
                 <path
                   className="workflow-path"
@@ -342,20 +394,22 @@ export function JourneySection() {
               </svg>
             </div>
 
-            {/* Funnel stages */}
             <div className="funnel-container">
               {FUNNEL_STAGES.map((stage, i) => (
                 <div key={stage.label} className="funnel-stage">
-                  <div className="funnel-stage-icon">{stage.icon}</div>
+                  <div className="funnel-stage-icon">
+                    <stage.Icon className="funnel-stage-svg" />
+                  </div>
                   <div className="funnel-stage-label">{stage.label}</div>
                   {i < FUNNEL_STAGES.length - 1 && (
-                    <div className="funnel-arrow">&rarr;</div>
+                    <svg className="funnel-arrow-svg" viewBox="0 0 24 12" fill="none">
+                      <path d="M0 6h20m0 0l-5-5m5 5l-5 5" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
+                    </svg>
                   )}
                 </div>
               ))}
             </div>
 
-            {/* Dashboard final state */}
             <div className="dashboard-final">
               <div className="dashboard-header">
                 <span className="dashboard-dot dashboard-dot-green" />
@@ -364,38 +418,23 @@ export function JourneySection() {
                 <span className="dashboard-title">Agency Automation Dashboard</span>
               </div>
               <div className="dashboard-grid">
-                <div className="dashboard-metric">
-                  <span className="dashboard-metric-value">4.2s</span>
-                  <span className="dashboard-metric-label">Avg Response</span>
-                </div>
-                <div className="dashboard-metric">
-                  <span className="dashboard-metric-value">97%</span>
-                  <span className="dashboard-metric-label">Follow-Up Rate</span>
-                </div>
-                <div className="dashboard-metric">
-                  <span className="dashboard-metric-value">0</span>
-                  <span className="dashboard-metric-label">Missed Leads</span>
-                </div>
-                <div className="dashboard-metric">
-                  <span className="dashboard-metric-value">12h</span>
-                  <span className="dashboard-metric-label">Saved Weekly</span>
-                </div>
+                {DASHBOARD_METRICS.map((metric) => (
+                  <div key={metric.label} className="dashboard-metric">
+                    <span className="dashboard-metric-value">0{metric.suffix}</span>
+                    <span className="dashboard-metric-label">{metric.label}</span>
+                  </div>
+                ))}
               </div>
               <div className="dashboard-bar-chart">
-                <div className="dashboard-bar" style={{ height: "40%" }} />
-                <div className="dashboard-bar" style={{ height: "55%" }} />
-                <div className="dashboard-bar" style={{ height: "68%" }} />
-                <div className="dashboard-bar" style={{ height: "82%" }} />
-                <div className="dashboard-bar" style={{ height: "75%" }} />
-                <div className="dashboard-bar" style={{ height: "92%" }} />
+                {BAR_HEIGHTS.map((h, i) => (
+                  <div key={i} className="dashboard-bar" style={{ height: `${h}%` }} />
+                ))}
               </div>
             </div>
 
-            {/* Background grid */}
             <div className="journey-grid-bg" aria-hidden="true" />
           </div>
 
-          {/* Scene copy overlays */}
           {SCENE_COPY.map((scene, i) => (
             <div key={`scene-${i}`} className={`journey-scene ${i === 0 ? "active" : ""}`}>
               <div className="scene-copy">
@@ -406,28 +445,19 @@ export function JourneySection() {
             </div>
           ))}
 
-          {/* Scene 5 CTA */}
           <div className="journey-scene journey-cta-scene" style={{ opacity: 0 }}>
             <div className="scene-copy">
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <ButtonLink
-                  href="/contact"
-                  trackingEvent="journey_audit_click"
-                >
+                <ButtonLink href="/contact" trackingEvent="journey_audit_click">
                   Book Free Automation Audit
                 </ButtonLink>
-                <ButtonLink
-                  href="/checklist"
-                  variant="secondary"
-                  trackingEvent="journey_checklist_click"
-                >
+                <ButtonLink href="/checklist" variant="secondary" trackingEvent="journey_checklist_click">
                   Get the Checklist
                 </ButtonLink>
               </div>
             </div>
           </div>
 
-          {/* Progress indicator */}
           <div className="journey-progress">
             {SCENE_COPY.map((_, i) => (
               <div key={`dot-${i}`} className="journey-progress-dot" />
@@ -451,7 +481,7 @@ export function JourneySection() {
                   <div className="journey-mobile-visual">
                     {CHAOS_CARDS.slice(0, 6).map((card, j) => (
                       <div key={j} className="chaos-card-mini">
-                        <span>{card.icon}</span>
+                        <card.Icon className="h-3.5 w-3.5 shrink-0" />
                         <span>{card.label}</span>
                       </div>
                     ))}
@@ -462,7 +492,7 @@ export function JourneySection() {
                   <div className="journey-mobile-funnel">
                     {FUNNEL_STAGES.map((stage, j) => (
                       <div key={j} className="funnel-stage-mini">
-                        <span>{stage.icon}</span>
+                        <stage.Icon className="h-3.5 w-3.5 shrink-0 text-[color:var(--accent)]" />
                         <span>{stage.label}</span>
                       </div>
                     ))}

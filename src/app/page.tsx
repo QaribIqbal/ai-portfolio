@@ -142,14 +142,14 @@ export default function HomePage() {
 
         <section className="page-section section-slice section-slice-problem" id="problem" data-snap-section>
           <div className="shell">
-            <GSAPReveal>
+            <GSAPReveal variant="clip-up">
               <SectionHeading
                 eyebrow="Problem"
                 title="Manual operations are where lean agencies lose leverage"
                 description="Fix one bottleneck properly and the team gets immediate leverage without adding more software."
               />
             </GSAPReveal>
-            <GSAPReveal stagger>
+            <GSAPReveal stagger variant="slide-up" delay={0.15}>
               <div className="problem-grid mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {homeProblems.map((problem, index) => (
                   <article key={problem} className="panel" data-gsap-reveal>
@@ -172,7 +172,7 @@ export default function HomePage() {
           data-horizontal-section="services"
         >
           <div className="shell">
-            <GSAPReveal>
+            <GSAPReveal variant="slide-up">
               <div className="services-heading-row">
                 <SectionHeading
                   eyebrow="Services"
@@ -215,14 +215,14 @@ export default function HomePage() {
 
         <section className="page-section section-slice section-slice-process" id="process" data-snap-section>
           <div className="shell">
-            <GSAPReveal>
+            <GSAPReveal variant="clip-up">
               <SectionHeading
                 eyebrow="Process"
                 title="How the audit turns into one fixed workflow"
                 description="Start with the smallest high-cost bottleneck. Then map it, build it, test it, and hand it over without turning the engagement into a vague retainer."
               />
             </GSAPReveal>
-            <GSAPReveal stagger>
+            <GSAPReveal stagger variant="slide-up" delay={0.1}>
               <div className="process-path mt-10">
                 {processSteps.map((step, index) => (
                   <article key={step.title} className="panel process-card" data-gsap-reveal>
@@ -245,7 +245,7 @@ export default function HomePage() {
 
         <section className="page-section section-slice section-slice-proof" id="case-studies" data-snap-section>
           <div className="shell">
-            <GSAPReveal>
+            <GSAPReveal variant="clip-up">
               <SectionHeading
                 eyebrow="Case Studies & Proof"
                 title="What you can check before committing"
@@ -381,7 +381,7 @@ export default function HomePage() {
             )}
 
             {publishedTestimonials.length > 0 ? (
-              <GSAPReveal>
+              <GSAPReveal variant="fade-scale">
                 <TestimonialCarousel testimonials={publishedTestimonials} />
               </GSAPReveal>
             ) : null}
@@ -444,7 +444,7 @@ export default function HomePage() {
 
         <section className="page-section section-slice section-slice-resource" id="checklist" data-snap-section>
           <div className="shell">
-            <GSAPReveal>
+            <GSAPReveal variant="slide-up">
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                 <div>
                   <SectionHeading
@@ -476,7 +476,7 @@ export default function HomePage() {
 
         <section className="page-section section-slice section-slice-final pt-0" id="final-cta" data-snap-section>
           <div className="shell">
-            <GSAPReveal>
+            <GSAPReveal variant="fade-scale">
               <div className="hero-panel">
                 <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
                   <div>

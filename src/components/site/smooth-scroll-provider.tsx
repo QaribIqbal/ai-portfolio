@@ -44,6 +44,31 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     gsap.ticker.add(lenisRaf);
     gsap.ticker.lagSmoothing(0);
 
+    const handleHashClick = (e: MouseEvent) => {
+      const anchor = (e.target as HTMLElement).closest<HTMLAnchorElement>("a[href*='#']");
+      if (!anchor) return;
+      const href = anchor.getAttribute("href");
+      if (!href) return;
+      const hashIndex = href.indexOf("#");
+      if (hashIndex === -1) return;
+      const hash = href.slice(hashIndex);
+      const prefix = href.slice(0, hashIndex);
+      if (prefix && prefix !== "/" && prefix !== window.location.pathname) return;
+      const target = document.querySelector(hash);
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target as HTMLElement, { offset: -80, duration: 1.6 });
+      history.pushState(null, "", hash);
+    };
+    document.addEventListener("click", handleHashClick);
+
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        requestAnimationFrame(() => lenis.scrollTo(target as HTMLElement, { offset: -80, duration: 1.6 }));
+      }
+    }
+
     const ctx = gsap.context(() => {
       const servicesSection = document.querySelector<HTMLElement>("[data-horizontal-section='services']");
       const servicesTrack = document.querySelector<HTMLElement>("[data-horizontal-track='services']");
@@ -118,6 +143,7 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     ScrollTrigger.refresh();
 
     return () => {
+      document.removeEventListener("click", handleHashClick);
       ctx.revert();
       gsap.ticker.remove(lenisRaf);
       (lenis as unknown as { off?: (event: string, cb: () => void) => void }).off?.("scroll", onLenisScroll);
