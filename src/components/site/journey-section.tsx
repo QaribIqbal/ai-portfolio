@@ -200,10 +200,12 @@ export function JourneySection() {
           },
           onRefresh(self) {
             if (self.pin) {
-              (self.pin as HTMLElement).style.zIndex = "1";
-            }
-            if (self.spacer) {
-              (self.spacer as HTMLElement).style.zIndex = "1";
+              const pinEl = self.pin as HTMLElement;
+              pinEl.style.zIndex = "1";
+              // The pin-spacer GSAP wraps around the pinned element
+              if (pinEl.parentElement?.classList.contains("pin-spacer")) {
+                pinEl.parentElement.style.zIndex = "1";
+              }
             }
           },
         },
@@ -339,7 +341,20 @@ export function JourneySection() {
 
     ScrollTrigger.refresh();
 
+    // Fonts and images load after mount and shift layout, which invalidates
+    // every trigger's measured start position — refresh again once settled.
+    const onLoad = () => ScrollTrigger.refresh();
+    if (document.readyState === "complete") {
+      const settle = window.setTimeout(onLoad, 300);
+      return () => {
+        window.clearTimeout(settle);
+        mm.revert();
+      };
+    }
+    window.addEventListener("load", onLoad);
+
     return () => {
+      window.removeEventListener("load", onLoad);
       mm.revert();
     };
   }, []);

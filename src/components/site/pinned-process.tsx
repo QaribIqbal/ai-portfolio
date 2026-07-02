@@ -39,80 +39,67 @@ export function PinnedProcess({ steps }: PinnedProcessProps) {
       mm.add("(min-width: 768px)", () => {
         const stepEls = gsap.utils.toArray<HTMLElement>(".pp-step", el);
         const lineFill = el.querySelector<HTMLElement>(".pp-line-fill");
-        const n = stepEls.length;
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: el,
-            start: "top 18%",
-            end: `+=${n * 45}vh`,
-            pin: true,
-            scrub: 0.8,
-            anticipatePin: 1,
-            onRefresh(self) {
-              if (self.pin) {
-                (self.pin as HTMLElement).style.zIndex = "1";
-              }
-              if (self.spacer) {
-                (self.spacer as HTMLElement).style.zIndex = "1";
-              }
-            },
-          },
-        });
-
+        // Line fill tracks scroll progress through the whole timeline —
+        // no pinning, so trigger positions stay valid even when other
+        // pinned sections change the document height.
         if (lineFill) {
-          tl.fromTo(
+          gsap.fromTo(
             lineFill,
             { scaleY: 0 },
-            { scaleY: 1, duration: 1, ease: "none" },
-            0,
+            {
+              scaleY: 1,
+              ease: "none",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 70%",
+                end: "bottom 55%",
+                scrub: 0.6,
+              },
+            },
           );
         }
 
-        stepEls.forEach((step, i) => {
+        stepEls.forEach((step) => {
           const dot = step.querySelector<HTMLElement>(".pp-dot");
           const content = step.querySelector<HTMLElement>(".pp-content");
-          const t = i / Math.max(n - 1, 1);
 
-          tl.fromTo(
+          gsap.fromTo(
             step,
             { opacity: 0.15 },
-            { opacity: 1, duration: 0.15, ease: "power2.out" },
-            t * 0.85,
+            {
+              opacity: 1,
+              duration: 0.7,
+              ease: "power2.out",
+              scrollTrigger: { trigger: step, start: "top 72%", once: true },
+            },
           );
 
           if (content) {
-            tl.fromTo(
+            gsap.fromTo(
               content,
-              { y: 18, scale: 0.98 },
-              { y: 0, scale: 1, duration: 0.18, ease: "power3.out" },
-              t * 0.85,
+              { y: 36, scale: 0.97 },
+              {
+                y: 0,
+                scale: 1,
+                duration: 0.9,
+                ease: "power3.out",
+                scrollTrigger: { trigger: step, start: "top 72%", once: true },
+              },
             );
           }
 
           if (dot) {
-            tl.to(
-              dot,
-              {
-                scale: 1.3,
-                boxShadow:
-                  "0 0 0 6px color-mix(in oklch, var(--accent) 22%, transparent)",
-                duration: 0.1,
-              },
-              t * 0.85,
-            );
-          }
-
-          if (i < n - 1) {
-            tl.to(
-              step,
-              { opacity: 0.35, duration: 0.12 },
-              Math.min(t * 0.85 + 0.2, 0.95),
-            );
+            gsap.to(dot, {
+              scale: 1.3,
+              boxShadow:
+                "0 0 0 6px color-mix(in oklch, var(--accent) 22%, transparent)",
+              duration: 0.5,
+              ease: "back.out(2)",
+              scrollTrigger: { trigger: step, start: "top 72%", once: true },
+            });
           }
         });
-
-        return () => tl.kill();
       });
 
       mm.add("(max-width: 767px)", () => {
