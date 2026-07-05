@@ -9,8 +9,8 @@ export function SiteFooter() {
       <div className="shell grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-5">
           <p className="section-eyebrow">For Lean Marketing Agencies</p>
-          <h2 className="max-w-xl text-[clamp(1.8rem,2.8vw,2.7rem)] font-semibold tracking-[-0.045em] text-[color:var(--text-main)]">
-            Cleaner systems beat more software.
+          <h2 className="max-w-xl font-[family:var(--font-display)] text-[clamp(2.2rem,3.6vw,3.4rem)] font-bold leading-[1.02] tracking-[-0.045em] text-[color:var(--text-main)]">
+            Cleaner systems <span className="serif-accent">beat</span> more software.
           </h2>
           <p className="max-w-xl text-sm leading-7 text-[color:var(--text-muted)]">
             Start with a free automation audit for a clear diagnosis, then run a focused sprint to

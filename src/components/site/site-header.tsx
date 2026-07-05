@@ -30,12 +30,12 @@ export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
           <span>{siteConfig.name}</span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-0.5 rounded-full border border-[color:var(--line)] bg-[color:color-mix(in_oklch,var(--panel-soft)_60%,transparent)] p-1 backdrop-blur-md lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
           {navigation.slice(0, 3).map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-4 py-2 text-[0.82rem] font-medium text-[color:var(--text-subtle)] transition hover:bg-[color:color-mix(in_oklch,var(--accent)_10%,transparent)] hover:text-[color:var(--text-main)]"
+              className="px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.22em] text-[color:var(--text-subtle)] transition hover:text-[color:var(--accent)]"
             >
               {item.label}
             </Link>

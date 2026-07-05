@@ -4,11 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-import SplitText from "@/components/SplitText";
-
 gsap.registerPlugin(useGSAP);
-
-const HERO_TITLE = "Remove one high-cost manual bottleneck in 21 days.";
 
 type HeroAnimationProps = {
   children: React.ReactNode;
@@ -24,27 +20,34 @@ export function HeroAnimation({ children }: HeroAnimationProps) {
 
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const eyebrow = el.querySelector("[data-hero-eyebrow]");
-      const title = el.querySelector("[data-hero-title]");
+      const lines = el.querySelectorAll("[data-hero-line] > span");
       const paragraph = el.querySelector("[data-hero-copy]");
       const buttons = el.querySelectorAll("[data-hero-cta]");
       const credibility = el.querySelector("[data-hero-credibility]");
       const capacity = el.querySelector("[data-hero-capacity]");
-      const targets = [eyebrow, title, paragraph, ...Array.from(buttons), credibility, capacity].filter(Boolean);
+      const fadeTargets = [eyebrow, paragraph, ...Array.from(buttons), credibility, capacity].filter(
+        Boolean,
+      );
 
       if (reducedMotion) {
-        gsap.set(targets, { clearProps: "all", opacity: 1, y: 0, scale: 1 });
+        gsap.set([...fadeTargets, ...Array.from(lines)], {
+          clearProps: "all",
+          opacity: 1,
+          y: 0,
+        });
         return;
       }
 
-      gsap.set(targets, { opacity: 0, y: 22, scale: 0.985 });
+      gsap.set(fadeTargets, { opacity: 0, y: 24 });
+      gsap.set(lines, { yPercent: 112 });
 
       gsap
-        .timeline({ defaults: { ease: "power3.out", duration: 0.74 } })
-        .to(eyebrow, { opacity: 1, y: 0, scale: 1 }, 0)
-        .to(title, { opacity: 1, y: 0, scale: 1 }, 0.2)
-        .to(paragraph, { opacity: 1, y: 0, scale: 1 }, 0.5)
-        .to(buttons, { opacity: 1, y: 0, scale: 1, stagger: 0.1 }, 0.7)
-        .to([credibility, capacity], { opacity: 1, y: 0, scale: 1, stagger: 0.08 }, 0.9);
+        .timeline({ defaults: { ease: "power4.out" } })
+        .to(eyebrow, { opacity: 1, y: 0, duration: 0.7 }, 0.1)
+        .to(lines, { yPercent: 0, duration: 1.1, stagger: 0.12 }, 0.25)
+        .to(paragraph, { opacity: 1, y: 0, duration: 0.8 }, 0.85)
+        .to(buttons, { opacity: 1, y: 0, duration: 0.7, stagger: 0.1 }, 1.0)
+        .to([credibility, capacity], { opacity: 1, y: 0, duration: 0.7, stagger: 0.08 }, 1.15);
     },
     { scope: ref },
   );
@@ -54,20 +57,18 @@ export function HeroAnimation({ children }: HeroAnimationProps) {
 
 export function HeroTitle() {
   return (
-    <div data-hero-title>
-      <SplitText
-        text={HERO_TITLE}
-        tag="h1"
-        splitType="words"
-        textAlign="left"
-        className="display-title max-w-[17ch] text-balance"
-        delay={80}
-        duration={0.72}
-        from={{ opacity: 0, y: 32 }}
-        to={{ opacity: 1, y: 0 }}
-        threshold={0}
-        rootMargin="0px"
-      />
-    </div>
+    <h1 className="display-title max-w-[15ch] text-balance" data-hero-title>
+      <span className="title-line" data-hero-line>
+        <span>Remove one high-cost</span>
+      </span>
+      <span className="title-line" data-hero-line>
+        <span>
+          <em>manual bottleneck</em>
+        </span>
+      </span>
+      <span className="title-line" data-hero-line>
+        <span>in 21 days.</span>
+      </span>
+    </h1>
   );
 }
