@@ -59,10 +59,10 @@ const FUNNEL_STAGES: { label: string; Icon: typeof Target }[] = [
 ];
 
 const DASHBOARD_METRICS = [
-  { value: 4.2, suffix: "s", label: "Avg Response" },
-  { value: 97, suffix: "%", label: "Follow-Up Rate" },
-  { value: 0, suffix: "", label: "Missed Leads" },
-  { value: 12, suffix: "h", label: "Saved Weekly" },
+  { value: "Live", label: "Lead Response" },
+  { value: "Routed", label: "Follow-Up" },
+  { value: "Synced", label: "CRM Status" },
+  { value: "Ready", label: "Client Reporting" },
 ];
 
 const BAR_HEIGHTS = [40, 55, 68, 82, 75, 92];
@@ -100,23 +100,16 @@ function animateCounters(container: HTMLElement) {
   metricValues.forEach((el, i) => {
     const metric = DASHBOARD_METRICS[i];
     if (!metric) return;
-    const obj = { val: 0 };
-    gsap.to(obj, {
-      val: metric.value,
-      duration: 1.6,
+    el.textContent = metric.value;
+    gsap.fromTo(el, {
+      opacity: 0,
+      y: 8,
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
       delay: i * 0.15,
       ease: "power2.out",
-      onUpdate() {
-        if (metric.value === 0) {
-          el.textContent = `0${metric.suffix}`;
-        } else if (metric.suffix === "s") {
-          el.textContent = `${obj.val.toFixed(1)}${metric.suffix}`;
-        } else if (metric.suffix === "%") {
-          el.textContent = `${Math.round(obj.val)}${metric.suffix}`;
-        } else {
-          el.textContent = `${Math.round(obj.val)}${metric.suffix}`;
-        }
-      },
     });
   });
 
@@ -443,7 +436,7 @@ export function JourneySection() {
               <div className="dashboard-grid">
                 {DASHBOARD_METRICS.map((metric) => (
                   <div key={metric.label} className="dashboard-metric">
-                    <span className="dashboard-metric-value">0{metric.suffix}</span>
+                    <span className="dashboard-metric-value">{metric.value}</span>
                     <span className="dashboard-metric-label">{metric.label}</span>
                   </div>
                 ))}

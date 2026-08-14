@@ -2,12 +2,13 @@ import { CheckCircle2, Mail, BarChart3, FileText, Settings, ArrowDown } from "lu
 import Image from "next/image";
 
 import { ButtonLink } from "@/components/site/button-link";
+import { FeaturedCaseStudy } from "@/components/site/featured-case-study";
 import { VoiceAgentShowcase } from "@/components/site/voice-agent-showcase";
-import { GSAPReveal } from "@/components/site/gsap-reveal";
 import { HeroAnimation, HeroTitle } from "@/components/site/hero-animation";
 import { JourneySection } from "@/components/site/journey-section";
 import { LeadCaptureForm } from "@/components/site/lead-capture-form";
 import { PinnedProcess } from "@/components/site/pinned-process";
+import { ProjectEvidenceGrid } from "@/components/site/project-evidence-grid";
 import {
   ScrollParallax,
   ScrollWordReveal,
@@ -17,18 +18,22 @@ import {
 import { ServiceShowcase } from "@/components/site/service-showcase";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
-import { TestimonialCarousel } from "@/components/site/testimonial-carousel";
+import { TrustPrinciples } from "@/components/site/trust-principles";
+import { buildAvailabilityCopy } from "@/lib/availability";
 import {
-  publishedCaseStudyTiles,
-  publishedTestimonials,
+  featuredSolutionStudies,
+  projectEvidence,
   siteConfig,
+  trustPrinciples,
 } from "@/lib/site-content";
 import { buildMetadata } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = buildMetadata({
-  title: "AI Automation for Marketing Agencies",
+  title: "AI Systems Operator for Marketing Agencies",
   description:
-    "Qarib Iqbal helps lean marketing agencies remove manual follow-up, reporting, onboarding, and handoff bottlenecks with practical automation systems.",
+    "Watch Qarib Iqbal's AI automation demos for lead response, reporting, onboarding, voice agents, and agency operations.",
 });
 
 export default function HomePage() {
@@ -42,16 +47,14 @@ export default function HomePage() {
             <div className="hero-panel">
               <HeroAnimation>
                 <p className="section-eyebrow" data-hero-eyebrow>
-                  AI Automation for Marketing Agencies
+                  Qarib Iqbal / AI Systems Operator
                 </p>
                 <HeroTitle />
                 <p
                   className="mt-8 max-w-[56ch] text-[1.14rem] leading-[1.85] text-[color:var(--text-muted)] sm:text-[1.2rem]"
                   data-hero-copy
                 >
-                  I run <span className="text-highlight-strong">21-Day Automation Sprints</span> that
-                  fix <span className="text-highlight">one expensive manual workflow</span> at a time — so
-                  your team gets hours back without adding headcount.
+                  I design and ship <span className="text-highlight-strong">voice agents, lead-response systems, reporting workflows, and operational automation</span> for teams that are done managing critical work by hand.
                 </p>
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                   <ButtonLink
@@ -79,7 +82,7 @@ export default function HomePage() {
                   {siteConfig.shortCredibility}
                 </p>
                 <p className="capacity-note mt-3 max-w-[54ch]" data-hero-capacity>
-                  Currently accepting <span className="text-highlight">2 new sprint clients</span> per month.
+                  {buildAvailabilityCopy(siteConfig.availabilityCapacity)}
                 </p>
               </HeroAnimation>
             </div>
@@ -126,7 +129,7 @@ export default function HomePage() {
                 { text: <>CRM status stays current without manual cleanup</> },
                 { text: <>Sales gets structured reminders, not ad-hoc chasing</> },
               ]}
-              stat={{ value: "<5m", label: "Avg First Response" }}
+              stat={{ value: "Always on", label: "Lead response" }}
               visual={
                 <ScrollParallax speed={0.15}>
                   <div className="svc-visual-card">
@@ -179,7 +182,7 @@ export default function HomePage() {
                 { text: <>Team shifts from copy-paste to insight and decisions</> },
                 { text: <>Data stays clean across channels and owners</> },
               ]}
-              stat={{ value: "12h", label: "Saved Per Week" }}
+              stat={{ value: "Scheduled", label: "Reporting cadence" }}
               visual={
                 <ScrollParallax speed={0.15}>
                   <div className="svc-visual-card">
@@ -231,7 +234,7 @@ export default function HomePage() {
                 { text: <>Internal teams get visibility without chasing status</> },
                 { text: <>New accounts go from close to kickoff with zero gaps</> },
               ]}
-              stat={{ value: "0", label: "Missed Handoffs Per Month" }}
+              stat={{ value: "Triggered", label: "At deal close" }}
               visual={
                 <ScrollParallax speed={0.15}>
                   <div className="svc-visual-card">
@@ -326,55 +329,55 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── RESULTS & PROOF ─── */}
+        {/* ─── EVIDENCE & PROOF ─── */}
         <section className="page-section section-slice section-slice-proof" id="case-studies" data-depth-section>
           <div className="shell">
             <ScrollSectionDepth>
-              <div className="max-w-[720px]">
-                <p className="section-eyebrow">Results</p>
+              <div className="max-w-[820px]">
+                <p className="section-eyebrow">Proof, not promises</p>
                 <ScrollWordReveal
-                  text="Real sprints. Measurable outcomes."
+                  text="Watch the systems. Inspect the workflows."
                   className="text-balance font-[family:var(--font-display)] text-[clamp(2.2rem,4.2vw,4rem)] font-bold leading-[1.05] tracking-[-0.045em] text-[color:var(--text-main)]"
                 />
+                <p className="mt-7 max-w-[62ch] text-[1.05rem] leading-[1.85] text-[color:var(--text-muted)]">
+                  The work below is labeled by what can actually be verified: live demos,
+                  implemented solution builds, and workflow blueprints. TechBees is the delivery
+                  studio behind the featured systems.
+                </p>
               </div>
             </ScrollSectionDepth>
 
-            {publishedCaseStudyTiles.length > 0 && (
-              <GSAPReveal stagger variant="slide-up" delay={0.1}>
-                <div className="mt-14 grid gap-6 lg:grid-cols-3">
-                  {publishedCaseStudyTiles.map((tile) => (
-                    <ScrollScaleReveal key={tile.clientType}>
-                      <article className="panel" data-gsap-reveal data-tilt-card>
-                        <p className="text-xs uppercase tracking-[0.12em] text-[color:var(--text-subtle)]">
-                          {tile.clientType}
-                        </p>
-                        <p className="mt-4 text-[0.95rem] leading-[1.75] text-[color:var(--text-muted)]">
-                          <strong className="text-[color:var(--text-main)]">Problem:</strong> {tile.problem}
-                        </p>
-                        <p className="mt-2 text-[0.95rem] leading-[1.75] text-[color:var(--text-muted)]">
-                          <strong className="text-[color:var(--text-main)]">Outcome:</strong>{" "}
-                          <span className="text-highlight">{tile.outcome}</span>
-                        </p>
-                        {tile.sprintTag ? (
-                          <p className="mt-4 text-xs uppercase tracking-[0.1em] text-[color:var(--accent)]">
-                            {tile.sprintTag}
-                          </p>
-                        ) : null}
-                      </article>
-                    </ScrollScaleReveal>
-                  ))}
-                </div>
-              </GSAPReveal>
-            )}
+            <div className="proof-ledger" aria-label="Portfolio evidence summary">
+              <div>
+                <strong>{featuredSolutionStudies.length}</strong>
+                <span>Featured solution studies</span>
+              </div>
+              <div>
+                <strong>{projectEvidence.filter((project) => Boolean(project.demoUrl)).length}</strong>
+                <span>Watchable demos and builds</span>
+              </div>
+              <div>
+                <strong>{projectEvidence.length}</strong>
+                <span>Documented systems</span>
+              </div>
+            </div>
 
-            {publishedTestimonials.length > 0 ? (
-              <GSAPReveal variant="fade-scale">
-                <TestimonialCarousel testimonials={publishedTestimonials} />
-              </GSAPReveal>
-            ) : null}
+            <div className="featured-studies">
+              {featuredSolutionStudies.map((study, index) => (
+                <FeaturedCaseStudy key={study.slug} study={study} index={index} />
+              ))}
+            </div>
+
+            <div className="evidence-section-heading">
+              <p className="section-eyebrow">Project archive</p>
+              <h3>Seven systems. Each one labeled by the evidence behind it.</h3>
+            </div>
+            <ProjectEvidenceGrid projects={projectEvidence} />
+
+            <TrustPrinciples principles={trustPrinciples} />
 
             <ScrollScaleReveal>
-              <div className="mt-16 panel grid gap-6 lg:grid-cols-[auto_1fr] lg:items-center">
+              <div className="operator-lockup">
                 <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-2xl border-2 border-[color:var(--accent)] shadow-[0_0_0_4px_color-mix(in_oklch,var(--accent)_10%,transparent),0_0_24px_-6px_color-mix(in_oklch,var(--accent)_30%,transparent)]">
                   <Image
                     src="/assets/images/qarib-profile.jpg"
@@ -386,12 +389,11 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="text-[1.4rem] font-bold tracking-[-0.02em] text-[color:var(--text-main)]">
-                    Built by <span className="text-highlight-strong">Qarib Iqbal</span>
+                    Qarib Iqbal <span className="text-highlight-strong">/ AI Systems Operator</span>
                   </h3>
                   <p className="mt-3 text-[1rem] leading-[1.85] text-[color:var(--text-muted)] max-w-[60ch]">
-                    I build focused automation systems for marketing agencies — one expensive
-                    process at a time. Specialized in{" "}
-                    <span className="text-highlight">Make, n8n, Zapier, Airtable</span>, and CRM workflow design.
+                    I lead the system design, automation logic, testing, and handoff. Selected
+                    collaborative builds ship under <span className="text-highlight">TechBees</span>.
                     Based in Lahore, working remotely worldwide.
                   </p>
                 </div>

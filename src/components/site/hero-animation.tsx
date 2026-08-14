@@ -57,17 +57,19 @@ export function HeroAnimation({ children }: HeroAnimationProps) {
 
 export function HeroTitle() {
   return (
-    <h1 className="display-title max-w-[15ch] text-balance" data-hero-title>
+    <h1
+      className="display-title max-w-[15ch] text-balance"
+      data-hero-title
+      aria-label="I build the AI systems your team keeps saying it needs."
+    >
       <span className="title-line" data-hero-line>
-        <span>Remove one high-cost</span>
+        <span>I build the AI systems</span>
       </span>
       <span className="title-line" data-hero-line>
-        <span>
-          <em>manual bottleneck</em>
-        </span>
+        <span>your team keeps saying</span>
       </span>
       <span className="title-line" data-hero-line>
-        <span>in 21 days.</span>
+        <span><em>it needs.</em></span>
       </span>
     </h1>
   );

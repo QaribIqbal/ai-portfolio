@@ -4,17 +4,19 @@ import { ButtonLink } from "@/components/site/button-link";
 import { siteConfig } from "@/lib/site-content";
 
 export function SiteFooter() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="section-frame border-t border-[color:color-mix(in_oklch,var(--accent)_8%,var(--line))] pb-16 pt-20">
       <div className="shell grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-5">
-          <p className="section-eyebrow">For Lean Marketing Agencies</p>
+          <p className="section-eyebrow">Qarib Iqbal / AI Systems Operator</p>
           <h2 className="max-w-xl font-[family:var(--font-display)] text-[clamp(2.2rem,3.6vw,3.4rem)] font-bold leading-[1.02] tracking-[-0.045em] text-[color:var(--text-main)]">
             Cleaner systems <span className="serif-accent">beat</span> more software.
           </h2>
           <p className="max-w-xl text-sm leading-7 text-[color:var(--text-muted)]">
-            Start with a free automation audit for a clear diagnosis, then run a focused sprint to
-            fix one workflow at a time.
+            Founder-led system design and delivery, with selected collaborative builds shipped
+            through TechBees. Start by identifying the one workflow worth fixing first.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <ButtonLink href="/contact" trackingEvent="footer_audit_click">{siteConfig.primaryCta}</ButtonLink>
@@ -51,7 +53,9 @@ export function SiteFooter() {
       </div>
       {/* review: change-7 */}
       <div className="soft-divider mt-10" />
-      <p className="footer-copyright mt-6 text-center">© 2026 Qarib Iqbal. All rights reserved.</p>
+      <p className="footer-copyright mt-6 text-center">
+        © {currentYear} Qarib Iqbal. All rights reserved.
+      </p>
     </footer>
   );
 }

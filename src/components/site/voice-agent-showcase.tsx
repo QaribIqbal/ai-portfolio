@@ -160,16 +160,16 @@ export function VoiceAgentShowcase() {
             {/* Stats Row */}
             <div className="voice-stats-row">
               <div className="voice-stat">
-                <span className="voice-stat-value">&lt;3s</span>
-                <span className="voice-stat-label">Avg Pickup Time</span>
+                <span className="voice-stat-value">Instant</span>
+                <span className="voice-stat-label">Inbound handling</span>
               </div>
               <div className="voice-stat">
-                <span className="voice-stat-value">24/7</span>
-                <span className="voice-stat-label">Availability</span>
+                <span className="voice-stat-value">Always</span>
+                <span className="voice-stat-label">Configured availability</span>
               </div>
               <div className="voice-stat">
-                <span className="voice-stat-value">85%</span>
-                <span className="voice-stat-label">Calls Resolved</span>
+                <span className="voice-stat-value">Human</span>
+                <span className="voice-stat-label">Fallback path</span>
               </div>
             </div>
 

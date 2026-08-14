@@ -10,19 +10,36 @@ type ProcessStep = {
   description: string;
 };
 
-export type ProofCaseStudy = {
-  clientType: string;
-  problem: string;
-  built: string;
-  outcome: string;
-  sprintTag?: string;
-  isPublished: boolean;
+export type ProofType =
+  | "live-demo"
+  | "solution-build"
+  | "workflow-blueprint"
+  | "verified-result";
+
+export type SolutionStudy = {
+  slug: string;
+  eyebrow: string;
+  title: string;
+  summary: string;
+  audience: string;
+  studio: "TechBees";
+  sourceUrl: string;
+  featuredDemoUrl: string;
+  featuredDemoLabel: string;
+  workflow: string[];
+  potentialImpact: string[];
+  tools: string[];
 };
 
-export type ProofQuote = {
-  quote: string;
-  attribution: string;
-  isPublished: boolean;
+export type ProjectEvidence = {
+  title: string;
+  summary: string;
+  proofType: ProofType;
+  sourceUrl: string;
+  demoUrl?: string;
+  demoLabel?: string;
+  tools: string[];
+  potentialImpact: string;
 };
 
 export type ProofTestimonial = {
@@ -30,7 +47,14 @@ export type ProofTestimonial = {
   name: string;
   role: string;
   company: string;
+  sourceUrl: string;
+  approvedForPublication: boolean;
   isPublished: boolean;
+};
+
+export type TrustPrinciple = {
+  title: string;
+  description: string;
 };
 
 export const siteConfig = {
@@ -42,14 +66,15 @@ export const siteConfig = {
   calendly: "https://calendly.com/qaribiqbal92/30min",
   primaryCta: "Book Free Automation Audit",
   secondaryCta: "Get the Agency AI Automation Checklist",
+  availabilityCapacity: 2,
   shortCredibility:
-    "Sprint-based implementation for founder-led agencies that need cleaner execution, not extra complexity.",
+    "Founder-led delivery. Real demos. Clear scope. No invented results.",
 };
 
 export const navigation = [
   { href: "/#services", label: "Services" },
   { href: "/#process", label: "Process" },
-  { href: "/#case-studies", label: "Case Studies" },
+  { href: "/case-studies", label: "Case Studies" },
   { href: "/checklist", label: "Checklist" },
   { href: "/contact", label: "Free Audit" },
 ];
@@ -189,70 +214,163 @@ export const proofDeliverables = [
   "Lead follow-up logic diagram",
 ];
 
-export const caseStudyTiles: ProofCaseStudy[] = [
+const REAL_ESTATE_STUDY_URL =
+  "https://app.notion.com/p/3b0a34737b6681109648f37a61f61786";
+const AGENCY_AUTOMATION_STUDY_URL =
+  "https://app.notion.com/p/3b0a34737b66817ba1cafae3aa98edd8";
+
+export const featuredSolutionStudies: SolutionStudy[] = [
   {
-    clientType: "Performance agency, 6-person team",
-    problem: "Manual weekly reporting across 4 platforms.",
-    built: "Automated reporting workflow with structured data flow.",
-    outcome: "Reporting time dropped from 12 hours/week to 1.5 hours/week.",
-    sprintTag: "Delivered as a 21-Day Agency Automation Sprint.",
-    isPublished: true,
+    slug: "real-estate-lead-response",
+    eyebrow: "Real Estate Lead Response",
+    title: "Respond to property leads in minutes, not hours.",
+    summary:
+      "A voice and chat response system designed to qualify property inquiries, capture requirements, coordinate viewings, and hand urgent conversations to a human agent.",
+    audience: "Property teams handling inbound buyer and tenant inquiries",
+    studio: "TechBees",
+    sourceUrl: REAL_ESTATE_STUDY_URL,
+    featuredDemoUrl: "https://youtube.com/shorts/0vO8tecumK8?feature=share",
+    featuredDemoLabel: "Watch the real-estate voice agent",
+    workflow: [
+      "Respond using approved scripts, business rules, and property knowledge.",
+      "Qualify budget, area, property type, timing, and viewing preferences.",
+      "Book the next step, write the lead record, or hand off to a person.",
+    ],
+    potentialImpact: [
+      "Fewer inquiries waiting after hours",
+      "More complete requirements before an agent joins",
+      "Less repetitive qualification and scheduling work",
+    ],
+    tools: ["AI voice", "WhatsApp", "CRM", "Calendar", "n8n / Make"],
   },
   {
-    clientType: "Lead-gen agency, 9-person team",
-    problem: "Inconsistent lead follow-up during busy delivery weeks.",
-    built: "Form-to-CRM routing with instant first touch and reminders.",
-    outcome: "First-response time moved from 14 hours to under 5 minutes.",
-    sprintTag: "Delivered as a focused automation sprint.",
-    isPublished: true,
-  },
-  {
-    clientType: "Creative agency, 8-person team",
-    problem: "Onboarding handoffs broke after deal close.",
-    built: "Deal-won to kickoff workflow with task and doc triggers.",
-    outcome: "Handoff delays dropped from 4 per month to zero.",
-    sprintTag: "Delivered as a sprint-based implementation.",
-    isPublished: true,
+    slug: "agency-automation",
+    eyebrow: "Marketing & Creative Agency Operations",
+    title: "Fix the workflow wasting the most time every week.",
+    summary:
+      "A focused automation system for recurring reporting, lead follow-up, onboarding, and delivery handoffs—built around the process an agency already runs.",
+    audience: "Lean agencies protecting delivery time without adding admin headcount",
+    studio: "TechBees",
+    sourceUrl: AGENCY_AUTOMATION_STUDY_URL,
+    featuredDemoUrl: "https://www.loom.com/embed/f7560adbec7841ca809a84e5d638c4f8",
+    featuredDemoLabel: "Watch the weekly reporting automation",
+    workflow: [
+      "Trigger the workflow on the agency's agreed schedule or system event.",
+      "Generate the correct client update from structured performance data.",
+      "Deliver the output and confirm completion to the internal team.",
+    ],
+    potentialImpact: [
+      "Fewer repetitive reporting steps",
+      "More consistent delivery at the promised time",
+      "Clearer ownership after reports and handoffs run",
+    ],
+    tools: ["Make", "n8n", "Airtable", "APIs", "Custom code"],
   },
 ];
 
-export const quoteStripEntries: ProofQuote[] = [
+export const projectEvidence: ProjectEvidence[] = [
   {
-    quote: "We went from 'we'll get back to this lead tomorrow' to responses within minutes.",
-    attribution: "Sarah J., Agency Founder",
-    isPublished: true,
+    title: "Real-estate voice agent",
+    summary:
+      "An AI phone workflow that gathers property requirements, supports viewing coordination, and transfers edge cases to a human agent.",
+    proofType: "live-demo",
+    sourceUrl: REAL_ESTATE_STUDY_URL,
+    demoUrl: "https://youtube.com/shorts/0vO8tecumK8?feature=share",
+    demoLabel: "Watch voice demo",
+    tools: ["AI voice", "Calendar", "CRM"],
+    potentialImpact: "Designed to keep inbound property conversations moving outside office hours.",
   },
   {
-    quote: "Our weekly reporting stopped being a scramble.",
-    attribution: "Mark T., Operations Director",
-    isPublished: true,
+    title: "WhatsApp inquiry assistant",
+    summary:
+      "A conversational assistant for common questions, inventory or listing information, requirements capture, and structured human handoff.",
+    proofType: "live-demo",
+    sourceUrl: REAL_ESTATE_STUDY_URL,
+    demoUrl:
+      "https://drive.google.com/file/d/16O38ZMaMMjXbo84LqKeS7l7EXFD6bxrN/view?usp=share_link",
+    demoLabel: "Watch WhatsApp demo",
+    tools: ["WhatsApp", "Knowledge base", "Routing"],
+    potentialImpact: "Designed to answer routine questions before a team member steps in.",
+  },
+  {
+    title: "Lead-email automation",
+    summary:
+      "A follow-up build that preserves context, schedules the next touch, and alerts the team when a reply needs human judgment.",
+    proofType: "solution-build",
+    sourceUrl: REAL_ESTATE_STUDY_URL,
+    demoUrl:
+      "https://drive.google.com/file/d/1lsKdjwt6U5fAO1vx2Vn3vmU-tUQghXkg/view?usp=sharing",
+    demoLabel: "Inspect email build",
+    tools: ["Email", "CRM", "Automation logic"],
+    potentialImpact: "Designed to make follow-up consistent without hiding high-intent replies.",
+  },
+  {
+    title: "Weekly client reporting automation",
+    summary:
+      "A scheduled Make workflow that reads structured data, prepares client-specific summaries, sends reports, and confirms delivery internally.",
+    proofType: "live-demo",
+    sourceUrl: AGENCY_AUTOMATION_STUDY_URL,
+    demoUrl: "https://www.loom.com/embed/f7560adbec7841ca809a84e5d638c4f8",
+    demoLabel: "Watch reporting demo",
+    tools: ["Make", "Email", "Structured data"],
+    potentialImpact: "Designed to reduce repetitive reporting steps and missed delivery windows.",
+  },
+  {
+    title: "Geo Dash",
+    summary:
+      "A product workflow for discovering relevant keywords, generating SEO-focused articles, and supporting publishing across client websites.",
+    proofType: "live-demo",
+    sourceUrl: AGENCY_AUTOMATION_STUDY_URL,
+    demoUrl: "https://youtu.be/NLuXiAsI1U4",
+    demoLabel: "Watch Geo Dash demo",
+    tools: ["SEO research", "AI content", "Publishing"],
+    potentialImpact: "Designed to reduce movement between research, drafting, optimization, and publishing.",
+  },
+  {
+    title: "Structured lead qualification",
+    summary:
+      "A repeatable qualification path that captures essential answers, tags intent, updates the chosen system, and routes unusual requests immediately.",
+    proofType: "workflow-blueprint",
+    sourceUrl: REAL_ESTATE_STUDY_URL,
+    tools: ["Forms", "CRM", "Intent routing"],
+    potentialImpact: "Designed to give every lead the same essential first-pass qualification.",
+  },
+  {
+    title: "Client onboarding and handoff",
+    summary:
+      "A deal-won blueprint that creates the internal project, requests assets, assigns owners, updates the CRM, and notifies delivery.",
+    proofType: "workflow-blueprint",
+    sourceUrl: AGENCY_AUTOMATION_STUDY_URL,
+    tools: ["CRM", "Project tools", "Notifications"],
+    potentialImpact: "Designed to stop new clients disappearing between sales and fulfillment.",
   },
 ];
 
-export const testimonialSlots: ProofTestimonial[] = [
+export const trustPrinciples: TrustPrinciple[] = [
   {
-    quote: "The 21-Day Sprint completely transformed how we handle new clients. Our onboarding is finally frictionless, and our account managers actually have time to manage accounts instead of chasing documents.",
-    name: "Elena Rodriguez",
-    role: "CEO",
-    company: "Elevate Creative",
-    isPublished: true,
+    title: "Clear scope before build",
+    description:
+      "One workflow, named owners, visible boundaries, and an agreed definition of done before implementation starts.",
   },
   {
-    quote: "We were drowning in reporting data before Qarib stepped in. Now, our custom dashboards update automatically and we save nearly 15 hours every single week.",
-    name: "David Chen",
-    role: "Head of Growth",
-    company: "Nexus Performance",
-    isPublished: true,
+    title: "A system your team can inspect",
+    description:
+      "The handoff includes the workflow logic, documentation, and walkthroughs—not a black box that only the builder understands.",
   },
   {
-    quote: "Lead follow-up used to be our biggest leak. Since implementing the CRM automation, our conversion rate has bumped by 20% simply because we are consistently the first to reply.",
-    name: "Michael Barnes",
-    role: "Managing Director",
-    company: "Acquire Media",
-    isPublished: true,
+    title: "Human fallback paths",
+    description:
+      "High-value, unusual, or uncertain conversations route to a person instead of forcing automation past its limits.",
+  },
+  {
+    title: "Ownership after launch",
+    description:
+      "Alerts, monitoring, and support boundaries are defined so the workflow remains operable when tools or inputs change.",
   },
 ];
 
-export const publishedCaseStudyTiles = caseStudyTiles.filter((entry) => entry.isPublished);
-export const publishedQuoteStripEntries = quoteStripEntries.filter((entry) => entry.isPublished);
-export const publishedTestimonials = testimonialSlots.filter((entry) => entry.isPublished);
+export const testimonialSlots: ProofTestimonial[] = [];
+
+export const publishedTestimonials = testimonialSlots.filter(
+  (entry) => entry.isPublished && entry.approvedForPublication && Boolean(entry.sourceUrl),
+);

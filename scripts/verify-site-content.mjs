@@ -1,10 +1,11 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const root = process.cwd();
 
 function read(relativePath) {
-  return readFileSync(resolve(root, relativePath), "utf8");
+  const absolutePath = resolve(root, relativePath);
+  return existsSync(absolutePath) ? readFileSync(absolutePath, "utf8") : "";
 }
 
 function normalize(value) {
@@ -55,144 +56,106 @@ const failures = [];
 
 const siteContent = read("src/lib/site-content.ts");
 const homePage = read("src/app/page.tsx");
-const servicesPage = read("src/app/services/page.tsx");
 const caseStudiesPage = read("src/app/case-studies/page.tsx");
-const aboutPage = read("src/app/about/page.tsx");
-const checklistPage = read("src/app/checklist/page.tsx");
-const contactPage = read("src/app/contact/page.tsx");
+const heroAnimation = read("src/components/site/hero-animation.tsx");
+const pageHero = read("src/components/site/page-hero.tsx");
+const proofBadge = read("src/components/site/proof-badge.tsx");
+const trustPrinciples = read("src/components/site/trust-principles.tsx");
+const journeySection = read("src/components/site/journey-section.tsx");
+const voiceAgentShowcase = read("src/components/site/voice-agent-showcase.tsx");
+const allTrustContent = [
+  siteContent,
+  homePage,
+  caseStudiesPage,
+  heroAnimation,
+  proofBadge,
+  trustPrinciples,
+  journeySection,
+  voiceAgentShowcase,
+].join("\n");
 
 expectIncludes(
   siteContent,
   [
-    'primaryCta: "Get the Free Agency AI Automation Checklist"',
-    'secondaryCta: "Book a Free Automation Audit"',
-    'title: "AI Lead Follow-Up Automation"',
-    'title: "Client Reporting Automation"',
-    'title: "Client Onboarding & Ops Automation"',
-    'title: "AI Workflow Design & Tool Integration"',
-    'title: "AI Assistants / Internal AI Systems"',
-    'title: "Free Agency AI Automation Checklist"',
-    'title: "Free Automation Audit"',
-    'title: "Fixed-Scope AI Automation Sprint"',
-    'title: "Ongoing Optimization Support / Retainer"',
-    'title: "Audit your workflow bottlenecks"',
-    'title: "Design the automation system"',
-    'title: "Build and implement"',
-    'title: "Refine and optimize"',
+    'availabilityCapacity: 2',
+    'slug: "real-estate-lead-response"',
+    'slug: "agency-automation"',
+    'title: "Real-estate voice agent"',
+    'title: "WhatsApp inquiry assistant"',
+    'title: "Lead-email automation"',
+    'title: "Weekly client reporting automation"',
+    'title: "Geo Dash"',
+    'title: "Structured lead qualification"',
+    'title: "Client onboarding and handoff"',
+    "entry.approvedForPublication",
+    "Boolean(entry.sourceUrl)",
   ],
   "site-content",
   failures,
 );
 
-expectExcludes(
-  siteContent,
-  [
-    'cta: "See the Sprint Scope"',
-    'cta: "Talk Through Ongoing Support"',
-    'label: "Free Checklist"',
-    'label: "Book Audit"',
-  ],
-  "site-content",
-  failures,
-);
-
 expectIncludes(
-  homePage,
+  [homePage, heroAnimation, trustPrinciples].join("\n"),
   [
-    "I help marketing agencies eliminate manual follow-up, reporting, and repetitive ops with AI automation.",
-    "I design and implement AI automation systems that save time, reduce lead leakage, and help your agency run more smoothly without adding more manual work.",
-    "If your agency is still running too much manually, start with the checklist or book a free audit.",
+    'export const dynamic = "force-dynamic"',
+    "Qarib Iqbal / AI Systems Operator",
+    "I build the AI systems your team keeps saying it needs.",
+    "Proof, not promises",
+    "What clients value",
+    "buildAvailabilityCopy(siteConfig.availabilityCapacity)",
   ],
   "home-page",
-  failures,
-);
-
-expectExcludes(
-  homePage,
-  [
-    "Agency Operations Map",
-    "One bottleneck. One scoped fix. One clear timeline.",
-    "Entry Point",
-    "Main Paid Offer",
-    "After The Sprint",
-    "Delivery Detail",
-  ],
-  "home-page",
-  failures,
-);
-
-expectInOrder(
-  homePage,
-  [
-    'id="problem"',
-    'id="outcomes"',
-    'id="services"',
-    'id="offers"',
-    'id="process"',
-    'id="proof"',
-    'id="about"',
-    'id="free-resource"',
-    'id="faq"',
-  ],
-  "home-page",
-  failures,
-);
-
-expectIncludes(
-  servicesPage,
-  [
-    "AI automation services built specifically for marketing agencies.",
-    "Free Automation Audit",
-    "Fixed-Scope AI Automation Sprint (2 to 4 weeks)",
-    "Ongoing Optimization Support / Retainer",
-  ],
-  "services-page",
   failures,
 );
 
 expectIncludes(
   caseStudiesPage,
   [
-    "These are clearly labeled sample workflow scenarios, not client case studies.",
-    "Operational Challenge",
-    "System To Build",
-    "Expected Improvement",
-    "Why It Matters",
+    "Watch the systems. Inspect the workflows. Decide from evidence.",
+    "Potential impact — not a claimed client result",
+    "featuredSolutionStudies",
+    "projectEvidence",
   ],
   "case-studies-page",
   failures,
 );
 
 expectIncludes(
-  aboutPage,
-  [
-    "Why this work is focused on marketing agencies.",
-    "Diagnose before prescribing. Build systems that work in the real world.",
-  ],
-  "about-page",
+  proofBadge,
+  ["Live demo", "Solution build", "Workflow blueprint", "Verified result"],
+  "proof-badge",
   failures,
 );
 
+expectIncludes(pageHero, ["level={1}"], "page-hero semantics", failures);
+
 expectIncludes(
-  checklistPage,
-  [
-    "Spot the 7 workflows your agency should automate next.",
-    "What's Inside",
-    "Who it's for",
-    "Why it matters now",
-  ],
-  "checklist-page",
+  trustPrinciples,
+  ["What clients value", "Operating standards, not invented endorsements."],
+  "trust-principles",
   failures,
 );
 
-expectIncludes(
-  contactPage,
+expectExcludes(
+  allTrustContent,
   [
-    "The Free Automation Audit is not a generic discovery chat.",
-    "What It Is",
-    "What To Expect",
+    "Elena Rodriguez",
+    "Elevate Creative",
+    "David Chen",
+    "Nexus Performance",
+    "Michael Barnes",
+    "Acquire Media",
+    "Real sprints. Measurable outcomes.",
+    "Reporting time dropped from 12 hours/week",
+    "First-response time moved from 14 hours",
+    'value: 4.2, suffix: "s"',
+    'value: 97, suffix: "%"',
+    'value: 12, suffix: "h"',
+    "&lt;3s",
+    '<span className="voice-stat-value">85%</span>',
+    "Calls Resolved",
   ],
-  "contact-page",
+  "published trust content",
   failures,
 );
 

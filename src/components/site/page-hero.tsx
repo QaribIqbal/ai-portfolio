@@ -24,6 +24,7 @@ export function PageHero({
             eyebrow={eyebrow}
             title={title}
             description={description}
+            level={1}
             className="max-w-[56rem]"
           />
           {(primaryCta || secondaryCta) && (
