@@ -25,6 +25,8 @@ export default function ServicesPage() {
           description="Instead of broad service menus, work is scoped and delivered as focused 21-Day Agency Automation Sprints targeting one painful workflow at a time."
           primaryCta={{ href: "/contact", label: siteConfig.primaryCta }}
           secondaryCta={{ href: "/checklist", label: siteConfig.secondaryCta }}
+          highlights={["One workflow per sprint", "Built in your current tools", "Loom walkthroughs and SOPs"]}
+          audience="agencies"
         />
 
         <section className="page-section pt-0">

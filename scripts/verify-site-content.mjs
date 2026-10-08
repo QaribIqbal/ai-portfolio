@@ -132,7 +132,7 @@ expectIncludes(
   failures,
 );
 
-expectIncludes(pageHero, ["level={1}"], "page-hero semantics", failures);
+expectIncludes(pageHero, ['<h1 className="page-hero-title">'], "page-hero semantics", failures);
 
 expectIncludes(
   trustPrinciples,

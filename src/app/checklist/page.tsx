@@ -21,10 +21,12 @@ export default function ChecklistPage() {
       <SiteHeader minimal />
       <main id="main">
         <PageHero
-          eyebrow="Lead Magnet"
+          eyebrow="Free agency checklist"
           title="Find the automation bottleneck that is costing your agency the most time"
           description="This checklist helps lean marketing agency teams diagnose where manual follow-up, reporting, and onboarding are breaking down before they spend on the wrong fix."
           secondaryCta={{ href: "/contact", label: siteConfig.primaryCta }}
+          highlights={["10-minute self-audit", "Leads, reporting and onboarding", "Free"]}
+          audience="agencies"
         />
 
         <section className="page-section pt-0">

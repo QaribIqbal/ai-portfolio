@@ -25,6 +25,8 @@ export default function ContactPage() {
           title="A focused diagnostic for agencies that want to fix the right bottleneck first"
           description="This is for lean marketing agencies that know manual operations are slowing growth. You get clarity on what to fix, what to ignore for now, and what a 21-Day Agency Automation Sprint should include if there is a fit."
           primaryCta={{ href: "/checklist", label: siteConfig.secondaryCta }}
+          highlights={["Free", "One workflow mapped live", "Written summary and next steps"]}
+          audience="agencies"
         />
 
         <section className="page-section pt-0">

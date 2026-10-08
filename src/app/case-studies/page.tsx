@@ -39,11 +39,12 @@ export default function CaseStudiesPage() {
       <SiteHeader />
       <main id="main">
         <PageHero
-          eyebrow="Qarib Iqbal / Proof of Work"
+          eyebrow="Proof of work"
           title="Watch the systems. Inspect the workflows. Decide from evidence."
           description="Every item is labeled by what can actually be verified. No generated testimonials, borrowed credibility, or unsupported performance claims."
           primaryCta={{ href: "/contact", label: siteConfig.primaryCta }}
           secondaryCta={{ href: "/checklist", label: siteConfig.secondaryCta }}
+          highlights={["Live demos", "Solution builds", "Workflow blueprints"]}
         />
 
         <section className="page-section pt-0">

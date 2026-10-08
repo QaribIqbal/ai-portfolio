@@ -1,11 +1,13 @@
-.dental-page {
+:root {
   --dental-emerald: #10b981;
   --dental-onyx: #0a0f0d;
   --dental-cream: #f5f1e8;
   --dental-muted: rgb(245 241 232 / 0.8);
   --dental-line: rgb(16 185 129 / 0.22);
   --dental-panel: rgb(245 241 232 / 0.04);
+}
 
+.dental-page {
   min-height: 100dvh;
   background: var(--dental-onyx);
   color: var(--dental-muted);
@@ -466,8 +468,12 @@
   color: #047857;
 }
 
-.dental-page .lp-h2 {
+.lp-h2 {
   margin: 0 0 1.25rem;
+  color: var(--dental-cream, #f5f1e8);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-wrap: balance;
   font-size: clamp(1.75rem, 6vw, 2.9rem);
   line-height: 1.08;
   letter-spacing: -0.035em;
@@ -950,7 +956,7 @@
   scroll-margin-top: 4rem;
 }
 
-.dental-page .lp-light h2 {
+.lp-light h2 {
   color: var(--dental-onyx);
 }
 
