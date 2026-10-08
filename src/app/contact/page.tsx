@@ -12,6 +12,7 @@ export const metadata = buildMetadata({
   title: "Book a Free Automation Audit",
   description:
     "Request a free automation audit to identify the highest-value workflow bottleneck in your marketing agency and get a practical implementation path.",
+  path: "/contact",
 });
 
 export default function ContactPage() {

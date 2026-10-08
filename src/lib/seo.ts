@@ -4,15 +4,12 @@ export const SITE_URL = "https://qaribiqbal.netlify.app";
 
 const baseTitle = "Qarib Iqbal";
 const baseDescription =
-  "AI automation for marketing agencies that want faster lead follow-up, automated reporting, cleaner onboarding, and less repetitive operational work.";
+  "Missed-call text-back and patient reactivation for Australian dental clinics. Fixed-price AUD 490 campaign and a free Missed-Call Leak Audit until 6 November 2026.";
 
 const defaultKeywords = [
-  "AI automation for marketing agencies",
-  "agency automation consultant",
-  "marketing agency workflow automation",
-  "AI systems for agencies",
-  "automate lead follow-up for agencies",
-  "agency reporting automation",
+  "missed call text back dental clinic",
+  "dental patient reactivation Australia",
+  "dental clinic lost patient recovery",
 ];
 
 export function buildMetadata({
@@ -49,5 +46,6 @@ export function buildMetadata({
 }
 
 export const defaultMetadata = buildMetadata({
-  title: "AI Automation for Marketing Agencies",
+  title: "Missed-Call Recovery for Australian Dental Clinics",
+  path: "/",
 });

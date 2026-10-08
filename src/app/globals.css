@@ -2,52 +2,55 @@
 @import "tw-animate-css";
 
 :root {
-  /* ── Dark cinematic palette: near-black neutrals, single amber accent ── */
-  --bg: oklch(0.115 0.005 270);
-  --bg-strong: oklch(0.082 0.004 270);
-  --panel: oklch(0.165 0.006 270 / 0.9);
-  --panel-strong: oklch(0.2 0.007 270 / 0.94);
-  --panel-soft: oklch(0.19 0.006 270 / 0.52);
-  --line: oklch(0.5 0.008 80 / 0.18);
-  --line-strong: oklch(0.62 0.012 80 / 0.28);
-  --line-contrast: oklch(0.7 0.03 80 / 0.42);
-  --text-main: oklch(0.965 0.006 90);
-  --text-muted: oklch(0.79 0.01 85);
-  --text-subtle: oklch(0.6 0.012 85);
-  --accent: oklch(0.78 0.14 75);
-  --accent-strong: oklch(0.85 0.13 80);
+  /* Brand palette: onyx background, cream text, emerald accents and buttons */
+  --brand-onyx: #0a0f0d;
+  --brand-cream: #f5f1e8;
+  --brand-emerald: #10b981;
+  --brand-emerald-deep: #047857;
+  --bg: #0a0f0d;
+  --bg-strong: #060a08;
+  --panel: rgb(245 241 232 / 0.045);
+  --panel-strong: #121a16;
+  --panel-soft: rgb(245 241 232 / 0.06);
+  --line: rgb(245 241 232 / 0.14);
+  --line-strong: rgb(245 241 232 / 0.26);
+  --line-contrast: rgb(245 241 232 / 0.42);
+  --text-main: #f5f1e8;
+  --text-muted: rgb(245 241 232 / 0.8);
+  --text-subtle: rgb(245 241 232 / 0.66);
+  --accent: #10b981;
+  --accent-strong: #34d399;
   --accent-soft: color-mix(in oklch, var(--accent) 14%, transparent);
-  --accent-warm: oklch(0.76 0.15 70);
-  --accent-warm-strong: oklch(0.83 0.14 75);
-  --primary: oklch(0.34 0.055 70);
-  --primary-light: oklch(0.46 0.07 72);
+  --accent-warm: #10b981;
+  --accent-warm-strong: #34d399;
+  --primary: #064e3b;
+  --primary-light: #065f46;
   --ease-out-strong: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
   --section-gap: clamp(5rem, 8vw, 8rem);
   --font-geist: var(--font-inter);
   --font-display: var(--font-display-loaded, var(--font-inter));
-  --font-serif: var(--font-serif-loaded, Georgia, serif);
 }
 
 html[data-theme="light"] {
-  --bg: oklch(0.972 0.006 85);
-  --bg-strong: oklch(0.938 0.008 85);
-  --panel: oklch(0.988 0.004 85 / 0.92);
-  --panel-strong: oklch(1 0.003 85 / 0.98);
-  --panel-soft: oklch(0.955 0.006 85 / 0.7);
-  --line: oklch(0.72 0.014 85 / 0.35);
-  --line-strong: oklch(0.6 0.02 85 / 0.45);
-  --line-contrast: oklch(0.46 0.05 80 / 0.45);
-  --text-main: oklch(0.17 0.015 80);
-  --text-muted: oklch(0.3 0.014 80);
-  --text-subtle: oklch(0.44 0.014 80);
-  --accent: oklch(0.58 0.15 70);
-  --accent-strong: oklch(0.5 0.16 68);
+  --bg: #f5f1e8;
+  --bg-strong: #ebe6d9;
+  --panel: rgb(255 255 255 / 0.7);
+  --panel-strong: #ffffff;
+  --panel-soft: rgb(10 15 13 / 0.05);
+  --line: rgb(10 15 13 / 0.16);
+  --line-strong: rgb(10 15 13 / 0.3);
+  --line-contrast: rgb(10 15 13 / 0.5);
+  --text-main: #0a0f0d;
+  --text-muted: rgb(10 15 13 / 0.82);
+  --text-subtle: rgb(10 15 13 / 0.7);
+  --accent: #047857;
+  --accent-strong: #065f46;
   --accent-soft: color-mix(in oklch, var(--accent) 12%, transparent);
-  --accent-warm: oklch(0.6 0.16 66);
-  --accent-warm-strong: oklch(0.54 0.17 64);
-  --primary: oklch(0.5 0.08 72);
-  --primary-light: oklch(0.6 0.08 74);
+  --accent-warm: #10b981;
+  --accent-warm-strong: #34d399;
+  --primary: #a7f3d0;
+  --primary-light: #6ee7b7;
 }
 
 *,
@@ -435,20 +438,14 @@ img {
   }
 
   .text-highlight {
-    font-family: var(--font-serif), Georgia, serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.06em;
-    letter-spacing: 0;
+    font-weight: 600;
+    letter-spacing: inherit;
     color: var(--accent-warm);
   }
 
   .text-highlight-strong {
-    font-family: var(--font-serif), Georgia, serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.06em;
-    letter-spacing: 0;
+    font-weight: 600;
+    letter-spacing: inherit;
     color: var(--accent-warm-strong);
   }
 
@@ -478,10 +475,9 @@ img {
 
   .display-title em,
   .serif-accent {
-    font-family: var(--font-serif), Georgia, serif;
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: -0.015em;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: inherit;
     color: var(--accent);
   }
 
@@ -1977,7 +1973,7 @@ img {
 }
 
 .dashboard-dot-green {
-  background: #34d399;
+  background: var(--accent-strong);
 }
 
 .dashboard-dot-blue {
@@ -1985,7 +1981,7 @@ img {
 }
 
 .dashboard-dot-purple {
-  background: #a78bfa;
+  background: var(--brand-cream);
 }
 
 .dashboard-title {
@@ -3353,5 +3349,11 @@ img {
   .dashboard-final {
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.lenis) {
+    scroll-behavior: smooth;
   }
 }

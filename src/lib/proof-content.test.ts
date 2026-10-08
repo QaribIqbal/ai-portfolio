@@ -41,8 +41,9 @@ test("links the primary case-studies navigation to the full evidence page", () =
   assert.equal(navigation.find((item) => item.label === "Case Studies")?.href, "/case-studies");
 });
 
-test("keeps the dental clinics link inside the four items shown in the desktop header", () => {
-  const dentalIndex = navigation.findIndex((item) => item.href === "/dental");
-  assert.ok(dentalIndex >= 0 && dentalIndex < 4);
-  assert.equal(navigation[dentalIndex].label, "For dental clinics →");
+test("leads the navigation with dental and links the agency path", () => {
+  assert.equal(navigation[0].href, "/dental");
+  assert.equal(navigation[0].label, "For dental clinics");
+  assert.equal(navigation.find((item) => item.href === "/agencies")?.label, "For agencies");
+  assert.ok(navigation.slice(0, 3).some((item) => item.href === "/agencies"));
 });

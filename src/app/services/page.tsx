@@ -11,6 +11,7 @@ export const metadata = buildMetadata({
   title: "Services Delivered Through Focused Sprints",
   description:
     "Qarib Iqbal delivers automation work through focused 21-Day Agency Automation Sprints for lean marketing agencies.",
+  path: "/services",
 });
 
 export default function ServicesPage() {

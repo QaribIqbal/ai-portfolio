@@ -25,19 +25,34 @@ test("hero and offer copy match the spec word for word", () => {
 });
 
 test("only numbers written in the spec appear in dental copy", () => {
-  const allowed = new Set(["60", "30", "38", "31", "490", "48", "649", "3", "24", "6", "2026"]);
+  const allowed = new Set(["60", "30", "38", "26", "31", "490", "48", "649", "3", "24", "6", "2026"]);
   const numbers = allCopy.replace(/https?:\/\/\S+/g, "").match(/\d+/g) ?? [];
   const unexpected = numbers.filter((n) => !allowed.has(n));
 
   assert.deepEqual(unexpected, []);
 });
 
-test("no filler text, and the demo placeholder is labelled exactly as specified", () => {
-  assert.doesNotMatch(allCopy, /lorem|ipsum|TODO|TBD/i);
+test("no filler text and no unfinished demo placeholder in the copy", () => {
+  assert.doesNotMatch(allCopy, /lorem|ipsum|TODO|TBD|recording in progress/i);
+});
+
+test("the stat is source-backed and extras wording is conditional", () => {
+  assert.ok(dental.dentalProblems.includes("A 2026 vendor study of 26 practices found 38% of calls went unanswered."));
+  assert.ok(dental.dentalProblems.includes("If you have extras cover, most funds reset on 31 Dec."));
+  assert.doesNotMatch(allCopy, /industry estimates/i);
+});
+
+test("copy avoids testimonials, clinical outcome claims, and pressure phrases", () => {
+  assert.doesNotMatch(allCopy, /testimonial|clinical|cure|guaranteed results|act now|hurry|don't miss out|last chance|limited time/i);
+});
+
+test("the home hero line is the approved wording", () => {
+  const { headlineLead, headlineKey, headlineTail } = dental.brandHome;
   assert.equal(
-    dental.dentalDemoPlaceholder,
-    "Demo video: missed-call text-back + a live reactivation run (3 min). Recording in progress.",
+    `${headlineLead}${headlineKey}${headlineTail}`,
+    "I plug missed-call and lost-patient recovery into the phones your dental practice already has, and every week I show you the appointments it booked.",
   );
+  assert.equal(dental.brandHome.meta.title, "Missed-Call Recovery for Australian Dental Clinics");
 });
 
 test("the Instagram link points at the owner's profile", () => {

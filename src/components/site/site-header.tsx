@@ -31,7 +31,7 @@ export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
-          {navigation.slice(0, 4).map((item) => (
+          {navigation.slice(0, 3).map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -45,16 +45,13 @@ export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
         <div className="flex items-center gap-2.5">
           {!minimal ? (
             <>
-              <ButtonLink href="/contact" className="hidden whitespace-nowrap lg:inline-flex" trackingEvent="header_audit_click">
-                {siteConfig.primaryCta}
-              </ButtonLink>
-              <ButtonLink href="/checklist" variant="secondary" className="hidden sm:inline-flex lg:hidden" trackingEvent="header_checklist_click">
-                {siteConfig.secondaryCta}
+              <ButtonLink href="/dental#audit" className="hidden whitespace-nowrap sm:inline-flex" trackingEvent="header_dental_audit_click">
+                {siteConfig.dentalCta}
               </ButtonLink>
             </>
           ) : (
-            <ButtonLink href="/checklist" className="hidden sm:inline-flex" trackingEvent="header_minimal_checklist_click">
-              {siteConfig.secondaryCta}
+            <ButtonLink href="/dental#audit" className="hidden sm:inline-flex" trackingEvent="header_minimal_audit_click">
+              {siteConfig.dentalCta}
             </ButtonLink>
           )}
           <MobileNav />

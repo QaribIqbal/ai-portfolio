@@ -59,11 +59,12 @@ export type TrustPrinciple = {
 
 export const siteConfig = {
   name: "Qarib Iqbal",
-  role: "AI Automation Specialist for Marketing Agencies",
+  role: "Missed-call and lost-patient recovery for Australian dental clinics",
   email: "qaribiqbal92@gmail.com",
   linkedin: "https://www.linkedin.com/in/qarib-iqbal92",
   // TODO: Replace Calendly link with real booking URL
   calendly: "https://calendly.com/qaribiqbal92/30min",
+  dentalCta: "Get the free Missed-Call Leak Audit",
   primaryCta: "Book Free Automation Audit",
   secondaryCta: "Get the Agency AI Automation Checklist",
   availabilityCapacity: 2,
@@ -72,12 +73,11 @@ export const siteConfig = {
 };
 
 export const navigation = [
-  { href: "/#services", label: "Services" },
-  { href: "/#process", label: "Process" },
+  { href: "/dental", label: "For dental clinics" },
+  { href: "/agencies", label: "For agencies" },
   { href: "/case-studies", label: "Case Studies" },
-  { href: "/dental", label: "For dental clinics →" },
   { href: "/checklist", label: "Checklist" },
-  { href: "/contact", label: "Free Audit" },
+  { href: "/contact", label: "Agency Audit" },
 ];
 
 export const offerPackaging = [

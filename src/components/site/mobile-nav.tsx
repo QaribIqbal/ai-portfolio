@@ -42,11 +42,8 @@ export function MobileNav() {
           </nav>
 
           <div className="mt-5 flex flex-col gap-3">
-            <ButtonLink href="/contact" className="w-full" trackingEvent="mobile_audit_click">
-              {siteConfig.primaryCta}
-            </ButtonLink>
-            <ButtonLink href="/checklist" variant="secondary" className="w-full" trackingEvent="mobile_checklist_click">
-              {siteConfig.secondaryCta}
+            <ButtonLink href="/dental#audit" className="w-full" trackingEvent="mobile_dental_audit_click" onClick={closeMenu}>
+              {siteConfig.dentalCta}
             </ButtonLink>
           </div>
         </div>

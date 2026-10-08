@@ -12,6 +12,7 @@ export const metadata = buildMetadata({
   title: "Free Agency AI Automation Checklist",
   description:
     "Use this checklist to identify workflow bottlenecks across lead follow-up, reporting, onboarding, and repetitive operations inside your marketing agency.",
+  path: "/checklist",
 });
 
 export default function ChecklistPage() {

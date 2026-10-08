@@ -55,7 +55,8 @@ function expectInOrder(haystack, needles, label, failures) {
 const failures = [];
 
 const siteContent = read("src/lib/site-content.ts");
-const homePage = read("src/app/page.tsx");
+const homePage = read("src/app/agencies/page.tsx");
+const brandHomePage = read("src/app/page.tsx");
 const caseStudiesPage = read("src/app/case-studies/page.tsx");
 const heroAnimation = read("src/components/site/hero-animation.tsx");
 const pageHero = read("src/components/site/page-hero.tsx");
@@ -167,19 +168,19 @@ expectExcludes(siteContent, ['title: "Geo Dash"', "Watch Geo Dash demo"], "site-
 expectIncludes(homePage, ["Six systems. Each one labeled by the evidence behind it."], "home-page archive", failures);
 expectExcludes(homePage, ["Seven systems."], "home-page", failures);
 
-expectIncludes(homePage, ['href="/dental"', "For dental clinics →"], "home-page dental entry", failures);
-expectIncludes(siteHeader, ["navigation.slice(0, 4)", "sm:inline-flex lg:hidden"], "site-header", failures);
+expectIncludes(brandHomePage, ['href="/dental#audit"', 'href="/dental#offer"', 'href="/agencies"', "See the 31 December reactivation campaign"], "brand home", failures);
+expectExcludes(brandHomePage, ["force-dynamic", "gsap"], "brand home", failures);
+expectIncludes(siteHeader, ["navigation.slice(0, 3)", "siteConfig.dentalCta"], "site-header", failures);
 
 expectIncludes(
   dentalContent,
   [
     "Missed calls become booked appointments.",
-    "30 to 38% of inbound calls to dental practices go unanswered (industry estimates).",
+    "A 2026 vendor study of 26 practices found 38% of calls went unanswered.",
     "The 31 December Reactivation Campaign",
     "Fixed price: AUD 490. Live within 48 hours of access.",
     "Founding price for the first 3 practices.",
     "Pilot guarantee: if the campaign recovers zero appointments in 30 days, the pilot fee is refunded. Conditions in writing before we start.",
-    "Demo video: missed-call text-back + a live reactivation run (3 min). Recording in progress.",
     "Request received. Your audit summary arrives by email within one business day.",
     "The Leak Audit is free until 6 November 2026.",
     "Prefer to talk first? DM 'AUDIT' on Instagram",
@@ -194,7 +195,7 @@ expectExcludes(dentalForm, ["placeholder="], "dental-audit-form", failures);
 expectIncludes(netlifyFormsHtml, ['name="dental-audit"', 'data-netlify="true"'], "public/__forms.html", failures);
 expectExcludes(
   [dentalContent, dentalPage, dentalForm].join("\n"),
-  ["lorem", "ipsum", "TODO"],
+  ["lorem", "ipsum", "TODO", "Recording in progress", "industry estimates"],
   "dental copy",
   failures,
 );

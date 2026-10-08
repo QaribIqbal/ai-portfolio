@@ -31,7 +31,7 @@ export function HeroAnimation({ children }: HeroAnimationProps) {
 
       if (reducedMotion) {
         gsap.set([...fadeTargets, ...Array.from(lines)], {
-          clearProps: "all",
+          clearProps: "opacity,transform,translate,rotate,scale",
           opacity: 1,
           y: 0,
         });

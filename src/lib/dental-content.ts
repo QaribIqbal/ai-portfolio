@@ -1,6 +1,6 @@
 export const DENTAL_INSTAGRAM_URL = "https://www.instagram.com/qaribiqbal92";
 
-// Owner swaps this for the recorded demo's embed URL (YouTube /embed/ or Loom /embed/).
+// Owner sets the recorded demo's embed URL (YouTube /embed/ or Loom /embed/). While null, the demo section is not rendered.
 export const DENTAL_DEMO_VIDEO_URL: string | null = null;
 
 export const dentalMeta = {
@@ -18,9 +18,9 @@ export const dentalHero = {
 };
 
 export const dentalProblems = [
-  "30 to 38% of inbound calls to dental practices go unanswered (industry estimates).",
+  "A 2026 vendor study of 26 practices found 38% of calls went unanswered.",
   "A missed call with no text-back usually books with the next clinic.",
-  "Unused health-fund extras expire 31 December for most major funds.",
+  "If you have extras cover, most funds reset on 31 Dec.",
 ];
 
 export const dentalOffer = {
@@ -49,9 +49,6 @@ export const dentalSteps = [
     description: "a simple report: messages sent, replies, appointments recovered.",
   },
 ];
-
-export const dentalDemoPlaceholder =
-  "Demo video: missed-call text-back + a live reactivation run (3 min). Recording in progress.";
 
 export const dentalAuditForm = {
   labels: {
@@ -94,4 +91,27 @@ export const dentalFinalCta = {
   heading: "Find out what missed calls are costing your clinic.",
   button: "Get the free Missed-Call Leak Audit",
   instagramLink: "Prefer to talk first? DM 'AUDIT' on Instagram",
+};
+
+export const dentalDemoTitle = "Missed-call text-back and reactivation demo";
+
+export const brandHome = {
+  meta: {
+    title: "Missed-Call Recovery for Australian Dental Clinics",
+    description:
+      "Missed-call text-back and patient reactivation for Australian dental clinics. Fixed-price AUD 490 campaign and a free Missed-Call Leak Audit until 6 November 2026.",
+  },
+  eyebrow: "Qarib Iqbal / Missed-call and lost-patient recovery",
+  headlineLead: "I plug ",
+  headlineKey: "missed-call and lost-patient recovery",
+  headlineTail:
+    " into the phones your dental practice already has, and every week I show you the appointments it booked.",
+  freeNote: "The Leak Audit is free until 6 November 2026.",
+  offerHeading: "Fixed price, written guarantee",
+  offerLink: "Full campaign details",
+  agencies: {
+    heading: "Run a marketing agency?",
+    body: "The same systems, delivered as automation sprints, voice agents and reporting workflows for agencies and their clients.",
+    link: "For agencies",
+  },
 };

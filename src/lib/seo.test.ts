@@ -20,8 +20,9 @@ test("sets a canonical URL and custom keywords when a path is given", () => {
   assert.deepEqual(metadata.keywords, ["dental missed call text back"]);
 });
 
-test("keeps the agency defaults for pages that pass only a title", () => {
-  const metadata = buildMetadata({ title: "AI Automation for Marketing Agencies" });
+test("defaults to the dental-first description and keywords", () => {
+  const metadata = buildMetadata({ title: "Missed-Call Recovery for Australian Dental Clinics" });
   assert.equal(metadata.alternates, undefined);
-  assert.ok((metadata.keywords as string[]).includes("AI automation for marketing agencies"));
+  assert.match(String(metadata.description), /Australian dental clinics/);
+  assert.ok((metadata.keywords as string[]).includes("missed call text back dental clinic"));
 });

@@ -11,6 +11,7 @@ export const metadata = buildMetadata({
   title: "AI Automation Demos & Solution Studies",
   description:
     "Watch Qarib Iqbal and TechBees AI automation demos for real-estate lead response, agency reporting, WhatsApp, email, onboarding, and SEO workflows.",
+  path: "/case-studies",
 });
 
 const proofTypes = [

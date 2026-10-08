@@ -11,6 +11,7 @@ export const metadata = buildMetadata({
   title: "About Qarib Iqbal",
   description:
     "How Qarib Iqbal works with lean marketing agencies through diagnosis-first, sprint-based automation execution.",
+  path: "/about",
 });
 
 export default function AboutPage() {

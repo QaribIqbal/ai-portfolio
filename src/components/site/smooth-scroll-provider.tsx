@@ -1,13 +1,14 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
-import Lenis from "lenis";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import type Lenis from "lenis";
 
 const LenisContext = createContext<Lenis | null>(null);
+
+// Brand pages stay light: no smooth-scroll or scroll-linked animation code is loaded.
+const CALM_ROUTES = new Set(["/", "/dental"]);
+const DESKTOP_QUERY = "(min-width: 768px)";
 
 export function useSmoothScroll() {
   return useContext(LenisContext);
@@ -19,12 +20,29 @@ type SmoothScrollProviderProps = {
 
 export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
   const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reducedMotion) return;
+    if (reducedMotion || CALM_ROUTES.has(pathname) || !window.matchMedia(DESKTOP_QUERY).matches) return;
 
-    const lenis = new Lenis({
+    let cancelled = false;
+    let teardown: (() => void) | undefined;
+
+    void Promise.all([import("lenis"), import("gsap"), import("gsap/ScrollTrigger")]).then(
+      ([{ default: Lenis }, { default: gsap }, { ScrollTrigger }]) => {
+        if (cancelled) return;
+        gsap.registerPlugin(ScrollTrigger);
+        teardown = setup(Lenis, gsap, ScrollTrigger);
+      },
+    );
+
+    function setup(
+      LenisCtor: typeof Lenis,
+      gsap: typeof import("gsap").default,
+      ScrollTrigger: typeof import("gsap/ScrollTrigger").ScrollTrigger,
+    ) {
+    const lenis = new LenisCtor({
       autoRaf: true,
       smoothWheel: true,
       duration: 1.5,
@@ -185,7 +203,13 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
       lenis.destroy();
       setLenisInstance(null);
     };
-  }, []);
+    }
+
+    return () => {
+      cancelled = true;
+      teardown?.();
+    };
+  }, [pathname]);
 
   return <LenisContext.Provider value={lenisInstance}>{children}</LenisContext.Provider>;
 }
