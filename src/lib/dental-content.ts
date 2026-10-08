@@ -135,3 +135,53 @@ export const brandHome = {
     link: "For agencies",
   },
 };
+
+export const dentalTrustChips = [
+  "No new software",
+  "Patient data stays in your clinic",
+  "Live within 48 hours of access",
+  "Fixed price, written guarantee",
+];
+
+export const dentalStat = {
+  value: "38%",
+  label: "of calls went unanswered",
+  source: "A 2026 vendor study of 26 practices.",
+};
+
+export const dentalIllustration = {
+  label: "Illustration: an example text-back conversation",
+  missedCall: "Missed call",
+  missedCallDetail: "Reception busy",
+  messages: [
+    {
+      from: "clinic",
+      text: "Hi, it's [Your clinic]. Sorry we missed your call. Reply with a time that suits and we'll book you in.",
+    },
+    { from: "patient", text: "Tomorrow afternoon if you have anything?" },
+    { from: "clinic", text: "Done. You're booked for tomorrow afternoon. See you then." },
+  ],
+  footer: "Sent automatically when a call goes unanswered",
+};
+
+export const dentalOfferBullets = [
+  "Patients segmented by health fund",
+  "SMS + email copy written for you",
+  "Runs inside your clinic's own messaging system",
+  "Every recovered booking reported",
+];
+
+export const dentalLeakCheck = {
+  eyebrow: "Leak check",
+  heading: "Where is your clinic leaking calls?",
+  intro: "Tap each one that sounds like your practice.",
+  questions: [
+    "Calls go to voicemail when reception is busy",
+    "Nobody answers the phone over lunch",
+    "After-hours calls go unanswered",
+    "There's no set process to call missed numbers back",
+  ],
+  resultNone: "None of these yet. The audit checks the rest of your call flow.",
+  resultSome: "common leak points selected. The free Leak Audit maps exactly where those calls go.",
+  cta: "Map my leaks in the free audit",
+};

@@ -1,18 +1,14 @@
 import { DentalAuditForm } from "@/components/dental/dental-audit-form";
-import { FinalCtaBand, OfferDetails, ProblemStrip, StepsList } from "@/components/dental/dental-sections";
-import { DentalFaqJsonLd, DentalServiceJsonLd } from "@/components/dental/structured-data";
+import { FaqGrid, FinalCta, LandingHero, OfferCard, StatSpotlight, StepsTimeline } from "@/components/dental/landing";
+import { LeakCheck } from "@/components/dental/leak-check";
 import { StickyAuditCta } from "@/components/dental/sticky-audit-cta";
+import { DentalFaqJsonLd, DentalServiceJsonLd } from "@/components/dental/structured-data";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
-import {
-  DENTAL_DEMO_VIDEO_URL,
-  dentalDemoTitle,
-  dentalFaqs,
-  dentalHero,
-  dentalMeta,
-  dentalOffer,
-} from "@/lib/dental-content";
+import { DENTAL_DEMO_VIDEO_URL, brandHome, dentalDemoTitle, dentalHero, dentalMeta } from "@/lib/dental-content";
 import { buildMetadata } from "@/lib/seo";
+
+const AUDIT_HREF = "#audit";
 
 export const metadata = buildMetadata({
   title: dentalMeta.title,
@@ -32,68 +28,63 @@ export default function DentalPage() {
       <SiteHeader />
 
       <main id="main">
-        <section className="dental-shell dental-hero" data-sticky-cta-hide-after aria-labelledby="dental-hero-title">
-          <h1 id="dental-hero-title">{dentalHero.title}</h1>
-          <p className="dental-lede">{dentalHero.subtitle}</p>
-          <div className="dental-hero-actions">
-            <a href="#audit" className="dental-cta">
-              {dentalHero.primaryCta}
-            </a>
-            <a href="#offer" className="dental-text-link">
-              {dentalHero.secondaryCta}
-            </a>
-          </div>
-        </section>
+        <LandingHero
+          headingId="dental-hero-title"
+          eyebrow="For Australian dental clinics"
+          note={brandHome.freeNote}
+          title={
+            <>
+              Missed calls become <span className="lp-highlight">booked appointments.</span>
+            </>
+          }
+          lede={dentalHero.subtitle}
+          primary={{ href: AUDIT_HREF, label: dentalHero.primaryCta }}
+          secondary={{ href: "#offer", label: dentalHero.secondaryCta }}
+        />
 
-        <ProblemStrip />
-
-        <section id="offer" className="dental-shell dental-section" aria-labelledby="dental-offer-title">
-          <h2 id="dental-offer-title">{dentalOffer.heading}</h2>
-          <OfferDetails />
-        </section>
-
-        <section className="dental-shell dental-section" aria-labelledby="dental-steps-title">
-          <h2 id="dental-steps-title">How it works</h2>
-          <StepsList headingId="dental-steps-title" />
-        </section>
+        <StatSpotlight />
+        <OfferCard id="offer" ctaHref={AUDIT_HREF} />
+        <StepsTimeline headingId="dental-steps-title" />
+        <LeakCheck auditHref={AUDIT_HREF} />
 
         {DENTAL_DEMO_VIDEO_URL ? (
-          <section id="demo" className="dental-shell dental-section" aria-labelledby="dental-demo-title">
-            <h2 id="dental-demo-title">Demo</h2>
-            <div className="dental-video">
-              <iframe
-                src={DENTAL_DEMO_VIDEO_URL}
-                title={dentalDemoTitle}
-                loading="lazy"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-              />
+          <section id="demo" className="lp-section" aria-labelledby="dental-demo-title">
+            <div className="lp-shell">
+              <p className="lp-eyebrow">Demo</p>
+              <h2 id="dental-demo-title" className="lp-h2">
+                {dentalDemoTitle}
+              </h2>
+              <div className="dental-video">
+                <iframe
+                  src={DENTAL_DEMO_VIDEO_URL}
+                  title={dentalDemoTitle}
+                  loading="lazy"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </section>
         ) : null}
 
-        <section id="audit" data-sticky-cta-hide className="dental-shell dental-section" aria-labelledby="dental-audit-title">
-          <h2 id="dental-audit-title">{dentalHero.primaryCta}</h2>
-          <DentalAuditForm />
-        </section>
-
-        <section className="dental-shell dental-section" aria-labelledby="dental-faq-title">
-          <h2 id="dental-faq-title">FAQ</h2>
-          <div className="dental-faq">
-            {dentalFaqs.map((faq) => (
-              <article key={faq.question} className="dental-card">
-                <h3>{faq.question}</h3>
-                <p>{faq.answer}</p>
-              </article>
-            ))}
+        <section id="audit" data-sticky-cta-hide className="lp-form-section" aria-labelledby="dental-audit-title">
+          <div className="lp-shell">
+            <div className="lp-form-card">
+              <p className="lp-eyebrow">Free until 6 November 2026</p>
+              <h2 id="dental-audit-title" className="lp-h2">
+                {dentalHero.primaryCta}
+              </h2>
+              <DentalAuditForm />
+            </div>
           </div>
         </section>
 
-        <FinalCtaBand auditHref="#audit" />
+        <FaqGrid headingId="dental-faq-title" />
+        <FinalCta auditHref={AUDIT_HREF} />
       </main>
 
       <SiteFooter />
-      <StickyAuditCta href="#audit" />
+      <StickyAuditCta href={AUDIT_HREF} />
       <DentalServiceJsonLd />
       <DentalFaqJsonLd />
     </div>

@@ -168,7 +168,7 @@ expectExcludes(siteContent, ['title: "Geo Dash"', "Watch Geo Dash demo"], "site-
 expectIncludes(homePage, ["Six systems. Each one labeled by the evidence behind it."], "home-page archive", failures);
 expectExcludes(homePage, ["Seven systems."], "home-page", failures);
 
-expectIncludes(brandHomePage, ['href="/dental#audit"', 'href="/dental#offer"', 'href="/agencies"', "See the 31 December reactivation campaign"], "brand home", failures);
+expectIncludes(brandHomePage, ['"/dental#audit"', '"/dental#offer"', 'href="/agencies"', "See the 31 December reactivation campaign"], "brand home", failures);
 expectExcludes(brandHomePage, ["force-dynamic", "gsap"], "brand home", failures);
 expectIncludes(siteHeader, ["navigation.slice(0, 3)", "siteConfig.dentalCta"], "site-header", failures);
 
@@ -189,7 +189,7 @@ expectIncludes(
   "dental-content",
   failures,
 );
-expectIncludes(dentalPage, ['id="offer"', 'id="demo"', 'id="audit"', 'href="#audit"', 'href="#offer"'], "dental-page", failures);
+expectIncludes(dentalPage, ['id="offer"', 'id="demo"', 'id="audit"', '"#audit"', '"#offer"'], "dental-page", failures);
 expectExcludes(dentalPage, ["force-dynamic", "gsap", "motion/react"], "dental-page", failures);
 expectExcludes(dentalForm, ["placeholder="], "dental-audit-form", failures);
 expectIncludes(netlifyFormsHtml, ['name="dental-audit"', 'data-netlify="true"'], "public/__forms.html", failures);
