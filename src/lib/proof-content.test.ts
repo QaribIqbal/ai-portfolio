@@ -25,7 +25,11 @@ test("keeps the supplied live demos in the evidence inventory", () => {
   const urls = projectEvidence.flatMap((item) => [item.demoUrl, item.sourceUrl]);
   assert.ok(urls.includes("https://youtube.com/shorts/0vO8tecumK8?feature=share"));
   assert.ok(urls.includes("https://www.loom.com/embed/f7560adbec7841ca809a84e5d638c4f8"));
-  assert.ok(urls.includes("https://youtu.be/NLuXiAsI1U4"));
+});
+
+test("does not present the shelved Geo Dash project in the archive", () => {
+  assert.ok(projectEvidence.every((item) => item.title !== "Geo Dash"));
+  assert.ok(projectEvidence.every((item) => item.demoUrl !== "https://youtu.be/NLuXiAsI1U4"));
 });
 
 test("does not publish testimonials without a source and approval", () => {
@@ -35,4 +39,10 @@ test("does not publish testimonials without a source and approval", () => {
 
 test("links the primary case-studies navigation to the full evidence page", () => {
   assert.equal(navigation.find((item) => item.label === "Case Studies")?.href, "/case-studies");
+});
+
+test("keeps the dental clinics link inside the four items shown in the desktop header", () => {
+  const dentalIndex = navigation.findIndex((item) => item.href === "/dental");
+  assert.ok(dentalIndex >= 0 && dentalIndex < 4);
+  assert.equal(navigation[dentalIndex].label, "For dental clinics →");
 });

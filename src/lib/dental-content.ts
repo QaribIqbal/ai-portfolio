@@ -1,0 +1,97 @@
+export const DENTAL_INSTAGRAM_URL = "https://www.instagram.com/qaribiqbal92";
+
+// Owner swaps this for the recorded demo's embed URL (YouTube /embed/ or Loom /embed/).
+export const DENTAL_DEMO_VIDEO_URL: string | null = null;
+
+export const dentalMeta = {
+  title: "Missed-Call Text-Back + Patient Reactivation for Dental Clinics",
+  description:
+    "Free Missed-Call Leak Audit for Australian dental clinics. 60-second SMS text-back and a fixed-price AUD 490 reactivation campaign before the 31 December extras reset.",
+};
+
+export const dentalHero = {
+  title: "Missed calls become booked appointments.",
+  subtitle:
+    "For Australian dental clinics: a 60-second SMS text-back for the calls your front desk can't reach, plus a patient reactivation campaign before health-fund extras reset on 31 December.",
+  primaryCta: "Get the free Missed-Call Leak Audit",
+  secondaryCta: "See the reactivation campaign",
+};
+
+export const dentalProblems = [
+  "30 to 38% of inbound calls to dental practices go unanswered (industry estimates).",
+  "A missed call with no text-back usually books with the next clinic.",
+  "Unused health-fund extras expire 31 December for most major funds.",
+];
+
+export const dentalOffer = {
+  heading: "The 31 December Reactivation Campaign",
+  what: "We reactivate your existing patients with a compliant SMS + email sequence built around the extras reset: segment by health fund, write the copy, run it inside your clinic's own messaging system, and report every recovered booking.",
+  price: "Fixed price: AUD 490. Live within 48 hours of access.",
+  ongoing:
+    "Ongoing: Missed-call text-back + monthly reactivation, AUD 649/month. Founding price for the first 3 practices.",
+  guarantee:
+    "Pilot guarantee: if the campaign recovers zero appointments in 30 days, the pilot fee is refunded. Conditions in writing before we start.",
+};
+
+export const dentalSteps = [
+  {
+    title: "Free Leak Audit",
+    description:
+      "we map where calls and patients are leaking: voicemail, lunch, after-hours, no callback queue.",
+  },
+  {
+    title: "Build inside your system",
+    description:
+      "the campaign runs in the SMS/email tool your clinic already uses. Your patient data never leaves your clinic.",
+  },
+  {
+    title: "Weekly proof",
+    description: "a simple report: messages sent, replies, appointments recovered.",
+  },
+];
+
+export const dentalDemoPlaceholder =
+  "Demo video: missed-call text-back + a live reactivation run (3 min). Recording in progress.";
+
+export const dentalAuditForm = {
+  labels: {
+    clinicName: "Clinic name",
+    name: "Your name",
+    email: "Work email",
+    phone: "Phone (optional)",
+    smsTool: "What do you currently use for patient SMS? (optional)",
+    consent:
+      "I confirm this enquiry is about my clinic's own systems. Do not send patient data through this form.",
+  },
+  submit: "Request my free Leak Audit",
+  success: "Request received. Your audit summary arrives by email within one business day.",
+  note: "The Leak Audit is free until 6 November 2026.",
+};
+
+export const dentalFaqs = [
+  {
+    question: "Does our patient data leave the clinic?",
+    answer:
+      "No. Campaigns run inside your existing messaging system. We segment and write; your data stays with you.",
+  },
+  {
+    question: "Is the messaging compliant?",
+    answer:
+      "Yes. Sends go only to patients with express consent or who attended within the last 24 months, every message carries a STOP opt-out, and replies are forwarded to your front desk.",
+  },
+  {
+    question: "What if we have no SMS tool?",
+    answer:
+      "We set up a sending number for you as a fallback, with every reply forwarded to your front desk the same day.",
+  },
+  {
+    question: "How fast is it live?",
+    answer: "48 hours from access to your system.",
+  },
+];
+
+export const dentalFinalCta = {
+  heading: "Find out what missed calls are costing your clinic.",
+  button: "Get the free Missed-Call Leak Audit",
+  instagramLink: "Prefer to talk first? DM 'AUDIT' on Instagram",
+};

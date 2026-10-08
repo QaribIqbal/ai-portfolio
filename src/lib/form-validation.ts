@@ -206,3 +206,84 @@ export function validateAuditForm(values: AuditFormValues): ValidationErrors<Aud
 
   return errors;
 }
+
+export type DentalAuditFormValues = {
+  clinicName: string;
+  name: string;
+  email: string;
+  phone: string;
+  smsTool: string;
+  consent: boolean;
+};
+
+export type DentalAuditFormErrors = Partial<Record<keyof DentalAuditFormValues, string>>;
+
+const phonePattern = /^[+\d][\d\s()-]{5,24}$/;
+
+export function sanitizeDentalAuditForm(values: DentalAuditFormValues): DentalAuditFormValues {
+  return {
+    ...values,
+    clinicName: normalize(values.clinicName),
+    name: normalize(values.name),
+    email: normalize(values.email),
+    phone: normalize(values.phone),
+    smsTool: normalize(values.smsTool),
+  };
+}
+
+export function validateDentalAuditField(
+  field: keyof DentalAuditFormValues,
+  values: DentalAuditFormValues,
+) {
+  switch (field) {
+    case "clinicName": {
+      const normalized = normalize(values.clinicName);
+      if (!normalized) {
+        return "Please enter your clinic name.";
+      }
+
+      if (normalized.length > 120) {
+        return "Clinic name is too long. Keep it under 120 characters.";
+      }
+
+      return undefined;
+    }
+    case "name":
+      return validateName(values.name);
+    case "email":
+      return validateEmail(values.email);
+    case "phone": {
+      const normalized = normalize(values.phone);
+      if (!normalized) {
+        return undefined;
+      }
+
+      if (!phonePattern.test(normalized)) {
+        return "Please enter a valid phone number, or leave it blank.";
+      }
+
+      return undefined;
+    }
+    case "smsTool":
+      return normalize(values.smsTool).length > 200
+        ? "Please keep this under 200 characters."
+        : undefined;
+    case "consent":
+      return values.consent ? undefined : "Please confirm before sending.";
+    default:
+      return undefined;
+  }
+}
+
+export function validateDentalAuditForm(values: DentalAuditFormValues): DentalAuditFormErrors {
+  const errors: DentalAuditFormErrors = {};
+
+  (Object.keys(values) as Array<keyof DentalAuditFormValues>).forEach((field) => {
+    const message = validateDentalAuditField(field, values);
+    if (message) {
+      errors[field] = message;
+    }
+  });
+
+  return errors;
+}

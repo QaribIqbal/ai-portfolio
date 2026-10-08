@@ -96,3 +96,22 @@ Primary events:
 ```bash
 npm run build
 ```
+
+## Dental landing page (/dental)
+
+All copy lives in `src/lib/dental-content.ts`, and `scripts/verify-site-content.mjs` locks it to the 8 Oct 2026 spec.
+
+### Audit form (Netlify Forms)
+
+The dental audit form posts to Netlify Forms, not the Formspree relay. Netlify detects the form at build time from `public/__forms.html`; field names there must match `DENTAL_AUDIT_FORM_FIELDS` in `src/lib/netlify-forms.ts`.
+
+One-time Netlify setup (free tier):
+1. Site configuration → Forms → enable form detection, then redeploy.
+2. After the deploy, check that a form named `dental-audit` appears under Forms.
+3. Forms → Form notifications → Add notification → Email notification → form `dental-audit` → owner email.
+
+Submissions only work on a Netlify deploy. Locally, `next start` returns 500 for `POST /__forms.html`.
+
+### Demo video
+
+Set `DENTAL_DEMO_VIDEO_URL` in `src/lib/dental-content.ts` to an embed URL (for example `https://www.youtube-nocookie.com/embed/<id>` or `https://www.loom.com/embed/<id>`). While it is `null`, the page shows the labelled placeholder panel.

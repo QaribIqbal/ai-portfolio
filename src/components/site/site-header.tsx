@@ -31,11 +31,11 @@ export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
-          {navigation.slice(0, 3).map((item) => (
+          {navigation.slice(0, 4).map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.22em] text-[color:var(--text-subtle)] transition hover:text-[color:var(--accent)]"
+              className="whitespace-nowrap px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.22em] text-[color:var(--text-subtle)] transition hover:text-[color:var(--accent)]"
             >
               {item.label}
             </Link>
@@ -45,10 +45,10 @@ export function SiteHeader({ minimal = false }: { minimal?: boolean }) {
         <div className="flex items-center gap-2.5">
           {!minimal ? (
             <>
-              <ButtonLink href="/contact" className="hidden lg:inline-flex" trackingEvent="header_audit_click">
+              <ButtonLink href="/contact" className="hidden whitespace-nowrap lg:inline-flex" trackingEvent="header_audit_click">
                 {siteConfig.primaryCta}
               </ButtonLink>
-              <ButtonLink href="/checklist" variant="secondary" className="hidden sm:inline-flex" trackingEvent="header_checklist_click">
+              <ButtonLink href="/checklist" variant="secondary" className="hidden sm:inline-flex lg:hidden" trackingEvent="header_checklist_click">
                 {siteConfig.secondaryCta}
               </ButtonLink>
             </>

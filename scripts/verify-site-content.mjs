@@ -63,6 +63,11 @@ const proofBadge = read("src/components/site/proof-badge.tsx");
 const trustPrinciples = read("src/components/site/trust-principles.tsx");
 const journeySection = read("src/components/site/journey-section.tsx");
 const voiceAgentShowcase = read("src/components/site/voice-agent-showcase.tsx");
+const siteHeader = read("src/components/site/site-header.tsx");
+const dentalContent = read("src/lib/dental-content.ts");
+const dentalPage = read("src/app/dental/page.tsx");
+const dentalForm = read("src/components/dental/dental-audit-form.tsx");
+const netlifyFormsHtml = read("public/__forms.html");
 const allTrustContent = [
   siteContent,
   homePage,
@@ -84,7 +89,6 @@ expectIncludes(
     'title: "WhatsApp inquiry assistant"',
     'title: "Lead-email automation"',
     'title: "Weekly client reporting automation"',
-    'title: "Geo Dash"',
     'title: "Structured lead qualification"',
     'title: "Client onboarding and handoff"',
     "entry.approvedForPublication",
@@ -156,6 +160,42 @@ expectExcludes(
     "Calls Resolved",
   ],
   "published trust content",
+  failures,
+);
+
+expectExcludes(siteContent, ['title: "Geo Dash"', "Watch Geo Dash demo"], "site-content", failures);
+expectIncludes(homePage, ["Six systems. Each one labeled by the evidence behind it."], "home-page archive", failures);
+expectExcludes(homePage, ["Seven systems."], "home-page", failures);
+
+expectIncludes(homePage, ['href="/dental"', "For dental clinics →"], "home-page dental entry", failures);
+expectIncludes(siteHeader, ["navigation.slice(0, 4)", "sm:inline-flex lg:hidden"], "site-header", failures);
+
+expectIncludes(
+  dentalContent,
+  [
+    "Missed calls become booked appointments.",
+    "30 to 38% of inbound calls to dental practices go unanswered (industry estimates).",
+    "The 31 December Reactivation Campaign",
+    "Fixed price: AUD 490. Live within 48 hours of access.",
+    "Founding price for the first 3 practices.",
+    "Pilot guarantee: if the campaign recovers zero appointments in 30 days, the pilot fee is refunded. Conditions in writing before we start.",
+    "Demo video: missed-call text-back + a live reactivation run (3 min). Recording in progress.",
+    "Request received. Your audit summary arrives by email within one business day.",
+    "The Leak Audit is free until 6 November 2026.",
+    "Prefer to talk first? DM 'AUDIT' on Instagram",
+    "https://www.instagram.com/qaribiqbal92",
+  ],
+  "dental-content",
+  failures,
+);
+expectIncludes(dentalPage, ['id="offer"', 'id="demo"', 'id="audit"', 'href="#audit"', 'href="#offer"'], "dental-page", failures);
+expectExcludes(dentalPage, ["force-dynamic", "gsap", "motion/react"], "dental-page", failures);
+expectExcludes(dentalForm, ["placeholder="], "dental-audit-form", failures);
+expectIncludes(netlifyFormsHtml, ['name="dental-audit"', 'data-netlify="true"'], "public/__forms.html", failures);
+expectExcludes(
+  [dentalContent, dentalPage, dentalForm].join("\n"),
+  ["lorem", "ipsum", "TODO"],
+  "dental copy",
   failures,
 );
 

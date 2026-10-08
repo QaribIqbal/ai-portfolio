@@ -1,5 +1,6 @@
 import { CheckCircle2, Mail, BarChart3, FileText, Settings, ArrowDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { ButtonLink } from "@/components/site/button-link";
 import { FeaturedCaseStudy } from "@/components/site/featured-case-study";
@@ -264,6 +265,18 @@ export default function HomePage() {
                 </ScrollParallax>
               }
             />
+
+            <Link
+              href="/dental"
+              className="panel mt-12 flex flex-col gap-2 transition hover:border-[color:var(--accent)] sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+            >
+              <span className="text-[1.15rem] font-semibold tracking-[-0.02em] text-[color:var(--text-main)]">
+                For dental clinics →
+              </span>
+              <span className="text-[0.98rem] leading-7 text-[color:var(--text-muted)]">
+                Missed-call text-back and patient reactivation for Australian dental clinics.
+              </span>
+            </Link>
           </div>
         </section>
 
@@ -370,7 +383,7 @@ export default function HomePage() {
 
             <div className="evidence-section-heading">
               <p className="section-eyebrow">Project archive</p>
-              <h3>Seven systems. Each one labeled by the evidence behind it.</h3>
+              <h3>Six systems. Each one labeled by the evidence behind it.</h3>
             </div>
             <ProjectEvidenceGrid projects={projectEvidence} />
 

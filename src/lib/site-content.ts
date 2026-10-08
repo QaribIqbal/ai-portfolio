@@ -75,6 +75,7 @@ export const navigation = [
   { href: "/#services", label: "Services" },
   { href: "/#process", label: "Process" },
   { href: "/case-studies", label: "Case Studies" },
+  { href: "/dental", label: "For dental clinics →" },
   { href: "/checklist", label: "Checklist" },
   { href: "/contact", label: "Free Audit" },
 ];
@@ -314,17 +315,6 @@ export const projectEvidence: ProjectEvidence[] = [
     demoLabel: "Watch reporting demo",
     tools: ["Make", "Email", "Structured data"],
     potentialImpact: "Designed to reduce repetitive reporting steps and missed delivery windows.",
-  },
-  {
-    title: "Geo Dash",
-    summary:
-      "A product workflow for discovering relevant keywords, generating SEO-focused articles, and supporting publishing across client websites.",
-    proofType: "live-demo",
-    sourceUrl: AGENCY_AUTOMATION_STUDY_URL,
-    demoUrl: "https://youtu.be/NLuXiAsI1U4",
-    demoLabel: "Watch Geo Dash demo",
-    tools: ["SEO research", "AI content", "Publishing"],
-    potentialImpact: "Designed to reduce movement between research, drafting, optimization, and publishing.",
   },
   {
     title: "Structured lead qualification",
