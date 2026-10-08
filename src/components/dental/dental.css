@@ -1226,3 +1226,187 @@
     padding-block: 6rem;
   }
 }
+
+/* Breadcrumbs, areas, guides */
+.lp-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-top: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--dental-muted);
+}
+
+.lp-breadcrumbs a {
+  color: var(--dental-cream);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.lp-area-links,
+.lp-guide-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-area-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--dental-line);
+  border-radius: 999px;
+  color: var(--dental-cream);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+.lp-area-links a:hover,
+.lp-area-links a[aria-current="page"] {
+  border-color: var(--dental-emerald);
+  background: rgb(16 185 129 / 0.12);
+}
+
+.lp-area-links span {
+  color: var(--dental-muted);
+  font-size: 0.8rem;
+}
+
+.dental-page .lp-guides-heading {
+  margin: 2.5rem 0 0;
+  color: var(--dental-cream);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.lp-guide-links {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lp-guide-links a {
+  color: var(--dental-emerald);
+  font-weight: 600;
+  text-underline-offset: 0.25em;
+}
+
+.guide-shell {
+  max-width: 760px;
+}
+
+.guide-shell .lp-breadcrumbs {
+  margin-bottom: 1.5rem;
+  padding-top: 0;
+}
+
+.dental-page .guide-title {
+  font-size: clamp(1.9rem, 6.5vw, 3rem);
+}
+
+.guide-meta {
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+}
+
+.guide-answer {
+  margin: 0 0 2rem;
+  padding: 1.25rem 1.4rem;
+  border-left: 4px solid var(--dental-emerald);
+  border-radius: 0 1rem 1rem 0;
+  background: rgb(16 185 129 / 0.1);
+  color: var(--dental-cream);
+  font-size: 1.08rem;
+}
+
+.guide-answer p {
+  margin: 0;
+}
+
+.guide-answer .guide-answer-label {
+  margin-bottom: 0.4rem;
+  color: var(--dental-emerald);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.guide-section {
+  margin-top: 2rem;
+}
+
+.dental-page .guide-section h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.45rem;
+}
+
+.guide-section p,
+.guide-section li {
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.guide-section ul {
+  padding-left: 1.2rem;
+}
+
+.guide-section li {
+  margin-bottom: 0.4rem;
+}
+
+.guide-disclaimer {
+  margin-top: 2rem;
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
+.guide-cta {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgb(16 185 129 / 0.35);
+  border-radius: 1.25rem;
+  background: rgb(245 241 232 / 0.03);
+}
+
+.guide-cta p {
+  margin: 0;
+  color: var(--dental-cream);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.guide-list {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-list a {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1.25rem;
+  border: 1px solid var(--dental-line);
+  border-radius: 1.1rem;
+  color: var(--dental-muted);
+  text-decoration: none;
+  transition: border-color 150ms ease;
+}
+
+.guide-list a:hover {
+  border-color: var(--dental-emerald);
+}
+
+.guide-list strong {
+  color: var(--dental-cream);
+  font-size: 1.1rem;
+}

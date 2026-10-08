@@ -30,7 +30,7 @@ export function buildMetadata({
     title: fullTitle,
     description,
     keywords,
-    ...(path ? { alternates: { canonical: path } } : {}),
+    ...(path ? { alternates: { canonical: path, languages: { "en-AU": path, "x-default": path } } } : {}),
     openGraph: {
       title: fullTitle,
       description,

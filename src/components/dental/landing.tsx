@@ -208,16 +208,24 @@ export function OfferCard({ id, ctaHref }: { id?: string; ctaHref: string }) {
   );
 }
 
-export function FaqGrid({ headingId }: { headingId: string }) {
+export function FaqGrid({
+  headingId,
+  faqs = dentalFaqs,
+  heading = "Questions practice owners ask",
+}: {
+  headingId: string;
+  faqs?: { question: string; answer: string }[];
+  heading?: string;
+}) {
   return (
     <section className="lp-section" aria-labelledby={headingId}>
       <div className="lp-shell">
         <p className="lp-eyebrow">FAQ</p>
         <h2 id={headingId} className="lp-h2">
-          Questions practice owners ask
+          {heading}
         </h2>
         <div className="lp-faq">
-          {dentalFaqs.map((faq) => (
+          {faqs.map((faq) => (
             <article key={faq.question} className="lp-faq-item lp-reveal">
               <h3>{faq.question}</h3>
               <p>{faq.answer}</p>

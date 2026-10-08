@@ -1,9 +1,10 @@
 import Link from "next/link";
 
+import { AreasServed } from "@/components/dental/areas-served";
 import { FaqGrid, FinalCta, LandingHero, OfferCard, StatSpotlight, StepsTimeline } from "@/components/dental/landing";
 import { LeakCheck } from "@/components/dental/leak-check";
 import { StickyAuditCta } from "@/components/dental/sticky-audit-cta";
-import { DentalServiceJsonLd } from "@/components/dental/structured-data";
+import { DentalServiceJsonLd, PersonJsonLd } from "@/components/dental/structured-data";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { brandHome, dentalHero } from "@/lib/dental-content";
@@ -67,12 +68,14 @@ export default function HomePage() {
           </div>
         </section>
 
+        <AreasServed />
         <FinalCta auditHref={AUDIT_HREF} />
       </main>
 
       <SiteFooter />
       <StickyAuditCta href={AUDIT_HREF} />
       <DentalServiceJsonLd />
+      <PersonJsonLd />
     </div>
   );
 }

@@ -46,6 +46,9 @@ export function SiteFooter() {
             </span>
           </ButtonLink>
           <div className="flex flex-wrap gap-3 text-xs uppercase tracking-[0.1em] text-[color:var(--text-subtle)]">
+            <ButtonLink href="/dental/guides" variant="ghost" trackingEvent="footer_guides_click">
+              Dental guides
+            </ButtonLink>
             <ButtonLink href="/about" variant="ghost" trackingEvent="footer_about_click">
               About
             </ButtonLink>

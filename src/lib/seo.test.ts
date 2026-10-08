@@ -16,7 +16,7 @@ test("sets a canonical URL and custom keywords when a path is given", () => {
   });
 
   assert.equal(metadata.title, "Missed-Call Text-Back + Patient Reactivation for Dental Clinics | Qarib Iqbal");
-  assert.deepEqual(metadata.alternates, { canonical: "/dental" });
+  assert.deepEqual(metadata.alternates, { canonical: "/dental", languages: { "en-AU": "/dental", "x-default": "/dental" } });
   assert.deepEqual(metadata.keywords, ["dental missed call text back"]);
 });
 

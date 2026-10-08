@@ -115,3 +115,9 @@ Submissions only work on a Netlify deploy. Locally, `next start` returns 500 for
 ### Demo video
 
 Set `DENTAL_DEMO_VIDEO_URL` in `src/lib/dental-content.ts` to an embed URL (for example `https://www.youtube-nocookie.com/embed/<id>` or `https://www.loom.com/embed/<id>`). While it is `null`, the page shows the labelled placeholder panel.
+
+## Australian SEO pages
+
+- Location pages (`/dental/<city>`) are generated from `src/lib/au-locations.ts`. Add a city there with its state and time zone; the page, sitemap entry, `llms.txt` entry and OG image are generated automatically.
+- Guides (`/dental/guides/<slug>`) come from `src/lib/dental-guides.ts`. Each guide needs a 25-70 word short answer (shown first, for answer engines) and must only use the sourced 38% statistic.
+- `/llms.txt`, `/sitemap.xml` and `/robots.txt` are generated from the same content modules.

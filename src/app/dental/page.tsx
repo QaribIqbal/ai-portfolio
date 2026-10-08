@@ -1,4 +1,5 @@
 import { DentalAuditForm } from "@/components/dental/dental-audit-form";
+import { AreasServed } from "@/components/dental/areas-served";
 import { FaqGrid, FinalCta, LandingHero, OfferCard, StatSpotlight, StepsTimeline } from "@/components/dental/landing";
 import { LeakCheck } from "@/components/dental/leak-check";
 import { StickyAuditCta } from "@/components/dental/sticky-audit-cta";
@@ -80,6 +81,7 @@ export default function DentalPage() {
         </section>
 
         <FaqGrid headingId="dental-faq-title" />
+        <AreasServed />
         <FinalCta auditHref={AUDIT_HREF} />
       </main>
 
