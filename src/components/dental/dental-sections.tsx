@@ -54,7 +54,7 @@ export function StepsList({ headingId }: { headingId: string }) {
 
 export function FinalCtaBand({ auditHref }: { auditHref: string }) {
   return (
-    <section className="dental-final" aria-labelledby="dental-final-title">
+    <section className="dental-final" data-sticky-cta-hide aria-labelledby="dental-final-title">
       <div className="dental-shell">
         <h2 id="dental-final-title">{dentalFinalCta.heading}</h2>
         <Link href={auditHref} className="dental-cta">

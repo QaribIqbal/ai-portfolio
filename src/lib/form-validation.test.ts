@@ -50,3 +50,15 @@ test("collapses whitespace before a dental request is sent", () => {
   assert.equal(sanitized.clinicName, "Harbour Dental");
   assert.equal(sanitized.smsTool, "Dental4Windows SMS");
 });
+
+test("accepts Australian mobile and landline formats", () => {
+  for (const phone of ["0412 345 678", "+61 412 345 678", "(02) 9123 4567", "02 9123 4567", "+61 2 9123 4567", "1300 123 456"]) {
+    assert.equal(validateDentalAuditForm({ ...validDentalForm, phone }).phone, undefined, phone);
+  }
+});
+
+test("rejects phone numbers that are not Australian", () => {
+  for (const phone of ["12345", "+1 415 555 0100", "0412 345"]) {
+    assert.ok(validateDentalAuditForm({ ...validDentalForm, phone }).phone, phone);
+  }
+});

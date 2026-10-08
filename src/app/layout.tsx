@@ -25,8 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-AU">
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <UtmCapture />
         <noscript>
           <style>{`[data-gsap-reveal] { opacity: 1 !important; transform: none !important; }`}</style>

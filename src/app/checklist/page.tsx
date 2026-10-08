@@ -19,7 +19,7 @@ export default function ChecklistPage() {
   return (
     <div className="min-h-[100dvh]">
       <SiteHeader minimal />
-      <main>
+      <main id="main">
         <PageHero
           eyebrow="Lead Magnet"
           title="Find the automation bottleneck that is costing your agency the most time"

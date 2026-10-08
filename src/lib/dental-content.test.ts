@@ -21,7 +21,7 @@ test("hero and offer copy match the spec word for word", () => {
   );
   assert.equal(dental.dentalProblems.length, 3);
   assert.equal(dental.dentalSteps.length, 3);
-  assert.equal(dental.dentalFaqs.length, 4);
+  assert.equal(dental.dentalFaqs.length, 6);
 });
 
 test("only numbers written in the spec appear in dental copy", () => {

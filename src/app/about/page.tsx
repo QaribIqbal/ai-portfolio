@@ -18,7 +18,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-[100dvh]">
       <SiteHeader />
-      <main>
+      <main id="main">
         <PageHero
           eyebrow="About"
           title="Practical operator support for lean agency teams"

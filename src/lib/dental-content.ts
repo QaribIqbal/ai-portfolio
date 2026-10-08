@@ -60,6 +60,15 @@ export const dentalAuditForm = {
     consent:
       "I confirm this enquiry is about my clinic's own systems. Do not send patient data through this form.",
   },
+  help: {
+    phone: "Australian mobile or landline.",
+    smsTool: "For example, the SMS feature in your practice software, or a separate SMS app.",
+  },
+  fallback: {
+    message: "The form didn't go through. You can send the same details by email instead:",
+    link: "Email my audit request",
+    subject: "Missed-Call Leak Audit request",
+  },
   submit: "Request my free Leak Audit",
   success: "Request received. Your audit summary arrives by email within one business day.",
   note: "The Leak Audit is free until 6 November 2026.",
@@ -85,7 +94,18 @@ export const dentalFaqs = [
     question: "How fast is it live?",
     answer: "48 hours from access to your system.",
   },
+  {
+    question: "What does it cost?",
+    answer:
+      "The 31 December Reactivation Campaign is a fixed AUD 490. Ongoing missed-call text-back + monthly reactivation is AUD 649/month, the founding price for the first 3 practices.",
+  },
+  {
+    question: "Do we need new software?",
+    answer: "No. The campaign runs in the SMS/email tool your clinic already uses.",
+  },
 ];
+
+export const dentalStickyCta = "Get the free Leak Audit";
 
 export const dentalFinalCta = {
   heading: "Find out what missed calls are costing your clinic.",

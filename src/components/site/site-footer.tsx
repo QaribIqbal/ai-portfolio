@@ -1,6 +1,7 @@
-import { Linkedin } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 
 import { ButtonLink } from "@/components/site/button-link";
+import { DENTAL_INSTAGRAM_URL } from "@/lib/dental-content";
 import { siteConfig } from "@/lib/site-content";
 
 export function SiteFooter() {
@@ -32,6 +33,12 @@ export function SiteFooter() {
             {siteConfig.email}
           </a>
           {/* review: change-7 */}
+          <ButtonLink href={DENTAL_INSTAGRAM_URL} variant="ghost" external trackingEvent="instagram_footer_click">
+            <span className="inline-flex items-center gap-2">
+              <Instagram className="h-4 w-4" aria-hidden="true" />
+              Instagram
+            </span>
+          </ButtonLink>
           <ButtonLink href={siteConfig.linkedin} variant="ghost" external trackingEvent="linkedin_footer_click">
             <span className="inline-flex items-center gap-2">
               <Linkedin className="h-4 w-4" aria-hidden="true" />

@@ -300,6 +300,24 @@
   box-shadow: 0 0 0 3px rgb(16 185 129 / 0.25);
 }
 
+.dental-field-help {
+  font-size: 0.85rem;
+  color: var(--dental-muted);
+}
+
+.dental-form-fallback {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+  border: 1px solid rgb(252 165 165 / 0.5);
+  border-radius: 0.75rem;
+  color: var(--dental-cream);
+}
+
+.dental-form-fallback p {
+  margin: 0;
+}
+
 .dental-input-invalid {
   border-color: #f87171 !important;
 }
@@ -362,6 +380,12 @@
   gap: 1.25rem;
 }
 
+@media (max-width: 767px) {
+  .dental-page {
+    padding-bottom: 5rem;
+  }
+}
+
 @media (max-width: 479px) {
   .dental-hero-actions .dental-cta,
   .dental-final .dental-cta {
@@ -386,5 +410,36 @@
 
   .dental-section {
     padding-top: 5rem;
+  }
+}
+
+.dental-sticky-cta {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 30;
+  padding: 0.75rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom));
+  background: rgb(10 15 13 / 0.94);
+  border-top: 1px solid var(--dental-line);
+  transform: translateY(110%);
+  transition: transform 200ms ease;
+}
+
+.dental-sticky-cta[data-visible="true"] {
+  transform: translateY(0);
+}
+
+.dental-sticky-cta .dental-cta {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .dental-sticky-cta {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dental-sticky-cta {
+    transition: none;
   }
 }

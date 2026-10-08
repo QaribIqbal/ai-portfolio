@@ -35,6 +35,8 @@ export function buildMetadata({
       title: fullTitle,
       description,
       type: "website",
+      locale: "en_AU",
+      siteName: "Qarib Iqbal",
       ...(path ? { url: path } : {}),
     },
     twitter: {

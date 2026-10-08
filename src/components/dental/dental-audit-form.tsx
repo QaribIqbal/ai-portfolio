@@ -4,6 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 import { useRef, useState } from "react";
 
 import { trackEvent } from "@/lib/analytics";
+import { buildAuditEmailHref } from "@/lib/audit-email";
 import { dentalAuditForm } from "@/lib/dental-content";
 import {
   sanitizeDentalAuditForm,
@@ -141,10 +142,18 @@ export function DentalAuditForm() {
       {textFields.map(({ field, type, autoComplete, inputMode, required, maxLength }) => {
         const error = errors[field];
         const errorId = `dental-${field}-error`;
+        const helpText = field === "phone" || field === "smsTool" ? dentalAuditForm.help[field] : undefined;
+        const helpId = `dental-${field}-help`;
+        const describedBy = [helpText ? helpId : "", error ? errorId : ""].filter(Boolean).join(" ") || undefined;
 
         return (
           <label key={field} className="dental-field">
             <span>{dentalAuditForm.labels[field]}</span>
+            {helpText ? (
+              <span id={helpId} className="dental-field-help">
+                {helpText}
+              </span>
+            ) : null}
             <input
               name={field}
               type={type}
@@ -156,7 +165,7 @@ export function DentalAuditForm() {
               onChange={(event) => updateField(field, event.target.value)}
               onBlur={() => handleBlur(field)}
               aria-invalid={Boolean(error)}
-              aria-describedby={error ? errorId : undefined}
+              aria-describedby={describedBy}
               className={cn(error && "dental-input-invalid")}
             />
             {error ? (
@@ -191,13 +200,20 @@ export function DentalAuditForm() {
       </button>
 
       {status === "error" ? (
-        <p className="dental-field-error" role="alert">
-          That didn&apos;t go through. Please try again, or email{" "}
-          <a href={`mailto:${siteConfig.email}`} className="underline">
-            {siteConfig.email}
+        <div className="dental-form-fallback" role="alert">
+          <p>{dentalAuditForm.fallback.message}</p>
+          <a
+            className="dental-text-link"
+            href={buildAuditEmailHref({
+              to: siteConfig.email,
+              subject: dentalAuditForm.fallback.subject,
+              values: sanitizeDentalAuditForm(form),
+            })}
+            onClick={() => trackEvent("dental_audit_email_fallback_click")}
+          >
+            {dentalAuditForm.fallback.link}
           </a>
-          .
-        </p>
+        </div>
       ) : null}
 
       <p className="dental-form-note">{dentalAuditForm.note}</p>

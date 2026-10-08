@@ -19,7 +19,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-[100dvh]">
       <SiteHeader />
-      <main>
+      <main id="main">
         <PageHero
           eyebrow="Free Automation Audit"
           title="A focused diagnostic for agencies that want to fix the right bottleneck first"

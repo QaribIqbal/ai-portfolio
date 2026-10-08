@@ -37,7 +37,7 @@ export default function CaseStudiesPage() {
   return (
     <div className="min-h-[100dvh]">
       <SiteHeader />
-      <main>
+      <main id="main">
         <PageHero
           eyebrow="Qarib Iqbal / Proof of Work"
           title="Watch the systems. Inspect the workflows. Decide from evidence."

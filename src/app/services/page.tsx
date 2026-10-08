@@ -18,7 +18,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-[100dvh]">
       <SiteHeader />
-      <main>
+      <main id="main">
         <PageHero
           eyebrow="Services"
           title="Focused sprint delivery, not open-ended automation projects"

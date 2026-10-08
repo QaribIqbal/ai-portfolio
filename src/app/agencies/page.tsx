@@ -47,7 +47,7 @@ export default function AgenciesPage() {
   return (
     <div className="min-h-[100dvh]">
       <SiteHeader />
-      <main>
+      <main id="main">
         {/* ─── HERO ─── */}
         <section className="page-section section-slice section-slice-hero pt-20 sm:pt-28" id="hero">
           <div className="shell">

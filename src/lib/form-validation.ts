@@ -218,7 +218,22 @@ export type DentalAuditFormValues = {
 
 export type DentalAuditFormErrors = Partial<Record<keyof DentalAuditFormValues, string>>;
 
-const phonePattern = /^[+\d][\d\s()-]{5,24}$/;
+const australianPhonePatterns = [/^0[2378]\d{8}$/, /^04\d{8}$/, /^1[38]00\d{6}$/, /^13\d{4}$/];
+
+function isAustralianPhone(value: string) {
+  if (!/^[+\d\s()-]+$/.test(value)) {
+    return false;
+  }
+
+  let digits = value.replace(/[\s()-]/g, "");
+  if (digits.startsWith("+61")) {
+    digits = `0${digits.slice(3)}`;
+  } else if (digits.startsWith("+")) {
+    return false;
+  }
+
+  return australianPhonePatterns.some((pattern) => pattern.test(digits));
+}
 
 export function sanitizeDentalAuditForm(values: DentalAuditFormValues): DentalAuditFormValues {
   return {
@@ -258,8 +273,8 @@ export function validateDentalAuditField(
         return undefined;
       }
 
-      if (!phonePattern.test(normalized)) {
-        return "Please enter a valid phone number, or leave it blank.";
+      if (!isAustralianPhone(normalized)) {
+        return "Please enter an Australian phone number, or leave it blank.";
       }
 
       return undefined;

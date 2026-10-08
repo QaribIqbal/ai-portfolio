@@ -1,5 +1,7 @@
 import { DentalAuditForm } from "@/components/dental/dental-audit-form";
 import { FinalCtaBand, OfferDetails, ProblemStrip, StepsList } from "@/components/dental/dental-sections";
+import { DentalFaqJsonLd, DentalServiceJsonLd } from "@/components/dental/structured-data";
+import { StickyAuditCta } from "@/components/dental/sticky-audit-cta";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import {
@@ -29,8 +31,8 @@ export default function DentalPage() {
     <div className="dental-page">
       <SiteHeader />
 
-      <main>
-        <section className="dental-shell dental-hero" aria-labelledby="dental-hero-title">
+      <main id="main">
+        <section className="dental-shell dental-hero" data-sticky-cta-hide-after aria-labelledby="dental-hero-title">
           <h1 id="dental-hero-title">{dentalHero.title}</h1>
           <p className="dental-lede">{dentalHero.subtitle}</p>
           <div className="dental-hero-actions">
@@ -70,7 +72,7 @@ export default function DentalPage() {
           </section>
         ) : null}
 
-        <section id="audit" className="dental-shell dental-section" aria-labelledby="dental-audit-title">
+        <section id="audit" data-sticky-cta-hide className="dental-shell dental-section" aria-labelledby="dental-audit-title">
           <h2 id="dental-audit-title">{dentalHero.primaryCta}</h2>
           <DentalAuditForm />
         </section>
@@ -91,6 +93,9 @@ export default function DentalPage() {
       </main>
 
       <SiteFooter />
+      <StickyAuditCta href="#audit" />
+      <DentalServiceJsonLd />
+      <DentalFaqJsonLd />
     </div>
   );
 }

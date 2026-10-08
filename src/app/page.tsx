@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 import { FinalCtaBand, OfferDetails, ProblemStrip, StepsList } from "@/components/dental/dental-sections";
+import { DentalServiceJsonLd } from "@/components/dental/structured-data";
+import { StickyAuditCta } from "@/components/dental/sticky-audit-cta";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { brandHome, dentalHero } from "@/lib/dental-content";
@@ -23,8 +25,8 @@ export default function HomePage() {
     <div className="dental-page">
       <SiteHeader />
 
-      <main>
-        <section className="dental-shell dental-hero" aria-labelledby="home-hero-title">
+      <main id="main">
+        <section className="dental-shell dental-hero" data-sticky-cta-hide-after aria-labelledby="home-hero-title">
           <p className="dental-eyebrow">{brandHome.eyebrow}</p>
           <h1 id="home-hero-title" className="dental-hero-line">
             {brandHome.headlineLead}
@@ -77,6 +79,8 @@ export default function HomePage() {
       </main>
 
       <SiteFooter />
+      <StickyAuditCta href="/dental#audit" />
+      <DentalServiceJsonLd />
     </div>
   );
 }

@@ -490,7 +490,7 @@ export function JourneySection() {
               <div className="journey-mobile-card">
                 <div className="journey-mobile-number">{String(i + 1).padStart(2, "0")}</div>
                 <p className="section-eyebrow">{scene.eyebrow}</p>
-                <h3 className="journey-mobile-title">{scene.title}</h3>
+                <h2 className="journey-mobile-title">{scene.title}</h2>
                 <p className="journey-mobile-subtitle">{scene.subtitle}</p>
 
                 {i === 0 && (
